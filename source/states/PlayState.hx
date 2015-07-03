@@ -25,7 +25,7 @@ class PlayState extends FlxState {
 		
 		var redPlatform = new FlxTypedGroup<FlxSprite>(9);
 		
-		for (i in 9) {
+		for (0 in 9 ) {
 			var red_platform = new FlxSprite(centerX, 100, AssetPaths.platform_red_normal__png);
 			red_platform.kill();
 			red_platform.add(red_platform);
