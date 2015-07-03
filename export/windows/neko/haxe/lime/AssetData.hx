@@ -16,6 +16,10 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/images/game_background.png", "assets/images/game_background.png");
+			type.set ("assets/images/game_background.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
+			type.set ("assets/images/game_background_sprites.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 			type.set ("assets/images/menu_background.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
