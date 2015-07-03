@@ -40,12 +40,6 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxSignal
 #include <flixel/interfaces/IFlxSignal.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SignalFrontEnd
 #include <flixel/system/frontEnds/SignalFrontEnd.h>
 #endif
@@ -1060,30 +1054,6 @@ Void FlxMouse_obj::onMouseWheel( ::openfl::_legacy::events::MouseEvent FlashEven
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","onMouseWheel",0xdc642911,"flixel.input.mouse.FlxMouse.onMouseWheel","flixel/input/mouse/FlxMouse.hx",560,0xe4e80b89)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(FlashEvent,"FlashEvent")
-		HX_STACK_LINE(562)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(562)
-		bool tmp1 = tmp->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(562)
-		bool tmp2;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(562)
-		if ((tmp1)){
-			HX_STACK_LINE(562)
-			::flixel::FlxGame tmp3 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(562)
-			::flixel::FlxGame tmp4 = tmp3;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(562)
-			tmp2 = tmp4->debugger->__Field(HX_HCSTRING("hasMouse","\x6b","\x60","\xbd","\x98"), hx::paccDynamic );
-		}
-		else{
-			HX_STACK_LINE(562)
-			tmp2 = false;
-		}
-		HX_STACK_LINE(562)
-		if ((tmp2)){
-			HX_STACK_LINE(565)
-			return null();
-		}
 		HX_STACK_LINE(569)
 		this->_wheelUsed = true;
 		HX_STACK_LINE(570)

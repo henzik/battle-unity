@@ -1,10 +1,13 @@
+FLX_NO_DEBUG=1
 FLX_RENDER_TILE=1
 HXCPP_ARMV7=1
+NAPE_RELEASE_BUILD=1
 android=1
 android-9=1
 android_9=1
-fdb=1
 flixel=3.3.8
+flixel-addons=1.1.0
+flixel_addons=1.1.0
 haxe3=1
 haxe_ver=3.2
 hxcpp=3.2.102

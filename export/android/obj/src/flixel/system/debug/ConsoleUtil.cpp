@@ -61,184 +61,6 @@ Dynamic ConsoleUtil_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct();
 	return _result_;}
 
-Dynamic ConsoleUtil_obj::attemptToCreateInstance_flixel_FlxObject( ::String ClassName,::hx::Class type,Array< ::String > Params){
-	HX_STACK_FRAME("flixel.system.debug.ConsoleUtil","attemptToCreateInstance_flixel_FlxObject",0xd1869411,"flixel.system.debug.ConsoleUtil.attemptToCreateInstance_flixel_FlxObject","flixel/system/debug/ConsoleUtil.hx",91,0x3784f9ee)
-	HX_STACK_ARG(ClassName,"ClassName")
-	HX_STACK_ARG(type,"type")
-	HX_STACK_ARG(Params,"Params")
-	HX_STACK_LINE(92)
-	bool tmp = (Params == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(92)
-	if ((tmp)){
-		HX_STACK_LINE(93)
-		Params = Array_obj< ::String >::__new();
-	}
-	HX_STACK_LINE(95)
-	::String tmp1 = ClassName;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(95)
-	::hx::Class tmp2 = ::Type_obj::resolveClass(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(95)
-	Dynamic obj = tmp2;		HX_STACK_VAR(obj,"obj");
-	HX_STACK_LINE(96)
-	Dynamic tmp3 = obj;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(96)
-	bool tmp4 = ::Reflect_obj::isObject(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(96)
-	bool tmp5 = !(tmp4);		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(96)
-	if ((tmp5)){
-		HX_STACK_LINE(98)
-		{
-			HX_STACK_LINE(98)
-			::flixel::_system::frontEnds::LogFrontEnd tmp6 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(98)
-			::String tmp7 = (ClassName + HX_HCSTRING("' is not a valid class name. Try passing the full class path. Also make sure the class is being compiled.","\x14","\xfc","\x5d","\xb2"));		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(98)
-			::flixel::_system::debug::LogStyle tmp8 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(98)
-			tmp6->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp7,tmp8,true);
-		}
-		HX_STACK_LINE(99)
-		return null();
-	}
-	HX_STACK_LINE(102)
-	Dynamic tmp6 = obj;		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(102)
-	Dynamic tmp7 = ::Type_obj::createInstance(tmp6,Params);		HX_STACK_VAR(tmp7,"tmp7");
-	HX_STACK_LINE(102)
-	Dynamic instance = tmp7;		HX_STACK_VAR(instance,"instance");
-	HX_STACK_LINE(104)
-	Dynamic tmp8 = instance;		HX_STACK_VAR(tmp8,"tmp8");
-	HX_STACK_LINE(104)
-	::hx::Class tmp9 = type;		HX_STACK_VAR(tmp9,"tmp9");
-	HX_STACK_LINE(104)
-	bool tmp10 = ::Std_obj::is(tmp8,tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-	HX_STACK_LINE(104)
-	bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
-	HX_STACK_LINE(104)
-	if ((tmp11)){
-		HX_STACK_LINE(106)
-		{
-			HX_STACK_LINE(106)
-			::String tmp12 = (ClassName + HX_HCSTRING("' is not a ","\xc9","\xf1","\x0e","\x46"));		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(106)
-			::hx::Class tmp13 = type;		HX_STACK_VAR(tmp13,"tmp13");
-			HX_STACK_LINE(106)
-			::String tmp14 = ::Type_obj::getClassName(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-			HX_STACK_LINE(106)
-			::String tmp15 = (tmp12 + tmp14);		HX_STACK_VAR(tmp15,"tmp15");
-			HX_STACK_LINE(106)
-			Dynamic Data = tmp15;		HX_STACK_VAR(Data,"Data");
-			HX_STACK_LINE(106)
-			::flixel::_system::frontEnds::LogFrontEnd tmp16 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp16,"tmp16");
-			HX_STACK_LINE(106)
-			Dynamic tmp17 = Data;		HX_STACK_VAR(tmp17,"tmp17");
-			HX_STACK_LINE(106)
-			::flixel::_system::debug::LogStyle tmp18 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp18,"tmp18");
-			HX_STACK_LINE(106)
-			tmp16->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp17,tmp18,true);
-		}
-		HX_STACK_LINE(107)
-		return null();
-	}
-	HX_STACK_LINE(110)
-	Dynamic tmp12 = instance;		HX_STACK_VAR(tmp12,"tmp12");
-	HX_STACK_LINE(110)
-	return tmp12;
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC3(ConsoleUtil_obj,attemptToCreateInstance_flixel_FlxObject,return )
-
-Dynamic ConsoleUtil_obj::attemptToCreateInstance_flixel_FlxState( ::String ClassName,::hx::Class type,Array< ::String > Params){
-	HX_STACK_FRAME("flixel.system.debug.ConsoleUtil","attemptToCreateInstance_flixel_FlxState",0xf7aff0ff,"flixel.system.debug.ConsoleUtil.attemptToCreateInstance_flixel_FlxState","flixel/system/debug/ConsoleUtil.hx",91,0x3784f9ee)
-	HX_STACK_ARG(ClassName,"ClassName")
-	HX_STACK_ARG(type,"type")
-	HX_STACK_ARG(Params,"Params")
-	HX_STACK_LINE(92)
-	bool tmp = (Params == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(92)
-	if ((tmp)){
-		HX_STACK_LINE(93)
-		Params = Array_obj< ::String >::__new();
-	}
-	HX_STACK_LINE(95)
-	::String tmp1 = ClassName;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(95)
-	::hx::Class tmp2 = ::Type_obj::resolveClass(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(95)
-	Dynamic obj = tmp2;		HX_STACK_VAR(obj,"obj");
-	HX_STACK_LINE(96)
-	Dynamic tmp3 = obj;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(96)
-	bool tmp4 = ::Reflect_obj::isObject(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(96)
-	bool tmp5 = !(tmp4);		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(96)
-	if ((tmp5)){
-		HX_STACK_LINE(98)
-		{
-			HX_STACK_LINE(98)
-			::flixel::_system::frontEnds::LogFrontEnd tmp6 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(98)
-			::String tmp7 = (ClassName + HX_HCSTRING("' is not a valid class name. Try passing the full class path. Also make sure the class is being compiled.","\x14","\xfc","\x5d","\xb2"));		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(98)
-			::flixel::_system::debug::LogStyle tmp8 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(98)
-			tmp6->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp7,tmp8,true);
-		}
-		HX_STACK_LINE(99)
-		return null();
-	}
-	HX_STACK_LINE(102)
-	Dynamic tmp6 = obj;		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(102)
-	Dynamic tmp7 = ::Type_obj::createInstance(tmp6,Params);		HX_STACK_VAR(tmp7,"tmp7");
-	HX_STACK_LINE(102)
-	Dynamic instance = tmp7;		HX_STACK_VAR(instance,"instance");
-	HX_STACK_LINE(104)
-	Dynamic tmp8 = instance;		HX_STACK_VAR(tmp8,"tmp8");
-	HX_STACK_LINE(104)
-	::hx::Class tmp9 = type;		HX_STACK_VAR(tmp9,"tmp9");
-	HX_STACK_LINE(104)
-	bool tmp10 = ::Std_obj::is(tmp8,tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-	HX_STACK_LINE(104)
-	bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
-	HX_STACK_LINE(104)
-	if ((tmp11)){
-		HX_STACK_LINE(106)
-		{
-			HX_STACK_LINE(106)
-			::String tmp12 = (ClassName + HX_HCSTRING("' is not a ","\xc9","\xf1","\x0e","\x46"));		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(106)
-			::hx::Class tmp13 = type;		HX_STACK_VAR(tmp13,"tmp13");
-			HX_STACK_LINE(106)
-			::String tmp14 = ::Type_obj::getClassName(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-			HX_STACK_LINE(106)
-			::String tmp15 = (tmp12 + tmp14);		HX_STACK_VAR(tmp15,"tmp15");
-			HX_STACK_LINE(106)
-			Dynamic Data = tmp15;		HX_STACK_VAR(Data,"Data");
-			HX_STACK_LINE(106)
-			::flixel::_system::frontEnds::LogFrontEnd tmp16 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp16,"tmp16");
-			HX_STACK_LINE(106)
-			Dynamic tmp17 = Data;		HX_STACK_VAR(tmp17,"tmp17");
-			HX_STACK_LINE(106)
-			::flixel::_system::debug::LogStyle tmp18 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp18,"tmp18");
-			HX_STACK_LINE(106)
-			tmp16->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp17,tmp18,true);
-		}
-		HX_STACK_LINE(107)
-		return null();
-	}
-	HX_STACK_LINE(110)
-	Dynamic tmp12 = instance;		HX_STACK_VAR(tmp12,"tmp12");
-	HX_STACK_LINE(110)
-	return tmp12;
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC3(ConsoleUtil_obj,attemptToCreateInstance_flixel_FlxState,return )
-
 bool ConsoleUtil_obj::callFunction( Dynamic Function,cpp::ArrayBase Args){
 	HX_STACK_FRAME("flixel.system.debug.ConsoleUtil","callFunction",0x976d0913,"flixel.system.debug.ConsoleUtil.callFunction","flixel/system/debug/ConsoleUtil.hx",25,0x3784f9ee)
 	HX_STACK_ARG(Function,"Function")
@@ -288,25 +110,6 @@ bool ConsoleUtil_obj::callFunction( Dynamic Function,cpp::ArrayBase Args){
 						::Reflect_obj::callMethod(null(),tmp7,shortenedArgs);
 					}
 					else{
-						HX_STACK_LINE(50)
-						{
-							HX_STACK_LINE(50)
-							::flixel::_system::frontEnds::LogFrontEnd tmp6 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp6,"tmp6");
-							HX_STACK_LINE(50)
-							::String tmp7 = (HX_HCSTRING("Invalid number or parameters: ","\xbf","\xa1","\xa0","\xde") + expected);		HX_STACK_VAR(tmp7,"tmp7");
-							HX_STACK_LINE(50)
-							::String tmp8 = (tmp7 + HX_HCSTRING(" expected, ","\x0c","\x4b","\x40","\xeb"));		HX_STACK_VAR(tmp8,"tmp8");
-							HX_STACK_LINE(50)
-							int tmp9 = Args->__Field(HX_HCSTRING("length","\xe6","\x94","\x07","\x9f"), hx::paccDynamic );		HX_STACK_VAR(tmp9,"tmp9");
-							HX_STACK_LINE(50)
-							::String tmp10 = (tmp8 + tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-							HX_STACK_LINE(50)
-							::String tmp11 = (tmp10 + HX_HCSTRING(" passed","\x90","\xab","\xe0","\x20"));		HX_STACK_VAR(tmp11,"tmp11");
-							HX_STACK_LINE(50)
-							::flixel::_system::debug::LogStyle tmp12 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(50)
-							tmp6->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp11,tmp12,true);
-						}
 						HX_STACK_LINE(51)
 						return false;
 					}
@@ -476,13 +279,7 @@ Dynamic ConsoleUtil_obj::resolveObjectAndVariable( ::String ObjectAndVariable,Dy
 			HX_STACK_LINE(134)
 			Dynamic Data = tmp7;		HX_STACK_VAR(Data,"Data");
 			HX_STACK_LINE(134)
-			::flixel::_system::frontEnds::LogFrontEnd tmp8 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(134)
-			Dynamic tmp9 = Data;		HX_STACK_VAR(tmp9,"tmp9");
-			HX_STACK_LINE(134)
-			::flixel::_system::debug::LogStyle tmp10 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(134)
-			tmp8->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp9,tmp10,true);
+			Dynamic();
 		}
 		HX_STACK_LINE(135)
 		return null();
@@ -610,13 +407,7 @@ Dynamic ConsoleUtil_obj::resolveObjectAndVariable( ::String ObjectAndVariable,Dy
 							HX_STACK_LINE(155)
 							Dynamic Data = tmp14;		HX_STACK_VAR(Data,"Data");
 							HX_STACK_LINE(155)
-							::flixel::_system::frontEnds::LogFrontEnd tmp15 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(155)
-							Dynamic tmp16 = Data;		HX_STACK_VAR(tmp16,"tmp16");
-							HX_STACK_LINE(155)
-							::flixel::_system::debug::LogStyle tmp17 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp17,"tmp17");
-							HX_STACK_LINE(155)
-							tmp15->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp16,tmp17,true);
+							Dynamic();
 						}
 						HX_STACK_LINE(156)
 						return null();
@@ -879,12 +670,6 @@ bool ConsoleUtil_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx:
 		break;
 	case 31:
 		if (HX_FIELD_EQ(inName,"resolveObjectAndVariableFromMap") ) { outValue = resolveObjectAndVariableFromMap_dyn(); return true;  }
-		break;
-	case 39:
-		if (HX_FIELD_EQ(inName,"attemptToCreateInstance_flixel_FlxState") ) { outValue = attemptToCreateInstance_flixel_FlxState_dyn(); return true;  }
-		break;
-	case 40:
-		if (HX_FIELD_EQ(inName,"attemptToCreateInstance_flixel_FlxObject") ) { outValue = attemptToCreateInstance_flixel_FlxObject_dyn(); return true;  }
 	}
 	return false;
 }
@@ -908,8 +693,6 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 hx::Class ConsoleUtil_obj::__mClass;
 
 static ::String sStaticFields[] = {
-	HX_HCSTRING("attemptToCreateInstance_flixel_FlxObject","\x54","\x67","\xbe","\x71"),
-	HX_HCSTRING("attemptToCreateInstance_flixel_FlxState","\x1c","\x77","\x4d","\xc1"),
 	HX_HCSTRING("callFunction","\xd6","\x4d","\x95","\x4c"),
 	HX_HCSTRING("findCommand","\x12","\x32","\x58","\x81"),
 	HX_HCSTRING("resolveObjectAndVariable","\x28","\x3f","\x7e","\x35"),

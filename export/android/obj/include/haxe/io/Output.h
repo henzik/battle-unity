@@ -26,8 +26,12 @@ class HXCPP_CLASS_ATTRIBUTES  Output_obj : public hx::Object{
 		//~Output_obj();
 
 		HX_DO_RTTI_ALL;
+		Dynamic __Field(const ::String &inString, hx::PropertyAccess inCallProp);
 		static void __register();
 		::String __ToString() const { return HX_HCSTRING("Output","\x21","\x83","\x15","\x41"); }
+
+		virtual Void close( );
+		Dynamic close_dyn();
 
 };
 

@@ -1,14 +1,5 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxSave
 #include <flixel/util/FlxSave.h>
 #endif
@@ -101,15 +92,6 @@ bool FlxSave_obj::bind( ::String Name){
 		if (__e.IsClass< ::openfl::errors::Error >() ){
 			HX_STACK_BEGIN_CATCH
 			::openfl::errors::Error e = __e;{
-				HX_STACK_LINE(80)
-				{
-					HX_STACK_LINE(80)
-					::flixel::_system::frontEnds::LogFrontEnd tmp = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp,"tmp");
-					HX_STACK_LINE(80)
-					::flixel::_system::debug::LogStyle tmp1 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp1,"tmp1");
-					HX_STACK_LINE(80)
-					tmp->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("There was a problem binding to\nthe shared object data from FlxSave.","\x75","\x65","\xd7","\xba"),tmp1,true);
-				}
 				HX_STACK_LINE(81)
 				this->destroy();
 				HX_STACK_LINE(82)
@@ -266,20 +248,12 @@ bool FlxSave_obj::onDone( int Result){
 	switch( (int)(tmp)){
 		case (int)1: {
 			HX_STACK_LINE(188)
-			::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(188)
-			::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(188)
-			tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxSave is requesting extra storage space.","\x65","\xed","\x43","\x59"),tmp2,true);
+			Dynamic();
 		}
 		;break;
 		case (int)2: {
 			HX_STACK_LINE(190)
-			::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(190)
-			::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(190)
-			tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("There was a problem flushing\nthe shared object data from FlxSave.","\x0d","\x4e","\xe5","\xad"),tmp2,true);
+			Dynamic();
 		}
 		;break;
 	}
@@ -327,15 +301,6 @@ bool FlxSave_obj::checkBinding( ){
 	bool tmp1 = (tmp == null());		HX_STACK_VAR(tmp1,"tmp1");
 	HX_STACK_LINE(211)
 	if ((tmp1)){
-		HX_STACK_LINE(213)
-		{
-			HX_STACK_LINE(213)
-			::flixel::_system::frontEnds::LogFrontEnd tmp2 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(213)
-			::flixel::_system::debug::LogStyle tmp3 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(213)
-			tmp2->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("You must call FlxSave.bind()\nbefore you can read or write data.","\x7f","\xaf","\xd9","\xea"),tmp3,true);
-		}
 		HX_STACK_LINE(214)
 		return false;
 	}

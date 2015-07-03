@@ -9,9 +9,6 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
 #ifndef INCLUDED_flixel_FlxObject
 #include <flixel/FlxObject.h>
 #endif
@@ -32,12 +29,6 @@
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_layer_frames_FlxFrame
 #include <flixel/system/layer/frames/FlxFrame.h>
@@ -457,19 +448,6 @@ Void FlxAnimationController_obj::append( ::String Name,Array< int > Frames){
 		bool tmp3 = (anim == null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(217)
 		if ((tmp3)){
-			HX_STACK_LINE(220)
-			{
-				HX_STACK_LINE(220)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(220)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + Name);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(220)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(220)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(220)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(221)
 			return null();
 		}
@@ -603,19 +581,6 @@ Void FlxAnimationController_obj::appendByNames( ::String Name,Array< ::String > 
 		bool tmp3 = (anim == null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(271)
 		if ((tmp3)){
-			HX_STACK_LINE(273)
-			{
-				HX_STACK_LINE(273)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(273)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + Name);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(273)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(273)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(273)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(274)
 			return null();
 		}
@@ -748,19 +713,6 @@ Void FlxAnimationController_obj::appendByStringIndices( ::String Name,::String P
 		bool tmp3 = (anim == null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(320)
 		if ((tmp3)){
-			HX_STACK_LINE(322)
-			{
-				HX_STACK_LINE(322)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(322)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + Name);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(322)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(322)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(322)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(323)
 			return null();
 		}
@@ -897,19 +849,6 @@ Void FlxAnimationController_obj::appendByIndices( ::String Name,::String Prefix,
 		bool tmp3 = (anim == null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(369)
 		if ((tmp3)){
-			HX_STACK_LINE(371)
-			{
-				HX_STACK_LINE(371)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(371)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + Name);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(371)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(371)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(371)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(372)
 			return null();
 		}
@@ -1159,19 +1098,6 @@ Void FlxAnimationController_obj::appendByPrefix( ::String Name,::String Prefix){
 		bool tmp3 = (anim == null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(446)
 		if ((tmp3)){
-			HX_STACK_LINE(448)
-			{
-				HX_STACK_LINE(448)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(448)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + Name);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(448)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(448)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(448)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(449)
 			return null();
 		}
@@ -1283,19 +1209,6 @@ int Frame = __o_Frame.Default(0);
 		}
 		HX_STACK_LINE(482)
 		if ((tmp3)){
-			HX_STACK_LINE(484)
-			{
-				HX_STACK_LINE(484)
-				::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(484)
-				::String tmp5 = (HX_HCSTRING("No animation called \"","\xba","\x9e","\x0f","\x3e") + AnimName);		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(484)
-				::String tmp6 = (tmp5 + HX_HCSTRING("\"","\x22","\x00","\x00","\x00"));		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(484)
-				::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(484)
-				tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp6,tmp7,true);
-			}
 			HX_STACK_LINE(485)
 			return null();
 		}

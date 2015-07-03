@@ -10,6 +10,8 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import entity.Background;
 
+import ClientConnectTest;
+
 /**
  * A FlxState which can be used for the actual gameplay.
  */
@@ -21,13 +23,15 @@ class PlayState extends FlxState {
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
 	
+
 	
 	override public function create():Void {
 		bgColor = 0xffc0f8c8;
 		var background = new Background();
 		add(background);
 		generatePlatforms();
-
+		
+		var connect = new ClientConnectTest();
 		super.create();		
 	}
 

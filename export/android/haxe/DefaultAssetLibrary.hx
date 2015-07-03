@@ -49,14 +49,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
-		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
-		path.set ("assets/images/MenuBG.jpg", "assets/images/MenuBG.jpg");
-		type.set ("assets/images/MenuBG.jpg", AssetType.IMAGE);
-		path.set ("assets/images/pressStart.png", "assets/images/pressStart.png");
-		type.set ("assets/images/pressStart.png", AssetType.IMAGE);
-		path.set ("assets/music/maintheme.mp3", "assets/music/maintheme.mp3");
-		type.set ("assets/music/maintheme.mp3", AssetType.MUSIC);
+		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
+		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
+		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
+		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
+		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
+		type.set ("assets/images/platform_blue_normal.png", AssetType.IMAGE);
+		path.set ("assets/images/platform_red_normal.png", "assets/images/platform_red_normal.png");
+		type.set ("assets/images/platform_red_normal.png", AssetType.IMAGE);
+		path.set ("assets/images/press_start.png", "assets/images/press_start.png");
+		type.set ("assets/images/press_start.png", AssetType.IMAGE);
 		path.set ("assets/music/maintheme.wav", "assets/music/maintheme.wav");
 		type.set ("assets/music/maintheme.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Teleport.wav", "assets/sounds/Teleport.wav");
@@ -70,18 +72,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
-		id = "assets/data/data-goes-here.txt";
-		path.set (id, id);
-		type.set (id, AssetType.TEXT);
-		id = "assets/images/MenuBG.jpg";
+		id = "assets/images/game_background_sprites.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/pressStart.png";
+		id = "assets/images/menu_background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/music/maintheme.mp3";
+		id = "assets/images/platform_blue_normal.png";
 		path.set (id, id);
-		type.set (id, AssetType.MUSIC);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/platform_red_normal.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/press_start.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/music/maintheme.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
@@ -109,9 +114,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -747,7 +754,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
@@ -829,14 +838,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
-		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
-		path.set ("assets/images/MenuBG.jpg", "assets/images/MenuBG.jpg");
-		type.set ("assets/images/MenuBG.jpg", AssetType.IMAGE);
-		path.set ("assets/images/pressStart.png", "assets/images/pressStart.png");
-		type.set ("assets/images/pressStart.png", AssetType.IMAGE);
-		path.set ("assets/music/maintheme.mp3", "assets/music/maintheme.mp3");
-		type.set ("assets/music/maintheme.mp3", AssetType.MUSIC);
+		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
+		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
+		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
+		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
+		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
+		type.set ("assets/images/platform_blue_normal.png", AssetType.IMAGE);
+		path.set ("assets/images/platform_red_normal.png", "assets/images/platform_red_normal.png");
+		type.set ("assets/images/platform_red_normal.png", AssetType.IMAGE);
+		path.set ("assets/images/press_start.png", "assets/images/press_start.png");
+		type.set ("assets/images/press_start.png", AssetType.IMAGE);
 		path.set ("assets/music/maintheme.wav", "assets/music/maintheme.wav");
 		type.set ("assets/music/maintheme.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Teleport.wav", "assets/sounds/Teleport.wav");
@@ -850,18 +861,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
-		id = "assets/data/data-goes-here.txt";
-		path.set (id, id);
-		type.set (id, AssetType.TEXT);
-		id = "assets/images/MenuBG.jpg";
+		id = "assets/images/game_background_sprites.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/images/pressStart.png";
+		id = "assets/images/menu_background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/music/maintheme.mp3";
+		id = "assets/images/platform_blue_normal.png";
 		path.set (id, id);
-		type.set (id, AssetType.MUSIC);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/platform_red_normal.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/press_start.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/music/maintheme.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
@@ -896,11 +910,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1520,7 +1536,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 

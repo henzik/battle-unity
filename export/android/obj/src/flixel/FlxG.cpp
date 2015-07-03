@@ -76,9 +76,6 @@
 #ifndef INCLUDED_flixel_system_FlxVersion
 #include <flixel/system/FlxVersion.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_BitmapFrontEnd
 #include <flixel/system/frontEnds/BitmapFrontEnd.h>
 #endif
@@ -791,11 +788,7 @@ int FlxG_obj::set_updateFramerate( int Framerate){
 	HX_STACK_LINE(530)
 	if ((tmp2)){
 		HX_STACK_LINE(532)
-		::flixel::_system::frontEnds::LogFrontEnd tmp3 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(532)
-		::flixel::_system::debug::LogStyle tmp4 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(532)
-		tmp3->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxG.framerate: The game's framerate shouldn't be smaller than the flash framerate, since it can stop your game from updating.","\x7a","\xeb","\x0b","\xac"),tmp4,true);
+		Dynamic();
 	}
 	HX_STACK_LINE(535)
 	Float tmp3 = (Float((int)1000) / Float(Framerate));		HX_STACK_VAR(tmp3,"tmp3");
@@ -863,11 +856,7 @@ int FlxG_obj::set_drawFramerate( int Framerate){
 	HX_STACK_LINE(548)
 	if ((tmp5)){
 		HX_STACK_LINE(550)
-		::flixel::_system::frontEnds::LogFrontEnd tmp6 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(550)
-		::flixel::_system::debug::LogStyle tmp7 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(550)
-		tmp6->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxG.drawFramerate: The update framerate shouldn't be smaller than the draw framerate, since it can stop your game from updating.","\x99","\x27","\x6a","\xbf"),tmp7,true);
+		Dynamic();
 	}
 	HX_STACK_LINE(553)
 	int tmp6 = Framerate;		HX_STACK_VAR(tmp6,"tmp6");

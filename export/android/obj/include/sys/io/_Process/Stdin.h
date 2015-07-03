@@ -33,6 +33,7 @@ class HXCPP_CLASS_ATTRIBUTES  Stdin_obj : public ::haxe::io::Output_obj{
 
 		HX_DO_RTTI_ALL;
 		Dynamic __Field(const ::String &inString, hx::PropertyAccess inCallProp);
+		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
 		Dynamic __SetField(const ::String &inString,const Dynamic &inValue, hx::PropertyAccess inCallProp);
 		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		void __GetFields(Array< ::String> &outFields);
@@ -41,8 +42,13 @@ class HXCPP_CLASS_ATTRIBUTES  Stdin_obj : public ::haxe::io::Output_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("Stdin","\x28","\x23","\x3b","\x17"); }
 
+		static void __boot();
 		Dynamic p;
 		::haxe::io::Bytes buf;
+		virtual Void close( );
+
+		static Dynamic _stdin_close;
+		static Dynamic &_stdin_close_dyn() { return _stdin_close;}
 };
 
 } // end namespace sys

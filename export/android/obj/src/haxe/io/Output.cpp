@@ -24,15 +24,39 @@ Dynamic Output_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct();
 	return _result_;}
 
+Void Output_obj::close( ){
+{
+		HX_STACK_FRAME("haxe.io.Output","close",0xe726bfeb,"haxe.io.Output.close","E:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",91,0xfcaeb466)
+		HX_STACK_THIS(this)
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Output_obj,close,(void))
+
 
 Output_obj::Output_obj()
 {
+}
+
+Dynamic Output_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 5:
+		if (HX_FIELD_EQ(inName,"close") ) { return close_dyn(); }
+	}
+	return super::__Field(inName,inCallProp);
 }
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo *sMemberStorageInfo = 0;
 static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
+
+static ::String sMemberFields[] = {
+	HX_HCSTRING("close","\xb8","\x17","\x63","\x48"),
+	::String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Output_obj::__mClass,"__mClass");
@@ -58,7 +82,7 @@ void Output_obj::__register()
 	__mClass->mSetStaticField = &hx::Class_obj::SetNoStaticField;
 	__mClass->mMarkFunc = sMarkStatics;
 	__mClass->mStatics = hx::Class_obj::dupFunctions(0 /* sStaticFields */);
-	__mClass->mMembers = hx::Class_obj::dupFunctions(0 /* sMemberFields */);
+	__mClass->mMembers = hx::Class_obj::dupFunctions(sMemberFields);
 	__mClass->mCanCast = hx::TCanCast< Output_obj >;
 #ifdef HXCPP_VISIT_ALLOCS
 	__mClass->mVisitFunc = sVisitStatics;

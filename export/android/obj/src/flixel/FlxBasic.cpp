@@ -104,10 +104,8 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxBasic_obj,revive,(void))
 
 Void FlxBasic_obj::update( ){
 {
-		HX_STACK_FRAME("flixel.FlxBasic","update",0x307e9d29,"flixel.FlxBasic.update","flixel/FlxBasic.hx",89,0xd8d6cfcf)
+		HX_STACK_FRAME("flixel.FlxBasic","update",0x307e9d29,"flixel.FlxBasic.update","flixel/FlxBasic.hx",87,0xd8d6cfcf)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(89)
-		(::flixel::FlxBasic_obj::_ACTIVECOUNT)++;
 	}
 return null();
 }
@@ -117,10 +115,8 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxBasic_obj,update,(void))
 
 Void FlxBasic_obj::draw( ){
 {
-		HX_STACK_FRAME("flixel.FlxBasic","draw",0x12af3b24,"flixel.FlxBasic.draw","flixel/FlxBasic.hx",100,0xd8d6cfcf)
+		HX_STACK_FRAME("flixel.FlxBasic","draw",0x12af3b24,"flixel.FlxBasic.draw","flixel/FlxBasic.hx",98,0xd8d6cfcf)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(100)
-		(::flixel::FlxBasic_obj::_VISIBLECOUNT)++;
 	}
 return null();
 }
@@ -268,10 +264,6 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBasic_obj,set_alive,return )
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxBasic_obj,toString,return )
 
-int FlxBasic_obj::_ACTIVECOUNT;
-
-int FlxBasic_obj::_VISIBLECOUNT;
-
 
 FlxBasic_obj::FlxBasic_obj()
 {
@@ -319,18 +311,6 @@ Dynamic FlxBasic_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 	return super::__Field(inName,inCallProp);
 }
 
-bool FlxBasic_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::PropertyAccess inCallProp)
-{
-	switch(inName.length) {
-	case 12:
-		if (HX_FIELD_EQ(inName,"_ACTIVECOUNT") ) { outValue = _ACTIVECOUNT; return true;  }
-		break;
-	case 13:
-		if (HX_FIELD_EQ(inName,"_VISIBLECOUNT") ) { outValue = _VISIBLECOUNT; return true;  }
-	}
-	return false;
-}
-
 Dynamic FlxBasic_obj::__SetField(const ::String &inName,const Dynamic &inValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
@@ -355,13 +335,6 @@ Dynamic FlxBasic_obj::__SetField(const ::String &inName,const Dynamic &inValue,h
 
 bool FlxBasic_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAccess inCallProp)
 {
-	switch(inName.length) {
-	case 12:
-		if (HX_FIELD_EQ(inName,"_ACTIVECOUNT") ) { _ACTIVECOUNT=ioValue.Cast< int >(); return true; }
-		break;
-	case 13:
-		if (HX_FIELD_EQ(inName,"_VISIBLECOUNT") ) { _VISIBLECOUNT=ioValue.Cast< int >(); return true; }
-	}
 	return false;
 }
 
@@ -386,11 +359,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxBasic_obj,collisionType),HX_HCSTRING("collisionType","\x4c","\xe8","\x3e","\x2d")},
 	{ hx::fsUnknown, 0, null()}
 };
-static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsInt,(void *) &FlxBasic_obj::_ACTIVECOUNT,HX_HCSTRING("_ACTIVECOUNT","\x2a","\x8f","\xc0","\x4f")},
-	{hx::fsInt,(void *) &FlxBasic_obj::_VISIBLECOUNT,HX_HCSTRING("_VISIBLECOUNT","\xfc","\xd9","\x77","\xad")},
-	{ hx::fsUnknown, 0, null()}
-};
+static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
 
 static ::String sMemberFields[] = {
@@ -414,25 +383,16 @@ static ::String sMemberFields[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(FlxBasic_obj::__mClass,"__mClass");
-	HX_MARK_MEMBER_NAME(FlxBasic_obj::_ACTIVECOUNT,"_ACTIVECOUNT");
-	HX_MARK_MEMBER_NAME(FlxBasic_obj::_VISIBLECOUNT,"_VISIBLECOUNT");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(FlxBasic_obj::__mClass,"__mClass");
-	HX_VISIT_MEMBER_NAME(FlxBasic_obj::_ACTIVECOUNT,"_ACTIVECOUNT");
-	HX_VISIT_MEMBER_NAME(FlxBasic_obj::_VISIBLECOUNT,"_VISIBLECOUNT");
 };
 
 #endif
 
 hx::Class FlxBasic_obj::__mClass;
-
-static ::String sStaticFields[] = {
-	HX_HCSTRING("_ACTIVECOUNT","\x2a","\x8f","\xc0","\x4f"),
-	HX_HCSTRING("_VISIBLECOUNT","\xfc","\xd9","\x77","\xad"),
-	::String(null()) };
 
 void FlxBasic_obj::__register()
 {
@@ -441,10 +401,10 @@ void FlxBasic_obj::__register()
 	__mClass->mSuper = &super::__SGetClass();
 	__mClass->mConstructEmpty = &__CreateEmpty;
 	__mClass->mConstructArgs = &__Create;
-	__mClass->mGetStaticField = &FlxBasic_obj::__GetStatic;
+	__mClass->mGetStaticField = &hx::Class_obj::GetNoStaticField;
 	__mClass->mSetStaticField = &FlxBasic_obj::__SetStatic;
 	__mClass->mMarkFunc = sMarkStatics;
-	__mClass->mStatics = hx::Class_obj::dupFunctions(sStaticFields);
+	__mClass->mStatics = hx::Class_obj::dupFunctions(0 /* sStaticFields */);
 	__mClass->mMembers = hx::Class_obj::dupFunctions(sMemberFields);
 	__mClass->mCanCast = hx::TCanCast< FlxBasic_obj >;
 #ifdef HXCPP_VISIT_ALLOCS
@@ -457,12 +417,6 @@ void FlxBasic_obj::__register()
 	__mClass->mStaticStorageInfo = sStaticStorageInfo;
 #endif
 	hx::RegisterClass(__mClass->mName, __mClass);
-}
-
-void FlxBasic_obj::__boot()
-{
-	_ACTIVECOUNT= (int)0;
-	_VISIBLECOUNT= (int)0;
 }
 
 } // end namespace flixel

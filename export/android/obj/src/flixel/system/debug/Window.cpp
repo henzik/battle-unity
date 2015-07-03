@@ -7,17 +7,11 @@
 #ifndef INCLUDED_flixel_FlxG
 #include <flixel/FlxG.h>
 #endif
-#ifndef INCLUDED_flixel_FlxGame
-#include <flixel/FlxGame.h>
-#endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
 #ifndef INCLUDED_flixel_system_FlxAssets
 #include <flixel/system/FlxAssets.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
 #endif
 #ifndef INCLUDED_flixel_system_debug_Window
 #include <flixel/system/debug/Window.h>
@@ -1490,52 +1484,10 @@ HX_DEFINE_DYNAMIC_FUNC0(Window_obj,updateSize,(void))
 
 Void Window_obj::close( ){
 {
-		HX_STACK_FRAME("flixel.system.debug.Window","close",0x8465b962,"flixel.system.debug.Window.close","flixel/system/debug/Window.hx",444,0xb8dfd4e5)
+		HX_STACK_FRAME("flixel.system.debug.Window","close",0x8465b962,"flixel.system.debug.Window.close","flixel/system/debug/Window.hx",445,0xb8dfd4e5)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(445)
 		this->destroy();
-		HX_STACK_LINE(447)
-		{
-			HX_STACK_LINE(447)
-			::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(447)
-			::flixel::_system::debug::FlxDebugger _this = tmp->debugger;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(447)
-			bool tmp1 = _this->__Field(HX_HCSTRING("contains","\x1f","\x5a","\x7b","\x2c"), hx::paccDynamic )(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(447)
-			if ((tmp1)){
-				HX_STACK_LINE(447)
-				_this->__Field(HX_HCSTRING("removeChild","\xb8","\x86","\xed","\x43"), hx::paccDynamic )(hx::ObjectPtr<OBJ_>(this));
-			}
-			HX_STACK_LINE(447)
-			{
-				HX_STACK_LINE(447)
-				Array< ::Dynamic > array = _this->__Field(HX_HCSTRING("_windows","\x04","\x38","\x2d","\x22"), hx::paccDynamic );		HX_STACK_VAR(array,"array");
-				HX_STACK_LINE(447)
-				int tmp2 = array->indexOf(hx::ObjectPtr<OBJ_>(this),null());		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(447)
-				int index = tmp2;		HX_STACK_VAR(index,"index");
-				HX_STACK_LINE(447)
-				bool tmp3 = (index != (int)-1);		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(447)
-				if ((tmp3)){
-					HX_STACK_LINE(447)
-					int tmp4 = (array->length - (int)1);		HX_STACK_VAR(tmp4,"tmp4");
-					HX_STACK_LINE(447)
-					::flixel::_system::debug::Window tmp5 = array->__get(tmp4).StaticCast< ::flixel::_system::debug::Window >();		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(447)
-					array[index] = tmp5;
-					HX_STACK_LINE(447)
-					array->pop().StaticCast< ::flixel::_system::debug::Window >();
-					HX_STACK_LINE(447)
-					array;
-				}
-				else{
-					HX_STACK_LINE(447)
-					array;
-				}
-			}
-		}
 	}
 return null();
 }

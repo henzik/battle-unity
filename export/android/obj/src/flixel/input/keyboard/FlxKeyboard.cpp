@@ -18,18 +18,6 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxInput
 #include <flixel/interfaces/IFlxInput.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
 #endif
@@ -831,18 +819,6 @@ bool FlxKeyboard_obj::checkStatus( int KeyCode,int Status){
 			}
 		}
 	}
-	else{
-		HX_STACK_LINE(175)
-		::flixel::_system::frontEnds::LogFrontEnd tmp2 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(175)
-		::String tmp3 = (HX_HCSTRING("Invalid Key: `","\x04","\x85","\xdb","\x41") + KeyCode);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(175)
-		::String tmp4 = (tmp3 + HX_HCSTRING("`.","\xce","\x53","\x00","\x00"));		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(175)
-		::flixel::_system::debug::LogStyle tmp5 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(175)
-		tmp2->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp4,tmp5,true);
-	}
 	HX_STACK_LINE(179)
 	return false;
 }
@@ -1235,242 +1211,196 @@ Void FlxKeyboard_obj::onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEve
 		}
 		HX_STACK_LINE(473)
 		int c = ((int)(tmp));		HX_STACK_VAR(c,"c");
-		HX_STACK_LINE(477)
-		::flixel::FlxGame tmp1 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(477)
-		::flixel::_system::debug::FlxDebugger tmp2 = tmp1->debugger;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(477)
-		bool tmp3 = (tmp2 != null());		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(477)
-		bool tmp4;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(477)
-		if ((tmp3)){
-			HX_STACK_LINE(477)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp5 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(477)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp6 = tmp5;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(477)
-			int tmp7 = c;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(477)
-			int tmp8 = tmp7;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(477)
-			tmp4 = this->inKeyArray(tmp6->__Field(HX_HCSTRING("toggleKeys","\xa8","\x27","\xbd","\xde"), hx::paccDynamic ),tmp8);
-		}
-		else{
-			HX_STACK_LINE(477)
-			tmp4 = false;
-		}
-		HX_STACK_LINE(477)
-		if ((tmp4)){
-			HX_STACK_LINE(479)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp5 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(479)
-			bool tmp6 = tmp5->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(479)
-			bool tmp7 = !(tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(479)
-			bool Value = tmp7;		HX_STACK_VAR(Value,"Value");
-			HX_STACK_LINE(479)
-			::flixel::FlxGame tmp8 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(479)
-			bool tmp9 = Value;		HX_STACK_VAR(tmp9,"tmp9");
-			HX_STACK_LINE(479)
-			tmp8->debugger->__Field(HX_HCSTRING("set_visible","\x95","\xdf","\x8b","\x33"), hx::paccDynamic )(tmp9);
-			HX_STACK_LINE(479)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp10 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(479)
-			tmp10->__FieldRef(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3")) = Value;
-		}
 		HX_STACK_LINE(484)
-		bool tmp5 = this->enabled;		HX_STACK_VAR(tmp5,"tmp5");
+		bool tmp1 = this->enabled;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(484)
-		bool tmp6 = !(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
+		bool tmp2 = !(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(484)
-		if ((tmp6)){
+		if ((tmp2)){
 			HX_STACK_LINE(486)
 			return null();
 		}
 		HX_STACK_LINE(492)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp7 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp7,"tmp7");
+		::flixel::_system::frontEnds::SoundFrontEnd tmp3 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(492)
-		int tmp8 = c;		HX_STACK_VAR(tmp8,"tmp8");
+		int tmp4 = c;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(492)
-		bool tmp9 = this->inKeyArray(tmp7->__Field(HX_HCSTRING("muteKeys","\x6d","\x5d","\x88","\x16"), hx::paccDynamic ),tmp8);		HX_STACK_VAR(tmp9,"tmp9");
+		bool tmp5 = this->inKeyArray(tmp3->__Field(HX_HCSTRING("muteKeys","\x6d","\x5d","\x88","\x16"), hx::paccDynamic ),tmp4);		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(492)
-		if ((tmp9)){
+		if ((tmp5)){
 			HX_STACK_LINE(494)
+			::flixel::_system::frontEnds::SoundFrontEnd tmp6 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp6,"tmp6");
+			HX_STACK_LINE(494)
+			bool tmp7 = tmp6->__Field(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10"), hx::paccDynamic );		HX_STACK_VAR(tmp7,"tmp7");
+			HX_STACK_LINE(494)
+			bool tmp8 = !(tmp7);		HX_STACK_VAR(tmp8,"tmp8");
+			HX_STACK_LINE(494)
+			::flixel::_system::frontEnds::SoundFrontEnd tmp9 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp9,"tmp9");
+			HX_STACK_LINE(494)
+			tmp9->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = tmp8;
+			HX_STACK_LINE(496)
 			::flixel::_system::frontEnds::SoundFrontEnd tmp10 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(494)
-			bool tmp11 = tmp10->__Field(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10"), hx::paccDynamic );		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(494)
-			bool tmp12 = !(tmp11);		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(494)
-			::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
-			HX_STACK_LINE(494)
-			tmp13->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = tmp12;
 			HX_STACK_LINE(496)
-			::flixel::_system::frontEnds::SoundFrontEnd tmp14 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp14,"tmp14");
+			Dynamic tmp11 = tmp10->__Field(HX_HCSTRING("volumeHandler","\x10","\xfd","\x6f","\x5d"), hx::paccDynamic );		HX_STACK_VAR(tmp11,"tmp11");
 			HX_STACK_LINE(496)
-			Dynamic tmp15 = tmp14->__Field(HX_HCSTRING("volumeHandler","\x10","\xfd","\x6f","\x5d"), hx::paccDynamic );		HX_STACK_VAR(tmp15,"tmp15");
+			bool tmp12 = (tmp11 != null());		HX_STACK_VAR(tmp12,"tmp12");
 			HX_STACK_LINE(496)
-			bool tmp16 = (tmp15 != null());		HX_STACK_VAR(tmp16,"tmp16");
-			HX_STACK_LINE(496)
-			if ((tmp16)){
+			if ((tmp12)){
 				HX_STACK_LINE(498)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp17 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp17,"tmp17");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
 				HX_STACK_LINE(498)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp18 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp18,"tmp18");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp14 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp14,"tmp14");
 				HX_STACK_LINE(498)
-				bool tmp19 = tmp18->__Field(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10"), hx::paccDynamic );		HX_STACK_VAR(tmp19,"tmp19");
+				bool tmp15 = tmp14->__Field(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10"), hx::paccDynamic );		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(498)
-				Float tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+				Float tmp16;		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(498)
-				if ((tmp19)){
+				if ((tmp15)){
 					HX_STACK_LINE(498)
-					tmp20 = (int)0;
+					tmp16 = (int)0;
 				}
 				else{
 					HX_STACK_LINE(498)
-					::flixel::_system::frontEnds::SoundFrontEnd tmp21 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp21,"tmp21");
+					::flixel::_system::frontEnds::SoundFrontEnd tmp17 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp17,"tmp17");
 					HX_STACK_LINE(498)
-					tmp20 = tmp21->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic );
+					tmp16 = tmp17->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic );
 				}
 				HX_STACK_LINE(498)
-				tmp17->__Field(HX_HCSTRING("volumeHandler","\x10","\xfd","\x6f","\x5d"), hx::paccDynamic )(tmp20);
+				tmp13->__Field(HX_HCSTRING("volumeHandler","\x10","\xfd","\x6f","\x5d"), hx::paccDynamic )(tmp16);
 			}
 			HX_STACK_LINE(502)
-			::flixel::FlxGame tmp17 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp17,"tmp17");
+			::flixel::FlxGame tmp13 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp13,"tmp13");
 			HX_STACK_LINE(502)
-			::flixel::_system::ui::FlxSoundTray tmp18 = tmp17->soundTray;		HX_STACK_VAR(tmp18,"tmp18");
+			::flixel::_system::ui::FlxSoundTray tmp14 = tmp13->soundTray;		HX_STACK_VAR(tmp14,"tmp14");
 			HX_STACK_LINE(502)
-			bool tmp19 = (tmp18 != null());		HX_STACK_VAR(tmp19,"tmp19");
+			bool tmp15 = (tmp14 != null());		HX_STACK_VAR(tmp15,"tmp15");
 			HX_STACK_LINE(502)
-			bool tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+			bool tmp16;		HX_STACK_VAR(tmp16,"tmp16");
 			HX_STACK_LINE(502)
-			if ((tmp19)){
+			if ((tmp15)){
 				HX_STACK_LINE(502)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp21 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp21,"tmp21");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp17 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(502)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp22 = tmp21;		HX_STACK_VAR(tmp22,"tmp22");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp18 = tmp17;		HX_STACK_VAR(tmp18,"tmp18");
 				HX_STACK_LINE(502)
-				tmp20 = tmp22->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
+				tmp16 = tmp18->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
 			}
 			else{
 				HX_STACK_LINE(502)
-				tmp20 = false;
+				tmp16 = false;
 			}
 			HX_STACK_LINE(502)
-			if ((tmp20)){
+			if ((tmp16)){
 				HX_STACK_LINE(504)
-				::flixel::FlxGame tmp21 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp21,"tmp21");
+				::flixel::FlxGame tmp17 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(504)
-				tmp21->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
+				tmp17->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
 			}
 		}
 		else{
 			HX_STACK_LINE(509)
-			::flixel::_system::frontEnds::SoundFrontEnd tmp10 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp10,"tmp10");
+			::flixel::_system::frontEnds::SoundFrontEnd tmp6 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(509)
-			int tmp11 = c;		HX_STACK_VAR(tmp11,"tmp11");
+			int tmp7 = c;		HX_STACK_VAR(tmp7,"tmp7");
 			HX_STACK_LINE(509)
-			bool tmp12 = this->inKeyArray(tmp10->__Field(HX_HCSTRING("volumeDownKeys","\x70","\x2f","\x58","\x0b"), hx::paccDynamic ),tmp11);		HX_STACK_VAR(tmp12,"tmp12");
+			bool tmp8 = this->inKeyArray(tmp6->__Field(HX_HCSTRING("volumeDownKeys","\x70","\x2f","\x58","\x0b"), hx::paccDynamic ),tmp7);		HX_STACK_VAR(tmp8,"tmp8");
 			HX_STACK_LINE(509)
-			if ((tmp12)){
+			if ((tmp8)){
 				HX_STACK_LINE(511)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp9 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(511)
-				tmp13->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = false;
+				tmp9->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = false;
 				HX_STACK_LINE(512)
 				{
 					HX_STACK_LINE(512)
-					::flixel::_system::frontEnds::SoundFrontEnd tmp14 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp14,"tmp14");
+					::flixel::_system::frontEnds::SoundFrontEnd tmp10 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp10,"tmp10");
 					HX_STACK_LINE(512)
-					::flixel::_system::frontEnds::SoundFrontEnd _g = tmp14;		HX_STACK_VAR(_g,"_g");
+					::flixel::_system::frontEnds::SoundFrontEnd _g = tmp10;		HX_STACK_VAR(_g,"_g");
 					HX_STACK_LINE(512)
-					Float tmp15 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) - ((Float)0.1));		HX_STACK_VAR(tmp15,"tmp15");
+					Float tmp11 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) - ((Float)0.1));		HX_STACK_VAR(tmp11,"tmp11");
 					HX_STACK_LINE(512)
-					_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp15);
+					_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp11);
 				}
 				HX_STACK_LINE(515)
-				::flixel::FlxGame tmp14 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp14,"tmp14");
+				::flixel::FlxGame tmp10 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(515)
-				::flixel::_system::ui::FlxSoundTray tmp15 = tmp14->soundTray;		HX_STACK_VAR(tmp15,"tmp15");
+				::flixel::_system::ui::FlxSoundTray tmp11 = tmp10->soundTray;		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(515)
-				bool tmp16 = (tmp15 != null());		HX_STACK_VAR(tmp16,"tmp16");
+				bool tmp12 = (tmp11 != null());		HX_STACK_VAR(tmp12,"tmp12");
 				HX_STACK_LINE(515)
-				bool tmp17;		HX_STACK_VAR(tmp17,"tmp17");
+				bool tmp13;		HX_STACK_VAR(tmp13,"tmp13");
 				HX_STACK_LINE(515)
-				if ((tmp16)){
+				if ((tmp12)){
 					HX_STACK_LINE(515)
-					::flixel::_system::frontEnds::SoundFrontEnd tmp18 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp18,"tmp18");
+					::flixel::_system::frontEnds::SoundFrontEnd tmp14 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp14,"tmp14");
 					HX_STACK_LINE(515)
-					::flixel::_system::frontEnds::SoundFrontEnd tmp19 = tmp18;		HX_STACK_VAR(tmp19,"tmp19");
+					::flixel::_system::frontEnds::SoundFrontEnd tmp15 = tmp14;		HX_STACK_VAR(tmp15,"tmp15");
 					HX_STACK_LINE(515)
-					tmp17 = tmp19->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
+					tmp13 = tmp15->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
 				}
 				else{
 					HX_STACK_LINE(515)
-					tmp17 = false;
+					tmp13 = false;
 				}
 				HX_STACK_LINE(515)
-				if ((tmp17)){
+				if ((tmp13)){
 					HX_STACK_LINE(517)
-					::flixel::FlxGame tmp18 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp18,"tmp18");
+					::flixel::FlxGame tmp14 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp14,"tmp14");
 					HX_STACK_LINE(517)
-					tmp18->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
+					tmp14->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
 				}
 			}
 			else{
 				HX_STACK_LINE(522)
-				::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
+				::flixel::_system::frontEnds::SoundFrontEnd tmp9 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(522)
-				int tmp14 = c;		HX_STACK_VAR(tmp14,"tmp14");
+				int tmp10 = c;		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(522)
-				bool tmp15 = this->inKeyArray(tmp13->__Field(HX_HCSTRING("volumeUpKeys","\x69","\xbb","\xf5","\x23"), hx::paccDynamic ),tmp14);		HX_STACK_VAR(tmp15,"tmp15");
+				bool tmp11 = this->inKeyArray(tmp9->__Field(HX_HCSTRING("volumeUpKeys","\x69","\xbb","\xf5","\x23"), hx::paccDynamic ),tmp10);		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(522)
-				if ((tmp15)){
+				if ((tmp11)){
 					HX_STACK_LINE(524)
-					::flixel::_system::frontEnds::SoundFrontEnd tmp16 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp16,"tmp16");
+					::flixel::_system::frontEnds::SoundFrontEnd tmp12 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp12,"tmp12");
 					HX_STACK_LINE(524)
-					tmp16->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = false;
+					tmp12->__FieldRef(HX_HCSTRING("muted","\x6b","\x8f","\x5b","\x10")) = false;
 					HX_STACK_LINE(525)
 					{
 						HX_STACK_LINE(525)
-						::flixel::_system::frontEnds::SoundFrontEnd tmp17 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp17,"tmp17");
+						::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
 						HX_STACK_LINE(525)
-						::flixel::_system::frontEnds::SoundFrontEnd _g = tmp17;		HX_STACK_VAR(_g,"_g");
+						::flixel::_system::frontEnds::SoundFrontEnd _g = tmp13;		HX_STACK_VAR(_g,"_g");
 						HX_STACK_LINE(525)
-						Float tmp18 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) + ((Float)0.1));		HX_STACK_VAR(tmp18,"tmp18");
+						Float tmp14 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) + ((Float)0.1));		HX_STACK_VAR(tmp14,"tmp14");
 						HX_STACK_LINE(525)
-						_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp18);
+						_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp14);
 					}
 					HX_STACK_LINE(528)
-					::flixel::FlxGame tmp17 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp17,"tmp17");
+					::flixel::FlxGame tmp13 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp13,"tmp13");
 					HX_STACK_LINE(528)
-					::flixel::_system::ui::FlxSoundTray tmp18 = tmp17->soundTray;		HX_STACK_VAR(tmp18,"tmp18");
+					::flixel::_system::ui::FlxSoundTray tmp14 = tmp13->soundTray;		HX_STACK_VAR(tmp14,"tmp14");
 					HX_STACK_LINE(528)
-					bool tmp19 = (tmp18 != null());		HX_STACK_VAR(tmp19,"tmp19");
+					bool tmp15 = (tmp14 != null());		HX_STACK_VAR(tmp15,"tmp15");
 					HX_STACK_LINE(528)
-					bool tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+					bool tmp16;		HX_STACK_VAR(tmp16,"tmp16");
 					HX_STACK_LINE(528)
-					if ((tmp19)){
+					if ((tmp15)){
 						HX_STACK_LINE(528)
-						::flixel::_system::frontEnds::SoundFrontEnd tmp21 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp21,"tmp21");
+						::flixel::_system::frontEnds::SoundFrontEnd tmp17 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp17,"tmp17");
 						HX_STACK_LINE(528)
-						::flixel::_system::frontEnds::SoundFrontEnd tmp22 = tmp21;		HX_STACK_VAR(tmp22,"tmp22");
+						::flixel::_system::frontEnds::SoundFrontEnd tmp18 = tmp17;		HX_STACK_VAR(tmp18,"tmp18");
 						HX_STACK_LINE(528)
-						tmp20 = tmp22->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
+						tmp16 = tmp18->__Field(HX_HCSTRING("soundTrayEnabled","\x9c","\x10","\x68","\xe0"), hx::paccDynamic );
 					}
 					else{
 						HX_STACK_LINE(528)
-						tmp20 = false;
+						tmp16 = false;
 					}
 					HX_STACK_LINE(528)
-					if ((tmp20)){
+					if ((tmp16)){
 						HX_STACK_LINE(530)
-						::flixel::FlxGame tmp21 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp21,"tmp21");
+						::flixel::FlxGame tmp17 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp17,"tmp17");
 						HX_STACK_LINE(530)
-						tmp21->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
+						tmp17->soundTray->__Field(HX_HCSTRING("show","\xfd","\xd4","\x52","\x4c"), hx::paccDynamic )(null());
 					}
 				}
 			}
@@ -1478,17 +1408,17 @@ Void FlxKeyboard_obj::onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEve
 		HX_STACK_LINE(536)
 		{
 			HX_STACK_LINE(536)
-			::flixel::input::keyboard::FlxKey tmp10 = this->_keyList->__get(c).StaticCast< ::flixel::input::keyboard::FlxKey >();		HX_STACK_VAR(tmp10,"tmp10");
+			::flixel::input::keyboard::FlxKey tmp6 = this->_keyList->__get(c).StaticCast< ::flixel::input::keyboard::FlxKey >();		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(536)
-			::flixel::input::keyboard::FlxKey obj = tmp10;		HX_STACK_VAR(obj,"obj");
+			::flixel::input::keyboard::FlxKey obj = tmp6;		HX_STACK_VAR(obj,"obj");
 			HX_STACK_LINE(536)
-			bool tmp11 = (obj != null());		HX_STACK_VAR(tmp11,"tmp11");
+			bool tmp7 = (obj != null());		HX_STACK_VAR(tmp7,"tmp7");
 			HX_STACK_LINE(536)
-			if ((tmp11)){
+			if ((tmp7)){
 				HX_STACK_LINE(536)
-				bool tmp12 = (obj->current > (int)0);		HX_STACK_VAR(tmp12,"tmp12");
+				bool tmp8 = (obj->current > (int)0);		HX_STACK_VAR(tmp8,"tmp8");
 				HX_STACK_LINE(536)
-				if ((tmp12)){
+				if ((tmp8)){
 					HX_STACK_LINE(536)
 					obj->current = (int)-1;
 				}

@@ -253,8 +253,6 @@ Void FlxBGSprite_obj::draw( ){
 				currDrawData[tmp35] = tmp36;
 				HX_STACK_LINE(69)
 				drawItem->__FieldRef(HX_HCSTRING("position","\xa9","\xa0","\xfa","\xca")) = currIndex;
-				HX_STACK_LINE(72)
-				(::flixel::FlxBasic_obj::_VISIBLECOUNT)++;
 			}
 		}
 	}

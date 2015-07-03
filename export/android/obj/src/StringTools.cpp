@@ -47,40 +47,6 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,urlEncode,return )
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,urlDecode,return )
 
-::String StringTools_obj::htmlEscape( ::String s,Dynamic quotes){
-	HX_STACK_FRAME("StringTools","htmlEscape",0x0e1a5dd0,"StringTools.htmlEscape","E:\\HaxeToolkit\\haxe\\std/StringTools.hx",97,0x60d65beb)
-	HX_STACK_ARG(s,"s")
-	HX_STACK_ARG(quotes,"quotes")
-	HX_STACK_LINE(98)
-	::String tmp = s.split(HX_HCSTRING("&","\x26","\x00","\x00","\x00"))->join(HX_HCSTRING("&amp;","\xdd","\xd4","\xaa","\x21"));		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(98)
-	::String tmp1 = tmp.split(HX_HCSTRING("<","\x3c","\x00","\x00","\x00"))->join(HX_HCSTRING("&lt;","\x4d","\x74","\x70","\x19"));		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(98)
-	::String tmp2 = tmp1.split(HX_HCSTRING(">","\x3e","\x00","\x00","\x00"))->join(HX_HCSTRING("&gt;","\x08","\xa9","\x6c","\x19"));		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(98)
-	s = tmp2;
-	HX_STACK_LINE(99)
-	Dynamic tmp3 = quotes;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(99)
-	::String tmp4;		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(99)
-	if ((tmp3)){
-		HX_STACK_LINE(99)
-		::String tmp5 = s.split(HX_HCSTRING("\"","\x22","\x00","\x00","\x00"))->join(HX_HCSTRING("&quot;","\x2c","\xd9","\x81","\x8f"));		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(99)
-		tmp4 = tmp5.split(HX_HCSTRING("'","\x27","\x00","\x00","\x00"))->join(HX_HCSTRING("&#039;","\x62","\x26","\x77","\x78"));
-	}
-	else{
-		HX_STACK_LINE(99)
-		tmp4 = s;
-	}
-	HX_STACK_LINE(99)
-	return tmp4;
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(StringTools_obj,htmlEscape,return )
-
 bool StringTools_obj::startsWith( ::String s,::String start){
 	HX_STACK_FRAME("StringTools","startsWith",0x5f4e6efb,"StringTools.startsWith","E:\\HaxeToolkit\\haxe\\std/StringTools.hx",127,0x60d65beb)
 	HX_STACK_ARG(s,"s")
@@ -427,7 +393,6 @@ bool StringTools_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx:
 		if (HX_FIELD_EQ(inName,"urlDecode") ) { outValue = urlDecode_dyn(); return true;  }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"htmlEscape") ) { outValue = htmlEscape_dyn(); return true;  }
 		if (HX_FIELD_EQ(inName,"startsWith") ) { outValue = startsWith_dyn(); return true;  }
 	}
 	return false;
@@ -454,7 +419,6 @@ hx::Class StringTools_obj::__mClass;
 static ::String sStaticFields[] = {
 	HX_HCSTRING("urlEncode","\xe5","\x4e","\x52","\x9a"),
 	HX_HCSTRING("urlDecode","\xfd","\xb9","\x5b","\x05"),
-	HX_HCSTRING("htmlEscape","\x4c","\xaf","\x9b","\xa8"),
 	HX_HCSTRING("startsWith","\x77","\xc0","\xcf","\xf9"),
 	HX_HCSTRING("endsWith","\x5e","\x7a","\xb6","\xdb"),
 	HX_HCSTRING("isSpace","\x7c","\x30","\xec","\x1d"),

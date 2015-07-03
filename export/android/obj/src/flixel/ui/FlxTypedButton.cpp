@@ -399,28 +399,6 @@ return null();
 }
 
 
-Void FlxTypedButton_obj::drawDebug( ){
-{
-		HX_STACK_FRAME("flixel.ui.FlxTypedButton","drawDebug",0xd8c08953,"flixel.ui.FlxTypedButton.drawDebug","flixel/ui/FlxTypedButton.hx",179,0x752be24c)
-		HX_STACK_THIS(this)
-		HX_STACK_LINE(180)
-		this->super::drawDebug();
-		HX_STACK_LINE(182)
-		Dynamic tmp = this->label;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(182)
-		bool tmp1 = (tmp != null());		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(182)
-		if ((tmp1)){
-			HX_STACK_LINE(184)
-			Dynamic tmp2 = this->label;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(184)
-			tmp2->__Field(HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"), hx::paccDynamic )();
-		}
-	}
-return null();
-}
-
-
 Void FlxTypedButton_obj::updateButton( ){
 {
 		HX_STACK_FRAME("flixel.ui.FlxTypedButton","updateButton",0x576ba5b7,"flixel.ui.FlxTypedButton.updateButton","flixel/ui/FlxTypedButton.hx",194,0x752be24c)
@@ -1084,7 +1062,6 @@ Dynamic FlxTypedButton_obj::__Field(const ::String &inName,hx::PropertyAccess in
 		if (HX_FIELD_EQ(inName,"destroy") ) { return destroy_dyn(); }
 		break;
 	case 9:
-		if (HX_FIELD_EQ(inName,"drawDebug") ) { return drawDebug_dyn(); }
 		if (HX_FIELD_EQ(inName,"set_label") ) { return set_label_dyn(); }
 		break;
 	case 10:
@@ -1205,7 +1182,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
 	HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"),
-	HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"),
 	HX_HCSTRING("updateButton","\xdb","\x08","\xa4","\xd9"),
 	HX_HCSTRING("updateStatus","\x1b","\x8e","\xbf","\x05"),
 	HX_HCSTRING("onUpEventListener","\xf4","\xbc","\xef","\x3b"),

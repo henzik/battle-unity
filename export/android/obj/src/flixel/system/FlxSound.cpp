@@ -25,12 +25,6 @@
 #ifndef INCLUDED_flixel_system_FlxSound
 #include <flixel/system/FlxSound.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
 #endif
@@ -1155,15 +1149,6 @@ Void FlxSound_obj::gotID3( ::openfl::_legacy::events::Event event){
 		HX_STACK_FRAME("flixel.system.FlxSound","gotID3",0xcead1fb0,"flixel.system.FlxSound.gotID3","flixel/system/FlxSound.hx",579,0x7d78fc74)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(event,"event")
-		HX_STACK_LINE(580)
-		{
-			HX_STACK_LINE(580)
-			::flixel::_system::frontEnds::LogFrontEnd tmp = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(580)
-			::flixel::_system::debug::LogStyle tmp1 = ::flixel::_system::debug::LogStyle_obj::NOTICE;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(580)
-			tmp->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("Got ID3 info.","\xe4","\x89","\x00","\x73"),tmp1,null());
-		}
 		HX_STACK_LINE(581)
 		::openfl::_legacy::media::Sound tmp = this->_sound;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(581)

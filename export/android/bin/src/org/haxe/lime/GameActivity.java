@@ -299,7 +299,6 @@ public class GameActivity extends Activity implements SensorEventListener {
 	
 	public static int getResourceID (String inFilename) {
 		
-		//if (inFilename.equals("assets/music/maintheme.mp3")) return com.example.myapp.R.raw.assets_music_maintheme_mp3;
 		//
 		//if (inFilename.equals("assets/music/maintheme.wav")) return com.example.myapp.R.raw.assets_music_maintheme_wav;
 		//if (inFilename.equals("assets/sounds/Teleport.wav")) return com.example.myapp.R.raw.assets_sounds_teleport_wav;

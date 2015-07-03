@@ -15,9 +15,6 @@
 #ifndef INCLUDED_flixel_system_FlxSound
 #include <flixel/system/FlxSound.h>
 #endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
 #endif
@@ -196,10 +193,6 @@ bool AutoPlay = __o_AutoPlay.Default(false);
 		}
 		HX_STACK_LINE(102)
 		if ((tmp1)){
-			HX_STACK_LINE(104)
-			::flixel::_system::frontEnds::LogFrontEnd tmp2 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(104)
-			tmp2->__Field(HX_HCSTRING("warn","\x46","\x62","\xf2","\x4e"), hx::paccDynamic )(HX_HCSTRING("FlxG.loadSound() requires either\nan embedded sound or a URL to work.","\x4f","\x8f","\xa4","\xef"));
 			HX_STACK_LINE(105)
 			return null();
 		}

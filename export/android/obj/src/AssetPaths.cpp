@@ -22,13 +22,15 @@ Dynamic AssetPaths_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct();
 	return _result_;}
 
-::String AssetPaths_obj::data_goes_here__txt;
+::String AssetPaths_obj::game_background_sprites__png;
 
-::String AssetPaths_obj::MenuBG__jpg;
+::String AssetPaths_obj::menu_background__jpg;
 
-::String AssetPaths_obj::pressStart__png;
+::String AssetPaths_obj::platform_blue_normal__png;
 
-::String AssetPaths_obj::maintheme__mp3;
+::String AssetPaths_obj::platform_red_normal__png;
+
+::String AssetPaths_obj::press_start__png;
 
 ::String AssetPaths_obj::maintheme__wav;
 
@@ -42,10 +44,11 @@ AssetPaths_obj::AssetPaths_obj()
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo *sMemberStorageInfo = 0;
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsString,(void *) &AssetPaths_obj::data_goes_here__txt,HX_HCSTRING("data_goes_here__txt","\xec","\x22","\x23","\xe8")},
-	{hx::fsString,(void *) &AssetPaths_obj::MenuBG__jpg,HX_HCSTRING("MenuBG__jpg","\xfd","\x41","\x1d","\x76")},
-	{hx::fsString,(void *) &AssetPaths_obj::pressStart__png,HX_HCSTRING("pressStart__png","\x4a","\x1f","\xeb","\x42")},
-	{hx::fsString,(void *) &AssetPaths_obj::maintheme__mp3,HX_HCSTRING("maintheme__mp3","\x20","\x93","\x68","\x16")},
+	{hx::fsString,(void *) &AssetPaths_obj::game_background_sprites__png,HX_HCSTRING("game_background_sprites__png","\x9f","\xf1","\x8b","\x81")},
+	{hx::fsString,(void *) &AssetPaths_obj::menu_background__jpg,HX_HCSTRING("menu_background__jpg","\x33","\x95","\x2c","\x64")},
+	{hx::fsString,(void *) &AssetPaths_obj::platform_blue_normal__png,HX_HCSTRING("platform_blue_normal__png","\xe9","\x8f","\x58","\xeb")},
+	{hx::fsString,(void *) &AssetPaths_obj::platform_red_normal__png,HX_HCSTRING("platform_red_normal__png","\x08","\xa6","\x38","\x65")},
+	{hx::fsString,(void *) &AssetPaths_obj::press_start__png,HX_HCSTRING("press_start__png","\x63","\x98","\x9c","\x77")},
 	{hx::fsString,(void *) &AssetPaths_obj::maintheme__wav,HX_HCSTRING("maintheme__wav","\xdc","\x1c","\x70","\x16")},
 	{hx::fsString,(void *) &AssetPaths_obj::Teleport__wav,HX_HCSTRING("Teleport__wav","\x61","\x23","\x8f","\xfd")},
 	{ hx::fsUnknown, 0, null()}
@@ -54,10 +57,11 @@ static hx::StaticInfo sStaticStorageInfo[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::__mClass,"__mClass");
-	HX_MARK_MEMBER_NAME(AssetPaths_obj::data_goes_here__txt,"data_goes_here__txt");
-	HX_MARK_MEMBER_NAME(AssetPaths_obj::MenuBG__jpg,"MenuBG__jpg");
-	HX_MARK_MEMBER_NAME(AssetPaths_obj::pressStart__png,"pressStart__png");
-	HX_MARK_MEMBER_NAME(AssetPaths_obj::maintheme__mp3,"maintheme__mp3");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::game_background_sprites__png,"game_background_sprites__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::menu_background__jpg,"menu_background__jpg");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::platform_blue_normal__png,"platform_blue_normal__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::platform_red_normal__png,"platform_red_normal__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::press_start__png,"press_start__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::maintheme__wav,"maintheme__wav");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::Teleport__wav,"Teleport__wav");
 };
@@ -65,10 +69,11 @@ static void sMarkStatics(HX_MARK_PARAMS) {
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::__mClass,"__mClass");
-	HX_VISIT_MEMBER_NAME(AssetPaths_obj::data_goes_here__txt,"data_goes_here__txt");
-	HX_VISIT_MEMBER_NAME(AssetPaths_obj::MenuBG__jpg,"MenuBG__jpg");
-	HX_VISIT_MEMBER_NAME(AssetPaths_obj::pressStart__png,"pressStart__png");
-	HX_VISIT_MEMBER_NAME(AssetPaths_obj::maintheme__mp3,"maintheme__mp3");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::game_background_sprites__png,"game_background_sprites__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::menu_background__jpg,"menu_background__jpg");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::platform_blue_normal__png,"platform_blue_normal__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::platform_red_normal__png,"platform_red_normal__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::press_start__png,"press_start__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::maintheme__wav,"maintheme__wav");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::Teleport__wav,"Teleport__wav");
 };
@@ -78,10 +83,11 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 hx::Class AssetPaths_obj::__mClass;
 
 static ::String sStaticFields[] = {
-	HX_HCSTRING("data_goes_here__txt","\xec","\x22","\x23","\xe8"),
-	HX_HCSTRING("MenuBG__jpg","\xfd","\x41","\x1d","\x76"),
-	HX_HCSTRING("pressStart__png","\x4a","\x1f","\xeb","\x42"),
-	HX_HCSTRING("maintheme__mp3","\x20","\x93","\x68","\x16"),
+	HX_HCSTRING("game_background_sprites__png","\x9f","\xf1","\x8b","\x81"),
+	HX_HCSTRING("menu_background__jpg","\x33","\x95","\x2c","\x64"),
+	HX_HCSTRING("platform_blue_normal__png","\xe9","\x8f","\x58","\xeb"),
+	HX_HCSTRING("platform_red_normal__png","\x08","\xa6","\x38","\x65"),
+	HX_HCSTRING("press_start__png","\x63","\x98","\x9c","\x77"),
 	HX_HCSTRING("maintheme__wav","\xdc","\x1c","\x70","\x16"),
 	HX_HCSTRING("Teleport__wav","\x61","\x23","\x8f","\xfd"),
 	::String(null()) };
@@ -113,10 +119,11 @@ void AssetPaths_obj::__register()
 
 void AssetPaths_obj::__boot()
 {
-	data_goes_here__txt= HX_HCSTRING("assets/data/data-goes-here.txt","\x5f","\x4b","\xb2","\x8e");
-	MenuBG__jpg= HX_HCSTRING("assets/images/MenuBG.jpg","\x22","\x18","\x36","\x38");
-	pressStart__png= HX_HCSTRING("assets/images/pressStart.png","\x85","\x3b","\x88","\xda");
-	maintheme__mp3= HX_HCSTRING("assets/music/maintheme.mp3","\x3c","\x22","\xd9","\x87");
+	game_background_sprites__png= HX_HCSTRING("assets/images/game_background_sprites.png","\x1a","\x5a","\x90","\x8c");
+	menu_background__jpg= HX_HCSTRING("assets/images/menu_background.jpg","\x76","\x01","\x17","\xa1");
+	platform_blue_normal__png= HX_HCSTRING("assets/images/platform_blue_normal.png","\x86","\x77","\x39","\x47");
+	platform_red_normal__png= HX_HCSTRING("assets/images/platform_red_normal.png","\x51","\x67","\x0c","\x7f");
+	press_start__png= HX_HCSTRING("assets/images/press_start.png","\x56","\xfc","\xc0","\x5e");
 	maintheme__wav= HX_HCSTRING("assets/music/maintheme.wav","\xf8","\xab","\xe0","\x87");
 	Teleport__wav= HX_HCSTRING("assets/sounds/Teleport.wav","\xa8","\xbe","\x60","\x5d");
 }

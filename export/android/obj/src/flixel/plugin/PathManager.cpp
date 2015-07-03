@@ -3,12 +3,6 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
-#ifndef INCLUDED_flixel_FlxCamera
-#include <flixel/FlxCamera.h>
-#endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
@@ -17,9 +11,6 @@
 #endif
 #ifndef INCLUDED_flixel_plugin_PathManager
 #include <flixel/plugin/PathManager.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxArrayUtil
 #include <flixel/util/FlxArrayUtil.h>
@@ -39,8 +30,6 @@ HX_STACK_THIS(this)
 	this->_paths = Array_obj< ::Dynamic >::__new();
 	HX_STACK_LINE(14)
 	super::__construct();
-	HX_STACK_LINE(16)
-	this->set_visible(false);
 }
 ;
 	return null();
@@ -105,68 +94,6 @@ Void PathManager_obj::update( ){
 			if ((tmp3)){
 				HX_STACK_LINE(37)
 				path->update();
-			}
-		}
-	}
-return null();
-}
-
-
-Void PathManager_obj::draw( ){
-{
-		HX_STACK_FRAME("flixel.plugin.PathManager","draw",0x90a68313,"flixel.plugin.PathManager.draw","flixel/plugin/PathManager.hx",48,0xf3716a7f)
-		HX_STACK_THIS(this)
-		HX_STACK_LINE(49)
-		this->super::draw();
-		HX_STACK_LINE(50)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(50)
-		bool tmp1 = tmp->__Field(HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(50)
-		if ((tmp1)){
-			HX_STACK_LINE(52)
-			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(52)
-			Array< ::Dynamic > _g1 = this->_paths;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(52)
-			while((true)){
-				HX_STACK_LINE(52)
-				bool tmp2 = (_g < _g1->length);		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(52)
-				bool tmp3 = !(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(52)
-				if ((tmp3)){
-					HX_STACK_LINE(52)
-					break;
-				}
-				HX_STACK_LINE(52)
-				::flixel::util::FlxPath tmp4 = _g1->__get(_g).StaticCast< ::flixel::util::FlxPath >();		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(52)
-				::flixel::util::FlxPath path = tmp4;		HX_STACK_VAR(path,"path");
-				HX_STACK_LINE(52)
-				++(_g);
-				HX_STACK_LINE(54)
-				bool tmp5 = (path != null());		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(54)
-				bool tmp6;		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(54)
-				if ((tmp5)){
-					HX_STACK_LINE(54)
-					bool tmp7 = path->ignoreDrawDebug;		HX_STACK_VAR(tmp7,"tmp7");
-					HX_STACK_LINE(54)
-					bool tmp8 = tmp7;		HX_STACK_VAR(tmp8,"tmp8");
-					HX_STACK_LINE(54)
-					tmp6 = !(tmp8);
-				}
-				else{
-					HX_STACK_LINE(54)
-					tmp6 = false;
-				}
-				HX_STACK_LINE(54)
-				if ((tmp6)){
-					HX_STACK_LINE(56)
-					path->drawDebug(null());
-				}
 			}
 		}
 	}
@@ -278,9 +205,6 @@ Dynamic PathManager_obj::__Field(const ::String &inName,hx::PropertyAccess inCal
 	case 3:
 		if (HX_FIELD_EQ(inName,"add") ) { return add_dyn(); }
 		break;
-	case 4:
-		if (HX_FIELD_EQ(inName,"draw") ) { return draw_dyn(); }
-		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"clear") ) { return clear_dyn(); }
 		break;
@@ -330,7 +254,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("_paths","\x6f","\x52","\x3e","\xb9"),
 	HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
-	HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"),
 	HX_HCSTRING("add","\x21","\xf2","\x49","\x00"),
 	HX_HCSTRING("remove","\x44","\x9c","\x88","\x04"),
 	HX_HCSTRING("clear","\x8d","\x71","\x5b","\x48"),

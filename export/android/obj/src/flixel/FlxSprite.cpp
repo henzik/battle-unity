@@ -34,17 +34,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_BitmapFrontEnd
 #include <flixel/system/frontEnds/BitmapFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_layer_DrawStackItem
 #include <flixel/system/layer/DrawStackItem.h>
@@ -431,13 +422,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxSprite_obj,clone,return )
 		HX_STACK_LINE(270)
 		Dynamic Data = tmp5;		HX_STACK_VAR(Data,"Data");
 		HX_STACK_LINE(270)
-		::flixel::_system::frontEnds::LogFrontEnd tmp6 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(270)
-		Dynamic tmp7 = Data;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(270)
-		::flixel::_system::debug::LogStyle tmp8 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(270)
-		tmp6->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp7,tmp8,true);
+		Dynamic();
 	}
 	HX_STACK_LINE(273)
 	::flixel::_system::layer::Region tmp2 = Sprite->region->__Field(HX_HCSTRING("clone","\x5d","\x13","\x63","\x48"), hx::paccDynamic )();		HX_STACK_VAR(tmp2,"tmp2");
@@ -2555,18 +2540,7 @@ Void FlxSprite_obj::draw( ){
 				currDrawData[tmp90] = tmp93;
 				HX_STACK_LINE(900)
 				drawItem->__FieldRef(HX_HCSTRING("position","\xa9","\xa0","\xfa","\xca")) = currIndex;
-				HX_STACK_LINE(903)
-				(::flixel::FlxBasic_obj::_VISIBLECOUNT)++;
 			}
-		}
-		HX_STACK_LINE(908)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp10 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(908)
-		bool tmp11 = tmp10->__Field(HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"), hx::paccDynamic );		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(908)
-		if ((tmp11)){
-			HX_STACK_LINE(909)
-			this->drawDebug();
 		}
 	}
 return null();
