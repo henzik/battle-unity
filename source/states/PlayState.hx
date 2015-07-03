@@ -22,14 +22,20 @@ class PlayState extends FlxState {
 	
 	override public function create():Void {
 		
+		var total = 9;
+		var xLocation = 0;
+		var yLocation = 0;
 		
-		var redPlatform = new FlxTypedGroup<FlxSprite>(9);
-		
-		for (0 in 9 ) {
-			var red_platform = new FlxSprite(centerX, 100, AssetPaths.platform_red_normal__png);
-			red_platform.kill();
-			red_platform.add(red_platform);
+		for (i in 0...total) {
+			
+			var red_platform = new FlxSprite(xLocation, yLocation, AssetPaths.platform_red_normal__png);
+			
+			add(red_platform);
+			xLocation += 40;
+			yLocation += 30;
+			FlxG.log.notice("Index: " + i + "Location: " + location);
 		}
+		
 		
 		super.create();		
 	}
