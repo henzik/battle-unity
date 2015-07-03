@@ -49,6 +49,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/images/game_background.png", "assets/images/game_background.png");
+		type.set ("assets/images/game_background.png", AssetType.IMAGE);
+		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
+		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
 		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
@@ -70,6 +74,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/images/game_background.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/game_background_sprites.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/menu_background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -109,9 +119,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -747,7 +761,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 #elseif html5
+
+
 
 
 
@@ -829,6 +847,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/images/game_background.png", "assets/images/game_background.png");
+		type.set ("assets/images/game_background.png", AssetType.IMAGE);
+		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
+		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
 		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
@@ -850,6 +872,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/images/game_background.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/game_background_sprites.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/menu_background.jpg";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -896,11 +924,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1520,7 +1552,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 #elseif html5
+
+
 
 
 

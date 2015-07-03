@@ -9,6 +9,7 @@
 -D openfl=3.1.0
 -cp source
 -cp source/states
+-cp source/entity
 -cp E:\HaxeToolkit\haxe\lib\lime/2,4,4/legacy
 -D openfl-legacy
 -D tools=2.4.4
