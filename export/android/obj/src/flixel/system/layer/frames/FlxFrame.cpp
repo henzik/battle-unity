@@ -24,8 +24,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_display_BitmapData
 #include <openfl/_legacy/display/BitmapData.h>
@@ -78,7 +78,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(45)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(45)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(45)
 		::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(45)
@@ -105,7 +105,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(46)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(46)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(46)
 		::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(46)
@@ -132,7 +132,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(47)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(47)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(47)
 		::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(47)

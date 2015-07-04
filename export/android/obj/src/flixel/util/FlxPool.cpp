@@ -11,13 +11,13 @@ namespace util{
 
 Void FlxPool_obj::__construct(::hx::Class classObj)
 {
-HX_STACK_FRAME("flixel.util.FlxPool","new",0x022eb226,"flixel.util.FlxPool.new","flixel/util/FlxPool.hx",18,0xdd4de86a)
+HX_STACK_FRAME("flixel.util.FlxPool","new",0x022eb226,"flixel.util.FlxPool.new","flixel/util/FlxPool.hx",17,0xdd4de86a)
 HX_STACK_THIS(this)
 HX_STACK_ARG(classObj,"classObj")
 {
-	HX_STACK_LINE(19)
+	HX_STACK_LINE(18)
 	this->_pool = cpp::ArrayBase_obj::__new();
-	HX_STACK_LINE(20)
+	HX_STACK_LINE(19)
 	this->_class = classObj;
 }
 ;
@@ -38,26 +38,26 @@ Dynamic FlxPool_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 Dynamic FlxPool_obj::get( ){
-	HX_STACK_FRAME("flixel.util.FlxPool","get",0x0229625c,"flixel.util.FlxPool.get","flixel/util/FlxPool.hx",24,0xdd4de86a)
+	HX_STACK_FRAME("flixel.util.FlxPool","get",0x0229625c,"flixel.util.FlxPool.get","flixel/util/FlxPool.hx",23,0xdd4de86a)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(24)
 	Dynamic tmp = this->_pool->__Field(HX_HCSTRING("pop","\x91","\x5d","\x55","\x00"), hx::paccDynamic )();		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(24)
 	Dynamic obj = tmp;		HX_STACK_VAR(obj,"obj");
-	HX_STACK_LINE(26)
+	HX_STACK_LINE(25)
 	bool tmp1 = (obj == null());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(26)
+	HX_STACK_LINE(25)
 	if ((tmp1)){
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(27)
 		::hx::Class tmp2 = this->_class;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(27)
 		Dynamic tmp3 = ::Type_obj::createInstance(tmp2,cpp::ArrayBase_obj::__new());		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(27)
 		obj = tmp3;
 	}
-	HX_STACK_LINE(30)
+	HX_STACK_LINE(29)
 	Dynamic tmp2 = obj;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(30)
+	HX_STACK_LINE(29)
 	return tmp2;
 }
 
@@ -66,37 +66,37 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxPool_obj,get,return )
 
 Void FlxPool_obj::put( Dynamic obj){
 {
-		HX_STACK_FRAME("flixel.util.FlxPool","put",0x02304495,"flixel.util.FlxPool.put","flixel/util/FlxPool.hx",34,0xdd4de86a)
+		HX_STACK_FRAME("flixel.util.FlxPool","put",0x02304495,"flixel.util.FlxPool.put","flixel/util/FlxPool.hx",33,0xdd4de86a)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(obj,"obj")
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(35)
 		bool tmp = (obj != null());		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(35)
 		bool tmp1;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(35)
 		if ((tmp)){
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			Dynamic tmp2 = obj;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			Dynamic tmp3 = tmp2;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			int tmp4 = this->_pool->__Field(HX_HCSTRING("indexOf","\xc9","\x48","\xbf","\xe0"), hx::paccDynamic )(tmp3,null());		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			int tmp5 = tmp4;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			tmp1 = (tmp5 < (int)0);
 		}
 		else{
-			HX_STACK_LINE(36)
+			HX_STACK_LINE(35)
 			tmp1 = false;
 		}
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(35)
 		if ((tmp1)){
-			HX_STACK_LINE(38)
+			HX_STACK_LINE(37)
 			obj->__Field(HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"), hx::paccDynamic )();
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(38)
 			Dynamic tmp2 = obj;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(38)
 			this->_pool->__Field(HX_HCSTRING("push","\xda","\x11","\x61","\x4a"), hx::paccDynamic )(tmp2);
 		}
 	}
@@ -108,18 +108,18 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPool_obj,put,(void))
 
 Void FlxPool_obj::putUnsafe( Dynamic obj){
 {
-		HX_STACK_FRAME("flixel.util.FlxPool","putUnsafe",0x4c705a9b,"flixel.util.FlxPool.putUnsafe","flixel/util/FlxPool.hx",44,0xdd4de86a)
+		HX_STACK_FRAME("flixel.util.FlxPool","putUnsafe",0x4c705a9b,"flixel.util.FlxPool.putUnsafe","flixel/util/FlxPool.hx",43,0xdd4de86a)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(obj,"obj")
-		HX_STACK_LINE(45)
+		HX_STACK_LINE(44)
 		bool tmp = (obj != null());		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(45)
+		HX_STACK_LINE(44)
 		if ((tmp)){
-			HX_STACK_LINE(47)
+			HX_STACK_LINE(46)
 			obj->__Field(HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"), hx::paccDynamic )();
-			HX_STACK_LINE(48)
+			HX_STACK_LINE(47)
 			Dynamic tmp1 = obj;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(48)
+			HX_STACK_LINE(47)
 			this->_pool->__Field(HX_HCSTRING("push","\xda","\x11","\x61","\x4a"), hx::paccDynamic )(tmp1);
 		}
 	}
@@ -131,31 +131,31 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPool_obj,putUnsafe,(void))
 
 Void FlxPool_obj::preAllocate( int numObjects){
 {
-		HX_STACK_FRAME("flixel.util.FlxPool","preAllocate",0x662e61c6,"flixel.util.FlxPool.preAllocate","flixel/util/FlxPool.hx",54,0xdd4de86a)
+		HX_STACK_FRAME("flixel.util.FlxPool","preAllocate",0x662e61c6,"flixel.util.FlxPool.preAllocate","flixel/util/FlxPool.hx",53,0xdd4de86a)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(numObjects,"numObjects")
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(53)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(53)
 		while((true)){
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(53)
 			bool tmp = (_g < numObjects);		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(53)
 			bool tmp1 = !(tmp);		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(53)
 			if ((tmp1)){
-				HX_STACK_LINE(54)
+				HX_STACK_LINE(53)
 				break;
 			}
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(53)
 			int tmp2 = (_g)++;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(53)
 			int i = tmp2;		HX_STACK_VAR(i,"i");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(55)
 			::hx::Class tmp3 = this->_class;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(55)
 			Dynamic tmp4 = ::Type_obj::createInstance(tmp3,cpp::ArrayBase_obj::__new());		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(55)
 			this->_pool->__Field(HX_HCSTRING("push","\xda","\x11","\x61","\x4a"), hx::paccDynamic )(tmp4);
 		}
 	}
@@ -166,13 +166,13 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(FlxPool_obj,preAllocate,(void))
 
 cpp::ArrayBase FlxPool_obj::clear( ){
-	HX_STACK_FRAME("flixel.util.FlxPool","clear",0xa006d0d3,"flixel.util.FlxPool.clear","flixel/util/FlxPool.hx",61,0xdd4de86a)
+	HX_STACK_FRAME("flixel.util.FlxPool","clear",0xa006d0d3,"flixel.util.FlxPool.clear","flixel/util/FlxPool.hx",60,0xdd4de86a)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(62)
+	HX_STACK_LINE(61)
 	cpp::ArrayBase oldPool = this->_pool;		HX_STACK_VAR(oldPool,"oldPool");
-	HX_STACK_LINE(63)
+	HX_STACK_LINE(62)
 	this->_pool = cpp::ArrayBase_obj::__new();
-	HX_STACK_LINE(64)
+	HX_STACK_LINE(63)
 	return oldPool;
 }
 
@@ -180,11 +180,11 @@ cpp::ArrayBase FlxPool_obj::clear( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxPool_obj,clear,return )
 
 int FlxPool_obj::get_length( ){
-	HX_STACK_FRAME("flixel.util.FlxPool","get_length",0x704687a9,"flixel.util.FlxPool.get_length","flixel/util/FlxPool.hx",68,0xdd4de86a)
+	HX_STACK_FRAME("flixel.util.FlxPool","get_length",0x704687a9,"flixel.util.FlxPool.get_length","flixel/util/FlxPool.hx",67,0xdd4de86a)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(69)
+	HX_STACK_LINE(68)
 	int tmp = this->_pool->__Field(HX_HCSTRING("length","\xe6","\x94","\x07","\x9f"), hx::paccDynamic );		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(69)
+	HX_STACK_LINE(68)
 	return tmp;
 }
 

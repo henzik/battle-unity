@@ -1,14 +1,5 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxSave
 #include <flixel/util/FlxSave.h>
 #endif
@@ -101,15 +92,6 @@ bool FlxSave_obj::bind( ::String Name){
 		if (__e.IsClass< ::openfl::errors::Error >() ){
 			HX_STACK_BEGIN_CATCH
 			::openfl::errors::Error e = __e;{
-				HX_STACK_LINE(80)
-				{
-					HX_STACK_LINE(80)
-					::flixel::_system::frontEnds::LogFrontEnd tmp = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp,"tmp");
-					HX_STACK_LINE(80)
-					::flixel::_system::debug::LogStyle tmp1 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp1,"tmp1");
-					HX_STACK_LINE(80)
-					tmp->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("There was a problem binding to\nthe shared object data from FlxSave.","\x75","\x65","\xd7","\xba"),tmp1,true);
-				}
 				HX_STACK_LINE(81)
 				this->destroy();
 				HX_STACK_LINE(82)
@@ -249,7 +231,21 @@ bool FlxSave_obj::erase( ){
 	::openfl::_legacy::net::SharedObject tmp2 = this->_sharedObject;		HX_STACK_VAR(tmp2,"tmp2");
 	HX_STACK_LINE(161)
 	tmp2->clear();
+	struct _Function_1_1{
+		inline static Dynamic Block( ){
+			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxSave.hx",162,0xc43cd0a9)
+			{
+				hx::Anon __result = hx::Anon_obj::Create();
+				return __result;
+			}
+			return null();
+		}
+	};
 	HX_STACK_LINE(162)
+	Dynamic tmp3 = _Function_1_1::Block();		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(162)
+	this->data = tmp3;
+	HX_STACK_LINE(163)
 	return true;
 }
 
@@ -257,61 +253,53 @@ bool FlxSave_obj::erase( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxSave_obj,erase,return )
 
 bool FlxSave_obj::onDone( int Result){
-	HX_STACK_FRAME("flixel.util.FlxSave","onDone",0x76016afa,"flixel.util.FlxSave.onDone","flixel/util/FlxSave.hx",184,0xc43cd0a9)
+	HX_STACK_FRAME("flixel.util.FlxSave","onDone",0x76016afa,"flixel.util.FlxSave.onDone","flixel/util/FlxSave.hx",185,0xc43cd0a9)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Result,"Result")
-	HX_STACK_LINE(185)
+	HX_STACK_LINE(186)
 	int tmp = Result;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(185)
+	HX_STACK_LINE(186)
 	switch( (int)(tmp)){
 		case (int)1: {
-			HX_STACK_LINE(188)
-			::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(188)
-			::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(188)
-			tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxSave is requesting extra storage space.","\x65","\xed","\x43","\x59"),tmp2,true);
+			HX_STACK_LINE(189)
+			Dynamic();
 		}
 		;break;
 		case (int)2: {
-			HX_STACK_LINE(190)
-			::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(190)
-			::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(190)
-			tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("There was a problem flushing\nthe shared object data from FlxSave.","\x0d","\x4e","\xe5","\xad"),tmp2,true);
+			HX_STACK_LINE(191)
+			Dynamic();
 		}
 		;break;
 	}
-	HX_STACK_LINE(193)
+	HX_STACK_LINE(194)
 	Dynamic tmp1 = this->_onComplete_dyn();		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(193)
+	HX_STACK_LINE(194)
 	bool tmp2 = (tmp1 != null());		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(193)
+	HX_STACK_LINE(194)
 	if ((tmp2)){
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(196)
 		int tmp3 = Result;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(196)
 		int tmp4 = ::flixel::util::FlxSave_obj::SUCCESS;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(196)
 		bool tmp5 = (tmp3 == tmp4);		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(196)
 		this->_onComplete(tmp5);
 	}
-	HX_STACK_LINE(197)
+	HX_STACK_LINE(198)
 	bool tmp3 = this->_closeRequested;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(197)
+	HX_STACK_LINE(198)
 	if ((tmp3)){
-		HX_STACK_LINE(199)
+		HX_STACK_LINE(200)
 		this->destroy();
 	}
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	int tmp4 = Result;		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	int tmp5 = ::flixel::util::FlxSave_obj::SUCCESS;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	bool tmp6 = (tmp4 == tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	return tmp6;
 }
 
@@ -319,27 +307,18 @@ bool FlxSave_obj::onDone( int Result){
 HX_DEFINE_DYNAMIC_FUNC1(FlxSave_obj,onDone,return )
 
 bool FlxSave_obj::checkBinding( ){
-	HX_STACK_FRAME("flixel.util.FlxSave","checkBinding",0xf0eb45d6,"flixel.util.FlxSave.checkBinding","flixel/util/FlxSave.hx",210,0xc43cd0a9)
+	HX_STACK_FRAME("flixel.util.FlxSave","checkBinding",0xf0eb45d6,"flixel.util.FlxSave.checkBinding","flixel/util/FlxSave.hx",211,0xc43cd0a9)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(211)
+	HX_STACK_LINE(212)
 	::openfl::_legacy::net::SharedObject tmp = this->_sharedObject;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(211)
+	HX_STACK_LINE(212)
 	bool tmp1 = (tmp == null());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(211)
+	HX_STACK_LINE(212)
 	if ((tmp1)){
-		HX_STACK_LINE(213)
-		{
-			HX_STACK_LINE(213)
-			::flixel::_system::frontEnds::LogFrontEnd tmp2 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(213)
-			::flixel::_system::debug::LogStyle tmp3 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(213)
-			tmp2->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("You must call FlxSave.bind()\nbefore you can read or write data.","\x7f","\xaf","\xd9","\xea"),tmp3,true);
-		}
-		HX_STACK_LINE(214)
+		HX_STACK_LINE(215)
 		return false;
 	}
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	return true;
 }
 

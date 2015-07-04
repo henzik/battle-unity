@@ -16,8 +16,6 @@ class AssetData {
 		
 		if (!initialized) {
 			
-			path.set ("assets/images/game_background.png", "assets/images/game_background.png");
-			type.set ("assets/images/game_background.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
 			type.set ("assets/images/game_background_sprites.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
@@ -36,6 +34,10 @@ class AssetData {
 			type.set ("assets/sounds/beep.ogg", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
 			type.set ("assets/sounds/flixel.ogg", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/fonts/nokiafc22.ttf", "assets/fonts/nokiafc22.ttf");
+			type.set ("assets/fonts/nokiafc22.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
+			path.set ("assets/fonts/arial.ttf", "assets/fonts/arial.ttf");
+			type.set ("assets/fonts/arial.ttf", Reflect.field (AssetType, "font".toUpperCase ()));
 			
 			
 			initialized = true;

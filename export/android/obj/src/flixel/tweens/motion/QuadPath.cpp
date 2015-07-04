@@ -25,8 +25,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 namespace flixel{
 namespace tweens{
@@ -197,7 +197,7 @@ Float y = __o_y.Default(0);
 		HX_STACK_LINE(84)
 		{
 			HX_STACK_LINE(84)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(84)
 			::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(84)
@@ -864,7 +864,7 @@ Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::uti
 		HX_STACK_LINE(202)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(202)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(202)
 		::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(202)
@@ -891,7 +891,7 @@ Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::uti
 		HX_STACK_LINE(203)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(203)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(203)
 		::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(203)

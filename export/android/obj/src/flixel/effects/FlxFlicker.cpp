@@ -18,8 +18,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_effects_FlxFlicker
-#include <flixel/util/FlxPool_flixel_effects_FlxFlicker.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxTimer
 #include <flixel/util/FlxTimer.h>
@@ -159,7 +159,7 @@ Void FlxFlicker_obj::release( ){
 		HX_STACK_LINE(161)
 		tmp->remove(tmp1);
 		HX_STACK_LINE(162)
-		::flixel::util::FlxPool_flixel_effects_FlxFlicker tmp2 = ::flixel::effects::FlxFlicker_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::effects::FlxFlicker_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(162)
 		tmp2->put(hx::ObjectPtr<OBJ_>(this));
 	}
@@ -237,7 +237,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxFlicker_obj,flickerProgress,(void))
 
-::flixel::util::FlxPool_flixel_effects_FlxFlicker FlxFlicker_obj::_pool;
+::flixel::util::FlxPool FlxFlicker_obj::_pool;
 
 ::haxe::ds::ObjectMap FlxFlicker_obj::_boundObjects;
 
@@ -285,7 +285,7 @@ bool ForceRestart = __o_ForceRestart.Default(true);
 			Interval = tmp3;
 		}
 		HX_STACK_LINE(53)
-		::flixel::util::FlxPool_flixel_effects_FlxFlicker tmp3 = ::flixel::effects::FlxFlicker_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::effects::FlxFlicker_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(53)
 		::flixel::effects::FlxFlicker tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(53)
@@ -485,7 +485,7 @@ bool FlxFlicker_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::Pro
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool_flixel_effects_FlxFlicker >(); return true; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool >(); return true; }
 		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"_boundObjects") ) { _boundObjects=ioValue.Cast< ::haxe::ds::ObjectMap >(); return true; }
@@ -515,7 +515,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsObject /*::flixel::util::FlxPool_flixel_effects_FlxFlicker*/ ,(void *) &FlxFlicker_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
+	{hx::fsObject /*::flixel::util::FlxPool*/ ,(void *) &FlxFlicker_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
 	{hx::fsObject /*::haxe::ds::ObjectMap*/ ,(void *) &FlxFlicker_obj::_boundObjects,HX_HCSTRING("_boundObjects","\x15","\x17","\x40","\x1b")},
 	{ hx::fsUnknown, 0, null()}
 };
@@ -588,7 +588,7 @@ void FlxFlicker_obj::__register()
 
 void FlxFlicker_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_effects_FlxFlicker_obj::__new(hx::ClassOf< ::flixel::effects::FlxFlicker >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::effects::FlxFlicker >());
 struct _Function_0_1{
 	inline static ::haxe::ds::ObjectMap Block( ){
 		HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/effects/FlxFlicker.hx",20,0x4fa53f38)

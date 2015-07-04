@@ -206,6 +206,21 @@ Dynamic Lib_obj::loadLazy( ::String lib,::String prim,int nargs){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(Lib_obj,loadLazy,return )
 
+Void Lib_obj::rethrow( Dynamic inExp){
+{
+		HX_STACK_FRAME("cpp.Lib","rethrow",0x3bf8427f,"cpp.Lib.rethrow","E:\\HaxeToolkit\\haxe\\std/cpp/Lib.hx",81,0x0c97463c)
+		HX_STACK_ARG(inExp,"inExp")
+		HX_STACK_LINE(81)
+		Dynamic tmp = inExp;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(81)
+		HX_STACK_DO_THROW(tmp);
+	}
+return null();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Lib_obj,rethrow,(void))
+
 
 Lib_obj::Lib_obj()
 {
@@ -216,6 +231,9 @@ bool Lib_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"load") ) { outValue = load_dyn(); return true;  }
+		break;
+	case 7:
+		if (HX_FIELD_EQ(inName,"rethrow") ) { outValue = rethrow_dyn(); return true;  }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"loadLazy") ) { outValue = loadLazy_dyn(); return true;  }
@@ -244,6 +262,7 @@ hx::Class Lib_obj::__mClass;
 static ::String sStaticFields[] = {
 	HX_HCSTRING("load","\x26","\x9a","\xb7","\x47"),
 	HX_HCSTRING("loadLazy","\xba","\xe1","\x4c","\xb8"),
+	HX_HCSTRING("rethrow","\x93","\xb0","\x2a","\xf6"),
 	::String(null()) };
 
 void Lib_obj::__register()

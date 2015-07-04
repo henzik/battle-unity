@@ -19,8 +19,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 namespace flixel{
 namespace tweens{
@@ -255,7 +255,7 @@ Float QuadMotion_obj::get_distance( ){
 		HX_STACK_LINE(75)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(75)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(75)
 		::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(75)
@@ -282,7 +282,7 @@ Float QuadMotion_obj::get_distance( ){
 		HX_STACK_LINE(76)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(76)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(76)
 		::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(76)

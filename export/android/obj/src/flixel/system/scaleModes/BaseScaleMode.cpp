@@ -25,8 +25,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_display_DisplayObject
 #include <openfl/_legacy/display/DisplayObject.h>
@@ -67,7 +67,7 @@ HX_STACK_THIS(this)
 		HX_STACK_LINE(19)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(19)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(19)
 		::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(19)
@@ -94,7 +94,7 @@ HX_STACK_THIS(this)
 		HX_STACK_LINE(20)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(20)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(20)
 		::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(20)
@@ -121,7 +121,7 @@ HX_STACK_THIS(this)
 		HX_STACK_LINE(21)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(21)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(21)
 		::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(21)
@@ -148,7 +148,7 @@ HX_STACK_THIS(this)
 		HX_STACK_LINE(22)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(22)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(22)
 		::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(22)
@@ -661,7 +661,7 @@ struct _Function_0_1{
 			HX_STACK_LINE(15)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(15)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+			::flixel::util::FlxPool tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 			HX_STACK_LINE(15)
 			::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(15)

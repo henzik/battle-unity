@@ -37,8 +37,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 namespace flixel{
 namespace util{
@@ -411,7 +411,7 @@ Array< Float > FlxAngle_obj::sinTable;
 			HX_STACK_LINE(117)
 			Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 			HX_STACK_LINE(117)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp16 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp16,"tmp16");
+			::flixel::util::FlxPool tmp16 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp16,"tmp16");
 			HX_STACK_LINE(117)
 			::flixel::util::FlxPoint tmp17 = tmp16->get();		HX_STACK_VAR(tmp17,"tmp17");
 			HX_STACK_LINE(117)
@@ -1124,7 +1124,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxAngle_obj,angleBetweenTouch,return )
 			HX_STACK_LINE(376)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(376)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(376)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(376)
@@ -1204,7 +1204,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxAngle_obj,getCartesianCoords,return )
 			HX_STACK_LINE(397)
 			Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 			HX_STACK_LINE(397)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(397)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(397)

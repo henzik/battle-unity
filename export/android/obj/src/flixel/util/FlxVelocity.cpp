@@ -40,8 +40,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxVelocity
 #include <flixel/util/FlxVelocity.h>
@@ -954,7 +954,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxVelocity_obj,accelerateTowardsPoint,(void))
 		HX_STACK_LINE(241)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(241)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp5 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+		::flixel::util::FlxPool tmp5 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(241)
 		::flixel::util::FlxPoint tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(241)
@@ -1074,7 +1074,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxVelocity_obj,velocityFromAngle,return )
 		HX_STACK_LINE(277)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(277)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(277)
 		::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(277)

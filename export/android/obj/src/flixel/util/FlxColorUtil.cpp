@@ -4,15 +4,6 @@
 #ifndef INCLUDED_Std
 #include <Std.h>
 #endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxColorUtil
 #include <flixel/util/FlxColorUtil.h>
 #endif
@@ -870,11 +861,7 @@ int Threshold = __o_Threshold.Default(30);
 		HX_STACK_LINE(323)
 		if ((tmp4)){
 			HX_STACK_LINE(325)
-			::flixel::_system::frontEnds::LogFrontEnd tmp5 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(325)
-			::flixel::_system::debug::LogStyle tmp6 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(325)
-			tmp5->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxColor Warning: Invalid threshold given to getAnalogousHarmony()","\x2f","\x9f","\x3c","\x37"),tmp6,true);
+			Dynamic();
 		}
 		HX_STACK_LINE(328)
 		Float tmp5 = hsv->__Field(HX_HCSTRING("hue","\xb8","\x50","\x4f","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp5,"tmp5");
@@ -970,11 +957,7 @@ int Threshold = __o_Threshold.Default(30);
 		HX_STACK_LINE(347)
 		if ((tmp4)){
 			HX_STACK_LINE(349)
-			::flixel::_system::frontEnds::LogFrontEnd tmp5 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(349)
-			::flixel::_system::debug::LogStyle tmp6 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(349)
-			tmp5->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxColor: Invalid threshold given to getSplitComplementHarmony()","\x70","\xa7","\xd0","\xdb"),tmp6,true);
+			Dynamic();
 		}
 		HX_STACK_LINE(352)
 		Float tmp5 = hsv->__Field(HX_HCSTRING("hue","\xb8","\x50","\x4f","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp5,"tmp5");
@@ -1004,35 +987,6 @@ int Threshold = __o_Threshold.Default(30);
 		int tmp15 = ::flixel::util::FlxMath_obj::wrapValue(tmp13,tmp14,(int)359);		HX_STACK_VAR(tmp15,"tmp15");
 		HX_STACK_LINE(355)
 		int colder = tmp15;		HX_STACK_VAR(colder,"colder");
-		HX_STACK_LINE(357)
-		{
-			HX_STACK_LINE(357)
-			::flixel::_system::frontEnds::LogFrontEnd tmp16 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp16,"tmp16");
-			HX_STACK_LINE(357)
-			::String tmp17 = (HX_HCSTRING("hue: ","\x5e","\x21","\x4f","\x2f") + hsv->__Field(HX_HCSTRING("hue","\xb8","\x50","\x4f","\x00"), hx::paccDynamic ));		HX_STACK_VAR(tmp17,"tmp17");
-			HX_STACK_LINE(357)
-			::String tmp18 = (tmp17 + HX_HCSTRING(" opposite: ","\x6d","\xbb","\xac","\x90"));		HX_STACK_VAR(tmp18,"tmp18");
-			HX_STACK_LINE(357)
-			int tmp19 = opposite;		HX_STACK_VAR(tmp19,"tmp19");
-			HX_STACK_LINE(357)
-			::String tmp20 = (tmp18 + tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-			HX_STACK_LINE(357)
-			::String tmp21 = (tmp20 + HX_HCSTRING(" warmer: ","\x38","\xc9","\xb7","\x50"));		HX_STACK_VAR(tmp21,"tmp21");
-			HX_STACK_LINE(357)
-			int tmp22 = warmer;		HX_STACK_VAR(tmp22,"tmp22");
-			HX_STACK_LINE(357)
-			::String tmp23 = (tmp21 + tmp22);		HX_STACK_VAR(tmp23,"tmp23");
-			HX_STACK_LINE(357)
-			::String tmp24 = (tmp23 + HX_HCSTRING(" colder: ","\x97","\xfa","\x33","\x8a"));		HX_STACK_VAR(tmp24,"tmp24");
-			HX_STACK_LINE(357)
-			int tmp25 = colder;		HX_STACK_VAR(tmp25,"tmp25");
-			HX_STACK_LINE(357)
-			::String tmp26 = (tmp24 + tmp25);		HX_STACK_VAR(tmp26,"tmp26");
-			HX_STACK_LINE(357)
-			::flixel::_system::debug::LogStyle tmp27 = ::flixel::_system::debug::LogStyle_obj::NOTICE;		HX_STACK_VAR(tmp27,"tmp27");
-			HX_STACK_LINE(357)
-			tmp16->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp26,tmp27,null());
-		}
 		HX_STACK_LINE(359)
 		int tmp16 = Color;		HX_STACK_VAR(tmp16,"tmp16");
 		HX_STACK_LINE(359)
@@ -2319,11 +2273,7 @@ int Alpha = __o_Alpha.Default(255);
 					;break;
 					default: {
 						HX_STACK_LINE(483)
-						::flixel::_system::frontEnds::LogFrontEnd tmp22 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp22,"tmp22");
-						HX_STACK_LINE(483)
-						::flixel::_system::debug::LogStyle tmp23 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp23,"tmp23");
-						HX_STACK_LINE(483)
-						tmp22->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxColor: HSVtoARGB: Unknown color","\x2c","\x4a","\xa7","\xdd"),tmp23,true);
+						Dynamic();
 					}
 				}
 			}

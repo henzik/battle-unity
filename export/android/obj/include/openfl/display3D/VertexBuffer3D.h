@@ -8,7 +8,9 @@
 HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS3(openfl,_legacy,gl,GLBuffer)
 HX_DECLARE_CLASS3(openfl,_legacy,gl,GLObject)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,ArrayBufferView)
 HX_DECLARE_CLASS3(openfl,_legacy,utils,ByteArray)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,Float32Array)
 HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataInput)
 HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataOutput)
 HX_DECLARE_CLASS3(openfl,_legacy,utils,IMemoryRange)
@@ -50,6 +52,9 @@ class HXCPP_CLASS_ATTRIBUTES  VertexBuffer3D_obj : public hx::Object{
 
 		virtual Void uploadFromByteArray( ::openfl::_legacy::utils::ByteArray byteArray,int byteArrayOffset,int startOffset,int count);
 		Dynamic uploadFromByteArray_dyn();
+
+		virtual Void uploadFromFloat32Array( ::openfl::_legacy::utils::Float32Array data,int startVertex,int numVertices);
+		Dynamic uploadFromFloat32Array_dyn();
 
 		virtual Void uploadFromVector( Array< Float > data,int startVertex,int numVertices);
 		Dynamic uploadFromVector_dyn();

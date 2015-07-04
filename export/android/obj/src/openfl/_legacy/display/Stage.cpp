@@ -211,22 +211,6 @@ HX_STACK_ARG(height,"height")
 		HX_STACK_LINE(155)
 		tmp10->push(tmp11);
 	}
-
-	HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
-	int __ArgCount() const { return 1; }
-	Void run(::String message){
-		HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","openfl/_legacy/display/Stage.hx",158,0x8b30a073)
-		HX_STACK_ARG(message,"message")
-		{
-			HX_STACK_LINE(158)
-			HX_STACK_DO_THROW(message);
-		}
-		return null();
-	}
-	HX_END_LOCAL_FUNC1((void))
-
-	HX_STACK_LINE(158)
-	::__hxcpp_set_critical_error_handler( Dynamic(new _Function_1_1()));
 }
 ;
 	return null();
@@ -1753,7 +1737,7 @@ Void Stage_obj::__onJoystick( Dynamic event,::String type){
 		}
 		else if (  ( _switch_1==HX_HCSTRING("deviceAdded","\x4a","\x08","\x84","\x0b"))){
 			HX_STACK_LINE(742)
-			::openfl::events::JoystickEvent tmp1 = ::openfl::events::JoystickEvent_obj::__new(type,false,false,event->__Field(HX_HCSTRING("id","\xdb","\x5b","\x00","\x00"), hx::paccDynamic ),null(),null(),null(),null());		HX_STACK_VAR(tmp1,"tmp1");
+			::openfl::events::JoystickEvent tmp1 = ::openfl::events::JoystickEvent_obj::__new(type,false,false,event->__Field(HX_HCSTRING("id","\xdb","\x5b","\x00","\x00"), hx::paccDynamic ),(int)0,event->__Field(HX_HCSTRING("x","\x78","\x00","\x00","\x00"), hx::paccDynamic ),null(),null());		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(742)
 			joystickEvent = tmp1;
 		}
@@ -2864,7 +2848,7 @@ Void Stage_obj::__setActive( bool value){
 					HX_END_LOCAL_FUNC0((void))
 
 					HX_STACK_LINE(1148)
-					::haxe::Timer_obj::delay( Dynamic(new _Function_4_1(focus,_g)),(int)100);
+					::haxe::Timer_obj::delay( Dynamic(new _Function_4_1(focus,_g)),(int)30);
 				}
 			}
 			else{

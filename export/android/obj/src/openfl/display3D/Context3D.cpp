@@ -3185,7 +3185,20 @@ Void Context3D_obj::setTextureParameters( ::openfl::display3D::textures::Texture
 				;break;
 				case (int)2: {
 					HX_STACK_LINE(853)
-					::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)3553,(int)10241,(int)9729);
+					bool tmp4 = (filter == ::openfl::display3D::Context3DTextureFilter_obj::NEAREST);		HX_STACK_VAR(tmp4,"tmp4");
+					HX_STACK_LINE(853)
+					int tmp5;		HX_STACK_VAR(tmp5,"tmp5");
+					HX_STACK_LINE(853)
+					if ((tmp4)){
+						HX_STACK_LINE(853)
+						tmp5 = (int)9728;
+					}
+					else{
+						HX_STACK_LINE(853)
+						tmp5 = (int)9729;
+					}
+					HX_STACK_LINE(853)
+					::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)3553,(int)10241,tmp5);
 				}
 				;break;
 			}
@@ -3527,7 +3540,23 @@ Void Context3D_obj::setTextureParameters( ::openfl::display3D::textures::Texture
 					;break;
 				}
 				HX_STACK_LINE(902)
-				::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)3553,(int)10241,(int)9729);
+				{
+					HX_STACK_LINE(902)
+					bool tmp6 = (filter == ::openfl::display3D::Context3DTextureFilter_obj::NEAREST);		HX_STACK_VAR(tmp6,"tmp6");
+					HX_STACK_LINE(902)
+					int tmp7;		HX_STACK_VAR(tmp7,"tmp7");
+					HX_STACK_LINE(902)
+					if ((tmp6)){
+						HX_STACK_LINE(902)
+						tmp7 = (int)9728;
+					}
+					else{
+						HX_STACK_LINE(902)
+						tmp7 = (int)9729;
+					}
+					HX_STACK_LINE(902)
+					::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)3553,(int)10241,tmp7);
+				}
 			}
 			else{
 				HX_STACK_LINE(904)
@@ -3892,7 +3921,20 @@ Void Context3D_obj::setTextureParameters( ::openfl::display3D::textures::Texture
 						;break;
 						case (int)2: {
 							HX_STACK_LINE(972)
-							::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)34067,(int)10241,(int)9729);
+							bool tmp8 = (filter == ::openfl::display3D::Context3DTextureFilter_obj::NEAREST);		HX_STACK_VAR(tmp8,"tmp8");
+							HX_STACK_LINE(972)
+							int tmp9;		HX_STACK_VAR(tmp9,"tmp9");
+							HX_STACK_LINE(972)
+							if ((tmp8)){
+								HX_STACK_LINE(972)
+								tmp9 = (int)9728;
+							}
+							else{
+								HX_STACK_LINE(972)
+								tmp9 = (int)9729;
+							}
+							HX_STACK_LINE(972)
+							::openfl::_legacy::gl::GL_obj::lime_gl_tex_parameteri((int)34067,(int)10241,tmp9);
 						}
 						;break;
 					}

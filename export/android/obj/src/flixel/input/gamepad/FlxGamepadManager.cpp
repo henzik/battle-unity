@@ -163,22 +163,22 @@ FlxGamepadManager_obj::operator ::flixel::interfaces::IFlxInput_obj *()
 		::flixel::input::gamepad::FlxGamepad tmp5 = gamepad;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(64)
 		this->_gamepads[GamepadID] = tmp5;
-		HX_STACK_LINE(66)
-		this->lastActive = gamepad;
-		HX_STACK_LINE(67)
-		::flixel::input::gamepad::FlxGamepad tmp6 = this->firstActive;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(67)
-		bool tmp7 = (tmp6 == null());		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(67)
-		if ((tmp7)){
-			HX_STACK_LINE(69)
-			this->firstActive = gamepad;
-		}
 	}
+	HX_STACK_LINE(67)
+	::flixel::input::gamepad::FlxGamepad tmp2 = this->firstActive;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(67)
+	bool tmp3 = (tmp2 == null());		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(67)
+	if ((tmp3)){
+		HX_STACK_LINE(69)
+		this->firstActive = gamepad;
+	}
+	HX_STACK_LINE(71)
+	this->lastActive = gamepad;
 	HX_STACK_LINE(73)
-	::flixel::input::gamepad::FlxGamepad tmp2 = gamepad;		HX_STACK_VAR(tmp2,"tmp2");
+	::flixel::input::gamepad::FlxGamepad tmp4 = gamepad;		HX_STACK_VAR(tmp4,"tmp4");
 	HX_STACK_LINE(73)
-	return tmp2;
+	return tmp4;
 }
 
 

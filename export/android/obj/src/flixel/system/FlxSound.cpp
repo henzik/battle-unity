@@ -25,12 +25,6 @@
 #ifndef INCLUDED_flixel_system_FlxSound
 #include <flixel/system/FlxSound.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
 #endif
@@ -43,8 +37,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_haxe_io_Bytes
 #include <haxe/io/Bytes.h>
@@ -286,7 +280,7 @@ Void FlxSound_obj::update( ){
 				HX_STACK_LINE(215)
 				{
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPool_flixel_util_FlxPoint tmp9 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
+					::flixel::util::FlxPool tmp9 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
 					HX_STACK_LINE(215)
 					::flixel::util::FlxPoint tmp10 = tmp9->get();		HX_STACK_VAR(tmp10,"tmp10");
 					HX_STACK_LINE(215)
@@ -313,7 +307,7 @@ Void FlxSound_obj::update( ){
 				HX_STACK_LINE(215)
 				{
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPool_flixel_util_FlxPoint tmp10 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp10,"tmp10");
+					::flixel::util::FlxPool tmp10 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp10,"tmp10");
 					HX_STACK_LINE(215)
 					::flixel::util::FlxPoint tmp11 = tmp10->get();		HX_STACK_VAR(tmp11,"tmp11");
 					HX_STACK_LINE(215)
@@ -1155,15 +1149,6 @@ Void FlxSound_obj::gotID3( ::openfl::_legacy::events::Event event){
 		HX_STACK_FRAME("flixel.system.FlxSound","gotID3",0xcead1fb0,"flixel.system.FlxSound.gotID3","flixel/system/FlxSound.hx",579,0x7d78fc74)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(event,"event")
-		HX_STACK_LINE(580)
-		{
-			HX_STACK_LINE(580)
-			::flixel::_system::frontEnds::LogFrontEnd tmp = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(580)
-			::flixel::_system::debug::LogStyle tmp1 = ::flixel::_system::debug::LogStyle_obj::NOTICE;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(580)
-			tmp->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("Got ID3 info.","\xe4","\x89","\x00","\x73"),tmp1,null());
-		}
 		HX_STACK_LINE(581)
 		::openfl::_legacy::media::Sound tmp = this->_sound;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(581)

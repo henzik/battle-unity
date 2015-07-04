@@ -161,69 +161,116 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC4(VertexBuffer3D_obj,uploadFromByteArray,(void))
 
-Void VertexBuffer3D_obj::uploadFromVector( Array< Float > data,int startVertex,int numVertices){
+Void VertexBuffer3D_obj::uploadFromFloat32Array( ::openfl::_legacy::utils::Float32Array data,int startVertex,int numVertices){
 {
-		HX_STACK_FRAME("openfl.display3D.VertexBuffer3D","uploadFromVector",0xcf228b0e,"openfl.display3D.VertexBuffer3D.uploadFromVector","openfl/display3D/VertexBuffer3D.hx",75,0xb1ad396e)
+		HX_STACK_FRAME("openfl.display3D.VertexBuffer3D","uploadFromFloat32Array",0xa0c31ae9,"openfl.display3D.VertexBuffer3D.uploadFromFloat32Array","openfl/display3D/VertexBuffer3D.hx",65,0xb1ad396e)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(data,"data")
 		HX_STACK_ARG(startVertex,"startVertex")
 		HX_STACK_ARG(numVertices,"numVertices")
-		HX_STACK_LINE(77)
-		int tmp = this->data32PerVertex;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(77)
-		int tmp1 = (tmp * (int)4);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(77)
-		int bytesPerVertex = tmp1;		HX_STACK_VAR(bytesPerVertex,"bytesPerVertex");
-		HX_STACK_LINE(79)
+		HX_STACK_LINE(67)
 		{
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(67)
+			::openfl::_legacy::gl::GLBuffer tmp = this->glBuffer;		HX_STACK_VAR(tmp,"tmp");
+			HX_STACK_LINE(67)
+			::openfl::_legacy::gl::GLBuffer buffer = tmp;		HX_STACK_VAR(buffer,"buffer");
+			HX_STACK_LINE(67)
+			bool tmp1 = (buffer == null());		HX_STACK_VAR(tmp1,"tmp1");
+			HX_STACK_LINE(67)
+			Dynamic tmp2;		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(67)
+			if ((tmp1)){
+				HX_STACK_LINE(67)
+				tmp2 = null();
+			}
+			else{
+				HX_STACK_LINE(67)
+				tmp2 = buffer->id;
+			}
+			HX_STACK_LINE(67)
+			::openfl::_legacy::gl::GL_obj::lime_gl_bind_buffer((int)34962,tmp2);
+		}
+		HX_STACK_LINE(68)
+		{
+			HX_STACK_LINE(68)
+			::openfl::_legacy::utils::ByteArray tmp = data->getByteBuffer();		HX_STACK_VAR(tmp,"tmp");
+			HX_STACK_LINE(68)
+			int tmp1 = data->getStart();		HX_STACK_VAR(tmp1,"tmp1");
+			HX_STACK_LINE(68)
+			int tmp2 = data->getLength();		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(68)
+			::openfl::_legacy::gl::GL_obj::lime_gl_buffer_data((int)34962,tmp,tmp1,tmp2,(int)35044);
+		}
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC3(VertexBuffer3D_obj,uploadFromFloat32Array,(void))
+
+Void VertexBuffer3D_obj::uploadFromVector( Array< Float > data,int startVertex,int numVertices){
+{
+		HX_STACK_FRAME("openfl.display3D.VertexBuffer3D","uploadFromVector",0xcf228b0e,"openfl.display3D.VertexBuffer3D.uploadFromVector","openfl/display3D/VertexBuffer3D.hx",73,0xb1ad396e)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(data,"data")
+		HX_STACK_ARG(startVertex,"startVertex")
+		HX_STACK_ARG(numVertices,"numVertices")
+		HX_STACK_LINE(75)
+		int tmp = this->data32PerVertex;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(75)
+		int tmp1 = (tmp * (int)4);		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(75)
+		int bytesPerVertex = tmp1;		HX_STACK_VAR(bytesPerVertex,"bytesPerVertex");
+		HX_STACK_LINE(77)
+		{
+			HX_STACK_LINE(77)
 			::openfl::_legacy::gl::GLBuffer tmp2 = this->glBuffer;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(77)
 			::openfl::_legacy::gl::GLBuffer buffer = tmp2;		HX_STACK_VAR(buffer,"buffer");
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(77)
 			bool tmp3 = (buffer == null());		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(77)
 			Dynamic tmp4;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(77)
 			if ((tmp3)){
-				HX_STACK_LINE(79)
+				HX_STACK_LINE(77)
 				tmp4 = null();
 			}
 			else{
-				HX_STACK_LINE(79)
+				HX_STACK_LINE(77)
 				tmp4 = buffer->id;
 			}
-			HX_STACK_LINE(79)
+			HX_STACK_LINE(77)
 			::openfl::_legacy::gl::GL_obj::lime_gl_bind_buffer((int)34962,tmp4);
 		}
-		HX_STACK_LINE(81)
+		HX_STACK_LINE(79)
 		int tmp2 = numVertices;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(81)
+		HX_STACK_LINE(79)
 		int tmp3 = this->data32PerVertex;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(81)
+		HX_STACK_LINE(79)
 		int tmp4 = (tmp2 * tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(81)
+		HX_STACK_LINE(79)
 		int length = tmp4;		HX_STACK_VAR(length,"length");
-		HX_STACK_LINE(82)
+		HX_STACK_LINE(80)
 		int offset = startVertex;		HX_STACK_VAR(offset,"offset");
-		HX_STACK_LINE(83)
+		HX_STACK_LINE(81)
 		::openfl::_legacy::utils::Float32Array float32Array;		HX_STACK_VAR(float32Array,"float32Array");
-		HX_STACK_LINE(94)
+		HX_STACK_LINE(92)
 		::openfl::_legacy::utils::Float32Array tmp5 = ::openfl::_legacy::utils::Float32Array_obj::__new(data,offset,length);		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(94)
+		HX_STACK_LINE(92)
 		float32Array = tmp5;
-		HX_STACK_LINE(97)
+		HX_STACK_LINE(95)
 		{
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(95)
 			::openfl::_legacy::utils::ByteArray tmp6 = float32Array->getByteBuffer();		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(95)
 			int tmp7 = float32Array->getStart();		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(95)
 			int tmp8 = float32Array->getLength();		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(95)
 			::openfl::_legacy::gl::GL_obj::lime_gl_buffer_data((int)34962,tmp6,tmp7,tmp8,(int)35044);
 		}
-		HX_STACK_LINE(99)
+		HX_STACK_LINE(97)
 		float32Array = null();
 	}
 return null();
@@ -273,6 +320,9 @@ Dynamic VertexBuffer3D_obj::__Field(const ::String &inName,hx::PropertyAccess in
 		break;
 	case 19:
 		if (HX_FIELD_EQ(inName,"uploadFromByteArray") ) { return uploadFromByteArray_dyn(); }
+		break;
+	case 22:
+		if (HX_FIELD_EQ(inName,"uploadFromFloat32Array") ) { return uploadFromFloat32Array_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -321,6 +371,7 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("numVertices","\x5f","\x10","\x2c","\x56"),
 	HX_HCSTRING("dispose","\x9f","\x80","\x4c","\xbb"),
 	HX_HCSTRING("uploadFromByteArray","\xe6","\x17","\x1b","\xee"),
+	HX_HCSTRING("uploadFromFloat32Array","\x09","\xd7","\x7d","\xf0"),
 	HX_HCSTRING("uploadFromVector","\x2e","\x6f","\x6b","\xa8"),
 	::String(null()) };
 

@@ -19,8 +19,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -99,7 +99,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(45)
 	{
 		HX_STACK_LINE(45)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(45)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(45)
@@ -118,7 +118,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(46)
 	{
 		HX_STACK_LINE(46)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(46)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(46)
@@ -137,7 +137,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(47)
 	{
 		HX_STACK_LINE(47)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(47)
 		::flixel::util::LabelValuePair tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(47)
@@ -197,7 +197,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(48)
 		{
 			HX_STACK_LINE(48)
-			::flixel::util::FlxPool_flixel_util_LabelValuePair tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+			::flixel::util::FlxPool tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(48)
 			::flixel::util::LabelValuePair tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(48)
@@ -378,7 +378,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(49)
 		{
 			HX_STACK_LINE(49)
-			::flixel::util::FlxPool_flixel_util_LabelValuePair tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
+			::flixel::util::FlxPool tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(49)
 			::flixel::util::LabelValuePair tmp7 = tmp6->get();		HX_STACK_VAR(tmp7,"tmp7");
 			HX_STACK_LINE(49)
@@ -396,7 +396,7 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(50)
 	{
 		HX_STACK_LINE(50)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
+		::flixel::util::FlxPool tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(50)
 		::flixel::util::LabelValuePair tmp7 = tmp6->get();		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(50)

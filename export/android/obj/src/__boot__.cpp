@@ -129,6 +129,18 @@
 #ifndef INCLUDED_ValueType
 #include <ValueType.h>
 #endif
+#ifndef INCLUDED_sys_net_Socket
+#include <sys/net/Socket.h>
+#endif
+#ifndef INCLUDED_sys_net__Socket_SocketOutput
+#include <sys/net/_Socket/SocketOutput.h>
+#endif
+#ifndef INCLUDED_sys_net__Socket_SocketInput
+#include <sys/net/_Socket/SocketInput.h>
+#endif
+#ifndef INCLUDED_sys_net_Host
+#include <sys/net/Host.h>
+#endif
 #ifndef INCLUDED_openfl_utils_Endian
 #include <openfl/utils/Endian.h>
 #endif
@@ -212,9 +224,6 @@
 #endif
 #ifndef INCLUDED_openfl__legacy_text_TextField
 #include <openfl/_legacy/text/TextField.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_system_System
-#include <openfl/_legacy/system/System.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_sensors_Accelerometer
 #include <openfl/_legacy/sensors/Accelerometer.h>
@@ -342,9 +351,6 @@
 #ifndef INCLUDED_flixel_ui_FlxButton
 #include <flixel/ui/FlxButton.h>
 #endif
-#ifndef INCLUDED_flixel_ui_FlxBar
-#include <flixel/ui/FlxBar.h>
-#endif
 #ifndef INCLUDED_flixel_tweens_FlxEase
 #include <flixel/tweens/FlxEase.h>
 #endif
@@ -378,86 +384,11 @@
 #ifndef INCLUDED_flixel_system_debug__Window_GraphicWindowHandle
 #include <flixel/system/debug/_Window/GraphicWindowHandle.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicStop
-#include <flixel/system/debug/_VCR/GraphicStop.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicStep
-#include <flixel/system/debug/_VCR/GraphicStep.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicRestart
-#include <flixel/system/debug/_VCR/GraphicRestart.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicRecordOn
-#include <flixel/system/debug/_VCR/GraphicRecordOn.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicRecordOff
-#include <flixel/system/debug/_VCR/GraphicRecordOff.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicPause
-#include <flixel/system/debug/_VCR/GraphicPause.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicOpen
-#include <flixel/system/debug/_VCR/GraphicOpen.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Tracker
-#include <flixel/system/debug/Tracker.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Watch
-#include <flixel/system/debug/Watch.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_StatsGraph
-#include <flixel/system/debug/StatsGraph.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Stats
-#include <flixel/system/debug/Stats.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__Stats_GraphicMaximizeButton
-#include <flixel/system/debug/_Stats/GraphicMaximizeButton.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__Stats_GraphicMinimizeButton
-#include <flixel/system/debug/_Stats/GraphicMinimizeButton.h>
+#ifndef INCLUDED_flixel_system_debug_Window
+#include <flixel/system/debug/Window.h>
 #endif
 #ifndef INCLUDED_flixel_system_debug_LogStyle
 #include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Log
-#include <flixel/system/debug/Log.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicArrowRight
-#include <flixel/system/debug/GraphicArrowRight.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicArrowLeft
-#include <flixel/system/debug/GraphicArrowLeft.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicConsole
-#include <flixel/system/debug/GraphicConsole.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicBitmapLog
-#include <flixel/system/debug/GraphicBitmapLog.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicWatch
-#include <flixel/system/debug/GraphicWatch.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicStats
-#include <flixel/system/debug/GraphicStats.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicLog
-#include <flixel/system/debug/GraphicLog.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__FlxDebugger_GraphicDrawDebug
-#include <flixel/system/debug/_FlxDebugger/GraphicDrawDebug.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__FlxDebugger_GraphicFlixel
-#include <flixel/system/debug/_FlxDebugger/GraphicFlixel.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Console
-#include <flixel/system/debug/Console.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Window
-#include <flixel/system/debug/Window.h>
 #endif
 #ifndef INCLUDED_flixel_system_FlxQuadTree
 #include <flixel/system/FlxQuadTree.h>
@@ -467,18 +398,6 @@
 #endif
 #ifndef INCLUDED_flixel_system_FlxAssets
 #include <flixel/system/FlxAssets.h>
-#endif
-#ifndef INCLUDED_flixel_system_GraphicLogo
-#include <flixel/system/GraphicLogo.h>
-#endif
-#ifndef INCLUDED_flixel_system__FlxAssets_FontDebugger
-#include <flixel/system/_FlxAssets/FontDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system__FlxAssets_FontDefault
-#include <flixel/system/_FlxAssets/FontDefault.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_text_Font
-#include <openfl/_legacy/text/Font.h>
 #endif
 #ifndef INCLUDED_flixel_input_touch_FlxTouchManager
 #include <flixel/input/touch/FlxTouchManager.h>
@@ -546,14 +465,14 @@
 #ifndef INCLUDED_flixel_FlxCamera
 #include <flixel/FlxCamera.h>
 #endif
-#ifndef INCLUDED_flixel_FlxBasic
-#include <flixel/FlxBasic.h>
-#endif
 #ifndef INCLUDED_Xml
 #include <Xml.h>
 #endif
 #ifndef INCLUDED_EReg
 #include <EReg.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_Font
+#include <openfl/_legacy/text/Font.h>
 #endif
 #ifndef INCLUDED_AssetPaths
 #include <AssetPaths.h>
@@ -572,6 +491,9 @@
 #endif
 #ifndef INCLUDED_sys_io__Process_Stdout
 #include <sys/io/_Process/Stdout.h>
+#endif
+#ifndef INCLUDED_sys_io__Process_Stdin
+#include <sys/io/_Process/Stdin.h>
 #endif
 #ifndef INCLUDED_sys_io_Process
 #include <sys/io/Process.h>
@@ -822,26 +744,14 @@
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignalHandler
 #include <flixel/util/_FlxSignal/FlxSignalHandler.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool
-#include <flixel/util/FlxPool.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxCallbackPoint
 #include <flixel/util/FlxCallbackPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxGradient
-#include <flixel/util/FlxGradient.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxDestroyUtil
 #include <flixel/util/FlxDestroyUtil.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxColorUtil
 #include <flixel/util/FlxColorUtil.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxBitmapUtil
-#include <flixel/util/FlxBitmapUtil.h>
 #endif
 #ifndef INCLUDED_flixel_util__FlxBitmapDataPool_FlxBitmapDataPoolNode
 #include <flixel/util/_FlxBitmapDataPool/FlxBitmapDataPoolNode.h>
@@ -951,26 +861,17 @@
 #ifndef INCLUDED_flixel_system_layer_DrawStackItem
 #include <flixel/system/layer/DrawStackItem.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_WatchEntry
-#include <flixel/system/debug/WatchEntry.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_VCR
-#include <flixel/system/debug/VCR.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_TrackerProfile
 #include <flixel/system/debug/TrackerProfile.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_DebuggerUtil
-#include <flixel/system/debug/DebuggerUtil.h>
+#ifndef INCLUDED_flixel_system_debug_Tracker
+#include <flixel/system/debug/Tracker.h>
+#endif
+#ifndef INCLUDED_flixel_system_debug_Watch
+#include <flixel/system/debug/Watch.h>
 #endif
 #ifndef INCLUDED_flixel_system_debug_ConsoleUtil
 #include <flixel/system/debug/ConsoleUtil.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_ConsoleCommands
-#include <flixel/system/debug/ConsoleCommands.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_BitmapLog
-#include <flixel/system/debug/BitmapLog.h>
 #endif
 #ifndef INCLUDED_flixel_system_FlxSplash
 #include <flixel/system/FlxSplash.h>
@@ -1017,9 +918,6 @@
 #ifndef INCLUDED_flixel_group_FlxTypedSpriteGroup
 #include <flixel/group/FlxTypedSpriteGroup.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_effects_FlxFlicker
-#include <flixel/util/FlxPool_flixel_effects_FlxFlicker.h>
-#endif
 #ifndef INCLUDED_flixel_animation_FlxAnimation
 #include <flixel/animation/FlxAnimation.h>
 #endif
@@ -1041,17 +939,11 @@
 #ifndef INCLUDED_flixel_FlxGame
 #include <flixel/FlxGame.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_WatchFrontEnd
 #include <flixel/system/frontEnds/WatchFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_VCRFrontEnd
 #include <flixel/system/frontEnds/VCRFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_group_FlxTypedGroup
-#include <flixel/group/FlxTypedGroup.h>
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
@@ -1107,14 +999,23 @@
 #ifndef INCLUDED_flixel_system_scaleModes_RatioScaleMode
 #include <flixel/system/scaleModes/RatioScaleMode.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
 #ifndef INCLUDED_flixel_system_FlxVersion
 #include <flixel/system/FlxVersion.h>
+#endif
+#ifndef INCLUDED_entity_Background
+#include <entity/Background.h>
+#endif
+#ifndef INCLUDED_flixel_group_FlxTypedGroup
+#include <flixel/group/FlxTypedGroup.h>
+#endif
+#ifndef INCLUDED_flixel_FlxBasic
+#include <flixel/FlxBasic.h>
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
@@ -1124,9 +1025,6 @@
 #endif
 #ifndef INCLUDED_cpp_vm_Mutex
 #include <cpp/vm/Mutex.h>
-#endif
-#ifndef INCLUDED_cpp_vm_Gc
-#include <cpp/vm/Gc.h>
 #endif
 #ifndef INCLUDED_Type
 #include <Type.h>
@@ -1149,6 +1047,12 @@
 #ifndef INCLUDED_Lambda
 #include <Lambda.h>
 #endif
+#ifndef INCLUDED___ASSET__assets_fonts_arial_ttf
+#include <__ASSET__assets_fonts_arial_ttf.h>
+#endif
+#ifndef INCLUDED___ASSET__assets_fonts_nokiafc22_ttf
+#include <__ASSET__assets_fonts_nokiafc22_ttf.h>
+#endif
 #ifndef INCLUDED_DefaultAssetLibrary
 #include <DefaultAssetLibrary.h>
 #endif
@@ -1157,6 +1061,9 @@
 #endif
 #ifndef INCLUDED_Date
 #include <Date.h>
+#endif
+#ifndef INCLUDED_ClientConnectionTest
+#include <ClientConnectionTest.h>
 #endif
 #ifndef INCLUDED_DocumentClass
 #include <DocumentClass.h>
@@ -1175,9 +1082,6 @@
 #endif
 #ifndef INCLUDED_haxe_io_Bytes
 #include <haxe/io/Bytes.h>
-#endif
-#ifndef INCLUDED_sys_io__Process_Stdin
-#include <sys/io/_Process/Stdin.h>
 #endif
 #ifndef INCLUDED_haxe_io_Output
 #include <haxe/io/Output.h>
@@ -1247,6 +1151,10 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::debug::DebuggerLayout_obj::__register();
 ::flixel::_system::debug::ButtonAlignment_obj::__register();
 ::ValueType_obj::__register();
+::sys::net::Socket_obj::__register();
+::sys::net::_Socket::SocketOutput_obj::__register();
+::sys::net::_Socket::SocketInput_obj::__register();
+::sys::net::Host_obj::__register();
 ::openfl::utils::Endian_obj::__register();
 ::openfl::_system::SecurityDomain_obj::__register();
 ::openfl::_system::ApplicationDomain_obj::__register();
@@ -1275,7 +1183,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_legacy::ui::Keyboard_obj::__register();
 ::openfl::_legacy::text::TextFormatAlign_obj::__register();
 ::openfl::_legacy::text::TextField_obj::__register();
-::openfl::_legacy::_system::System_obj::__register();
 ::openfl::_legacy::sensors::Accelerometer_obj::__register();
 ::openfl::_legacy::net::URLRequestMethod_obj::__register();
 ::openfl::_legacy::net::URLRequest_obj::__register();
@@ -1318,7 +1225,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::util::FlxAngle_obj::__register();
 ::flixel::ui::_FlxTypedButton::GraphicButton_obj::__register();
 ::flixel::ui::FlxButton_obj::__register();
-::flixel::ui::FlxBar_obj::__register();
 ::flixel::tweens::FlxEase_obj::__register();
 ::flixel::tile::FlxTilemap_obj::__register();
 ::flixel::tile::GraphicAutoAlt_obj::__register();
@@ -1330,40 +1236,11 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_legacy::display::Tilesheet_obj::__register();
 ::flixel::_system::debug::_Window::GraphicCloseButton_obj::__register();
 ::flixel::_system::debug::_Window::GraphicWindowHandle_obj::__register();
-::flixel::_system::debug::_VCR::GraphicStop_obj::__register();
-::flixel::_system::debug::_VCR::GraphicStep_obj::__register();
-::flixel::_system::debug::_VCR::GraphicRestart_obj::__register();
-::flixel::_system::debug::_VCR::GraphicRecordOn_obj::__register();
-::flixel::_system::debug::_VCR::GraphicRecordOff_obj::__register();
-::flixel::_system::debug::_VCR::GraphicPause_obj::__register();
-::flixel::_system::debug::_VCR::GraphicOpen_obj::__register();
-::flixel::_system::debug::Tracker_obj::__register();
-::flixel::_system::debug::Watch_obj::__register();
-::flixel::_system::debug::StatsGraph_obj::__register();
-::flixel::_system::debug::Stats_obj::__register();
-::flixel::_system::debug::_Stats::GraphicMaximizeButton_obj::__register();
-::flixel::_system::debug::_Stats::GraphicMinimizeButton_obj::__register();
-::flixel::_system::debug::LogStyle_obj::__register();
-::flixel::_system::debug::Log_obj::__register();
-::flixel::_system::debug::FlxDebugger_obj::__register();
-::flixel::_system::debug::GraphicArrowRight_obj::__register();
-::flixel::_system::debug::GraphicArrowLeft_obj::__register();
-::flixel::_system::debug::GraphicConsole_obj::__register();
-::flixel::_system::debug::GraphicBitmapLog_obj::__register();
-::flixel::_system::debug::GraphicWatch_obj::__register();
-::flixel::_system::debug::GraphicStats_obj::__register();
-::flixel::_system::debug::GraphicLog_obj::__register();
-::flixel::_system::debug::_FlxDebugger::GraphicDrawDebug_obj::__register();
-::flixel::_system::debug::_FlxDebugger::GraphicFlixel_obj::__register();
-::flixel::_system::debug::Console_obj::__register();
 ::flixel::_system::debug::Window_obj::__register();
+::flixel::_system::debug::LogStyle_obj::__register();
 ::flixel::_system::FlxQuadTree_obj::__register();
 ::flixel::_system::FlxList_obj::__register();
 ::flixel::_system::FlxAssets_obj::__register();
-::flixel::_system::GraphicLogo_obj::__register();
-::flixel::_system::_FlxAssets::FontDebugger_obj::__register();
-::flixel::_system::_FlxAssets::FontDefault_obj::__register();
-::openfl::_legacy::text::Font_obj::__register();
 ::flixel::input::touch::FlxTouchManager_obj::__register();
 ::flixel::input::mouse::FlxMouseButton_obj::__register();
 ::flixel::input::mouse::_FlxMouse::GraphicCursor_obj::__register();
@@ -1386,15 +1263,16 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::scaleModes::BaseScaleMode_obj::__register();
 ::flixel::util::FlxPoint_obj::__register();
 ::flixel::FlxCamera_obj::__register();
-::flixel::FlxBasic_obj::__register();
 ::Xml_obj::__register();
 ::EReg_obj::__register();
+::openfl::_legacy::text::Font_obj::__register();
 ::AssetPaths_obj::__register();
 ::openfl::_legacy::display::DisplayObjectContainer_obj::__register();
 ::openfl::_legacy::display::InteractiveObject_obj::__register();
 ::openfl::_legacy::display::DisplayObject_obj::__register();
 ::openfl::_legacy::Lib_obj::__register();
 ::sys::io::_Process::Stdout_obj::__register();
+::sys::io::_Process::Stdin_obj::__register();
 ::sys::io::Process_obj::__register();
 ::Sys_obj::__register();
 ::states::PlayState_obj::__register();
@@ -1478,13 +1356,9 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::util::_FlxSignal::FlxSignal0_obj::__register();
 ::flixel::util::_FlxSignal::FlxSignalBase_obj::__register();
 ::flixel::util::_FlxSignal::FlxSignalHandler_obj::__register();
-::flixel::util::FlxPool_flixel_util_LabelValuePair_obj::__register();
-::flixel::util::FlxPool_obj::__register();
 ::flixel::util::FlxCallbackPoint_obj::__register();
-::flixel::util::FlxGradient_obj::__register();
 ::flixel::util::FlxDestroyUtil_obj::__register();
 ::flixel::util::FlxColorUtil_obj::__register();
-::flixel::util::FlxBitmapUtil_obj::__register();
 ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode_obj::__register();
 ::flixel::util::FlxArrayUtil_obj::__register();
 ::flixel::ui::_FlxTypedButton::FlxButtonEvent_obj::__register();
@@ -1521,13 +1395,10 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::layer::TileSheetData_obj::__register();
 ::flixel::_system::layer::Region_obj::__register();
 ::flixel::_system::layer::DrawStackItem_obj::__register();
-::flixel::_system::debug::WatchEntry_obj::__register();
-::flixel::_system::debug::VCR_obj::__register();
 ::flixel::_system::debug::TrackerProfile_obj::__register();
-::flixel::_system::debug::DebuggerUtil_obj::__register();
+::flixel::_system::debug::Tracker_obj::__register();
+::flixel::_system::debug::Watch_obj::__register();
 ::flixel::_system::debug::ConsoleUtil_obj::__register();
-::flixel::_system::debug::ConsoleCommands_obj::__register();
-::flixel::_system::debug::BitmapLog_obj::__register();
 ::flixel::_system::FlxSplash_obj::__register();
 ::flixel::_system::FlxSound_obj::__register();
 ::flixel::_system::FlxBGSprite_obj::__register();
@@ -1543,7 +1414,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::group::FlxTypedGroupIterator_obj::__register();
 ::flixel::group::FlxSpriteGroup_obj::__register();
 ::flixel::group::FlxTypedSpriteGroup_obj::__register();
-::flixel::util::FlxPool_flixel_effects_FlxFlicker_obj::__register();
 ::flixel::animation::FlxAnimation_obj::__register();
 ::flixel::animation::FlxBaseAnimation_obj::__register();
 ::flixel::FlxSubState_obj::__register();
@@ -1551,10 +1421,8 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::group::FlxGroup_obj::__register();
 ::flixel::FlxSprite_obj::__register();
 ::flixel::FlxGame_obj::__register();
-::flixel::util::FlxPool_flixel_util_FlxRect_obj::__register();
 ::flixel::_system::frontEnds::WatchFrontEnd_obj::__register();
 ::flixel::_system::frontEnds::VCRFrontEnd_obj::__register();
-::flixel::group::FlxTypedGroup_obj::__register();
 ::flixel::_system::frontEnds::SoundFrontEnd_obj::__register();
 ::flixel::_system::frontEnds::SignalFrontEnd_obj::__register();
 ::flixel::plugin::TweenManager_obj::__register();
@@ -1573,13 +1441,15 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::frontEnds::BitmapLogFrontEnd_obj::__register();
 ::flixel::_system::frontEnds::BitmapFrontEnd_obj::__register();
 ::flixel::_system::scaleModes::RatioScaleMode_obj::__register();
-::flixel::util::FlxPool_flixel_util_FlxPoint_obj::__register();
+::flixel::util::FlxPool_obj::__register();
 ::flixel::interfaces::IFlxPooled_obj::__register();
 ::flixel::_system::FlxVersion_obj::__register();
+::entity::Background_obj::__register();
+::flixel::group::FlxTypedGroup_obj::__register();
+::flixel::FlxBasic_obj::__register();
 ::flixel::interfaces::IFlxDestroyable_obj::__register();
 ::cpp::vm::Thread_obj::__register();
 ::cpp::vm::Mutex_obj::__register();
-::cpp::vm::Gc_obj::__register();
 ::Type_obj::__register();
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
@@ -1587,16 +1457,18 @@ hx::RegisterResources( hx::GetResources() );
 ::_List::ListIterator_obj::__register();
 ::List_obj::__register();
 ::Lambda_obj::__register();
+::__ASSET__assets_fonts_arial_ttf_obj::__register();
+::__ASSET__assets_fonts_nokiafc22_ttf_obj::__register();
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::_legacy::AssetLibrary_obj::__register();
 ::Date_obj::__register();
+::ClientConnectionTest_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::openfl::_legacy::display::Sprite_obj::__register();
 ::Std_obj::__register();
 ::haxe::io::Input_obj::__register();
 ::haxe::io::Bytes_obj::__register();
-::sys::io::_Process::Stdin_obj::__register();
 ::haxe::io::Output_obj::__register();
 ::cpp::Lib_obj::__register();
 ::openfl::_legacy::display::IBitmapDrawable_obj::__register();
@@ -1648,18 +1520,20 @@ hx::RegisterResources( hx::GetResources() );
 ::ValueType_obj::__boot();
 ::openfl::_legacy::ui::Multitouch_obj::__init__();
 ::openfl::_legacy::utils::ByteArray_obj::__init__();
+::sys::net::Host_obj::__init__();
 ::EReg_obj::__boot();
 ::haxe::Log_obj::__boot();
 ::Sys_obj::__boot();
 ::sys::io::Process_obj::__boot();
+::sys::io::_Process::Stdin_obj::__boot();
 ::sys::io::_Process::Stdout_obj::__boot();
 ::openfl::_legacy::Lib_obj::__boot();
 ::openfl::_legacy::display::DisplayObject_obj::__boot();
 ::openfl::_legacy::display::InteractiveObject_obj::__boot();
 ::openfl::_legacy::display::DisplayObjectContainer_obj::__boot();
 ::AssetPaths_obj::__boot();
+::openfl::_legacy::text::Font_obj::__boot();
 ::Xml_obj::__boot();
-::flixel::FlxBasic_obj::__boot();
 ::flixel::FlxCamera_obj::__boot();
 ::flixel::util::FlxPoint_obj::__boot();
 ::flixel::_system::scaleModes::BaseScaleMode_obj::__boot();
@@ -1681,40 +1555,11 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::input::mouse::_FlxMouse::GraphicCursor_obj::__boot();
 ::flixel::input::mouse::FlxMouseButton_obj::__boot();
 ::flixel::input::touch::FlxTouchManager_obj::__boot();
-::openfl::_legacy::text::Font_obj::__boot();
-::flixel::_system::_FlxAssets::FontDefault_obj::__boot();
-::flixel::_system::_FlxAssets::FontDebugger_obj::__boot();
-::flixel::_system::GraphicLogo_obj::__boot();
 ::flixel::_system::FlxAssets_obj::__boot();
 ::flixel::_system::FlxList_obj::__boot();
 ::flixel::_system::FlxQuadTree_obj::__boot();
-::flixel::_system::debug::Window_obj::__boot();
-::flixel::_system::debug::Console_obj::__boot();
-::flixel::_system::debug::_FlxDebugger::GraphicFlixel_obj::__boot();
-::flixel::_system::debug::_FlxDebugger::GraphicDrawDebug_obj::__boot();
-::flixel::_system::debug::GraphicLog_obj::__boot();
-::flixel::_system::debug::GraphicStats_obj::__boot();
-::flixel::_system::debug::GraphicWatch_obj::__boot();
-::flixel::_system::debug::GraphicBitmapLog_obj::__boot();
-::flixel::_system::debug::GraphicConsole_obj::__boot();
-::flixel::_system::debug::GraphicArrowLeft_obj::__boot();
-::flixel::_system::debug::GraphicArrowRight_obj::__boot();
-::flixel::_system::debug::FlxDebugger_obj::__boot();
-::flixel::_system::debug::Log_obj::__boot();
 ::flixel::_system::debug::LogStyle_obj::__boot();
-::flixel::_system::debug::_Stats::GraphicMinimizeButton_obj::__boot();
-::flixel::_system::debug::_Stats::GraphicMaximizeButton_obj::__boot();
-::flixel::_system::debug::Stats_obj::__boot();
-::flixel::_system::debug::StatsGraph_obj::__boot();
-::flixel::_system::debug::Watch_obj::__boot();
-::flixel::_system::debug::Tracker_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicOpen_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicPause_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicRecordOff_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicRecordOn_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicRestart_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicStep_obj::__boot();
-::flixel::_system::debug::_VCR::GraphicStop_obj::__boot();
+::flixel::_system::debug::Window_obj::__boot();
 ::flixel::_system::debug::_Window::GraphicWindowHandle_obj::__boot();
 ::flixel::_system::debug::_Window::GraphicCloseButton_obj::__boot();
 ::openfl::_legacy::display::Tilesheet_obj::__boot();
@@ -1726,7 +1571,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::tile::GraphicAutoAlt_obj::__boot();
 ::flixel::tile::FlxTilemap_obj::__boot();
 ::flixel::tweens::FlxEase_obj::__boot();
-::flixel::ui::FlxBar_obj::__boot();
 ::flixel::ui::FlxButton_obj::__boot();
 ::flixel::ui::_FlxTypedButton::GraphicButton_obj::__boot();
 ::flixel::util::FlxAngle_obj::__boot();
@@ -1769,7 +1613,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_legacy::net::URLRequest_obj::__boot();
 ::openfl::_legacy::net::URLRequestMethod_obj::__boot();
 ::openfl::_legacy::sensors::Accelerometer_obj::__boot();
-::openfl::_legacy::_system::System_obj::__boot();
 ::openfl::_legacy::text::TextField_obj::__boot();
 ::openfl::_legacy::text::TextFormatAlign_obj::__boot();
 ::openfl::_legacy::ui::Keyboard_obj::__boot();
@@ -1798,5 +1641,9 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_system::ApplicationDomain_obj::__boot();
 ::openfl::_system::SecurityDomain_obj::__boot();
 ::openfl::utils::Endian_obj::__boot();
+::sys::net::Host_obj::__boot();
+::sys::net::_Socket::SocketInput_obj::__boot();
+::sys::net::_Socket::SocketOutput_obj::__boot();
+::sys::net::Socket_obj::__boot();
 }
 

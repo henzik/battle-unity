@@ -13,9 +13,6 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
 #ifndef INCLUDED_flixel_group_FlxTypedGroup
 #include <flixel/group/FlxTypedGroup.h>
 #endif
@@ -24,9 +21,6 @@
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxArrayUtil
 #include <flixel/util/FlxArrayUtil.h>
@@ -271,10 +265,6 @@ Dynamic FlxTypedGroup_obj::add( Dynamic Object){
 	bool tmp = (Object == null());		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(126)
 	if ((tmp)){
-		HX_STACK_LINE(128)
-		::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(128)
-		tmp1->__Field(HX_HCSTRING("warn","\x46","\x62","\xf2","\x4e"), hx::paccDynamic )(HX_HCSTRING("Cannot add a `null` object to a FlxGroup.","\xf2","\xf4","\xc0","\x70"));
 		HX_STACK_LINE(129)
 		return null();
 	}

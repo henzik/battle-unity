@@ -10,9 +10,9 @@ import flixel.group.FlxTypedGroup;
  */
 class Background extends FlxTypedGroup<FlxSprite> {
 
-	var container = null;
-	var masterX = 0.0;
-	var resetTimer = 0;
+	private var container = null;
+	private var masterX = 0.0;
+	private var resetTimer = 0;
 
 	public function new() {
 		super(100);

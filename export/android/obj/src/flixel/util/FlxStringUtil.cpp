@@ -25,8 +25,8 @@
 #ifndef INCLUDED_flixel_util_FlxMath
 #include <flixel/util/FlxMath.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -1407,7 +1407,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,imageToCSV,return )
 			HX_STACK_LINE(545)
 			{
 				HX_STACK_LINE(545)
-				::flixel::util::FlxPool_flixel_util_LabelValuePair tmp9 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
+				::flixel::util::FlxPool tmp9 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(545)
 				::flixel::util::LabelValuePair tmp10 = pair;		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(545)

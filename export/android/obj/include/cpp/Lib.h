@@ -35,6 +35,9 @@ class HXCPP_CLASS_ATTRIBUTES  Lib_obj : public hx::Object{
 		static Dynamic loadLazy( ::String lib,::String prim,int nargs);
 		static Dynamic loadLazy_dyn();
 
+		static Void rethrow( Dynamic inExp);
+		static Dynamic rethrow_dyn();
+
 };
 
 } // end namespace cpp

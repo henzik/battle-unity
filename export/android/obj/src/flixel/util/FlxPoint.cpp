@@ -13,11 +13,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
@@ -98,8 +95,10 @@ Void FlxPoint_obj::put( ){
 			HX_STACK_LINE(63)
 			this->_inPool = true;
 			HX_STACK_LINE(64)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(64)
+			this->_weak = false;
+			HX_STACK_LINE(65)
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(65)
 			tmp2->putUnsafe(hx::ObjectPtr<OBJ_>(this));
 		}
 	}
@@ -111,13 +110,13 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,put,(void))
 
 Void FlxPoint_obj::putWeak( ){
 {
-		HX_STACK_FRAME("flixel.util.FlxPoint","putWeak",0xec9f9371,"flixel.util.FlxPoint.putWeak","flixel/util/FlxPoint.hx",72,0xb59f5266)
+		HX_STACK_FRAME("flixel.util.FlxPoint","putWeak",0xec9f9371,"flixel.util.FlxPoint.putWeak","flixel/util/FlxPoint.hx",73,0xb59f5266)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(73)
+		HX_STACK_LINE(74)
 		bool tmp = this->_weak;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(73)
+		HX_STACK_LINE(74)
 		if ((tmp)){
-			HX_STACK_LINE(75)
+			HX_STACK_LINE(76)
 			this->put();
 		}
 	}
@@ -130,20 +129,20 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,putWeak,(void))
 ::flixel::util::FlxPoint FlxPoint_obj::set( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
-	HX_STACK_FRAME("flixel.util.FlxPoint","set",0xddaca32c,"flixel.util.FlxPoint.set","flixel/util/FlxPoint.hx",87,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","set",0xddaca32c,"flixel.util.FlxPoint.set","flixel/util/FlxPoint.hx",88,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
 {
-		HX_STACK_LINE(88)
+		HX_STACK_LINE(89)
 		Float tmp = X;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(88)
+		HX_STACK_LINE(89)
 		this->set_x(tmp);
-		HX_STACK_LINE(89)
-		Float tmp1 = Y;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(89)
-		this->set_y(tmp1);
 		HX_STACK_LINE(90)
+		Float tmp1 = Y;		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(90)
+		this->set_y(tmp1);
+		HX_STACK_LINE(91)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
@@ -154,30 +153,30 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxPoint_obj,set,return )
 ::flixel::util::FlxPoint FlxPoint_obj::add( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
-	HX_STACK_FRAME("flixel.util.FlxPoint","add",0xdd9ef9ab,"flixel.util.FlxPoint.add","flixel/util/FlxPoint.hx",101,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","add",0xdd9ef9ab,"flixel.util.FlxPoint.add","flixel/util/FlxPoint.hx",102,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
 {
-		HX_STACK_LINE(102)
-		{
-			HX_STACK_LINE(102)
-			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(102)
-			Float tmp = (_g->x + X);		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(102)
-			_g->set_x(tmp);
-		}
 		HX_STACK_LINE(103)
 		{
 			HX_STACK_LINE(103)
 			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(103)
-			Float tmp = (_g->y + Y);		HX_STACK_VAR(tmp,"tmp");
+			Float tmp = (_g->x + X);		HX_STACK_VAR(tmp,"tmp");
 			HX_STACK_LINE(103)
-			_g->set_y(tmp);
+			_g->set_x(tmp);
 		}
 		HX_STACK_LINE(104)
+		{
+			HX_STACK_LINE(104)
+			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(104)
+			Float tmp = (_g->y + Y);		HX_STACK_VAR(tmp,"tmp");
+			HX_STACK_LINE(104)
+			_g->set_y(tmp);
+		}
+		HX_STACK_LINE(105)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
@@ -186,38 +185,38 @@ Float Y = __o_Y.Default(0);
 HX_DEFINE_DYNAMIC_FUNC2(FlxPoint_obj,add,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::addPoint( ::flixel::util::FlxPoint point){
-	HX_STACK_FRAME("flixel.util.FlxPoint","addPoint",0x9b3e3ea5,"flixel.util.FlxPoint.addPoint","flixel/util/FlxPoint.hx",114,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","addPoint",0x9b3e3ea5,"flixel.util.FlxPoint.addPoint","flixel/util/FlxPoint.hx",115,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(point,"point")
-	HX_STACK_LINE(115)
-	{
-		HX_STACK_LINE(115)
-		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(115)
-		Float tmp = (_g->x + point->x);		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(115)
-		_g->set_x(tmp);
-	}
 	HX_STACK_LINE(116)
 	{
 		HX_STACK_LINE(116)
 		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(116)
-		Float tmp = (_g->y + point->y);		HX_STACK_VAR(tmp,"tmp");
+		Float tmp = (_g->x + point->x);		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(116)
-		_g->set_y(tmp);
+		_g->set_x(tmp);
 	}
 	HX_STACK_LINE(117)
 	{
 		HX_STACK_LINE(117)
-		bool tmp = point->_weak;		HX_STACK_VAR(tmp,"tmp");
+		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(117)
+		Float tmp = (_g->y + point->y);		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(117)
+		_g->set_y(tmp);
+	}
+	HX_STACK_LINE(118)
+	{
+		HX_STACK_LINE(118)
+		bool tmp = point->_weak;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(118)
 		if ((tmp)){
-			HX_STACK_LINE(117)
+			HX_STACK_LINE(118)
 			point->put();
 		}
 	}
-	HX_STACK_LINE(118)
+	HX_STACK_LINE(119)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -227,30 +226,30 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,addPoint,return )
 ::flixel::util::FlxPoint FlxPoint_obj::subtract( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
-	HX_STACK_FRAME("flixel.util.FlxPoint","subtract",0x5362d94a,"flixel.util.FlxPoint.subtract","flixel/util/FlxPoint.hx",129,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","subtract",0x5362d94a,"flixel.util.FlxPoint.subtract","flixel/util/FlxPoint.hx",130,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
 {
-		HX_STACK_LINE(130)
-		{
-			HX_STACK_LINE(130)
-			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(130)
-			Float tmp = (_g->x - X);		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(130)
-			_g->set_x(tmp);
-		}
 		HX_STACK_LINE(131)
 		{
 			HX_STACK_LINE(131)
 			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(131)
-			Float tmp = (_g->y - Y);		HX_STACK_VAR(tmp,"tmp");
+			Float tmp = (_g->x - X);		HX_STACK_VAR(tmp,"tmp");
 			HX_STACK_LINE(131)
-			_g->set_y(tmp);
+			_g->set_x(tmp);
 		}
 		HX_STACK_LINE(132)
+		{
+			HX_STACK_LINE(132)
+			::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
+			HX_STACK_LINE(132)
+			Float tmp = (_g->y - Y);		HX_STACK_VAR(tmp,"tmp");
+			HX_STACK_LINE(132)
+			_g->set_y(tmp);
+		}
+		HX_STACK_LINE(133)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
@@ -259,38 +258,38 @@ Float Y = __o_Y.Default(0);
 HX_DEFINE_DYNAMIC_FUNC2(FlxPoint_obj,subtract,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::subtractPoint( ::flixel::util::FlxPoint point){
-	HX_STACK_FRAME("flixel.util.FlxPoint","subtractPoint",0x8ad05ea6,"flixel.util.FlxPoint.subtractPoint","flixel/util/FlxPoint.hx",142,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","subtractPoint",0x8ad05ea6,"flixel.util.FlxPoint.subtractPoint","flixel/util/FlxPoint.hx",143,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(point,"point")
-	HX_STACK_LINE(143)
-	{
-		HX_STACK_LINE(143)
-		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(143)
-		Float tmp = (_g->x - point->x);		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(143)
-		_g->set_x(tmp);
-	}
 	HX_STACK_LINE(144)
 	{
 		HX_STACK_LINE(144)
 		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(144)
-		Float tmp = (_g->y - point->y);		HX_STACK_VAR(tmp,"tmp");
+		Float tmp = (_g->x - point->x);		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(144)
-		_g->set_y(tmp);
+		_g->set_x(tmp);
 	}
 	HX_STACK_LINE(145)
 	{
 		HX_STACK_LINE(145)
-		bool tmp = point->_weak;		HX_STACK_VAR(tmp,"tmp");
+		::flixel::util::FlxPoint _g = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(145)
+		Float tmp = (_g->y - point->y);		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(145)
+		_g->set_y(tmp);
+	}
+	HX_STACK_LINE(146)
+	{
+		HX_STACK_LINE(146)
+		bool tmp = point->_weak;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(146)
 		if ((tmp)){
-			HX_STACK_LINE(145)
+			HX_STACK_LINE(146)
 			point->put();
 		}
 	}
-	HX_STACK_LINE(146)
+	HX_STACK_LINE(147)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -298,18 +297,18 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxPoint_obj,subtract,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,subtractPoint,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::copyFrom( ::flixel::util::FlxPoint point){
-	HX_STACK_FRAME("flixel.util.FlxPoint","copyFrom",0x23b26ff5,"flixel.util.FlxPoint.copyFrom","flixel/util/FlxPoint.hx",156,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","copyFrom",0x23b26ff5,"flixel.util.FlxPoint.copyFrom","flixel/util/FlxPoint.hx",157,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(point,"point")
-	HX_STACK_LINE(157)
+	HX_STACK_LINE(158)
 	Float tmp = point->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(157)
+	HX_STACK_LINE(158)
 	this->set_x(tmp);
-	HX_STACK_LINE(158)
-	Float tmp1 = point->y;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(158)
-	this->set_y(tmp1);
 	HX_STACK_LINE(159)
+	Float tmp1 = point->y;		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(159)
+	this->set_y(tmp1);
+	HX_STACK_LINE(160)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -317,52 +316,52 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,subtractPoint,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyFrom,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::copyTo( ::flixel::util::FlxPoint point){
-	HX_STACK_FRAME("flixel.util.FlxPoint","copyTo",0x2ab3e746,"flixel.util.FlxPoint.copyTo","flixel/util/FlxPoint.hx",169,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","copyTo",0x2ab3e746,"flixel.util.FlxPoint.copyTo","flixel/util/FlxPoint.hx",170,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(point,"point")
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(171)
 	bool tmp = (point == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(171)
 	if ((tmp)){
-		HX_STACK_LINE(172)
+		HX_STACK_LINE(173)
 		::flixel::util::FlxPoint tmp1;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(172)
+		HX_STACK_LINE(173)
 		{
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			Float X = (int)0;		HX_STACK_VAR(X,"X");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
-			HX_STACK_LINE(172)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(173)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			Float tmp4 = X;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			Float tmp5 = Y;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			::flixel::util::FlxPoint tmp6 = tmp3->set(tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			::flixel::util::FlxPoint point1 = tmp6;		HX_STACK_VAR(point1,"point1");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			point1->_inPool = false;
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(173)
 			tmp1 = point1;
 		}
-		HX_STACK_LINE(172)
+		HX_STACK_LINE(173)
 		point = tmp1;
 	}
-	HX_STACK_LINE(174)
+	HX_STACK_LINE(175)
 	Float tmp1 = this->x;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(174)
+	HX_STACK_LINE(175)
 	point->set_x(tmp1);
-	HX_STACK_LINE(175)
+	HX_STACK_LINE(176)
 	Float tmp2 = this->y;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(175)
+	HX_STACK_LINE(176)
 	point->set_y(tmp2);
-	HX_STACK_LINE(176)
+	HX_STACK_LINE(177)
 	::flixel::util::FlxPoint tmp3 = point;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(176)
+	HX_STACK_LINE(177)
 	return tmp3;
 }
 
@@ -370,18 +369,18 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyFrom,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyTo,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::copyFromFlash( ::openfl::_legacy::geom::Point FlashPoint){
-	HX_STACK_FRAME("flixel.util.FlxPoint","copyFromFlash",0x5f443d7b,"flixel.util.FlxPoint.copyFromFlash","flixel/util/FlxPoint.hx",186,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","copyFromFlash",0x5f443d7b,"flixel.util.FlxPoint.copyFromFlash","flixel/util/FlxPoint.hx",187,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(FlashPoint,"FlashPoint")
-	HX_STACK_LINE(187)
+	HX_STACK_LINE(188)
 	Float tmp = FlashPoint->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(187)
+	HX_STACK_LINE(188)
 	this->set_x(tmp);
-	HX_STACK_LINE(188)
-	Float tmp1 = FlashPoint->y;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(188)
-	this->set_y(tmp1);
 	HX_STACK_LINE(189)
+	Float tmp1 = FlashPoint->y;		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(189)
+	this->set_y(tmp1);
+	HX_STACK_LINE(190)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -389,20 +388,20 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyTo,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyFromFlash,return )
 
 ::openfl::_legacy::geom::Point FlxPoint_obj::copyToFlash( ::openfl::_legacy::geom::Point FlashPoint){
-	HX_STACK_FRAME("flixel.util.FlxPoint","copyToFlash",0x2f7ba08a,"flixel.util.FlxPoint.copyToFlash","flixel/util/FlxPoint.hx",199,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","copyToFlash",0x2f7ba08a,"flixel.util.FlxPoint.copyToFlash","flixel/util/FlxPoint.hx",200,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(FlashPoint,"FlashPoint")
-	HX_STACK_LINE(200)
+	HX_STACK_LINE(201)
 	Float tmp = this->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(200)
+	HX_STACK_LINE(201)
 	FlashPoint->x = tmp;
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	Float tmp1 = this->y;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	FlashPoint->y = tmp1;
-	HX_STACK_LINE(202)
+	HX_STACK_LINE(203)
 	::openfl::_legacy::geom::Point tmp2 = FlashPoint;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(202)
+	HX_STACK_LINE(203)
 	return tmp2;
 }
 
@@ -410,27 +409,27 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyFromFlash,return )
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,copyToFlash,return )
 
 bool FlxPoint_obj::inCoords( Float RectX,Float RectY,Float RectWidth,Float RectHeight){
-	HX_STACK_FRAME("flixel.util.FlxPoint","inCoords",0xac545219,"flixel.util.FlxPoint.inCoords","flixel/util/FlxPoint.hx",215,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","inCoords",0xac545219,"flixel.util.FlxPoint.inCoords","flixel/util/FlxPoint.hx",216,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(RectX,"RectX")
 	HX_STACK_ARG(RectY,"RectY")
 	HX_STACK_ARG(RectWidth,"RectWidth")
 	HX_STACK_ARG(RectHeight,"RectHeight")
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp = this->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp1 = this->y;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp2 = RectX;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp3 = RectY;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp4 = RectWidth;		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	Float tmp5 = RectHeight;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	bool tmp6 = ::flixel::util::FlxMath_obj::pointInCoordinates(tmp,tmp1,tmp2,tmp3,tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	return tmp6;
 }
 
@@ -438,18 +437,18 @@ bool FlxPoint_obj::inCoords( Float RectX,Float RectY,Float RectWidth,Float RectH
 HX_DEFINE_DYNAMIC_FUNC4(FlxPoint_obj,inCoords,return )
 
 bool FlxPoint_obj::inFlxRect( ::flixel::util::FlxRect Rect){
-	HX_STACK_FRAME("flixel.util.FlxPoint","inFlxRect",0x8096ec5b,"flixel.util.FlxPoint.inFlxRect","flixel/util/FlxPoint.hx",226,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","inFlxRect",0x8096ec5b,"flixel.util.FlxPoint.inFlxRect","flixel/util/FlxPoint.hx",227,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Rect,"Rect")
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(228)
 	Float tmp = this->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(228)
 	Float tmp1 = this->y;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(228)
 	::flixel::util::FlxRect tmp2 = Rect;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(228)
 	bool tmp3 = ::flixel::util::FlxMath_obj::pointInFlxRect(tmp,tmp1,tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(227)
+	HX_STACK_LINE(228)
 	return tmp3;
 }
 
@@ -457,59 +456,59 @@ bool FlxPoint_obj::inFlxRect( ::flixel::util::FlxRect Rect){
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,inFlxRect,return )
 
 Float FlxPoint_obj::distanceTo( ::flixel::util::FlxPoint AnotherPoint){
-	HX_STACK_FRAME("flixel.util.FlxPoint","distanceTo",0x698831c6,"flixel.util.FlxPoint.distanceTo","flixel/util/FlxPoint.hx",237,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","distanceTo",0x698831c6,"flixel.util.FlxPoint.distanceTo","flixel/util/FlxPoint.hx",238,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(AnotherPoint,"AnotherPoint")
-	HX_STACK_LINE(238)
+	HX_STACK_LINE(239)
 	Float tmp;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(238)
+	HX_STACK_LINE(239)
 	{
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp1 = this->x;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp2 = AnotherPoint->x;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp3 = (tmp1 - tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float dx = tmp3;		HX_STACK_VAR(dx,"dx");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp4 = this->y;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp5 = AnotherPoint->y;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp6 = (tmp4 - tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float dy = tmp6;		HX_STACK_VAR(dy,"dy");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		{
-			HX_STACK_LINE(238)
+			HX_STACK_LINE(239)
 			bool tmp7 = this->_weak;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(238)
+			HX_STACK_LINE(239)
 			if ((tmp7)){
-				HX_STACK_LINE(238)
+				HX_STACK_LINE(239)
 				this->put();
 			}
 		}
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		{
-			HX_STACK_LINE(238)
+			HX_STACK_LINE(239)
 			bool tmp7 = AnotherPoint->_weak;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(238)
+			HX_STACK_LINE(239)
 			if ((tmp7)){
-				HX_STACK_LINE(238)
+				HX_STACK_LINE(239)
 				AnotherPoint->put();
 			}
 		}
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp7 = (dx * dx);		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp8 = (dy * dy);		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		Float tmp9 = (tmp7 + tmp8);		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(239)
 		tmp = ::Math_obj::sqrt(tmp9);
 	}
-	HX_STACK_LINE(238)
+	HX_STACK_LINE(239)
 	return tmp;
 }
 
@@ -517,21 +516,21 @@ Float FlxPoint_obj::distanceTo( ::flixel::util::FlxPoint AnotherPoint){
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,distanceTo,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::floor( ){
-	HX_STACK_FRAME("flixel.util.FlxPoint","floor",0xa4e44fd6,"flixel.util.FlxPoint.floor","flixel/util/FlxPoint.hx",245,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","floor",0xa4e44fd6,"flixel.util.FlxPoint.floor","flixel/util/FlxPoint.hx",246,0xb59f5266)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(246)
+	HX_STACK_LINE(247)
 	Float tmp = this->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(246)
+	HX_STACK_LINE(247)
 	int tmp1 = ::Math_obj::floor(tmp);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(246)
+	HX_STACK_LINE(247)
 	this->set_x(tmp1);
-	HX_STACK_LINE(247)
-	Float tmp2 = this->y;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(247)
-	int tmp3 = ::Math_obj::floor(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(247)
-	this->set_y(tmp3);
 	HX_STACK_LINE(248)
+	Float tmp2 = this->y;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(248)
+	int tmp3 = ::Math_obj::floor(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(248)
+	this->set_y(tmp3);
+	HX_STACK_LINE(249)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -539,21 +538,21 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,distanceTo,return )
 HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,floor,return )
 
 ::flixel::util::FlxPoint FlxPoint_obj::ceil( ){
-	HX_STACK_FRAME("flixel.util.FlxPoint","ceil",0x0eceb03b,"flixel.util.FlxPoint.ceil","flixel/util/FlxPoint.hx",255,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","ceil",0x0eceb03b,"flixel.util.FlxPoint.ceil","flixel/util/FlxPoint.hx",256,0xb59f5266)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(256)
+	HX_STACK_LINE(257)
 	Float tmp = this->x;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(256)
+	HX_STACK_LINE(257)
 	int tmp1 = ::Math_obj::ceil(tmp);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(256)
+	HX_STACK_LINE(257)
 	this->set_x(tmp1);
-	HX_STACK_LINE(257)
-	Float tmp2 = this->y;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(257)
-	int tmp3 = ::Math_obj::ceil(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(257)
-	this->set_y(tmp3);
 	HX_STACK_LINE(258)
+	Float tmp2 = this->y;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(258)
+	int tmp3 = ::Math_obj::ceil(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(258)
+	this->set_y(tmp3);
+	HX_STACK_LINE(259)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -562,7 +561,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,ceil,return )
 
 Void FlxPoint_obj::destroy( ){
 {
-		HX_STACK_FRAME("flixel.util.FlxPoint","destroy",0x13b6c184,"flixel.util.FlxPoint.destroy","flixel/util/FlxPoint.hx",264,0xb59f5266)
+		HX_STACK_FRAME("flixel.util.FlxPoint","destroy",0x13b6c184,"flixel.util.FlxPoint.destroy","flixel/util/FlxPoint.hx",265,0xb59f5266)
 		HX_STACK_THIS(this)
 	}
 return null();
@@ -572,49 +571,49 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,destroy,(void))
 
 ::String FlxPoint_obj::toString( ){
-	HX_STACK_FRAME("flixel.util.FlxPoint","toString",0x93c034e2,"flixel.util.FlxPoint.toString","flixel/util/FlxPoint.hx",270,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","toString",0x93c034e2,"flixel.util.FlxPoint.toString","flixel/util/FlxPoint.hx",271,0xb59f5266)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(272)
+	HX_STACK_LINE(273)
 	::flixel::util::LabelValuePair tmp;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(272)
+	HX_STACK_LINE(273)
 	{
-		HX_STACK_LINE(272)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(273)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
 		::flixel::util::LabelValuePair _this = tmp2;		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
 		_this->label = HX_HCSTRING("x","\x78","\x00","\x00","\x00");
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
 		Float tmp3 = this->x;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
 		_this->value = tmp3;
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(273)
 		tmp = _this;
 	}
-	HX_STACK_LINE(273)
+	HX_STACK_LINE(274)
 	::flixel::util::LabelValuePair tmp1;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(273)
+	HX_STACK_LINE(274)
 	{
-		HX_STACK_LINE(273)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		HX_STACK_LINE(274)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
 		::flixel::util::LabelValuePair _this = tmp3;		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
 		_this->label = HX_HCSTRING("y","\x79","\x00","\x00","\x00");
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
 		Float tmp4 = this->y;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
 		_this->value = tmp4;
-		HX_STACK_LINE(273)
+		HX_STACK_LINE(274)
 		tmp1 = _this;
 	}
-	HX_STACK_LINE(271)
+	HX_STACK_LINE(272)
 	::String tmp2 = ::flixel::util::FlxStringUtil_obj::getDebugString(Array_obj< ::Dynamic >::__new().Add(tmp).Add(tmp1));		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(271)
+	HX_STACK_LINE(272)
 	return tmp2;
 }
 
@@ -622,12 +621,12 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,destroy,(void))
 HX_DEFINE_DYNAMIC_FUNC0(FlxPoint_obj,toString,return )
 
 Float FlxPoint_obj::set_x( Float Value){
-	HX_STACK_FRAME("flixel.util.FlxPoint","set_x",0x1c7d1965,"flixel.util.FlxPoint.set_x","flixel/util/FlxPoint.hx",280,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","set_x",0x1c7d1965,"flixel.util.FlxPoint.set_x","flixel/util/FlxPoint.hx",281,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(281)
+	HX_STACK_LINE(282)
 	Float tmp = this->x = Value;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(281)
+	HX_STACK_LINE(282)
 	return tmp;
 }
 
@@ -635,19 +634,19 @@ Float FlxPoint_obj::set_x( Float Value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,set_x,return )
 
 Float FlxPoint_obj::set_y( Float Value){
-	HX_STACK_FRAME("flixel.util.FlxPoint","set_y",0x1c7d1966,"flixel.util.FlxPoint.set_y","flixel/util/FlxPoint.hx",288,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxPoint","set_y",0x1c7d1966,"flixel.util.FlxPoint.set_y","flixel/util/FlxPoint.hx",289,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(289)
+	HX_STACK_LINE(290)
 	Float tmp = this->y = Value;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(289)
+	HX_STACK_LINE(290)
 	return tmp;
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxPoint_obj,set_y,return )
 
-::flixel::util::FlxPool_flixel_util_FlxPoint FlxPoint_obj::_pool;
+::flixel::util::FlxPool FlxPoint_obj::_pool;
 
 ::flixel::util::FlxPoint FlxPoint_obj::get( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
@@ -657,7 +656,7 @@ Float Y = __o_Y.Default(0);
 	HX_STACK_ARG(Y,"Y")
 {
 		HX_STACK_LINE(25)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+		::flixel::util::FlxPool tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(25)
 		::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(25)
@@ -688,23 +687,44 @@ Float Y = __o_Y.Default(0);
 	HX_STACK_ARG(Y,"Y")
 {
 		HX_STACK_LINE(40)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+		::flixel::util::FlxPoint tmp;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(40)
-		::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
+		{
+			HX_STACK_LINE(40)
+			Float X1 = (int)0;		HX_STACK_VAR(X1,"X1");
+			HX_STACK_LINE(40)
+			Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
+			HX_STACK_LINE(40)
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			HX_STACK_LINE(40)
+			::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(40)
+			Float tmp3 = X1;		HX_STACK_VAR(tmp3,"tmp3");
+			HX_STACK_LINE(40)
+			Float tmp4 = Y1;		HX_STACK_VAR(tmp4,"tmp4");
+			HX_STACK_LINE(40)
+			::flixel::util::FlxPoint tmp5 = tmp2->set(tmp3,tmp4);		HX_STACK_VAR(tmp5,"tmp5");
+			HX_STACK_LINE(40)
+			::flixel::util::FlxPoint point = tmp5;		HX_STACK_VAR(point,"point");
+			HX_STACK_LINE(40)
+			point->_inPool = false;
+			HX_STACK_LINE(40)
+			tmp = point;
+		}
 		HX_STACK_LINE(40)
-		Float tmp2 = X;		HX_STACK_VAR(tmp2,"tmp2");
+		Float tmp1 = X;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(40)
-		Float tmp3 = Y;		HX_STACK_VAR(tmp3,"tmp3");
+		Float tmp2 = Y;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(40)
-		::flixel::util::FlxPoint tmp4 = tmp1->set(tmp2,tmp3);		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPoint tmp3 = tmp->set(tmp1,tmp2);		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(40)
-		::flixel::util::FlxPoint point = tmp4;		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = tmp3;		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(41)
 		point->_weak = true;
 		HX_STACK_LINE(42)
-		::flixel::util::FlxPoint tmp5 = point;		HX_STACK_VAR(tmp5,"tmp5");
+		::flixel::util::FlxPoint tmp4 = point;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(42)
-		return tmp5;
+		return tmp4;
 	}
 }
 
@@ -803,7 +823,7 @@ bool FlxPoint_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::Prope
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool_flixel_util_FlxPoint >(); return true; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool >(); return true; }
 	}
 	return false;
 }
@@ -826,7 +846,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsObject /*::flixel::util::FlxPool_flixel_util_FlxPoint*/ ,(void *) &FlxPoint_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
+	{hx::fsObject /*::flixel::util::FlxPool*/ ,(void *) &FlxPoint_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif
@@ -906,7 +926,7 @@ void FlxPoint_obj::__register()
 
 void FlxPoint_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_util_FlxPoint_obj::__new(hx::ClassOf< ::flixel::util::FlxPoint >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::util::FlxPoint >());
 }
 
 } // end namespace flixel

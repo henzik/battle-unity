@@ -21,9 +21,6 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
-#ifndef INCLUDED_flixel_FlxSubState
-#include <flixel/FlxSubState.h>
-#endif
 #ifndef INCLUDED_flixel_group_FlxGroup
 #include <flixel/group/FlxGroup.h>
 #endif
@@ -51,35 +48,14 @@
 #ifndef INCLUDED_flixel_system_FlxSplash
 #include <flixel/system/FlxSplash.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_Console
-#include <flixel/system/debug/Console.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Stats
-#include <flixel/system/debug/Stats.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Window
-#include <flixel/system/debug/Window.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_BitmapFrontEnd
 #include <flixel/system/frontEnds/BitmapFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_CameraFrontEnd
 #include <flixel/system/frontEnds/CameraFrontEnd.h>
 #endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_InputFrontEnd
 #include <flixel/system/frontEnds/InputFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_PluginFrontEnd
 #include <flixel/system/frontEnds/PluginFrontEnd.h>
@@ -122,12 +98,6 @@
 #endif
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignalBase
 #include <flixel/util/_FlxSignal/FlxSignalBase.h>
-#endif
-#ifndef INCLUDED_haxe_IMap
-#include <haxe/IMap.h>
-#endif
-#ifndef INCLUDED_haxe_ds_StringMap
-#include <haxe/ds/StringMap.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_Lib
 #include <openfl/_legacy/Lib.h>
@@ -325,107 +295,76 @@ Void FlxGame_obj::create( Dynamic _){
 		::openfl::_legacy::display::Sprite tmp9 = this->_inputContainer;		HX_STACK_VAR(tmp9,"tmp9");
 		HX_STACK_LINE(278)
 		this->addChild(tmp9);
-		HX_STACK_LINE(282)
-		::openfl::_legacy::display::MovieClip tmp10 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(282)
-		::openfl::_legacy::display::Stage tmp11 = tmp10->get_stage();		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(282)
-		int tmp12 = tmp11->get_stageWidth();		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(282)
-		::openfl::_legacy::display::MovieClip tmp13 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(282)
-		::openfl::_legacy::display::Stage tmp14 = tmp13->get_stage();		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(282)
-		int tmp15 = tmp14->get_stageHeight();		HX_STACK_VAR(tmp15,"tmp15");
-		HX_STACK_LINE(282)
-		::flixel::_system::debug::FlxDebugger tmp16 = ::flixel::_system::debug::FlxDebugger_obj::__new(tmp12,tmp15);		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(282)
-		this->debugger = tmp16;
-		HX_STACK_LINE(283)
-		::flixel::_system::debug::FlxDebugger tmp17 = this->debugger;		HX_STACK_VAR(tmp17,"tmp17");
-		HX_STACK_LINE(283)
-		this->addChild(tmp17);
 		HX_STACK_LINE(305)
-		::openfl::_legacy::display::Stage tmp18 = this->get_stage();		HX_STACK_VAR(tmp18,"tmp18");
+		::openfl::_legacy::display::Stage tmp10 = this->get_stage();		HX_STACK_VAR(tmp10,"tmp10");
 		HX_STACK_LINE(305)
-		::String tmp19 = ::openfl::_legacy::events::Event_obj::DEACTIVATE;		HX_STACK_VAR(tmp19,"tmp19");
+		::String tmp11 = ::openfl::_legacy::events::Event_obj::DEACTIVATE;		HX_STACK_VAR(tmp11,"tmp11");
 		HX_STACK_LINE(305)
-		Dynamic tmp20 = this->onFocusLost_dyn();		HX_STACK_VAR(tmp20,"tmp20");
+		Dynamic tmp12 = this->onFocusLost_dyn();		HX_STACK_VAR(tmp12,"tmp12");
 		HX_STACK_LINE(305)
-		tmp18->addEventListener(tmp19,tmp20,null(),null(),null());
+		tmp10->addEventListener(tmp11,tmp12,null(),null(),null());
 		HX_STACK_LINE(306)
-		::openfl::_legacy::display::Stage tmp21 = this->get_stage();		HX_STACK_VAR(tmp21,"tmp21");
+		::openfl::_legacy::display::Stage tmp13 = this->get_stage();		HX_STACK_VAR(tmp13,"tmp13");
 		HX_STACK_LINE(306)
-		::String tmp22 = ::openfl::_legacy::events::Event_obj::ACTIVATE;		HX_STACK_VAR(tmp22,"tmp22");
+		::String tmp14 = ::openfl::_legacy::events::Event_obj::ACTIVATE;		HX_STACK_VAR(tmp14,"tmp14");
 		HX_STACK_LINE(306)
-		Dynamic tmp23 = this->onFocus_dyn();		HX_STACK_VAR(tmp23,"tmp23");
+		Dynamic tmp15 = this->onFocus_dyn();		HX_STACK_VAR(tmp15,"tmp15");
 		HX_STACK_LINE(306)
-		tmp21->addEventListener(tmp22,tmp23,null(),null(),null());
+		tmp13->addEventListener(tmp14,tmp15,null(),null(),null());
 		HX_STACK_LINE(310)
 		{
 			HX_STACK_LINE(310)
-			::flixel::_system::frontEnds::SignalFrontEnd tmp24 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp24,"tmp24");
+			::flixel::_system::frontEnds::SignalFrontEnd tmp16 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp16,"tmp16");
 			HX_STACK_LINE(310)
-			tmp24->__Field(HX_HCSTRING("gameReset","\x7d","\x38","\xe3","\x1b"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
+			tmp16->__Field(HX_HCSTRING("gameReset","\x7d","\x38","\xe3","\x1b"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
 			HX_STACK_LINE(310)
-			this->_skipSplash = true;
+			bool tmp17 = this->_skipSplash;		HX_STACK_VAR(tmp17,"tmp17");
 			HX_STACK_LINE(310)
-			bool tmp25 = this->_skipSplash;		HX_STACK_VAR(tmp25,"tmp25");
+			bool tmp18 = !(tmp17);		HX_STACK_VAR(tmp18,"tmp18");
 			HX_STACK_LINE(310)
-			bool tmp26 = !(tmp25);		HX_STACK_VAR(tmp26,"tmp26");
+			bool tmp19;		HX_STACK_VAR(tmp19,"tmp19");
 			HX_STACK_LINE(310)
-			bool tmp27;		HX_STACK_VAR(tmp27,"tmp27");
-			HX_STACK_LINE(310)
-			if ((tmp26)){
+			if ((tmp18)){
 				HX_STACK_LINE(310)
-				::hx::Class tmp28 = ::flixel::_system::FlxSplash_obj::nextState;		HX_STACK_VAR(tmp28,"tmp28");
+				::hx::Class tmp20 = ::flixel::_system::FlxSplash_obj::nextState;		HX_STACK_VAR(tmp20,"tmp20");
 				HX_STACK_LINE(310)
-				::hx::Class tmp29 = tmp28;		HX_STACK_VAR(tmp29,"tmp29");
+				::hx::Class tmp21 = tmp20;		HX_STACK_VAR(tmp21,"tmp21");
 				HX_STACK_LINE(310)
-				tmp27 = (tmp29 != null());
+				tmp19 = (tmp21 != null());
 			}
 			else{
 				HX_STACK_LINE(310)
-				tmp27 = true;
+				tmp19 = true;
 			}
 			HX_STACK_LINE(310)
-			if ((tmp27)){
+			if ((tmp19)){
 				HX_STACK_LINE(310)
-				::hx::Class tmp28 = this->_initialState;		HX_STACK_VAR(tmp28,"tmp28");
+				::hx::Class tmp20 = this->_initialState;		HX_STACK_VAR(tmp20,"tmp20");
 				HX_STACK_LINE(310)
-				::flixel::FlxState tmp29 = ::Type_obj::createInstance(tmp28,cpp::ArrayBase_obj::__new());		HX_STACK_VAR(tmp29,"tmp29");
+				::flixel::FlxState tmp21 = ::Type_obj::createInstance(tmp20,cpp::ArrayBase_obj::__new());		HX_STACK_VAR(tmp21,"tmp21");
 				HX_STACK_LINE(310)
-				this->_requestedState = tmp29;
+				this->_requestedState = tmp21;
 				HX_STACK_LINE(310)
-				::hx::Class tmp30 = ::flixel::_system::FlxSplash_obj::nextState;		HX_STACK_VAR(tmp30,"tmp30");
+				::hx::Class tmp22 = ::flixel::_system::FlxSplash_obj::nextState;		HX_STACK_VAR(tmp22,"tmp22");
 				HX_STACK_LINE(310)
-				bool tmp31 = (tmp30 == null());		HX_STACK_VAR(tmp31,"tmp31");
+				bool tmp23 = (tmp22 == null());		HX_STACK_VAR(tmp23,"tmp23");
 				HX_STACK_LINE(310)
-				if ((tmp31)){
+				if ((tmp23)){
 					HX_STACK_LINE(310)
 					this->_gameJustStarted = true;
 				}
 			}
 			else{
 				HX_STACK_LINE(310)
-				::hx::Class tmp28 = this->_initialState;		HX_STACK_VAR(tmp28,"tmp28");
+				::hx::Class tmp20 = this->_initialState;		HX_STACK_VAR(tmp20,"tmp20");
 				HX_STACK_LINE(310)
-				::flixel::_system::FlxSplash_obj::nextState = tmp28;
+				::flixel::_system::FlxSplash_obj::nextState = tmp20;
 				HX_STACK_LINE(310)
-				::flixel::_system::FlxSplash tmp29 = ::flixel::_system::FlxSplash_obj::__new(null());		HX_STACK_VAR(tmp29,"tmp29");
+				::flixel::_system::FlxSplash tmp21 = ::flixel::_system::FlxSplash_obj::__new(null());		HX_STACK_VAR(tmp21,"tmp21");
 				HX_STACK_LINE(310)
-				this->_requestedState = tmp29;
+				this->_requestedState = tmp21;
 				HX_STACK_LINE(310)
 				this->_skipSplash = true;
-			}
-			HX_STACK_LINE(310)
-			::flixel::FlxState tmp28 = this->_requestedState;		HX_STACK_VAR(tmp28,"tmp28");
-			HX_STACK_LINE(310)
-			bool tmp29 = ::Std_obj::is(tmp28,hx::ClassOf< ::flixel::FlxSubState >());		HX_STACK_VAR(tmp29,"tmp29");
-			HX_STACK_LINE(310)
-			if ((tmp29)){
-				HX_STACK_LINE(310)
-				HX_STACK_DO_THROW(HX_HCSTRING("You can't set FlxSubState class instance as the state for you game","\xf2","\x8e","\x2c","\x80"));
 			}
 			HX_STACK_LINE(310)
 			::flixel::FlxG_obj::reset();
@@ -433,56 +372,52 @@ Void FlxGame_obj::create( Dynamic _){
 		HX_STACK_LINE(311)
 		this->switchState();
 		HX_STACK_LINE(313)
-		::flixel::FlxGame tmp24 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp24,"tmp24");
+		::flixel::FlxGame tmp16 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp16,"tmp16");
 		HX_STACK_LINE(313)
-		int tmp25 = tmp24->_stepMS;		HX_STACK_VAR(tmp25,"tmp25");
+		int tmp17 = tmp16->_stepMS;		HX_STACK_VAR(tmp17,"tmp17");
 		HX_STACK_LINE(313)
-		Float tmp26 = (Float((int)1000) / Float(tmp25));		HX_STACK_VAR(tmp26,"tmp26");
+		Float tmp18 = (Float((int)1000) / Float(tmp17));		HX_STACK_VAR(tmp18,"tmp18");
 		HX_STACK_LINE(313)
-		int tmp27 = ::Std_obj::_int(tmp26);		HX_STACK_VAR(tmp27,"tmp27");
+		int tmp19 = ::Std_obj::_int(tmp18);		HX_STACK_VAR(tmp19,"tmp19");
 		HX_STACK_LINE(313)
-		int tmp28 = ::flixel::FlxG_obj::drawFramerate;		HX_STACK_VAR(tmp28,"tmp28");
+		int tmp20 = ::flixel::FlxG_obj::drawFramerate;		HX_STACK_VAR(tmp20,"tmp20");
 		HX_STACK_LINE(313)
-		bool tmp29 = (tmp27 < tmp28);		HX_STACK_VAR(tmp29,"tmp29");
+		bool tmp21 = (tmp19 < tmp20);		HX_STACK_VAR(tmp21,"tmp21");
 		HX_STACK_LINE(313)
-		if ((tmp29)){
+		if ((tmp21)){
 			HX_STACK_LINE(315)
-			::flixel::_system::frontEnds::LogFrontEnd tmp30 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp30,"tmp30");
-			HX_STACK_LINE(315)
-			::flixel::_system::debug::LogStyle tmp31 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp31,"tmp31");
-			HX_STACK_LINE(315)
-			tmp30->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxG.updateFramerate: The update framerate shouldn't be smaller than the draw framerate, since it can slow down your game.","\x81","\x2e","\x69","\x6b"),tmp31,true);
+			Dynamic();
 		}
 		HX_STACK_LINE(319)
-		::openfl::_legacy::display::Stage tmp30 = this->get_stage();		HX_STACK_VAR(tmp30,"tmp30");
+		::openfl::_legacy::display::Stage tmp22 = this->get_stage();		HX_STACK_VAR(tmp22,"tmp22");
 		HX_STACK_LINE(319)
-		::String tmp31 = ::openfl::_legacy::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp31,"tmp31");
+		::String tmp23 = ::openfl::_legacy::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp23,"tmp23");
 		HX_STACK_LINE(319)
-		Dynamic tmp32 = this->onEnterFrame_dyn();		HX_STACK_VAR(tmp32,"tmp32");
+		Dynamic tmp24 = this->onEnterFrame_dyn();		HX_STACK_VAR(tmp24,"tmp24");
 		HX_STACK_LINE(319)
-		tmp30->addEventListener(tmp31,tmp32,null(),null(),null());
+		tmp22->addEventListener(tmp23,tmp24,null(),null(),null());
 		HX_STACK_LINE(323)
-		::openfl::_legacy::display::Stage tmp33 = this->get_stage();		HX_STACK_VAR(tmp33,"tmp33");
+		::openfl::_legacy::display::Stage tmp25 = this->get_stage();		HX_STACK_VAR(tmp25,"tmp25");
 		HX_STACK_LINE(323)
-		::String tmp34 = ::openfl::_legacy::events::Event_obj::RESIZE;		HX_STACK_VAR(tmp34,"tmp34");
+		::String tmp26 = ::openfl::_legacy::events::Event_obj::RESIZE;		HX_STACK_VAR(tmp26,"tmp26");
 		HX_STACK_LINE(323)
-		Dynamic tmp35 = this->onResize_dyn();		HX_STACK_VAR(tmp35,"tmp35");
+		Dynamic tmp27 = this->onResize_dyn();		HX_STACK_VAR(tmp27,"tmp27");
 		HX_STACK_LINE(323)
-		tmp33->addEventListener(tmp34,tmp35,null(),null(),null());
+		tmp25->addEventListener(tmp26,tmp27,null(),null(),null());
 		HX_STACK_LINE(326)
-		::openfl::_legacy::display::MovieClip tmp36 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp36,"tmp36");
+		::openfl::_legacy::display::MovieClip tmp28 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp28,"tmp28");
 		HX_STACK_LINE(326)
-		::openfl::_legacy::display::Stage tmp37 = tmp36->get_stage();		HX_STACK_VAR(tmp37,"tmp37");
+		::openfl::_legacy::display::Stage tmp29 = tmp28->get_stage();		HX_STACK_VAR(tmp29,"tmp29");
 		HX_STACK_LINE(326)
-		int tmp38 = tmp37->get_stageWidth();		HX_STACK_VAR(tmp38,"tmp38");
+		int tmp30 = tmp29->get_stageWidth();		HX_STACK_VAR(tmp30,"tmp30");
 		HX_STACK_LINE(326)
-		::openfl::_legacy::display::MovieClip tmp39 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp39,"tmp39");
+		::openfl::_legacy::display::MovieClip tmp31 = ::openfl::_legacy::Lib_obj::get_current();		HX_STACK_VAR(tmp31,"tmp31");
 		HX_STACK_LINE(326)
-		::openfl::_legacy::display::Stage tmp40 = tmp39->get_stage();		HX_STACK_VAR(tmp40,"tmp40");
+		::openfl::_legacy::display::Stage tmp32 = tmp31->get_stage();		HX_STACK_VAR(tmp32,"tmp32");
 		HX_STACK_LINE(326)
-		int tmp41 = tmp40->get_stageHeight();		HX_STACK_VAR(tmp41,"tmp41");
+		int tmp33 = tmp32->get_stageHeight();		HX_STACK_VAR(tmp33,"tmp33");
 		HX_STACK_LINE(326)
-		this->resizeGame(tmp38,tmp41);
+		this->resizeGame(tmp30,tmp33);
 	}
 return null();
 }
@@ -525,43 +460,39 @@ Void FlxGame_obj::onFocus( Dynamic _){
 			HX_STACK_LINE(359)
 			tmp5->__Field(HX_HCSTRING("set_visible","\x95","\xdf","\x8b","\x33"), hx::paccDynamic )(false);
 		}
-		HX_STACK_LINE(364)
-		::flixel::_system::debug::FlxDebugger tmp5 = this->debugger;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(364)
-		tmp5->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("onFocus","\x39","\xfe","\xc6","\x9a"), hx::paccDynamic )();
 		HX_STACK_LINE(367)
-		::openfl::_legacy::display::Stage tmp6 = this->get_stage();		HX_STACK_VAR(tmp6,"tmp6");
+		::openfl::_legacy::display::Stage tmp5 = this->get_stage();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(367)
-		int tmp7 = ::flixel::FlxG_obj::drawFramerate;		HX_STACK_VAR(tmp7,"tmp7");
+		int tmp6 = ::flixel::FlxG_obj::drawFramerate;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(367)
-		tmp6->set_frameRate(tmp7);
+		tmp5->set_frameRate(tmp6);
 		HX_STACK_LINE(369)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp8 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp8,"tmp8");
+		::flixel::_system::frontEnds::SoundFrontEnd tmp7 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(369)
-		tmp8->__Field(HX_HCSTRING("onFocus","\x39","\xfe","\xc6","\x9a"), hx::paccDynamic )();
+		tmp7->__Field(HX_HCSTRING("onFocus","\x39","\xfe","\xc6","\x9a"), hx::paccDynamic )();
 		HX_STACK_LINE(371)
 		{
 			HX_STACK_LINE(371)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(371)
-			::flixel::_system::frontEnds::InputFrontEnd tmp9 = ::flixel::FlxG_obj::inputs;		HX_STACK_VAR(tmp9,"tmp9");
+			::flixel::_system::frontEnds::InputFrontEnd tmp8 = ::flixel::FlxG_obj::inputs;		HX_STACK_VAR(tmp8,"tmp8");
 			HX_STACK_LINE(371)
-			Array< ::flixel::interfaces::IFlxInput > _g1 = tmp9->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::flixel::interfaces::IFlxInput > _g1 = tmp8->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(371)
 			while((true)){
 				HX_STACK_LINE(371)
-				bool tmp10 = (_g < _g1->length);		HX_STACK_VAR(tmp10,"tmp10");
+				bool tmp9 = (_g < _g1->length);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(371)
-				bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
+				bool tmp10 = !(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(371)
-				if ((tmp11)){
+				if ((tmp10)){
 					HX_STACK_LINE(371)
 					break;
 				}
 				HX_STACK_LINE(371)
-				::flixel::interfaces::IFlxInput tmp12 = _g1->__get(_g);		HX_STACK_VAR(tmp12,"tmp12");
+				::flixel::interfaces::IFlxInput tmp11 = _g1->__get(_g);		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(371)
-				::flixel::interfaces::IFlxInput input = tmp12;		HX_STACK_VAR(input,"input");
+				::flixel::interfaces::IFlxInput input = tmp11;		HX_STACK_VAR(input,"input");
 				HX_STACK_LINE(371)
 				++(_g);
 				HX_STACK_LINE(371)
@@ -610,43 +541,39 @@ Void FlxGame_obj::onFocusLost( Dynamic _){
 			HX_STACK_LINE(395)
 			tmp5->__Field(HX_HCSTRING("set_visible","\x95","\xdf","\x8b","\x33"), hx::paccDynamic )(true);
 		}
-		HX_STACK_LINE(400)
-		::flixel::_system::debug::FlxDebugger tmp5 = this->debugger;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(400)
-		tmp5->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("onFocusLost","\xbd","\xe4","\x85","\x41"), hx::paccDynamic )();
 		HX_STACK_LINE(403)
-		::openfl::_legacy::display::Stage tmp6 = this->get_stage();		HX_STACK_VAR(tmp6,"tmp6");
+		::openfl::_legacy::display::Stage tmp5 = this->get_stage();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(403)
-		int tmp7 = this->focusLostFramerate;		HX_STACK_VAR(tmp7,"tmp7");
+		int tmp6 = this->focusLostFramerate;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(403)
-		tmp6->set_frameRate(tmp7);
+		tmp5->set_frameRate(tmp6);
 		HX_STACK_LINE(405)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp8 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp8,"tmp8");
+		::flixel::_system::frontEnds::SoundFrontEnd tmp7 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(405)
-		tmp8->__Field(HX_HCSTRING("onFocusLost","\xbd","\xe4","\x85","\x41"), hx::paccDynamic )();
+		tmp7->__Field(HX_HCSTRING("onFocusLost","\xbd","\xe4","\x85","\x41"), hx::paccDynamic )();
 		HX_STACK_LINE(407)
 		{
 			HX_STACK_LINE(407)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(407)
-			::flixel::_system::frontEnds::InputFrontEnd tmp9 = ::flixel::FlxG_obj::inputs;		HX_STACK_VAR(tmp9,"tmp9");
+			::flixel::_system::frontEnds::InputFrontEnd tmp8 = ::flixel::FlxG_obj::inputs;		HX_STACK_VAR(tmp8,"tmp8");
 			HX_STACK_LINE(407)
-			Array< ::flixel::interfaces::IFlxInput > _g1 = tmp9->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::flixel::interfaces::IFlxInput > _g1 = tmp8->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(407)
 			while((true)){
 				HX_STACK_LINE(407)
-				bool tmp10 = (_g < _g1->length);		HX_STACK_VAR(tmp10,"tmp10");
+				bool tmp9 = (_g < _g1->length);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(407)
-				bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
+				bool tmp10 = !(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(407)
-				if ((tmp11)){
+				if ((tmp10)){
 					HX_STACK_LINE(407)
 					break;
 				}
 				HX_STACK_LINE(407)
-				::flixel::interfaces::IFlxInput tmp12 = _g1->__get(_g);		HX_STACK_VAR(tmp12,"tmp12");
+				::flixel::interfaces::IFlxInput tmp11 = _g1->__get(_g);		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(407)
-				::flixel::interfaces::IFlxInput input = tmp12;		HX_STACK_VAR(input,"input");
+				::flixel::interfaces::IFlxInput input = tmp11;		HX_STACK_VAR(input,"input");
 				HX_STACK_LINE(407)
 				++(_g);
 				HX_STACK_LINE(407)
@@ -769,56 +696,48 @@ Void FlxGame_obj::resizeGame( int width,int height){
 			HX_STACK_LINE(429)
 			tmp->__Field(HX_HCSTRING("onMeasure","\xff","\xb3","\x94","\x14"), hx::paccDynamic )(tmp1,tmp2);
 		}
-		HX_STACK_LINE(432)
-		::flixel::_system::debug::FlxDebugger tmp = this->debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(432)
-		int tmp1 = width;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(432)
-		int tmp2 = height;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(432)
-		tmp->__Field(HX_HCSTRING("onResize","\x73","\x50","\x28","\xe8"), hx::paccDynamic )(tmp1,tmp2);
 		HX_STACK_LINE(436)
-		::flixel::_system::ui::FlxFocusLostScreen tmp3 = this->_focusLostScreen;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::_system::ui::FlxFocusLostScreen tmp = this->_focusLostScreen;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(436)
-		bool tmp4 = (tmp3 != null());		HX_STACK_VAR(tmp4,"tmp4");
+		bool tmp1 = (tmp != null());		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(436)
-		if ((tmp4)){
+		if ((tmp1)){
 			HX_STACK_LINE(438)
-			::flixel::_system::ui::FlxFocusLostScreen tmp5 = this->_focusLostScreen;		HX_STACK_VAR(tmp5,"tmp5");
+			::flixel::_system::ui::FlxFocusLostScreen tmp2 = this->_focusLostScreen;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(438)
-			tmp5->__Field(HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"), hx::paccDynamic )();
+			tmp2->__Field(HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"), hx::paccDynamic )();
 		}
 		HX_STACK_LINE(443)
-		::flixel::_system::ui::FlxSoundTray tmp5 = this->soundTray;		HX_STACK_VAR(tmp5,"tmp5");
+		::flixel::_system::ui::FlxSoundTray tmp2 = this->soundTray;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(443)
-		bool tmp6 = (tmp5 != null());		HX_STACK_VAR(tmp6,"tmp6");
+		bool tmp3 = (tmp2 != null());		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(443)
-		if ((tmp6)){
+		if ((tmp3)){
 			HX_STACK_LINE(445)
-			::flixel::_system::ui::FlxSoundTray tmp7 = this->soundTray;		HX_STACK_VAR(tmp7,"tmp7");
+			::flixel::_system::ui::FlxSoundTray tmp4 = this->soundTray;		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(445)
-			tmp7->__Field(HX_HCSTRING("screenCenter","\x61","\x2e","\xf9","\xe2"), hx::paccDynamic )();
+			tmp4->__Field(HX_HCSTRING("screenCenter","\x61","\x2e","\xf9","\xe2"), hx::paccDynamic )();
 		}
 		HX_STACK_LINE(449)
-		::openfl::_legacy::display::Sprite tmp7 = this->_inputContainer;		HX_STACK_VAR(tmp7,"tmp7");
+		::openfl::_legacy::display::Sprite tmp4 = this->_inputContainer;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(449)
-		::flixel::FlxGame tmp8 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp8,"tmp8");
+		::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(449)
-		Float tmp9 = tmp8->get_scaleX();		HX_STACK_VAR(tmp9,"tmp9");
+		Float tmp6 = tmp5->get_scaleX();		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(449)
-		Float tmp10 = (Float((int)1) / Float(tmp9));		HX_STACK_VAR(tmp10,"tmp10");
+		Float tmp7 = (Float((int)1) / Float(tmp6));		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(449)
-		tmp7->set_scaleX(tmp10);
+		tmp4->set_scaleX(tmp7);
 		HX_STACK_LINE(450)
-		::openfl::_legacy::display::Sprite tmp11 = this->_inputContainer;		HX_STACK_VAR(tmp11,"tmp11");
+		::openfl::_legacy::display::Sprite tmp8 = this->_inputContainer;		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(450)
-		::flixel::FlxGame tmp12 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp12,"tmp12");
+		::flixel::FlxGame tmp9 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp9,"tmp9");
 		HX_STACK_LINE(450)
-		Float tmp13 = tmp12->get_scaleY();		HX_STACK_VAR(tmp13,"tmp13");
+		Float tmp10 = tmp9->get_scaleY();		HX_STACK_VAR(tmp10,"tmp10");
 		HX_STACK_LINE(450)
-		Float tmp14 = (Float((int)1) / Float(tmp13));		HX_STACK_VAR(tmp14,"tmp14");
+		Float tmp11 = (Float((int)1) / Float(tmp10));		HX_STACK_VAR(tmp11,"tmp11");
 		HX_STACK_LINE(450)
-		tmp11->set_scaleY(tmp14);
+		tmp8->set_scaleY(tmp11);
 	}
 return null();
 }
@@ -985,20 +904,8 @@ Void FlxGame_obj::onEnterFrame( Dynamic _){
 				HX_STACK_LINE(499)
 				this->step();
 			}
-			HX_STACK_LINE(503)
-			::flixel::FlxBasic_obj::_VISIBLECOUNT = (int)0;
 			HX_STACK_LINE(506)
 			this->draw();
-			HX_STACK_LINE(509)
-			::flixel::_system::debug::FlxDebugger tmp16 = this->debugger;		HX_STACK_VAR(tmp16,"tmp16");
-			HX_STACK_LINE(509)
-			int tmp17 = ::flixel::FlxBasic_obj::_VISIBLECOUNT;		HX_STACK_VAR(tmp17,"tmp17");
-			HX_STACK_LINE(509)
-			tmp16->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("visibleObjects","\x82","\xea","\xf1","\x36"), hx::paccDynamic )(tmp17);
-			HX_STACK_LINE(510)
-			::flixel::_system::debug::FlxDebugger tmp18 = this->debugger;		HX_STACK_VAR(tmp18,"tmp18");
-			HX_STACK_LINE(510)
-			tmp18->__Field(HX_HCSTRING("update","\x09","\x86","\x05","\x87"), hx::paccDynamic )();
 		}
 	}
 return null();
@@ -1015,8 +922,6 @@ Void FlxGame_obj::resetGame( ){
 		::flixel::_system::frontEnds::SignalFrontEnd tmp = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(521)
 		tmp->__Field(HX_HCSTRING("gameReset","\x7d","\x38","\xe3","\x1b"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
-		HX_STACK_LINE(524)
-		this->_skipSplash = true;
 		HX_STACK_LINE(527)
 		bool tmp1 = this->_skipSplash;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(527)
@@ -1065,15 +970,6 @@ Void FlxGame_obj::resetGame( ){
 			this->_requestedState = tmp5;
 			HX_STACK_LINE(539)
 			this->_skipSplash = true;
-		}
-		HX_STACK_LINE(543)
-		::flixel::FlxState tmp4 = this->_requestedState;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(543)
-		bool tmp5 = ::Std_obj::is(tmp4,hx::ClassOf< ::flixel::FlxSubState >());		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(543)
-		if ((tmp5)){
-			HX_STACK_LINE(545)
-			HX_STACK_DO_THROW(HX_HCSTRING("You can't set FlxSubState class instance as the state for you game","\xf2","\x8e","\x2c","\x80"));
 		}
 		HX_STACK_LINE(549)
 		::flixel::FlxG_obj::reset();
@@ -1170,21 +1066,6 @@ Void FlxGame_obj::switchState( ){
 			HX_STACK_LINE(587)
 			this->gameStart();
 		}
-		HX_STACK_LINE(591)
-		{
-			HX_STACK_LINE(591)
-			::flixel::FlxState tmp10 = this->_state;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(591)
-			Dynamic value = tmp10;		HX_STACK_VAR(value,"value");
-			HX_STACK_LINE(591)
-			::flixel::_system::debug::FlxDebugger tmp11 = this->debugger;		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(591)
-			::haxe::ds::StringMap tmp12 = tmp11->__Field(HX_HCSTRING("console","\x57","\xeb","\xd5","\x18"), hx::paccDynamic )->__Field(HX_HCSTRING("registeredObjects","\x72","\x87","\x9b","\x2a"), hx::paccDynamic );		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(591)
-			Dynamic tmp13 = value;		HX_STACK_VAR(tmp13,"tmp13");
-			HX_STACK_LINE(591)
-			tmp12->set(HX_HCSTRING("state","\x11","\x76","\x0b","\x84"),tmp13);
-		}
 	}
 return null();
 }
@@ -1223,8 +1104,6 @@ Void FlxGame_obj::step( ){
 				::flixel::_system::frontEnds::SignalFrontEnd tmp1 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(612)
 				tmp1->__Field(HX_HCSTRING("gameReset","\x7d","\x38","\xe3","\x1b"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
-				HX_STACK_LINE(612)
-				this->_skipSplash = true;
 				HX_STACK_LINE(612)
 				bool tmp2 = this->_skipSplash;		HX_STACK_VAR(tmp2,"tmp2");
 				HX_STACK_LINE(612)
@@ -1275,30 +1154,13 @@ Void FlxGame_obj::step( ){
 					this->_skipSplash = true;
 				}
 				HX_STACK_LINE(612)
-				::flixel::FlxState tmp5 = this->_requestedState;		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(612)
-				bool tmp6 = ::Std_obj::is(tmp5,hx::ClassOf< ::flixel::FlxSubState >());		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(612)
-				if ((tmp6)){
-					HX_STACK_LINE(612)
-					HX_STACK_DO_THROW(HX_HCSTRING("You can't set FlxSubState class instance as the state for you game","\xf2","\x8e","\x2c","\x80"));
-				}
-				HX_STACK_LINE(612)
 				::flixel::FlxG_obj::reset();
 			}
 			HX_STACK_LINE(613)
 			this->_resetGame = false;
 		}
-		HX_STACK_LINE(645)
-		::flixel::FlxBasic_obj::_ACTIVECOUNT = (int)0;
 		HX_STACK_LINE(648)
 		this->update();
-		HX_STACK_LINE(651)
-		::flixel::_system::debug::FlxDebugger tmp1 = this->debugger;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(651)
-		int tmp2 = ::flixel::FlxBasic_obj::_ACTIVECOUNT;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(651)
-		tmp1->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("activeObjects","\xae","\xb3","\x18","\x3a"), hx::paccDynamic )(tmp2);
 	}
 return null();
 }
@@ -1355,61 +1217,50 @@ Void FlxGame_obj::update( ){
 			HX_STACK_LINE(668)
 			this->switchState();
 		}
-		HX_STACK_LINE(672)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp9 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(672)
-		bool tmp10 = tmp9->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(672)
+		HX_STACK_LINE(678)
+		::flixel::_system::frontEnds::SignalFrontEnd tmp9 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp9,"tmp9");
+		HX_STACK_LINE(678)
+		tmp9->__Field(HX_HCSTRING("preUpdate","\x8c","\x96","\xa6","\xe5"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
+		HX_STACK_LINE(680)
+		bool tmp10 = ::flixel::FlxG_obj::fixedTimestep;		HX_STACK_VAR(tmp10,"tmp10");
+		HX_STACK_LINE(680)
 		if ((tmp10)){
-			HX_STACK_LINE(674)
-			int tmp11 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(674)
-			this->ticks = tmp11;
-		}
-		HX_STACK_LINE(678)
-		::flixel::_system::frontEnds::SignalFrontEnd tmp11 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(678)
-		tmp11->__Field(HX_HCSTRING("preUpdate","\x8c","\x96","\xa6","\xe5"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
-		HX_STACK_LINE(680)
-		bool tmp12 = ::flixel::FlxG_obj::fixedTimestep;		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(680)
-		if ((tmp12)){
 			HX_STACK_LINE(682)
-			Float tmp13 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp13,"tmp13");
+			Float tmp11 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp11,"tmp11");
 			HX_STACK_LINE(682)
-			Float tmp14 = this->_stepSeconds;		HX_STACK_VAR(tmp14,"tmp14");
+			Float tmp12 = this->_stepSeconds;		HX_STACK_VAR(tmp12,"tmp12");
 			HX_STACK_LINE(682)
-			Float tmp15 = (tmp13 * tmp14);		HX_STACK_VAR(tmp15,"tmp15");
+			Float tmp13 = (tmp11 * tmp12);		HX_STACK_VAR(tmp13,"tmp13");
 			HX_STACK_LINE(682)
-			::flixel::FlxG_obj::elapsed = tmp15;
+			::flixel::FlxG_obj::elapsed = tmp13;
 		}
 		else{
 			HX_STACK_LINE(686)
-			Float tmp13 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp13,"tmp13");
+			Float tmp11 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp11,"tmp11");
 			HX_STACK_LINE(686)
-			int tmp14 = this->_elapsedMS;		HX_STACK_VAR(tmp14,"tmp14");
+			int tmp12 = this->_elapsedMS;		HX_STACK_VAR(tmp12,"tmp12");
 			HX_STACK_LINE(686)
-			Float tmp15 = (Float(tmp14) / Float((int)1000));		HX_STACK_VAR(tmp15,"tmp15");
+			Float tmp13 = (Float(tmp12) / Float((int)1000));		HX_STACK_VAR(tmp13,"tmp13");
 			HX_STACK_LINE(686)
-			Float tmp16 = (tmp13 * tmp15);		HX_STACK_VAR(tmp16,"tmp16");
+			Float tmp14 = (tmp11 * tmp13);		HX_STACK_VAR(tmp14,"tmp14");
 			HX_STACK_LINE(686)
-			::flixel::FlxG_obj::elapsed = tmp16;
+			::flixel::FlxG_obj::elapsed = tmp14;
 			HX_STACK_LINE(688)
-			Float tmp17 = ::flixel::FlxG_obj::maxElapsed;		HX_STACK_VAR(tmp17,"tmp17");
+			Float tmp15 = ::flixel::FlxG_obj::maxElapsed;		HX_STACK_VAR(tmp15,"tmp15");
 			HX_STACK_LINE(688)
-			Float tmp18 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp18,"tmp18");
+			Float tmp16 = ::flixel::FlxG_obj::timeScale;		HX_STACK_VAR(tmp16,"tmp16");
 			HX_STACK_LINE(688)
-			Float tmp19 = (tmp17 * tmp18);		HX_STACK_VAR(tmp19,"tmp19");
+			Float tmp17 = (tmp15 * tmp16);		HX_STACK_VAR(tmp17,"tmp17");
 			HX_STACK_LINE(688)
-			Float max = tmp19;		HX_STACK_VAR(max,"max");
+			Float max = tmp17;		HX_STACK_VAR(max,"max");
 			HX_STACK_LINE(689)
-			Float tmp20 = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(tmp20,"tmp20");
+			Float tmp18 = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(tmp18,"tmp18");
 			HX_STACK_LINE(689)
-			Float tmp21 = max;		HX_STACK_VAR(tmp21,"tmp21");
+			Float tmp19 = max;		HX_STACK_VAR(tmp19,"tmp19");
 			HX_STACK_LINE(689)
-			bool tmp22 = (tmp20 > tmp21);		HX_STACK_VAR(tmp22,"tmp22");
+			bool tmp20 = (tmp18 > tmp19);		HX_STACK_VAR(tmp20,"tmp20");
 			HX_STACK_LINE(689)
-			if ((tmp22)){
+			if ((tmp20)){
 				HX_STACK_LINE(690)
 				::flixel::FlxG_obj::elapsed = max;
 			}
@@ -1417,142 +1268,132 @@ Void FlxGame_obj::update( ){
 		HX_STACK_LINE(693)
 		this->updateInput();
 		HX_STACK_LINE(696)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp13 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp13,"tmp13");
+		::flixel::_system::frontEnds::SoundFrontEnd tmp11 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp11,"tmp11");
 		HX_STACK_LINE(696)
-		tmp13->__Field(HX_HCSTRING("update","\x09","\x86","\x05","\x87"), hx::paccDynamic )();
+		tmp11->__Field(HX_HCSTRING("update","\x09","\x86","\x05","\x87"), hx::paccDynamic )();
 		HX_STACK_LINE(698)
 		{
 			HX_STACK_LINE(698)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(698)
-			::flixel::_system::frontEnds::PluginFrontEnd tmp14 = ::flixel::FlxG_obj::plugins;		HX_STACK_VAR(tmp14,"tmp14");
+			::flixel::_system::frontEnds::PluginFrontEnd tmp12 = ::flixel::FlxG_obj::plugins;		HX_STACK_VAR(tmp12,"tmp12");
 			HX_STACK_LINE(698)
-			Array< ::Dynamic > _g1 = tmp14->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp12->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(698)
 			while((true)){
 				HX_STACK_LINE(698)
-				bool tmp15 = (_g < _g1->length);		HX_STACK_VAR(tmp15,"tmp15");
+				bool tmp13 = (_g < _g1->length);		HX_STACK_VAR(tmp13,"tmp13");
 				HX_STACK_LINE(698)
-				bool tmp16 = !(tmp15);		HX_STACK_VAR(tmp16,"tmp16");
+				bool tmp14 = !(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
 				HX_STACK_LINE(698)
-				if ((tmp16)){
+				if ((tmp14)){
 					HX_STACK_LINE(698)
 					break;
 				}
 				HX_STACK_LINE(698)
-				::flixel::plugin::FlxPlugin tmp17 = _g1->__get(_g).StaticCast< ::flixel::plugin::FlxPlugin >();		HX_STACK_VAR(tmp17,"tmp17");
+				::flixel::plugin::FlxPlugin tmp15 = _g1->__get(_g).StaticCast< ::flixel::plugin::FlxPlugin >();		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(698)
-				::flixel::plugin::FlxPlugin plugin = tmp17;		HX_STACK_VAR(plugin,"plugin");
+				::flixel::plugin::FlxPlugin plugin = tmp15;		HX_STACK_VAR(plugin,"plugin");
 				HX_STACK_LINE(698)
 				++(_g);
 				HX_STACK_LINE(698)
-				bool tmp18 = plugin->exists;		HX_STACK_VAR(tmp18,"tmp18");
+				bool tmp16 = plugin->exists;		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(698)
-				bool tmp19;		HX_STACK_VAR(tmp19,"tmp19");
+				bool tmp17;		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(698)
-				if ((tmp18)){
+				if ((tmp16)){
 					HX_STACK_LINE(698)
-					tmp19 = plugin->active;
+					tmp17 = plugin->active;
 				}
 				else{
 					HX_STACK_LINE(698)
-					tmp19 = false;
+					tmp17 = false;
 				}
 				HX_STACK_LINE(698)
-				if ((tmp19)){
+				if ((tmp17)){
 					HX_STACK_LINE(698)
 					plugin->update();
 				}
 			}
 		}
 		HX_STACK_LINE(700)
-		::flixel::FlxState tmp14 = this->_state;		HX_STACK_VAR(tmp14,"tmp14");
+		::flixel::FlxState tmp12 = this->_state;		HX_STACK_VAR(tmp12,"tmp12");
 		HX_STACK_LINE(700)
-		tmp14->tryUpdate();
+		tmp12->tryUpdate();
 		HX_STACK_LINE(702)
 		{
 			HX_STACK_LINE(702)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(702)
-			::flixel::_system::frontEnds::CameraFrontEnd tmp15 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp15,"tmp15");
+			::flixel::_system::frontEnds::CameraFrontEnd tmp13 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp13,"tmp13");
 			HX_STACK_LINE(702)
-			Array< ::Dynamic > _g1 = tmp15->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp13->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(702)
 			while((true)){
 				HX_STACK_LINE(702)
-				bool tmp16 = (_g < _g1->length);		HX_STACK_VAR(tmp16,"tmp16");
+				bool tmp14 = (_g < _g1->length);		HX_STACK_VAR(tmp14,"tmp14");
 				HX_STACK_LINE(702)
-				bool tmp17 = !(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+				bool tmp15 = !(tmp14);		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(702)
-				if ((tmp17)){
+				if ((tmp15)){
 					HX_STACK_LINE(702)
 					break;
 				}
 				HX_STACK_LINE(702)
-				::flixel::FlxCamera tmp18 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp18,"tmp18");
+				::flixel::FlxCamera tmp16 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(702)
-				::flixel::FlxCamera camera = tmp18;		HX_STACK_VAR(camera,"camera");
+				::flixel::FlxCamera camera = tmp16;		HX_STACK_VAR(camera,"camera");
 				HX_STACK_LINE(702)
 				++(_g);
 				HX_STACK_LINE(702)
-				bool tmp19 = (camera != null());		HX_STACK_VAR(tmp19,"tmp19");
+				bool tmp17 = (camera != null());		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(702)
-				bool tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+				bool tmp18;		HX_STACK_VAR(tmp18,"tmp18");
 				HX_STACK_LINE(702)
-				if ((tmp19)){
+				if ((tmp17)){
 					HX_STACK_LINE(702)
-					tmp20 = camera->exists;
+					tmp18 = camera->exists;
 				}
 				else{
 					HX_STACK_LINE(702)
-					tmp20 = false;
+					tmp18 = false;
 				}
 				HX_STACK_LINE(702)
-				if ((tmp20)){
+				if ((tmp18)){
 					HX_STACK_LINE(702)
-					bool tmp21 = camera->active;		HX_STACK_VAR(tmp21,"tmp21");
+					bool tmp19 = camera->active;		HX_STACK_VAR(tmp19,"tmp19");
 					HX_STACK_LINE(702)
-					if ((tmp21)){
+					if ((tmp19)){
 						HX_STACK_LINE(702)
 						camera->update();
 					}
 					HX_STACK_LINE(702)
-					Float tmp22 = camera->x;		HX_STACK_VAR(tmp22,"tmp22");
+					Float tmp20 = camera->x;		HX_STACK_VAR(tmp20,"tmp20");
 					HX_STACK_LINE(702)
-					Float tmp23 = camera->_flashOffset->x;		HX_STACK_VAR(tmp23,"tmp23");
+					Float tmp21 = camera->_flashOffset->x;		HX_STACK_VAR(tmp21,"tmp21");
 					HX_STACK_LINE(702)
-					Float tmp24 = (tmp22 + tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+					Float tmp22 = (tmp20 + tmp21);		HX_STACK_VAR(tmp22,"tmp22");
 					HX_STACK_LINE(702)
-					camera->flashSprite->set_x(tmp24);
+					camera->flashSprite->set_x(tmp22);
 					HX_STACK_LINE(702)
-					Float tmp25 = camera->y;		HX_STACK_VAR(tmp25,"tmp25");
+					Float tmp23 = camera->y;		HX_STACK_VAR(tmp23,"tmp23");
 					HX_STACK_LINE(702)
-					Float tmp26 = camera->_flashOffset->y;		HX_STACK_VAR(tmp26,"tmp26");
+					Float tmp24 = camera->_flashOffset->y;		HX_STACK_VAR(tmp24,"tmp24");
 					HX_STACK_LINE(702)
-					Float tmp27 = (tmp25 + tmp26);		HX_STACK_VAR(tmp27,"tmp27");
+					Float tmp25 = (tmp23 + tmp24);		HX_STACK_VAR(tmp25,"tmp25");
 					HX_STACK_LINE(702)
-					camera->flashSprite->set_y(tmp27);
+					camera->flashSprite->set_y(tmp25);
 					HX_STACK_LINE(702)
-					bool tmp28 = camera->visible;		HX_STACK_VAR(tmp28,"tmp28");
+					bool tmp26 = camera->visible;		HX_STACK_VAR(tmp26,"tmp26");
 					HX_STACK_LINE(702)
-					camera->flashSprite->set_visible(tmp28);
+					camera->flashSprite->set_visible(tmp26);
 				}
 			}
 		}
 		HX_STACK_LINE(703)
-		::flixel::_system::frontEnds::SignalFrontEnd tmp15 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp15,"tmp15");
+		::flixel::_system::frontEnds::SignalFrontEnd tmp13 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp13,"tmp13");
 		HX_STACK_LINE(703)
-		tmp15->__Field(HX_HCSTRING("postUpdate","\x89","\x06","\x3e","\xdc"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
-		HX_STACK_LINE(706)
-		::flixel::_system::debug::FlxDebugger tmp16 = this->debugger;		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(706)
-		int tmp17 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(tmp17,"tmp17");
-		HX_STACK_LINE(706)
-		int tmp18 = this->ticks;		HX_STACK_VAR(tmp18,"tmp18");
-		HX_STACK_LINE(706)
-		int tmp19 = (tmp17 - tmp18);		HX_STACK_VAR(tmp19,"tmp19");
-		HX_STACK_LINE(706)
-		tmp16->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("flixelUpdate","\x85","\x69","\x5e","\x27"), hx::paccDynamic )(tmp19);
+		tmp13->__Field(HX_HCSTRING("postUpdate","\x89","\x06","\x3e","\xdc"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
 		HX_STACK_LINE(710)
 		{
 			HX_STACK_LINE(710)
@@ -1562,18 +1403,18 @@ Void FlxGame_obj::update( ){
 			HX_STACK_LINE(710)
 			while((true)){
 				HX_STACK_LINE(710)
-				bool tmp20 = (_g < _g1->length);		HX_STACK_VAR(tmp20,"tmp20");
+				bool tmp14 = (_g < _g1->length);		HX_STACK_VAR(tmp14,"tmp14");
 				HX_STACK_LINE(710)
-				bool tmp21 = !(tmp20);		HX_STACK_VAR(tmp21,"tmp21");
+				bool tmp15 = !(tmp14);		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(710)
-				if ((tmp21)){
+				if ((tmp15)){
 					HX_STACK_LINE(710)
 					break;
 				}
 				HX_STACK_LINE(710)
-				::flixel::input::FlxSwipe tmp22 = _g1->__get(_g).StaticCast< ::flixel::input::FlxSwipe >();		HX_STACK_VAR(tmp22,"tmp22");
+				::flixel::input::FlxSwipe tmp16 = _g1->__get(_g).StaticCast< ::flixel::input::FlxSwipe >();		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(710)
-				::flixel::input::FlxSwipe swipe = tmp22;		HX_STACK_VAR(swipe,"swipe");
+				::flixel::input::FlxSwipe swipe = tmp16;		HX_STACK_VAR(swipe,"swipe");
 				HX_STACK_LINE(710)
 				++(_g);
 				HX_STACK_LINE(712)
@@ -1664,21 +1505,10 @@ Void FlxGame_obj::draw( ){
 			HX_STACK_LINE(784)
 			return null();
 		}
-		HX_STACK_LINE(788)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp6 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(788)
-		bool tmp7 = tmp6->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(788)
-		if ((tmp7)){
-			HX_STACK_LINE(791)
-			int tmp8 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(791)
-			this->ticks = tmp8;
-		}
 		HX_STACK_LINE(795)
-		::flixel::_system::frontEnds::SignalFrontEnd tmp8 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp8,"tmp8");
+		::flixel::_system::frontEnds::SignalFrontEnd tmp6 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(795)
-		tmp8->__Field(HX_HCSTRING("preDraw","\xc7","\x05","\xd5","\x1a"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
+		tmp6->__Field(HX_HCSTRING("preDraw","\xc7","\x05","\xd5","\x1a"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
 		HX_STACK_LINE(798)
 		::flixel::_system::layer::TileSheetExt_obj::_DRAWCALLS = (int)0;
 		HX_STACK_LINE(801)
@@ -1686,93 +1516,89 @@ Void FlxGame_obj::draw( ){
 			HX_STACK_LINE(801)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(801)
-			::flixel::_system::frontEnds::CameraFrontEnd tmp9 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp9,"tmp9");
+			::flixel::_system::frontEnds::CameraFrontEnd tmp7 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp7,"tmp7");
 			HX_STACK_LINE(801)
-			Array< ::Dynamic > _g1 = tmp9->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp7->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(801)
 			while((true)){
 				HX_STACK_LINE(801)
-				bool tmp10 = (_g < _g1->length);		HX_STACK_VAR(tmp10,"tmp10");
+				bool tmp8 = (_g < _g1->length);		HX_STACK_VAR(tmp8,"tmp8");
 				HX_STACK_LINE(801)
-				bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
+				bool tmp9 = !(tmp8);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(801)
-				if ((tmp11)){
+				if ((tmp9)){
 					HX_STACK_LINE(801)
 					break;
 				}
 				HX_STACK_LINE(801)
-				::flixel::FlxCamera tmp12 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp12,"tmp12");
+				::flixel::FlxCamera tmp10 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(801)
-				::flixel::FlxCamera camera = tmp12;		HX_STACK_VAR(camera,"camera");
+				::flixel::FlxCamera camera = tmp10;		HX_STACK_VAR(camera,"camera");
 				HX_STACK_LINE(801)
 				++(_g);
 				HX_STACK_LINE(801)
-				bool tmp13 = (camera == null());		HX_STACK_VAR(tmp13,"tmp13");
+				bool tmp11 = (camera == null());		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(801)
-				bool tmp14 = !(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
+				bool tmp12 = !(tmp11);		HX_STACK_VAR(tmp12,"tmp12");
 				HX_STACK_LINE(801)
-				bool tmp15 = tmp14;		HX_STACK_VAR(tmp15,"tmp15");
+				bool tmp13 = tmp12;		HX_STACK_VAR(tmp13,"tmp13");
+				HX_STACK_LINE(801)
+				bool tmp14;		HX_STACK_VAR(tmp14,"tmp14");
+				HX_STACK_LINE(801)
+				if ((tmp13)){
+					HX_STACK_LINE(801)
+					bool tmp15 = camera->exists;		HX_STACK_VAR(tmp15,"tmp15");
+					HX_STACK_LINE(801)
+					bool tmp16 = tmp15;		HX_STACK_VAR(tmp16,"tmp16");
+					HX_STACK_LINE(801)
+					bool tmp17 = tmp16;		HX_STACK_VAR(tmp17,"tmp17");
+					HX_STACK_LINE(801)
+					tmp14 = !(tmp17);
+				}
+				else{
+					HX_STACK_LINE(801)
+					tmp14 = true;
+				}
+				HX_STACK_LINE(801)
+				bool tmp15 = !(tmp14);		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(801)
 				bool tmp16;		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(801)
 				if ((tmp15)){
 					HX_STACK_LINE(801)
-					bool tmp17 = camera->exists;		HX_STACK_VAR(tmp17,"tmp17");
+					bool tmp17 = camera->visible;		HX_STACK_VAR(tmp17,"tmp17");
 					HX_STACK_LINE(801)
 					bool tmp18 = tmp17;		HX_STACK_VAR(tmp18,"tmp18");
 					HX_STACK_LINE(801)
-					bool tmp19 = tmp18;		HX_STACK_VAR(tmp19,"tmp19");
-					HX_STACK_LINE(801)
-					tmp16 = !(tmp19);
+					tmp16 = !(tmp18);
 				}
 				else{
 					HX_STACK_LINE(801)
 					tmp16 = true;
 				}
 				HX_STACK_LINE(801)
-				bool tmp17 = !(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-				HX_STACK_LINE(801)
-				bool tmp18;		HX_STACK_VAR(tmp18,"tmp18");
-				HX_STACK_LINE(801)
-				if ((tmp17)){
-					HX_STACK_LINE(801)
-					bool tmp19 = camera->visible;		HX_STACK_VAR(tmp19,"tmp19");
-					HX_STACK_LINE(801)
-					bool tmp20 = tmp19;		HX_STACK_VAR(tmp20,"tmp20");
-					HX_STACK_LINE(801)
-					tmp18 = !(tmp20);
-				}
-				else{
-					HX_STACK_LINE(801)
-					tmp18 = true;
-				}
-				HX_STACK_LINE(801)
-				if ((tmp18)){
+				if ((tmp16)){
 					HX_STACK_LINE(801)
 					continue;
 				}
 				HX_STACK_LINE(801)
 				camera->clearDrawStack();
 				HX_STACK_LINE(801)
-				::openfl::_legacy::display::Graphics tmp19 = camera->canvas->get_graphics();		HX_STACK_VAR(tmp19,"tmp19");
+				::openfl::_legacy::display::Graphics tmp17 = camera->canvas->get_graphics();		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(801)
-				tmp19->clear();
+				tmp17->clear();
 				HX_STACK_LINE(801)
-				::openfl::_legacy::display::Graphics tmp20 = camera->debugLayer->get_graphics();		HX_STACK_VAR(tmp20,"tmp20");
+				int tmp18 = (int(camera->bgColor) & int((int)16777215));		HX_STACK_VAR(tmp18,"tmp18");
 				HX_STACK_LINE(801)
-				tmp20->clear();
+				bool tmp19 = camera->useBgAlphaBlending;		HX_STACK_VAR(tmp19,"tmp19");
 				HX_STACK_LINE(801)
-				int tmp21 = (int(camera->bgColor) & int((int)16777215));		HX_STACK_VAR(tmp21,"tmp21");
+				int tmp20 = (int(camera->bgColor) >> int((int)24));		HX_STACK_VAR(tmp20,"tmp20");
 				HX_STACK_LINE(801)
-				bool tmp22 = camera->useBgAlphaBlending;		HX_STACK_VAR(tmp22,"tmp22");
+				int tmp21 = (int(tmp20) & int((int)255));		HX_STACK_VAR(tmp21,"tmp21");
 				HX_STACK_LINE(801)
-				int tmp23 = (int(camera->bgColor) >> int((int)24));		HX_STACK_VAR(tmp23,"tmp23");
+				Float tmp22 = (Float(tmp21) / Float((int)255));		HX_STACK_VAR(tmp22,"tmp22");
 				HX_STACK_LINE(801)
-				int tmp24 = (int(tmp23) & int((int)255));		HX_STACK_VAR(tmp24,"tmp24");
-				HX_STACK_LINE(801)
-				Float tmp25 = (Float(tmp24) / Float((int)255));		HX_STACK_VAR(tmp25,"tmp25");
-				HX_STACK_LINE(801)
-				camera->fill(tmp21,tmp22,tmp25,null());
+				camera->fill(tmp18,tmp19,tmp22,null());
 			}
 		}
 		HX_STACK_LINE(803)
@@ -1780,181 +1606,175 @@ Void FlxGame_obj::draw( ){
 			HX_STACK_LINE(803)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(803)
-			::flixel::_system::frontEnds::PluginFrontEnd tmp9 = ::flixel::FlxG_obj::plugins;		HX_STACK_VAR(tmp9,"tmp9");
+			::flixel::_system::frontEnds::PluginFrontEnd tmp7 = ::flixel::FlxG_obj::plugins;		HX_STACK_VAR(tmp7,"tmp7");
 			HX_STACK_LINE(803)
-			Array< ::Dynamic > _g1 = tmp9->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp7->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(803)
 			while((true)){
 				HX_STACK_LINE(803)
-				bool tmp10 = (_g < _g1->length);		HX_STACK_VAR(tmp10,"tmp10");
+				bool tmp8 = (_g < _g1->length);		HX_STACK_VAR(tmp8,"tmp8");
 				HX_STACK_LINE(803)
-				bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
+				bool tmp9 = !(tmp8);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(803)
-				if ((tmp11)){
+				if ((tmp9)){
 					HX_STACK_LINE(803)
 					break;
 				}
 				HX_STACK_LINE(803)
-				::flixel::plugin::FlxPlugin tmp12 = _g1->__get(_g).StaticCast< ::flixel::plugin::FlxPlugin >();		HX_STACK_VAR(tmp12,"tmp12");
+				::flixel::plugin::FlxPlugin tmp10 = _g1->__get(_g).StaticCast< ::flixel::plugin::FlxPlugin >();		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(803)
-				::flixel::plugin::FlxPlugin plugin = tmp12;		HX_STACK_VAR(plugin,"plugin");
+				::flixel::plugin::FlxPlugin plugin = tmp10;		HX_STACK_VAR(plugin,"plugin");
 				HX_STACK_LINE(803)
 				++(_g);
 				HX_STACK_LINE(803)
-				bool tmp13 = plugin->exists;		HX_STACK_VAR(tmp13,"tmp13");
+				bool tmp11 = plugin->exists;		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(803)
-				bool tmp14;		HX_STACK_VAR(tmp14,"tmp14");
+				bool tmp12;		HX_STACK_VAR(tmp12,"tmp12");
 				HX_STACK_LINE(803)
-				if ((tmp13)){
+				if ((tmp11)){
 					HX_STACK_LINE(803)
-					tmp14 = plugin->visible;
+					tmp12 = plugin->visible;
 				}
 				else{
 					HX_STACK_LINE(803)
-					tmp14 = false;
+					tmp12 = false;
 				}
 				HX_STACK_LINE(803)
-				if ((tmp14)){
+				if ((tmp12)){
 					HX_STACK_LINE(803)
 					plugin->draw();
 				}
 			}
 		}
 		HX_STACK_LINE(805)
-		::flixel::FlxState tmp9 = this->_state;		HX_STACK_VAR(tmp9,"tmp9");
+		::flixel::FlxState tmp7 = this->_state;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(805)
-		tmp9->draw();
+		tmp7->draw();
 		HX_STACK_LINE(808)
 		{
 			HX_STACK_LINE(808)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(808)
-			::flixel::_system::frontEnds::CameraFrontEnd tmp10 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp10,"tmp10");
+			::flixel::_system::frontEnds::CameraFrontEnd tmp8 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp8,"tmp8");
 			HX_STACK_LINE(808)
-			Array< ::Dynamic > _g1 = tmp10->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp8->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(808)
 			while((true)){
 				HX_STACK_LINE(808)
-				bool tmp11 = (_g < _g1->length);		HX_STACK_VAR(tmp11,"tmp11");
+				bool tmp9 = (_g < _g1->length);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(808)
-				bool tmp12 = !(tmp11);		HX_STACK_VAR(tmp12,"tmp12");
+				bool tmp10 = !(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(808)
-				if ((tmp12)){
+				if ((tmp10)){
 					HX_STACK_LINE(808)
 					break;
 				}
 				HX_STACK_LINE(808)
-				::flixel::FlxCamera tmp13 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp13,"tmp13");
+				::flixel::FlxCamera tmp11 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(808)
-				::flixel::FlxCamera camera = tmp13;		HX_STACK_VAR(camera,"camera");
+				::flixel::FlxCamera camera = tmp11;		HX_STACK_VAR(camera,"camera");
 				HX_STACK_LINE(808)
 				++(_g);
 				HX_STACK_LINE(808)
-				bool tmp14 = (camera != null());		HX_STACK_VAR(tmp14,"tmp14");
+				bool tmp12 = (camera != null());		HX_STACK_VAR(tmp12,"tmp12");
 				HX_STACK_LINE(808)
-				bool tmp15 = tmp14;		HX_STACK_VAR(tmp15,"tmp15");
+				bool tmp13 = tmp12;		HX_STACK_VAR(tmp13,"tmp13");
 				HX_STACK_LINE(808)
-				bool tmp16;		HX_STACK_VAR(tmp16,"tmp16");
+				bool tmp14;		HX_STACK_VAR(tmp14,"tmp14");
+				HX_STACK_LINE(808)
+				if ((tmp13)){
+					HX_STACK_LINE(808)
+					tmp14 = camera->exists;
+				}
+				else{
+					HX_STACK_LINE(808)
+					tmp14 = false;
+				}
+				HX_STACK_LINE(808)
+				bool tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+				HX_STACK_LINE(808)
+				if ((tmp14)){
+					HX_STACK_LINE(808)
+					tmp15 = camera->visible;
+				}
+				else{
+					HX_STACK_LINE(808)
+					tmp15 = false;
+				}
 				HX_STACK_LINE(808)
 				if ((tmp15)){
-					HX_STACK_LINE(808)
-					tmp16 = camera->exists;
-				}
-				else{
-					HX_STACK_LINE(808)
-					tmp16 = false;
-				}
-				HX_STACK_LINE(808)
-				bool tmp17;		HX_STACK_VAR(tmp17,"tmp17");
-				HX_STACK_LINE(808)
-				if ((tmp16)){
-					HX_STACK_LINE(808)
-					tmp17 = camera->visible;
-				}
-				else{
-					HX_STACK_LINE(808)
-					tmp17 = false;
-				}
-				HX_STACK_LINE(808)
-				if ((tmp17)){
 					HX_STACK_LINE(808)
 					camera->render();
 				}
 			}
 		}
-		HX_STACK_LINE(811)
-		::flixel::_system::debug::FlxDebugger tmp10 = this->debugger;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(811)
-		int tmp11 = ::flixel::_system::layer::TileSheetExt_obj::_DRAWCALLS;		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(811)
-		tmp10->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("drawCalls","\x71","\xa7","\x26","\x09"), hx::paccDynamic )(tmp11);
 		HX_STACK_LINE(837)
 		{
 			HX_STACK_LINE(837)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(837)
-			::flixel::_system::frontEnds::CameraFrontEnd tmp12 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp12,"tmp12");
+			::flixel::_system::frontEnds::CameraFrontEnd tmp8 = ::flixel::FlxG_obj::cameras;		HX_STACK_VAR(tmp8,"tmp8");
 			HX_STACK_LINE(837)
-			Array< ::Dynamic > _g1 = tmp12->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
+			Array< ::Dynamic > _g1 = tmp8->__Field(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"), hx::paccDynamic );		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(837)
 			while((true)){
 				HX_STACK_LINE(837)
-				bool tmp13 = (_g < _g1->length);		HX_STACK_VAR(tmp13,"tmp13");
+				bool tmp9 = (_g < _g1->length);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(837)
-				bool tmp14 = !(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
+				bool tmp10 = !(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(837)
-				if ((tmp14)){
+				if ((tmp10)){
 					HX_STACK_LINE(837)
 					break;
 				}
 				HX_STACK_LINE(837)
-				::flixel::FlxCamera tmp15 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp15,"tmp15");
+				::flixel::FlxCamera tmp11 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(837)
-				::flixel::FlxCamera camera = tmp15;		HX_STACK_VAR(camera,"camera");
+				::flixel::FlxCamera camera = tmp11;		HX_STACK_VAR(camera,"camera");
 				HX_STACK_LINE(837)
 				++(_g);
 				HX_STACK_LINE(837)
-				bool tmp16 = (camera == null());		HX_STACK_VAR(tmp16,"tmp16");
+				bool tmp12 = (camera == null());		HX_STACK_VAR(tmp12,"tmp12");
 				HX_STACK_LINE(837)
-				bool tmp17 = !(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+				bool tmp13 = !(tmp12);		HX_STACK_VAR(tmp13,"tmp13");
 				HX_STACK_LINE(837)
-				bool tmp18 = tmp17;		HX_STACK_VAR(tmp18,"tmp18");
+				bool tmp14 = tmp13;		HX_STACK_VAR(tmp14,"tmp14");
 				HX_STACK_LINE(837)
-				bool tmp19;		HX_STACK_VAR(tmp19,"tmp19");
+				bool tmp15;		HX_STACK_VAR(tmp15,"tmp15");
 				HX_STACK_LINE(837)
-				if ((tmp18)){
+				if ((tmp14)){
 					HX_STACK_LINE(837)
-					bool tmp20 = camera->exists;		HX_STACK_VAR(tmp20,"tmp20");
+					bool tmp16 = camera->exists;		HX_STACK_VAR(tmp16,"tmp16");
 					HX_STACK_LINE(837)
-					bool tmp21 = tmp20;		HX_STACK_VAR(tmp21,"tmp21");
+					bool tmp17 = tmp16;		HX_STACK_VAR(tmp17,"tmp17");
 					HX_STACK_LINE(837)
-					bool tmp22 = tmp21;		HX_STACK_VAR(tmp22,"tmp22");
+					bool tmp18 = tmp17;		HX_STACK_VAR(tmp18,"tmp18");
 					HX_STACK_LINE(837)
-					tmp19 = !(tmp22);
+					tmp15 = !(tmp18);
 				}
 				else{
 					HX_STACK_LINE(837)
-					tmp19 = true;
+					tmp15 = true;
 				}
 				HX_STACK_LINE(837)
-				bool tmp20 = !(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+				bool tmp16 = !(tmp15);		HX_STACK_VAR(tmp16,"tmp16");
 				HX_STACK_LINE(837)
-				bool tmp21;		HX_STACK_VAR(tmp21,"tmp21");
+				bool tmp17;		HX_STACK_VAR(tmp17,"tmp17");
 				HX_STACK_LINE(837)
-				if ((tmp20)){
+				if ((tmp16)){
 					HX_STACK_LINE(837)
-					bool tmp22 = camera->visible;		HX_STACK_VAR(tmp22,"tmp22");
+					bool tmp18 = camera->visible;		HX_STACK_VAR(tmp18,"tmp18");
 					HX_STACK_LINE(837)
-					bool tmp23 = tmp22;		HX_STACK_VAR(tmp23,"tmp23");
+					bool tmp19 = tmp18;		HX_STACK_VAR(tmp19,"tmp19");
 					HX_STACK_LINE(837)
-					tmp21 = !(tmp23);
+					tmp17 = !(tmp19);
 				}
 				else{
 					HX_STACK_LINE(837)
-					tmp21 = true;
+					tmp17 = true;
 				}
 				HX_STACK_LINE(837)
-				if ((tmp21)){
+				if ((tmp17)){
 					HX_STACK_LINE(837)
 					continue;
 				}
@@ -1963,19 +1783,9 @@ Void FlxGame_obj::draw( ){
 			}
 		}
 		HX_STACK_LINE(839)
-		::flixel::_system::frontEnds::SignalFrontEnd tmp12 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp12,"tmp12");
+		::flixel::_system::frontEnds::SignalFrontEnd tmp8 = ::flixel::FlxG_obj::signals;		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(839)
-		tmp12->__Field(HX_HCSTRING("postDraw","\x84","\x8c","\xaf","\x00"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
-		HX_STACK_LINE(842)
-		::flixel::_system::debug::FlxDebugger tmp13 = this->debugger;		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(842)
-		int tmp14 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(842)
-		int tmp15 = this->ticks;		HX_STACK_VAR(tmp15,"tmp15");
-		HX_STACK_LINE(842)
-		int tmp16 = (tmp14 - tmp15);		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(842)
-		tmp13->__Field(HX_HCSTRING("stats","\x1f","\x76","\x0b","\x84"), hx::paccDynamic )->__Field(HX_HCSTRING("flixelDraw","\x80","\xf8","\xdf","\x4d"), hx::paccDynamic )(tmp16);
+		tmp8->__Field(HX_HCSTRING("postDraw","\x84","\x8c","\xaf","\x00"), hx::paccDynamic )->__Field(HX_HCSTRING("dispatch","\xba","\xce","\x63","\x1e"), hx::paccDynamic )();
 	}
 return null();
 }
@@ -1993,7 +1803,6 @@ void FlxGame_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_BEGIN_CLASS(FlxGame);
 	HX_MARK_MEMBER_NAME(focusLostFramerate,"focusLostFramerate");
 	HX_MARK_MEMBER_NAME(soundTray,"soundTray");
-	HX_MARK_MEMBER_NAME(debugger,"debugger");
 	HX_MARK_MEMBER_NAME(ticks,"ticks");
 	HX_MARK_MEMBER_NAME(_gameJustStarted,"_gameJustStarted");
 	HX_MARK_MEMBER_NAME(_initialState,"_initialState");
@@ -2021,7 +1830,6 @@ void FlxGame_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(focusLostFramerate,"focusLostFramerate");
 	HX_VISIT_MEMBER_NAME(soundTray,"soundTray");
-	HX_VISIT_MEMBER_NAME(debugger,"debugger");
 	HX_VISIT_MEMBER_NAME(ticks,"ticks");
 	HX_VISIT_MEMBER_NAME(_gameJustStarted,"_gameJustStarted");
 	HX_VISIT_MEMBER_NAME(_initialState,"_initialState");
@@ -2065,7 +1873,6 @@ Dynamic FlxGame_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPro
 		if (HX_FIELD_EQ(inName,"onFocus") ) { return onFocus_dyn(); }
 		break;
 	case 8:
-		if (HX_FIELD_EQ(inName,"debugger") ) { return debugger; }
 		if (HX_FIELD_EQ(inName,"onResize") ) { return onResize_dyn(); }
 		break;
 	case 9:
@@ -2128,9 +1935,6 @@ Dynamic FlxGame_obj::__SetField(const ::String &inName,const Dynamic &inValue,hx
 	case 7:
 		if (HX_FIELD_EQ(inName,"_stepMS") ) { _stepMS=inValue.Cast< int >(); return inValue; }
 		break;
-	case 8:
-		if (HX_FIELD_EQ(inName,"debugger") ) { debugger=inValue.Cast< ::flixel::_system::debug::FlxDebugger >(); return inValue; }
-		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"soundTray") ) { soundTray=inValue.Cast< ::flixel::_system::ui::FlxSoundTray >(); return inValue; }
 		break;
@@ -2180,7 +1984,6 @@ void FlxGame_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("focusLostFramerate","\x11","\xa8","\xf2","\xda"));
 	outFields->push(HX_HCSTRING("soundTray","\x65","\x62","\xd1","\x57"));
-	outFields->push(HX_HCSTRING("debugger","\x21","\x24","\xeb","\x90"));
 	outFields->push(HX_HCSTRING("ticks","\x76","\x2e","\x2e","\x10"));
 	outFields->push(HX_HCSTRING("_gameJustStarted","\x24","\xcc","\x52","\x15"));
 	outFields->push(HX_HCSTRING("_initialState","\xcc","\x09","\x8a","\x2a"));
@@ -2207,7 +2010,6 @@ void FlxGame_obj::__GetFields(Array< ::String> &outFields)
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxGame_obj,focusLostFramerate),HX_HCSTRING("focusLostFramerate","\x11","\xa8","\xf2","\xda")},
 	{hx::fsObject /*::flixel::_system::ui::FlxSoundTray*/ ,(int)offsetof(FlxGame_obj,soundTray),HX_HCSTRING("soundTray","\x65","\x62","\xd1","\x57")},
-	{hx::fsObject /*::flixel::_system::debug::FlxDebugger*/ ,(int)offsetof(FlxGame_obj,debugger),HX_HCSTRING("debugger","\x21","\x24","\xeb","\x90")},
 	{hx::fsInt,(int)offsetof(FlxGame_obj,ticks),HX_HCSTRING("ticks","\x76","\x2e","\x2e","\x10")},
 	{hx::fsBool,(int)offsetof(FlxGame_obj,_gameJustStarted),HX_HCSTRING("_gameJustStarted","\x24","\xcc","\x52","\x15")},
 	{hx::fsObject /*::hx::Class*/ ,(int)offsetof(FlxGame_obj,_initialState),HX_HCSTRING("_initialState","\xcc","\x09","\x8a","\x2a")},
@@ -2235,7 +2037,6 @@ static hx::StaticInfo *sStaticStorageInfo = 0;
 static ::String sMemberFields[] = {
 	HX_HCSTRING("focusLostFramerate","\x11","\xa8","\xf2","\xda"),
 	HX_HCSTRING("soundTray","\x65","\x62","\xd1","\x57"),
-	HX_HCSTRING("debugger","\x21","\x24","\xeb","\x90"),
 	HX_HCSTRING("ticks","\x76","\x2e","\x2e","\x10"),
 	HX_HCSTRING("_gameJustStarted","\x24","\xcc","\x52","\x15"),
 	HX_HCSTRING("_initialState","\xcc","\x09","\x8a","\x2a"),

@@ -20,18 +20,21 @@ class PlayState extends FlxState {
 	private var red_platform:FlxSprite;
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
+	
 	var background = null;
-
+	
 
 	override public function create():Void {
 		bgColor = 0xffc0f8c8;
-		background = new Background();
+		background = new Background();				
 
 		for(i in 0...background.getGroup().length) {
 			add(background.getGroup().members[i]);
 		}
 		generatePlatforms();
-
+		
+		//var client = new ClientConnectionTest(); //If server is not running will crash program
+		
 		super.create();
 	}
 

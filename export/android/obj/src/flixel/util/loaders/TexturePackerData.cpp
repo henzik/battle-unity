@@ -21,8 +21,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_loaders_CachedGraphics
 #include <flixel/util/loaders/CachedGraphics.h>
@@ -203,7 +203,7 @@ Void TexturePackerData_obj::parseData( ){
 				HX_STACK_LINE(56)
 				{
 					HX_STACK_LINE(56)
-					::flixel::util::FlxPool_flixel_util_FlxPoint tmp13 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp13,"tmp13");
+					::flixel::util::FlxPool tmp13 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp13,"tmp13");
 					HX_STACK_LINE(56)
 					::flixel::util::FlxPoint tmp14 = tmp13->get();		HX_STACK_VAR(tmp14,"tmp14");
 					HX_STACK_LINE(56)
@@ -226,7 +226,7 @@ Void TexturePackerData_obj::parseData( ){
 				HX_STACK_LINE(57)
 				{
 					HX_STACK_LINE(57)
-					::flixel::util::FlxPool_flixel_util_FlxPoint tmp14 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp14,"tmp14");
+					::flixel::util::FlxPool tmp14 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp14,"tmp14");
 					HX_STACK_LINE(57)
 					::flixel::util::FlxPoint tmp15 = tmp14->get();		HX_STACK_VAR(tmp15,"tmp15");
 					HX_STACK_LINE(57)

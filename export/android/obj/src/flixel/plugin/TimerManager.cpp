@@ -116,7 +116,7 @@ Void TimerManager_obj::update( ){
 			HX_STACK_LINE(45)
 			if ((tmp5)){
 				HX_STACK_LINE(45)
-				tmp6 = (timer->time > (int)0);
+				tmp6 = (timer->time >= (int)0);
 			}
 			else{
 				HX_STACK_LINE(45)

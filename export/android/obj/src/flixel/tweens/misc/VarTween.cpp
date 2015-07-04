@@ -72,22 +72,6 @@ return null();
 	HX_STACK_ARG(object,"object")
 	HX_STACK_ARG(properties,"properties")
 	HX_STACK_ARG(duration,"duration")
-	HX_STACK_LINE(46)
-	bool tmp = (object == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(46)
-	if ((tmp)){
-		HX_STACK_LINE(48)
-		HX_STACK_DO_THROW(HX_HCSTRING("Cannot tween variables of an object that is null.","\x4e","\x3a","\x13","\x2f"));
-	}
-	else{
-		HX_STACK_LINE(50)
-		bool tmp1 = (properties == null());		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(50)
-		if ((tmp1)){
-			HX_STACK_LINE(52)
-			HX_STACK_DO_THROW(HX_HCSTRING("Cannot tween null properties.","\x74","\x80","\x03","\x52"));
-		}
-	}
 	HX_STACK_LINE(56)
 	this->_object = object;
 	HX_STACK_LINE(57)

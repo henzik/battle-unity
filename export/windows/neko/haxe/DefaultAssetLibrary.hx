@@ -49,8 +49,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		path.set ("assets/images/game_background.png", "assets/images/game_background.png");
-		type.set ("assets/images/game_background.png", AssetType.IMAGE);
 		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
 		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
@@ -69,14 +67,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/beep.ogg", AssetType.SOUND);
 		path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
 		type.set ("assets/sounds/flixel.ogg", AssetType.SOUND);
+		className.set ("assets/fonts/nokiafc22.ttf", __ASSET__assets_fonts_nokiafc22_ttf);
+		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
+		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
+		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
 		
 		
 		#elseif html5
 		
 		var id;
-		id = "assets/images/game_background.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "assets/images/game_background_sprites.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -104,6 +103,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/flixel.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
+		id = "assets/fonts/nokiafc22.ttf";
+		className.set (id, __ASSET__assets_fonts_nokiafc22_ttf);
+		
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/arial.ttf";
+		className.set (id, __ASSET__assets_fonts_arial_ttf);
+		
+		type.set (id, AssetType.FONT);
 		
 		
 		#else
@@ -118,7 +125,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
+		Font.registerFont (__ASSET__assets_fonts_nokiafc22_ttf);
+		Font.registerFont (__ASSET__assets_fonts_arial_ttf);
 		
 		
 		#if (windows || mac || linux)
@@ -133,7 +141,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
-		useManifest = true;
+		
+		className.set ("assets/fonts/nokiafc22.ttf", __ASSET__assets_fonts_nokiafc22_ttf);
+		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
+		
+		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
+		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
 		
 		
 		if (useManifest) {
@@ -760,7 +773,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
+@:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
+@:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
@@ -774,7 +788,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
+@:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Nokia Cellphone FC Small"; } #end }
+@:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Arial"; } #end }
 
 
 #else
@@ -782,6 +797,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
+@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font {}
+@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/arial.ttf") @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font {}
 
 
 
@@ -790,6 +807,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #else
 
 
+class __ASSET__assets_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/nokiafc22.ttf"; fontName = "Nokia Cellphone FC Small";  }}
+class __ASSET__assets_fonts_arial_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/arial.ttf"; fontName = "Arial";  }}
 
 
 #end
@@ -847,8 +866,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		path.set ("assets/images/game_background.png", "assets/images/game_background.png");
-		type.set ("assets/images/game_background.png", AssetType.IMAGE);
 		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
 		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
@@ -867,14 +884,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/beep.ogg", AssetType.SOUND);
 		path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
 		type.set ("assets/sounds/flixel.ogg", AssetType.SOUND);
+		className.set ("assets/fonts/nokiafc22.ttf", __ASSET__assets_fonts_nokiafc22_ttf);
+		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
+		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
+		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
 		
 		
 		#elseif html5
 		
 		var id;
-		id = "assets/images/game_background.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "assets/images/game_background_sprites.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -902,6 +920,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/flixel.ogg";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
+		id = "assets/fonts/nokiafc22.ttf";
+		className.set (id, __ASSET__assets_fonts_nokiafc22_ttf);
+		
+		type.set (id, AssetType.FONT);
+		id = "assets/fonts/arial.ttf";
+		className.set (id, __ASSET__assets_fonts_arial_ttf);
+		
+		type.set (id, AssetType.FONT);
 		
 		
 		var assetsPrefix = ApplicationMain.config.assetsPrefix;
@@ -924,7 +950,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
+		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_nokiafc22_ttf);
+		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_arial_ttf);
 		
 		#end
 		
@@ -940,7 +967,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
-		useManifest = true;
+		
+		className.set ("assets/fonts/nokiafc22.ttf", __ASSET__assets_fonts_nokiafc22_ttf);
+		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
+		
+		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
+		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
 		
 		
 		if (useManifest) {
@@ -1551,7 +1583,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
+@:keep @:bind #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
@@ -1565,7 +1598,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
+@:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
+@:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font { public function new () { super (); name = "Arial"; } } 
 
 
 #else
@@ -1575,12 +1609,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
+@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/arial.ttf") #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font {}
 
 
 
 #end
 
 #if openfl
+@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { __fontPath = "assets/fonts/nokiafc22.ttf"; name = "Nokia Cellphone FC Small"; super (); }}
+@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_arial_ttf extends openfl.text.Font { public function new () { __fontPath = "assets/fonts/arial.ttf"; name = "Arial"; super (); }}
 
 #end
 

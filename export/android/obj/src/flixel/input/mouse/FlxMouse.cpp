@@ -40,12 +40,6 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxSignal
 #include <flixel/interfaces/IFlxSignal.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SignalFrontEnd
 #include <flixel/system/frontEnds/SignalFrontEnd.h>
 #endif
@@ -58,8 +52,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignal0
 #include <flixel/util/_FlxSignal/FlxSignal0.h>
@@ -171,7 +165,7 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 		HX_STACK_LINE(435)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(435)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(435)
 		::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(435)
@@ -198,7 +192,7 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 		HX_STACK_LINE(436)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(436)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(436)
 		::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(436)
@@ -542,7 +536,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,unload,(void))
 			HX_STACK_LINE(326)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(326)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+			::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(326)
 			::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(326)
@@ -621,7 +615,7 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxMouse_obj,getWorldPosition,return )
 			HX_STACK_LINE(349)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(349)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+			::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(349)
 			::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(349)
@@ -1060,30 +1054,6 @@ Void FlxMouse_obj::onMouseWheel( ::openfl::_legacy::events::MouseEvent FlashEven
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","onMouseWheel",0xdc642911,"flixel.input.mouse.FlxMouse.onMouseWheel","flixel/input/mouse/FlxMouse.hx",560,0xe4e80b89)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(FlashEvent,"FlashEvent")
-		HX_STACK_LINE(562)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(562)
-		bool tmp1 = tmp->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(562)
-		bool tmp2;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(562)
-		if ((tmp1)){
-			HX_STACK_LINE(562)
-			::flixel::FlxGame tmp3 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(562)
-			::flixel::FlxGame tmp4 = tmp3;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(562)
-			tmp2 = tmp4->debugger->__Field(HX_HCSTRING("hasMouse","\x6b","\x60","\xbd","\x98"), hx::paccDynamic );
-		}
-		else{
-			HX_STACK_LINE(562)
-			tmp2 = false;
-		}
-		HX_STACK_LINE(562)
-		if ((tmp2)){
-			HX_STACK_LINE(565)
-			return null();
-		}
 		HX_STACK_LINE(569)
 		this->_wheelUsed = true;
 		HX_STACK_LINE(570)

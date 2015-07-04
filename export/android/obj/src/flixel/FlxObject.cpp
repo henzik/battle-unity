@@ -31,15 +31,6 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_tile_FlxTilemap
 #include <flixel/tile/FlxTilemap.h>
 #endif
@@ -49,14 +40,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
@@ -69,39 +54,6 @@
 #endif
 #ifndef INCLUDED_flixel_util_LabelValuePair
 #include <flixel/util/LabelValuePair.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_CapsStyle
-#include <openfl/_legacy/display/CapsStyle.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_DisplayObject
-#include <openfl/_legacy/display/DisplayObject.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
-#include <openfl/_legacy/display/DisplayObjectContainer.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_Graphics
-#include <openfl/_legacy/display/Graphics.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
-#include <openfl/_legacy/display/IBitmapDrawable.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
-#include <openfl/_legacy/display/InteractiveObject.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_JointStyle
-#include <openfl/_legacy/display/JointStyle.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_LineScaleMode
-#include <openfl/_legacy/display/LineScaleMode.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_Sprite
-#include <openfl/_legacy/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
-#include <openfl/_legacy/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
-#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 
@@ -118,10 +70,6 @@ Float Y = __o_Y.Default(0);
 Float Width = __o_Width.Default(0);
 Float Height = __o_Height.Default(0);
 {
-	HX_STACK_LINE(459)
-	this->ignoreDrawDebug = false;
-	HX_STACK_LINE(454)
-	this->debugBoundingBoxColor = null();
 	HX_STACK_LINE(448)
 	this->collisonXDrag = true;
 	HX_STACK_LINE(443)
@@ -205,7 +153,7 @@ Void FlxObject_obj::initVars( ){
 		HX_STACK_LINE(492)
 		{
 			HX_STACK_LINE(492)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(492)
 			::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(492)
@@ -228,7 +176,7 @@ Void FlxObject_obj::initVars( ){
 		HX_STACK_LINE(493)
 		{
 			HX_STACK_LINE(493)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(493)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(493)
@@ -251,7 +199,7 @@ Void FlxObject_obj::initVars( ){
 			HX_STACK_LINE(494)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(494)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+			::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(494)
 			::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(494)
@@ -280,7 +228,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+				::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 				HX_STACK_LINE(496)
 				::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 				HX_STACK_LINE(496)
@@ -307,7 +255,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp5 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+				::flixel::util::FlxPool tmp5 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 				HX_STACK_LINE(496)
 				::flixel::util::FlxPoint tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 				HX_STACK_LINE(496)
@@ -334,7 +282,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp6 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
+				::flixel::util::FlxPool tmp6 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
 				HX_STACK_LINE(496)
 				::flixel::util::FlxPoint tmp7 = tmp6->get();		HX_STACK_VAR(tmp7,"tmp7");
 				HX_STACK_LINE(496)
@@ -357,7 +305,7 @@ Void FlxObject_obj::initVars( ){
 			HX_STACK_LINE(496)
 			{
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp7 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp7,"tmp7");
+				::flixel::util::FlxPool tmp7 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp7,"tmp7");
 				HX_STACK_LINE(496)
 				::flixel::util::FlxPoint tmp8 = tmp7->get();		HX_STACK_VAR(tmp8,"tmp8");
 				HX_STACK_LINE(496)
@@ -392,7 +340,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(504)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(504)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(504)
 			::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(504)
@@ -419,7 +367,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(505)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(505)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(505)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(505)
@@ -446,7 +394,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(506)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(506)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+			::flixel::util::FlxPool tmp3 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(506)
 			::flixel::util::FlxPoint tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(506)
@@ -469,7 +417,7 @@ Void FlxObject_obj::initMotionVars( ){
 		HX_STACK_LINE(507)
 		{
 			HX_STACK_LINE(507)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+			::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(507)
 			::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(507)
@@ -549,8 +497,6 @@ Void FlxObject_obj::update( ){
 {
 		HX_STACK_FRAME("flixel.FlxObject","update",0x87b15e78,"flixel.FlxObject.update","flixel/FlxObject.hx",533,0xf0fe0d80)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(536)
-		this->super::update();
 		HX_STACK_LINE(539)
 		::flixel::util::FlxPoint tmp = this->last;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(539)
@@ -956,17 +902,6 @@ Void FlxObject_obj::draw( ){
 {
 		HX_STACK_FRAME("flixel.FlxObject","draw",0x1f17bab3,"flixel.FlxObject.draw","flixel/FlxObject.hx",581,0xf0fe0d80)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(583)
-		this->super::draw();
-		HX_STACK_LINE(584)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(584)
-		bool tmp1 = tmp->__Field(HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(584)
-		if ((tmp1)){
-			HX_STACK_LINE(585)
-			this->drawDebug();
-		}
 	}
 return null();
 }
@@ -2253,7 +2188,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,inWorldBounds,return )
 			HX_STACK_LINE(733)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(733)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(733)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(733)
@@ -2331,7 +2266,7 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,getScreenXY,return )
 			HX_STACK_LINE(752)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(752)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(752)
 			::flixel::util::FlxPoint tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(752)
@@ -2655,223 +2590,6 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,setSize,(void))
 
-Void FlxObject_obj::drawDebug( ){
-{
-		HX_STACK_FRAME("flixel.FlxObject","drawDebug",0x2ad45ea0,"flixel.FlxObject.drawDebug","flixel/FlxObject.hx",856,0xf0fe0d80)
-		HX_STACK_THIS(this)
-		HX_STACK_LINE(857)
-		bool tmp = this->ignoreDrawDebug;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(857)
-		bool tmp1 = !(tmp);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(857)
-		if ((tmp1)){
-			HX_STACK_LINE(859)
-			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(859)
-			Array< ::Dynamic > _g1 = this->get_cameras();		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(859)
-			while((true)){
-				HX_STACK_LINE(859)
-				bool tmp2 = (_g < _g1->length);		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(859)
-				bool tmp3 = !(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(859)
-				if ((tmp3)){
-					HX_STACK_LINE(859)
-					break;
-				}
-				HX_STACK_LINE(859)
-				::flixel::FlxCamera tmp4 = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(859)
-				::flixel::FlxCamera camera = tmp4;		HX_STACK_VAR(camera,"camera");
-				HX_STACK_LINE(859)
-				++(_g);
-				HX_STACK_LINE(861)
-				::flixel::FlxCamera tmp5 = camera;		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(861)
-				this->drawDebugOnCamera(tmp5);
-			}
-		}
-	}
-return null();
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,drawDebug,(void))
-
-Void FlxObject_obj::drawDebugOnCamera( ::flixel::FlxCamera Camera){
-{
-		HX_STACK_FRAME("flixel.FlxObject","drawDebugOnCamera",0x0b2ef7e4,"flixel.FlxObject.drawDebugOnCamera","flixel/FlxObject.hx",873,0xf0fe0d80)
-		HX_STACK_THIS(this)
-		HX_STACK_ARG(Camera,"Camera")
-		HX_STACK_LINE(874)
-		bool tmp = Camera->visible;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(874)
-		bool tmp1 = tmp;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(874)
-		bool tmp2 = !(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(874)
-		bool tmp3 = !(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(874)
-		bool tmp4 = tmp3;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(874)
-		bool tmp5;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(874)
-		if ((tmp4)){
-			HX_STACK_LINE(874)
-			bool tmp6 = Camera->exists;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(874)
-			bool tmp7 = tmp6;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(874)
-			bool tmp8 = tmp7;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(874)
-			tmp5 = !(tmp8);
-		}
-		else{
-			HX_STACK_LINE(874)
-			tmp5 = true;
-		}
-		HX_STACK_LINE(874)
-		bool tmp6 = !(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(874)
-		bool tmp7;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(874)
-		if ((tmp6)){
-			HX_STACK_LINE(874)
-			::flixel::FlxCamera tmp8 = Camera;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(874)
-			::flixel::FlxCamera tmp9 = tmp8;		HX_STACK_VAR(tmp9,"tmp9");
-			HX_STACK_LINE(874)
-			bool tmp10 = this->isOnScreen(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(874)
-			bool tmp11 = tmp10;		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(874)
-			bool tmp12 = tmp11;		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(874)
-			tmp7 = !(tmp12);
-		}
-		else{
-			HX_STACK_LINE(874)
-			tmp7 = true;
-		}
-		HX_STACK_LINE(874)
-		if ((tmp7)){
-			HX_STACK_LINE(876)
-			return null();
-		}
-		HX_STACK_LINE(880)
-		Float tmp8 = this->x;		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(880)
-		Float tmp9 = Camera->scroll->x;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(880)
-		::flixel::util::FlxPoint tmp10 = this->scrollFactor;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(880)
-		Float tmp11 = tmp10->x;		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(880)
-		Float tmp12 = (tmp9 * tmp11);		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(880)
-		Float tmp13 = (tmp8 - tmp12);		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(880)
-		Float boundingBoxX = tmp13;		HX_STACK_VAR(boundingBoxX,"boundingBoxX");
-		HX_STACK_LINE(881)
-		Float tmp14 = this->y;		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(881)
-		Float tmp15 = Camera->scroll->y;		HX_STACK_VAR(tmp15,"tmp15");
-		HX_STACK_LINE(881)
-		::flixel::util::FlxPoint tmp16 = this->scrollFactor;		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(881)
-		Float tmp17 = tmp16->y;		HX_STACK_VAR(tmp17,"tmp17");
-		HX_STACK_LINE(881)
-		Float tmp18 = (tmp15 * tmp17);		HX_STACK_VAR(tmp18,"tmp18");
-		HX_STACK_LINE(881)
-		Float tmp19 = (tmp14 - tmp18);		HX_STACK_VAR(tmp19,"tmp19");
-		HX_STACK_LINE(881)
-		Float boundingBoxY = tmp19;		HX_STACK_VAR(boundingBoxY,"boundingBoxY");
-		HX_STACK_LINE(883)
-		bool tmp20 = this->pixelPerfectRender;		HX_STACK_VAR(tmp20,"tmp20");
-		HX_STACK_LINE(883)
-		if ((tmp20)){
-			HX_STACK_LINE(885)
-			Float tmp21 = boundingBoxX;		HX_STACK_VAR(tmp21,"tmp21");
-			HX_STACK_LINE(885)
-			int tmp22 = ::Math_obj::floor(tmp21);		HX_STACK_VAR(tmp22,"tmp22");
-			HX_STACK_LINE(885)
-			boundingBoxX = tmp22;
-			HX_STACK_LINE(886)
-			Float tmp23 = boundingBoxY;		HX_STACK_VAR(tmp23,"tmp23");
-			HX_STACK_LINE(886)
-			int tmp24 = ::Math_obj::floor(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-			HX_STACK_LINE(886)
-			boundingBoxY = tmp24;
-		}
-		HX_STACK_LINE(895)
-		Dynamic tmp21 = this->debugBoundingBoxColor;		HX_STACK_VAR(tmp21,"tmp21");
-		HX_STACK_LINE(895)
-		Dynamic color = tmp21;		HX_STACK_VAR(color,"color");
-		HX_STACK_LINE(896)
-		bool tmp22 = (color == null());		HX_STACK_VAR(tmp22,"tmp22");
-		HX_STACK_LINE(896)
-		if ((tmp22)){
-			HX_STACK_LINE(898)
-			int tmp23 = this->allowCollisions;		HX_STACK_VAR(tmp23,"tmp23");
-			HX_STACK_LINE(898)
-			bool tmp24 = (tmp23 != (int)0);		HX_STACK_VAR(tmp24,"tmp24");
-			HX_STACK_LINE(898)
-			if ((tmp24)){
-				HX_STACK_LINE(900)
-				int tmp25 = this->allowCollisions;		HX_STACK_VAR(tmp25,"tmp25");
-				HX_STACK_LINE(900)
-				bool tmp26 = (tmp25 != (int)4369);		HX_STACK_VAR(tmp26,"tmp26");
-				HX_STACK_LINE(900)
-				if ((tmp26)){
-					HX_STACK_LINE(902)
-					color = (int)-16181;
-				}
-				HX_STACK_LINE(904)
-				bool tmp27 = this->immovable;		HX_STACK_VAR(tmp27,"tmp27");
-				HX_STACK_LINE(904)
-				if ((tmp27)){
-					HX_STACK_LINE(906)
-					color = (int)-16744448;
-				}
-				else{
-					HX_STACK_LINE(910)
-					color = (int)-65536;
-				}
-			}
-			HX_STACK_LINE(915)
-			bool tmp25 = (color == null());		HX_STACK_VAR(tmp25,"tmp25");
-			HX_STACK_LINE(915)
-			if ((tmp25)){
-				HX_STACK_LINE(917)
-				color = (int)-16776961;
-			}
-		}
-		HX_STACK_LINE(934)
-		::openfl::_legacy::display::Graphics tmp23 = Camera->debugLayer->get_graphics();		HX_STACK_VAR(tmp23,"tmp23");
-		HX_STACK_LINE(934)
-		::openfl::_legacy::display::Graphics gfx = tmp23;		HX_STACK_VAR(gfx,"gfx");
-		HX_STACK_LINE(935)
-		Dynamic tmp24 = color;		HX_STACK_VAR(tmp24,"tmp24");
-		HX_STACK_LINE(935)
-		gfx->lineStyle((int)1,tmp24,((Float)0.5),null(),null(),null(),null(),null());
-		HX_STACK_LINE(936)
-		Float tmp25 = boundingBoxX;		HX_STACK_VAR(tmp25,"tmp25");
-		HX_STACK_LINE(936)
-		Float tmp26 = boundingBoxY;		HX_STACK_VAR(tmp26,"tmp26");
-		HX_STACK_LINE(936)
-		Float tmp27 = this->get_width();		HX_STACK_VAR(tmp27,"tmp27");
-		HX_STACK_LINE(936)
-		Float tmp28 = this->get_height();		HX_STACK_VAR(tmp28,"tmp28");
-		HX_STACK_LINE(936)
-		gfx->drawRect(tmp25,tmp26,tmp27,tmp28);
-	}
-return null();
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
-
 ::String FlxObject_obj::toString( ){
 	HX_STACK_FRAME("flixel.FlxObject","toString",0x9e14e2db,"flixel.FlxObject.toString","flixel/FlxObject.hx",945,0xf0fe0d80)
 	HX_STACK_THIS(this)
@@ -2880,7 +2598,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 	HX_STACK_LINE(947)
 	{
 		HX_STACK_LINE(947)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(947)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(947)
@@ -2899,7 +2617,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 	HX_STACK_LINE(948)
 	{
 		HX_STACK_LINE(948)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(948)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(948)
@@ -2924,7 +2642,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 		HX_STACK_LINE(949)
 		{
 			HX_STACK_LINE(949)
-			::flixel::util::FlxPool_flixel_util_LabelValuePair tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+			::flixel::util::FlxPool tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(949)
 			::flixel::util::LabelValuePair tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(949)
@@ -2948,7 +2666,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 		HX_STACK_LINE(950)
 		{
 			HX_STACK_LINE(950)
-			::flixel::util::FlxPool_flixel_util_LabelValuePair tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+			::flixel::util::FlxPool tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(950)
 			::flixel::util::LabelValuePair tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(950)
@@ -2966,7 +2684,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 	HX_STACK_LINE(951)
 	{
 		HX_STACK_LINE(951)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+		::flixel::util::FlxPool tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(951)
 		::flixel::util::LabelValuePair tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(951)
@@ -2985,7 +2703,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxObject_obj,drawDebugOnCamera,(void))
 	HX_STACK_LINE(952)
 	{
 		HX_STACK_LINE(952)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
+		::flixel::util::FlxPool tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(952)
 		::flixel::util::LabelValuePair tmp7 = tmp6->get();		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(952)
@@ -3036,25 +2754,12 @@ Float FlxObject_obj::set_width( Float Width){
 	HX_STACK_FRAME("flixel.FlxObject","set_width",0x7d06d55a,"flixel.FlxObject.set_width","flixel/FlxObject.hx",966,0xf0fe0d80)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Width,"Width")
-	HX_STACK_LINE(968)
-	bool tmp = (Width < (int)0);		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(968)
-	if ((tmp)){
-		HX_STACK_LINE(970)
-		::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(970)
-		::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(970)
-		tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("An object's width cannot be smaller than 0. Use offset for sprites to control the hitbox position!","\xf5","\x8d","\x0b","\x95"),tmp2,true);
-	}
-	else{
-		HX_STACK_LINE(975)
-		this->width = Width;
-	}
+	HX_STACK_LINE(975)
+	this->width = Width;
 	HX_STACK_LINE(980)
-	Float tmp1 = Width;		HX_STACK_VAR(tmp1,"tmp1");
+	Float tmp = Width;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(980)
-	return tmp1;
+	return tmp;
 }
 
 
@@ -3064,25 +2769,12 @@ Float FlxObject_obj::set_height( Float Height){
 	HX_STACK_FRAME("flixel.FlxObject","set_height",0x9f435213,"flixel.FlxObject.set_height","flixel/FlxObject.hx",984,0xf0fe0d80)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Height,"Height")
-	HX_STACK_LINE(986)
-	bool tmp = (Height < (int)0);		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(986)
-	if ((tmp)){
-		HX_STACK_LINE(988)
-		::flixel::_system::frontEnds::LogFrontEnd tmp1 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(988)
-		::flixel::_system::debug::LogStyle tmp2 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(988)
-		tmp1->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("An object's height cannot be smaller than 0. Use offset for sprites to control the hitbox position!","\xb0","\x49","\x90","\xe4"),tmp2,true);
-	}
-	else{
-		HX_STACK_LINE(993)
-		this->height = Height;
-	}
+	HX_STACK_LINE(993)
+	this->height = Height;
 	HX_STACK_LINE(998)
-	Float tmp1 = Height;		HX_STACK_VAR(tmp1,"tmp1");
+	Float tmp = Height;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(998)
-	return tmp1;
+	return tmp;
 }
 
 
@@ -4783,8 +4475,6 @@ void FlxObject_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(wasTouching,"wasTouching");
 	HX_MARK_MEMBER_NAME(allowCollisions,"allowCollisions");
 	HX_MARK_MEMBER_NAME(collisonXDrag,"collisonXDrag");
-	HX_MARK_MEMBER_NAME(debugBoundingBoxColor,"debugBoundingBoxColor");
-	HX_MARK_MEMBER_NAME(ignoreDrawDebug,"ignoreDrawDebug");
 	HX_MARK_MEMBER_NAME(_point,"_point");
 	HX_MARK_MEMBER_NAME(_cameras,"_cameras");
 	HX_MARK_END_CLASS();
@@ -4817,8 +4507,6 @@ void FlxObject_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(wasTouching,"wasTouching");
 	HX_VISIT_MEMBER_NAME(allowCollisions,"allowCollisions");
 	HX_VISIT_MEMBER_NAME(collisonXDrag,"collisonXDrag");
-	HX_VISIT_MEMBER_NAME(debugBoundingBoxColor,"debugBoundingBoxColor");
-	HX_VISIT_MEMBER_NAME(ignoreDrawDebug,"ignoreDrawDebug");
 	HX_VISIT_MEMBER_NAME(_point,"_point");
 	HX_VISIT_MEMBER_NAME(_cameras,"_cameras");
 }
@@ -4868,7 +4556,6 @@ Dynamic FlxObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"immovable") ) { return immovable; }
-		if (HX_FIELD_EQ(inName,"drawDebug") ) { return drawDebug_dyn(); }
 		if (HX_FIELD_EQ(inName,"set_width") ) { return set_width_dyn(); }
 		if (HX_FIELD_EQ(inName,"get_width") ) { return get_width_dyn(); }
 		if (HX_FIELD_EQ(inName,"get_solid") ) { return get_solid_dyn(); }
@@ -4915,13 +4602,9 @@ Dynamic FlxObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 	case 15:
 		if (HX_FIELD_EQ(inName,"angularVelocity") ) { return angularVelocity; }
 		if (HX_FIELD_EQ(inName,"allowCollisions") ) { return allowCollisions; }
-		if (HX_FIELD_EQ(inName,"ignoreDrawDebug") ) { return ignoreDrawDebug; }
 		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"overlapsCallback") ) { return overlapsCallback_dyn(); }
-		break;
-	case 17:
-		if (HX_FIELD_EQ(inName,"drawDebugOnCamera") ) { return drawDebugOnCamera_dyn(); }
 		break;
 	case 18:
 		if (HX_FIELD_EQ(inName,"pixelPerfectRender") ) { return pixelPerfectRender; }
@@ -4929,9 +4612,6 @@ Dynamic FlxObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		break;
 	case 19:
 		if (HX_FIELD_EQ(inName,"angularAcceleration") ) { return angularAcceleration; }
-		break;
-	case 21:
-		if (HX_FIELD_EQ(inName,"debugBoundingBoxColor") ) { return debugBoundingBoxColor; }
 		break;
 	case 22:
 		if (HX_FIELD_EQ(inName,"set_pixelPerfectRender") ) { return set_pixelPerfectRender_dyn(); }
@@ -5015,16 +4695,12 @@ Dynamic FlxObject_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 	case 15:
 		if (HX_FIELD_EQ(inName,"angularVelocity") ) { angularVelocity=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"allowCollisions") ) { allowCollisions=inValue.Cast< int >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"ignoreDrawDebug") ) { ignoreDrawDebug=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 18:
 		if (HX_FIELD_EQ(inName,"pixelPerfectRender") ) { if (inCallProp == hx::paccAlways) return set_pixelPerfectRender(inValue);pixelPerfectRender=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 19:
 		if (HX_FIELD_EQ(inName,"angularAcceleration") ) { angularAcceleration=inValue.Cast< Float >(); return inValue; }
-		break;
-	case 21:
-		if (HX_FIELD_EQ(inName,"debugBoundingBoxColor") ) { debugBoundingBoxColor=inValue.Cast< Dynamic >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -5074,8 +4750,6 @@ void FlxObject_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("wasTouching","\xcc","\x44","\xe4","\x5f"));
 	outFields->push(HX_HCSTRING("allowCollisions","\xaa","\xc9","\xd9","\x59"));
 	outFields->push(HX_HCSTRING("collisonXDrag","\x97","\xca","\xfa","\x0a"));
-	outFields->push(HX_HCSTRING("debugBoundingBoxColor","\x4f","\xf7","\x30","\x61"));
-	outFields->push(HX_HCSTRING("ignoreDrawDebug","\x3d","\xfc","\x11","\x6b"));
 	outFields->push(HX_HCSTRING("_point","\x91","\xfb","\x76","\xc2"));
 	outFields->push(HX_HCSTRING("_cameras","\xaf","\xe3","\xe9","\x1c"));
 	super::__GetFields(outFields);
@@ -5108,8 +4782,6 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxObject_obj,wasTouching),HX_HCSTRING("wasTouching","\xcc","\x44","\xe4","\x5f")},
 	{hx::fsInt,(int)offsetof(FlxObject_obj,allowCollisions),HX_HCSTRING("allowCollisions","\xaa","\xc9","\xd9","\x59")},
 	{hx::fsBool,(int)offsetof(FlxObject_obj,collisonXDrag),HX_HCSTRING("collisonXDrag","\x97","\xca","\xfa","\x0a")},
-	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxObject_obj,debugBoundingBoxColor),HX_HCSTRING("debugBoundingBoxColor","\x4f","\xf7","\x30","\x61")},
-	{hx::fsBool,(int)offsetof(FlxObject_obj,ignoreDrawDebug),HX_HCSTRING("ignoreDrawDebug","\x3d","\xfc","\x11","\x6b")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxObject_obj,_point),HX_HCSTRING("_point","\x91","\xfb","\x76","\xc2")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxObject_obj,_cameras),HX_HCSTRING("_cameras","\xaf","\xe3","\xe9","\x1c")},
 	{ hx::fsUnknown, 0, null()}
@@ -5157,8 +4829,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("wasTouching","\xcc","\x44","\xe4","\x5f"),
 	HX_HCSTRING("allowCollisions","\xaa","\xc9","\xd9","\x59"),
 	HX_HCSTRING("collisonXDrag","\x97","\xca","\xfa","\x0a"),
-	HX_HCSTRING("debugBoundingBoxColor","\x4f","\xf7","\x30","\x61"),
-	HX_HCSTRING("ignoreDrawDebug","\x3d","\xfc","\x11","\x6b"),
 	HX_HCSTRING("_point","\x91","\xfb","\x76","\xc2"),
 	HX_HCSTRING("_cameras","\xaf","\xe3","\xe9","\x1c"),
 	HX_HCSTRING("initVars","\xdc","\x5a","\x00","\x53"),
@@ -5182,8 +4852,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("hurt","\x0f","\x5c","\x17","\x45"),
 	HX_HCSTRING("setPosition","\x6b","\x6a","\x5b","\xfb"),
 	HX_HCSTRING("setSize","\x83","\xe1","\xd7","\x11"),
-	HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"),
-	HX_HCSTRING("drawDebugOnCamera","\xf3","\x47","\x7b","\xcb"),
 	HX_HCSTRING("toString","\xac","\xd0","\x6e","\x38"),
 	HX_HCSTRING("set_x","\x5b","\x9b","\x2f","\x7a"),
 	HX_HCSTRING("set_y","\x5c","\x9b","\x2f","\x7a"),
@@ -5312,7 +4980,7 @@ struct _Function_0_1{
 			HX_STACK_LINE(66)
 			{
 				HX_STACK_LINE(66)
-				::flixel::util::FlxPool_flixel_util_FlxRect tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+				::flixel::util::FlxPool tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(66)
 				::flixel::util::FlxRect tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 				HX_STACK_LINE(66)
@@ -5356,7 +5024,7 @@ struct _Function_0_2{
 			HX_STACK_LINE(67)
 			{
 				HX_STACK_LINE(67)
-				::flixel::util::FlxPool_flixel_util_FlxRect tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+				::flixel::util::FlxPool tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(67)
 				::flixel::util::FlxRect tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 				HX_STACK_LINE(67)

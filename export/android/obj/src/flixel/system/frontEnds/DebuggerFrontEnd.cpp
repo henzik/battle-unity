@@ -1,20 +1,5 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_Std
-#include <Std.h>
-#endif
-#ifndef INCLUDED_StringTools
-#include <StringTools.h>
-#endif
-#ifndef INCLUDED_Type
-#include <Type.h>
-#endif
-#ifndef INCLUDED_flixel_FlxG
-#include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_FlxGame
-#include <flixel/FlxGame.h>
-#endif
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
@@ -27,29 +12,14 @@
 #ifndef INCLUDED_flixel_system_debug_DebuggerLayout
 #include <flixel/system/debug/DebuggerLayout.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Tracker
-#include <flixel/system/debug/Tracker.h>
-#endif
 #ifndef INCLUDED_flixel_system_debug_TrackerProfile
 #include <flixel/system/debug/TrackerProfile.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Watch
-#include <flixel/system/debug/Watch.h>
 #endif
 #ifndef INCLUDED_flixel_system_debug_Window
 #include <flixel/system/debug/Window.h>
 #endif
 #ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
 #include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_system_ui_FlxSystemButton
 #include <flixel/system/ui/FlxSystemButton.h>
@@ -83,9 +53,6 @@
 #endif
 #ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
 #include <openfl/_legacy/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_geom_Rectangle
-#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace _system{
@@ -128,17 +95,9 @@ Dynamic DebuggerFrontEnd_obj::__Create(hx::DynamicArray inArgs)
 
 Void DebuggerFrontEnd_obj::setLayout( ::flixel::_system::debug::DebuggerLayout Layout){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","setLayout",0x96c2386b,"flixel.system.frontEnds.DebuggerFrontEnd.setLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",47,0x2ebb4b30)
+		HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","setLayout",0x96c2386b,"flixel.system.frontEnds.DebuggerFrontEnd.setLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",45,0x2ebb4b30)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(Layout,"Layout")
-		HX_STACK_LINE(47)
-		::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(47)
-		::flixel::_system::debug::FlxDebugger _this = tmp->debugger;		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(47)
-		_this->__FieldRef(HX_HCSTRING("_layout","\x49","\xc0","\x2f","\xc7")) = Layout;
-		HX_STACK_LINE(47)
-		_this->__Field(HX_HCSTRING("resetLayout","\xd9","\x31","\xcd","\xf8"), hx::paccDynamic )();
 	}
 return null();
 }
@@ -150,10 +109,6 @@ Void DebuggerFrontEnd_obj::resetLayout( ){
 {
 		HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","resetLayout",0xc33ca418,"flixel.system.frontEnds.DebuggerFrontEnd.resetLayout","flixel/system/frontEnds/DebuggerFrontEnd.hx",55,0x2ebb4b30)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(57)
-		::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(57)
-		tmp->debugger->__Field(HX_HCSTRING("resetLayout","\xd9","\x31","\xcd","\xf8"), hx::paccDynamic )();
 	}
 return null();
 }
@@ -164,7 +119,7 @@ HX_DEFINE_DYNAMIC_FUNC0(DebuggerFrontEnd_obj,resetLayout,(void))
 ::flixel::_system::ui::FlxSystemButton DebuggerFrontEnd_obj::addButton( ::flixel::_system::debug::ButtonAlignment Alignment,::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode,hx::Null< bool >  __o_UpdateLayout){
 bool ToggleMode = __o_ToggleMode.Default(false);
 bool UpdateLayout = __o_UpdateLayout.Default(true);
-	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","addButton",0x7066ab72,"flixel.system.frontEnds.DebuggerFrontEnd.addButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",72,0x2ebb4b30)
+	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","addButton",0x7066ab72,"flixel.system.frontEnds.DebuggerFrontEnd.addButton","flixel/system/frontEnds/DebuggerFrontEnd.hx",76,0x2ebb4b30)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Alignment,"Alignment")
 	HX_STACK_ARG(Icon,"Icon")
@@ -172,22 +127,8 @@ bool UpdateLayout = __o_UpdateLayout.Default(true);
 	HX_STACK_ARG(ToggleMode,"ToggleMode")
 	HX_STACK_ARG(UpdateLayout,"UpdateLayout")
 {
-		HX_STACK_LINE(74)
-		::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(74)
-		::flixel::_system::debug::ButtonAlignment tmp1 = Alignment;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(74)
-		::openfl::_legacy::display::BitmapData tmp2 = Icon;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(74)
-		Dynamic tmp3 = UpHandler;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(74)
-		bool tmp4 = ToggleMode;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(74)
-		bool tmp5 = UpdateLayout;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(74)
-		::flixel::_system::ui::FlxSystemButton tmp6 = tmp->debugger->__Field(HX_HCSTRING("addButton","\xf3","\x96","\x04","\x92"), hx::paccDynamic )(tmp1,tmp2,tmp3,tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(74)
-		return tmp6;
+		HX_STACK_LINE(76)
+		return null();
 	}
 }
 
@@ -195,141 +136,11 @@ bool UpdateLayout = __o_UpdateLayout.Default(true);
 HX_DEFINE_DYNAMIC_FUNC5(DebuggerFrontEnd_obj,addButton,return )
 
 ::flixel::_system::debug::Window DebuggerFrontEnd_obj::track( Dynamic Object,::String WindowTitle){
-	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","track",0x1a1fb78a,"flixel.system.frontEnds.DebuggerFrontEnd.track","flixel/system/frontEnds/DebuggerFrontEnd.hx",88,0x2ebb4b30)
+	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","track",0x1a1fb78a,"flixel.system.frontEnds.DebuggerFrontEnd.track","flixel/system/frontEnds/DebuggerFrontEnd.hx",108,0x2ebb4b30)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Object,"Object")
 	HX_STACK_ARG(WindowTitle,"WindowTitle")
-	HX_STACK_LINE(90)
-	Dynamic tmp = Object;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(90)
-	int tmp1 = ::flixel::_system::debug::Tracker_obj::objectsBeingTracked->__Field(HX_HCSTRING("indexOf","\xc9","\x48","\xbf","\xe0"), hx::paccDynamic )(tmp,null());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(90)
-	bool tmp2 = (tmp1 == (int)-1);		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(90)
-	if ((tmp2)){
-		HX_STACK_LINE(92)
-		Dynamic tmp3 = Object;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(92)
-		::flixel::_system::debug::TrackerProfile tmp4 = ::flixel::_system::debug::Tracker_obj::findProfile(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(92)
-		::flixel::_system::debug::TrackerProfile profile = tmp4;		HX_STACK_VAR(profile,"profile");
-		HX_STACK_LINE(93)
-		bool tmp5 = (profile == null());		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(93)
-		if ((tmp5)){
-			HX_STACK_LINE(95)
-			{
-				HX_STACK_LINE(95)
-				::String tmp6;		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(95)
-				{
-					HX_STACK_LINE(95)
-					::hx::Class cl;		HX_STACK_VAR(cl,"cl");
-					HX_STACK_LINE(95)
-					Dynamic tmp7 = Object;		HX_STACK_VAR(tmp7,"tmp7");
-					HX_STACK_LINE(95)
-					bool tmp8 = ::Std_obj::is(tmp7,hx::ClassOf< ::hx::Class >());		HX_STACK_VAR(tmp8,"tmp8");
-					HX_STACK_LINE(95)
-					if ((tmp8)){
-						HX_STACK_LINE(95)
-						cl = ((::hx::Class)(Object));
-					}
-					else{
-						HX_STACK_LINE(95)
-						Dynamic tmp9 = Object;		HX_STACK_VAR(tmp9,"tmp9");
-						HX_STACK_LINE(95)
-						::hx::Class tmp10 = ::Type_obj::getClass(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-						HX_STACK_LINE(95)
-						cl = tmp10;
-					}
-					HX_STACK_LINE(95)
-					::hx::Class tmp9 = cl;		HX_STACK_VAR(tmp9,"tmp9");
-					HX_STACK_LINE(95)
-					::String tmp10 = ::Type_obj::getClassName(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(95)
-					::String s = tmp10;		HX_STACK_VAR(s,"s");
-					HX_STACK_LINE(95)
-					bool tmp11 = (s != null());		HX_STACK_VAR(tmp11,"tmp11");
-					HX_STACK_LINE(95)
-					if ((tmp11)){
-						HX_STACK_LINE(95)
-						::String tmp12 = s;		HX_STACK_VAR(tmp12,"tmp12");
-						HX_STACK_LINE(95)
-						::String tmp13 = ::StringTools_obj::replace(tmp12,HX_HCSTRING("::","\xc0","\x32","\x00","\x00"),HX_HCSTRING(".","\x2e","\x00","\x00","\x00"));		HX_STACK_VAR(tmp13,"tmp13");
-						HX_STACK_LINE(95)
-						s = tmp13;
-						HX_STACK_LINE(95)
-						int tmp14 = s.lastIndexOf(HX_HCSTRING(".","\x2e","\x00","\x00","\x00"),null());		HX_STACK_VAR(tmp14,"tmp14");
-						HX_STACK_LINE(95)
-						int tmp15 = (tmp14 + (int)1);		HX_STACK_VAR(tmp15,"tmp15");
-						HX_STACK_LINE(95)
-						::String tmp16 = s.substr(tmp15,null());		HX_STACK_VAR(tmp16,"tmp16");
-						HX_STACK_LINE(95)
-						s = tmp16;
-					}
-					HX_STACK_LINE(95)
-					tmp6 = s;
-				}
-				HX_STACK_LINE(95)
-				::String tmp7 = (HX_HCSTRING("FlxG.debugger.track(): Could not find a tracking profile for this object of class '","\x30","\x7a","\x51","\x04") + tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(95)
-				::String tmp8 = (tmp7 + HX_HCSTRING("'.","\x27","\x22","\x00","\x00"));		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(95)
-				Dynamic Data = tmp8;		HX_STACK_VAR(Data,"Data");
-				HX_STACK_LINE(95)
-				::flixel::_system::frontEnds::LogFrontEnd tmp9 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(95)
-				Dynamic tmp10 = Data;		HX_STACK_VAR(tmp10,"tmp10");
-				HX_STACK_LINE(95)
-				::flixel::_system::debug::LogStyle tmp11 = ::flixel::_system::debug::LogStyle_obj::ERROR;		HX_STACK_VAR(tmp11,"tmp11");
-				HX_STACK_LINE(95)
-				tmp9->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(tmp10,tmp11,true);
-			}
-			HX_STACK_LINE(96)
-			return null();
-		}
-		else{
-			HX_STACK_LINE(100)
-			::flixel::_system::debug::Window tmp6;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(100)
-			{
-				HX_STACK_LINE(100)
-				::flixel::FlxGame tmp7 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(100)
-				::flixel::_system::debug::FlxDebugger _this = tmp7->debugger;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(100)
-				::flixel::_system::debug::Tracker tmp8 = ::flixel::_system::debug::Tracker_obj::__new(profile,Object,WindowTitle);		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(100)
-				::flixel::_system::debug::Window window = tmp8;		HX_STACK_VAR(window,"window");
-				HX_STACK_LINE(100)
-				::flixel::_system::debug::Window tmp9 = window;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(100)
-				_this->__Field(HX_HCSTRING("_windows","\x04","\x38","\x2d","\x22"), hx::paccDynamic )->__Field(HX_HCSTRING("push","\xda","\x11","\x61","\x4a"), hx::paccDynamic )(tmp9);
-				HX_STACK_LINE(100)
-				::flixel::_system::debug::Window tmp10 = window;		HX_STACK_VAR(tmp10,"tmp10");
-				HX_STACK_LINE(100)
-				_this->__Field(HX_HCSTRING("addChild","\xbb","\xcf","\x16","\xbf"), hx::paccDynamic )(tmp10);
-				HX_STACK_LINE(100)
-				bool tmp11 = (_this->__Field(HX_HCSTRING("_screenBounds","\xe0","\x21","\xaa","\x25"), hx::paccDynamic ) != null());		HX_STACK_VAR(tmp11,"tmp11");
-				HX_STACK_LINE(100)
-				if ((tmp11)){
-					HX_STACK_LINE(100)
-					_this->__Field(HX_HCSTRING("updateBounds","\x5e","\x2d","\xe1","\x65"), hx::paccDynamic )();
-					HX_STACK_LINE(100)
-					window->__Field(HX_HCSTRING("bound","\x3e","\xb0","\xfc","\xb6"), hx::paccDynamic )();
-				}
-				HX_STACK_LINE(100)
-				tmp6 = window;
-			}
-			HX_STACK_LINE(100)
-			return tmp6;
-		}
-	}
-	else{
-		HX_STACK_LINE(105)
-		return null();
-	}
-	HX_STACK_LINE(90)
+	HX_STACK_LINE(108)
 	return null();
 }
 
@@ -338,18 +149,9 @@ HX_DEFINE_DYNAMIC_FUNC2(DebuggerFrontEnd_obj,track,return )
 
 Void DebuggerFrontEnd_obj::addTrackerProfile( ::flixel::_system::debug::TrackerProfile Profile){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","addTrackerProfile",0xb36941d1,"flixel.system.frontEnds.DebuggerFrontEnd.addTrackerProfile","flixel/system/frontEnds/DebuggerFrontEnd.hx",120,0x2ebb4b30)
+		HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","addTrackerProfile",0xb36941d1,"flixel.system.frontEnds.DebuggerFrontEnd.addTrackerProfile","flixel/system/frontEnds/DebuggerFrontEnd.hx",118,0x2ebb4b30)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(Profile,"Profile")
-		HX_STACK_LINE(120)
-		bool tmp = (Profile != null());		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(120)
-		if ((tmp)){
-			HX_STACK_LINE(120)
-			::flixel::_system::debug::TrackerProfile tmp1 = Profile;		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(120)
-			::flixel::_system::debug::Tracker_obj::profiles->push(tmp1);
-		}
 	}
 return null();
 }
@@ -364,14 +166,6 @@ bool UpdateLayout = __o_UpdateLayout.Default(true);
 	HX_STACK_ARG(Button,"Button")
 	HX_STACK_ARG(UpdateLayout,"UpdateLayout")
 {
-		HX_STACK_LINE(133)
-		::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(133)
-		::flixel::_system::ui::FlxSystemButton tmp1 = Button;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(133)
-		bool tmp2 = UpdateLayout;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(133)
-		tmp->debugger->__Field(HX_HCSTRING("removeButton","\x56","\xfd","\x0d","\x49"), hx::paccDynamic )(tmp1,tmp2);
 	}
 return null();
 }
@@ -383,23 +177,10 @@ bool DebuggerFrontEnd_obj::set_drawDebug( bool Value){
 	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","set_drawDebug",0x8073fd91,"flixel.system.frontEnds.DebuggerFrontEnd.set_drawDebug","flixel/system/frontEnds/DebuggerFrontEnd.hx",147,0x2ebb4b30)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(149)
-	bool tmp = Value;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(149)
-	bool tmp1 = this->drawDebug;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(149)
-	bool tmp2 = (tmp != tmp1);		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(149)
-	if ((tmp2)){
-		HX_STACK_LINE(150)
-		::flixel::util::_FlxSignal::FlxSignal0 tmp3 = this->drawDebugChanged;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(150)
-		tmp3->dispatch();
-	}
 	HX_STACK_LINE(153)
-	bool tmp3 = this->drawDebug = Value;		HX_STACK_VAR(tmp3,"tmp3");
+	bool tmp = this->drawDebug = Value;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(153)
-	return tmp3;
+	return tmp;
 }
 
 
@@ -409,16 +190,10 @@ bool DebuggerFrontEnd_obj::set_visible( bool Value){
 	HX_STACK_FRAME("flixel.system.frontEnds.DebuggerFrontEnd","set_visible",0xfdfb51d4,"flixel.system.frontEnds.DebuggerFrontEnd.set_visible","flixel/system/frontEnds/DebuggerFrontEnd.hx",157,0x2ebb4b30)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(159)
-	::flixel::FlxGame tmp = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(159)
-	bool tmp1 = Value;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(159)
-	tmp->debugger->__Field(HX_HCSTRING("set_visible","\x95","\xdf","\x8b","\x33"), hx::paccDynamic )(tmp1);
 	HX_STACK_LINE(162)
-	bool tmp2 = this->visible = Value;		HX_STACK_VAR(tmp2,"tmp2");
+	bool tmp = this->visible = Value;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(162)
-	return tmp2;
+	return tmp;
 }
 
 

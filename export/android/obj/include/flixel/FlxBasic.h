@@ -30,7 +30,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBasic_obj : public hx::Object{
 
 		HX_DO_RTTI_ALL;
 		Dynamic __Field(const ::String &inString, hx::PropertyAccess inCallProp);
-		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
 		Dynamic __SetField(const ::String &inString,const Dynamic &inValue, hx::PropertyAccess inCallProp);
 		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		void __GetFields(Array< ::String> &outFields);
@@ -39,7 +38,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBasic_obj : public hx::Object{
 		operator ::flixel::interfaces::IFlxDestroyable_obj *();
 		::String __ToString() const { return HX_HCSTRING("FlxBasic","\xfc","\x34","\x94","\x6a"); }
 
-		static void __boot();
 		int ID;
 		bool active;
 		bool visible;
@@ -76,8 +74,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBasic_obj : public hx::Object{
 		virtual ::String toString( );
 		Dynamic toString_dyn();
 
-		static int _ACTIVECOUNT;
-		static int _VISIBLECOUNT;
 };
 
 } // end namespace flixel

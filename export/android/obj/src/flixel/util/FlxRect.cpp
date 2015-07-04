@@ -13,11 +13,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
@@ -100,7 +97,7 @@ Void FlxRect_obj::put( ){
 			HX_STACK_LINE(68)
 			this->_inPool = true;
 			HX_STACK_LINE(69)
-			::flixel::util::FlxPool_flixel_util_FlxRect tmp2 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(69)
 			tmp2->putUnsafe(hx::ObjectPtr<OBJ_>(this));
 		}
@@ -457,7 +454,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxRect_obj,destroy,(void))
 	HX_STACK_LINE(214)
 	{
 		HX_STACK_LINE(214)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(214)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(214)
@@ -476,7 +473,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxRect_obj,destroy,(void))
 	HX_STACK_LINE(215)
 	{
 		HX_STACK_LINE(215)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(215)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(215)
@@ -495,7 +492,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxRect_obj,destroy,(void))
 	HX_STACK_LINE(216)
 	{
 		HX_STACK_LINE(216)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(216)
 		::flixel::util::LabelValuePair tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(216)
@@ -514,7 +511,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxRect_obj,destroy,(void))
 	HX_STACK_LINE(217)
 	{
 		HX_STACK_LINE(217)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPool tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(217)
 		::flixel::util::LabelValuePair tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(217)
@@ -677,7 +674,7 @@ Float FlxRect_obj::set_bottom( Float Value){
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,set_bottom,return )
 
-::flixel::util::FlxPool_flixel_util_FlxRect FlxRect_obj::_pool;
+::flixel::util::FlxPool FlxRect_obj::_pool;
 
 ::flixel::util::FlxRect FlxRect_obj::get( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height){
 Float X = __o_X.Default(0);
@@ -695,7 +692,7 @@ Float Height = __o_Height.Default(0);
 		HX_STACK_LINE(24)
 		{
 			HX_STACK_LINE(24)
-			::flixel::util::FlxPool_flixel_util_FlxRect tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxRect_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(24)
 			::flixel::util::FlxRect tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(24)
@@ -832,7 +829,7 @@ bool FlxRect_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::Proper
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool_flixel_util_FlxRect >(); return true; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool >(); return true; }
 	}
 	return false;
 }
@@ -861,7 +858,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsObject /*::flixel::util::FlxPool_flixel_util_FlxRect*/ ,(void *) &FlxRect_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
+	{hx::fsObject /*::flixel::util::FlxPool*/ ,(void *) &FlxRect_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif
@@ -941,7 +938,7 @@ void FlxRect_obj::__register()
 
 void FlxRect_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_util_FlxRect_obj::__new(hx::ClassOf< ::flixel::util::FlxRect >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::util::FlxRect >());
 }
 
 } // end namespace flixel

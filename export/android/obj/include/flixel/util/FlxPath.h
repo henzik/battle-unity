@@ -9,7 +9,6 @@
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
 HX_DECLARE_CLASS1(flixel,FlxBasic)
-HX_DECLARE_CLASS1(flixel,FlxCamera)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
@@ -58,10 +57,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxPath_obj : public hx::Object{
 		bool active;
 		Dynamic onComplete;
 		Dynamic &onComplete_dyn() { return onComplete;}
-		int debugColor;
-		Float debugScrollX;
-		Float debugScrollY;
-		bool ignoreDrawDebug;
 		bool finished;
 		int _nodeIndex;
 		int _mode;
@@ -115,9 +110,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxPath_obj : public hx::Object{
 
 		virtual ::flixel::util::FlxPoint tail( );
 		Dynamic tail_dyn();
-
-		virtual Void drawDebug( ::flixel::FlxCamera Camera);
-		Dynamic drawDebug_dyn();
 
 		static ::flixel::plugin::PathManager manager;
 		static int FORWARD;

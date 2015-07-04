@@ -9,7 +9,7 @@
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
-HX_DECLARE_CLASS2(flixel,util,FlxPool_flixel_util_LabelValuePair)
+HX_DECLARE_CLASS2(flixel,util,FlxPool)
 HX_DECLARE_CLASS2(flixel,util,LabelValuePair)
 namespace flixel{
 namespace util{
@@ -55,7 +55,7 @@ class HXCPP_CLASS_ATTRIBUTES  LabelValuePair_obj : public hx::Object{
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
 
-		static ::flixel::util::FlxPool_flixel_util_LabelValuePair _pool;
+		static ::flixel::util::FlxPool _pool;
 		static ::flixel::util::LabelValuePair weak( ::String label,Dynamic value);
 		static Dynamic weak_dyn();
 

@@ -52,8 +52,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_loaders_CachedGraphics
 #include <flixel/util/loaders/CachedGraphics.h>
@@ -289,7 +289,7 @@ bool EmbeddedFont = __o_EmbeddedFont.Default(true);
 	HX_STACK_LINE(223)
 	{
 		HX_STACK_LINE(223)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp31 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp31,"tmp31");
+		::flixel::util::FlxPool tmp31 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp31,"tmp31");
 		HX_STACK_LINE(223)
 		::flixel::util::FlxPoint tmp32 = tmp31->get();		HX_STACK_VAR(tmp32,"tmp32");
 		HX_STACK_LINE(223)
@@ -629,51 +629,55 @@ bool Embedded = __o_Embedded.Default(true);
 		HX_STACK_LINE(326)
 		tmp1->set_embedFonts(tmp2);
 		HX_STACK_LINE(328)
-		::openfl::_legacy::text::TextFormat tmp3 = this->_defaultFormat;		HX_STACK_VAR(tmp3,"tmp3");
+		Float tmp3 = Size;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(328)
-		tmp3->size = Size;
+		int tmp4 = ::Std_obj::_int(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
+		HX_STACK_LINE(328)
+		::openfl::_legacy::text::TextFormat tmp5 = this->_defaultFormat;		HX_STACK_VAR(tmp5,"tmp5");
+		HX_STACK_LINE(328)
+		tmp5->size = tmp4;
 		HX_STACK_LINE(329)
 		hx::AndEq(Color,(int)16777215);
 		HX_STACK_LINE(330)
-		::openfl::_legacy::text::TextFormat tmp4 = this->_defaultFormat;		HX_STACK_VAR(tmp4,"tmp4");
+		::openfl::_legacy::text::TextFormat tmp6 = this->_defaultFormat;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(330)
-		tmp4->color = Color;
+		tmp6->color = Color;
 		HX_STACK_LINE(331)
-		::String tmp5 = Alignment;		HX_STACK_VAR(tmp5,"tmp5");
+		::String tmp7 = Alignment;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(331)
-		::String tmp6 = this->convertTextAlignmentFromString(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
+		::String tmp8 = this->convertTextAlignmentFromString(tmp7);		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(331)
-		::openfl::_legacy::text::TextFormat tmp7 = this->_defaultFormat;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(331)
-		tmp7->align = tmp6;
-		HX_STACK_LINE(332)
-		::openfl::_legacy::text::TextField tmp8 = this->_textField;		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(332)
 		::openfl::_legacy::text::TextFormat tmp9 = this->_defaultFormat;		HX_STACK_VAR(tmp9,"tmp9");
+		HX_STACK_LINE(331)
+		tmp9->align = tmp8;
 		HX_STACK_LINE(332)
-		tmp8->set_defaultTextFormat(tmp9);
+		::openfl::_legacy::text::TextField tmp10 = this->_textField;		HX_STACK_VAR(tmp10,"tmp10");
+		HX_STACK_LINE(332)
+		::openfl::_legacy::text::TextFormat tmp11 = this->_defaultFormat;		HX_STACK_VAR(tmp11,"tmp11");
+		HX_STACK_LINE(332)
+		tmp10->set_defaultTextFormat(tmp11);
 		HX_STACK_LINE(333)
-		int tmp10 = BorderStyle;		HX_STACK_VAR(tmp10,"tmp10");
+		int tmp12 = BorderStyle;		HX_STACK_VAR(tmp12,"tmp12");
 		HX_STACK_LINE(333)
-		this->set_borderStyle(tmp10);
+		this->set_borderStyle(tmp12);
 		HX_STACK_LINE(334)
-		int tmp11 = BorderColor;		HX_STACK_VAR(tmp11,"tmp11");
+		int tmp13 = BorderColor;		HX_STACK_VAR(tmp13,"tmp13");
 		HX_STACK_LINE(334)
-		this->set_borderColor(tmp11);
+		this->set_borderColor(tmp13);
 		HX_STACK_LINE(335)
 		{
 			HX_STACK_LINE(335)
-			::openfl::_legacy::text::TextField tmp12 = this->_textField;		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(335)
-			::openfl::_legacy::text::TextFormat tmp13 = this->_defaultFormat;		HX_STACK_VAR(tmp13,"tmp13");
-			HX_STACK_LINE(335)
 			::openfl::_legacy::text::TextField tmp14 = this->_textField;		HX_STACK_VAR(tmp14,"tmp14");
 			HX_STACK_LINE(335)
-			::String tmp15 = tmp14->get_text();		HX_STACK_VAR(tmp15,"tmp15");
+			::openfl::_legacy::text::TextFormat tmp15 = this->_defaultFormat;		HX_STACK_VAR(tmp15,"tmp15");
 			HX_STACK_LINE(335)
-			int tmp16 = tmp15.length;		HX_STACK_VAR(tmp16,"tmp16");
+			::openfl::_legacy::text::TextField tmp16 = this->_textField;		HX_STACK_VAR(tmp16,"tmp16");
 			HX_STACK_LINE(335)
-			tmp12->setTextFormat(tmp13,(int)0,tmp16);
+			::String tmp17 = tmp16->get_text();		HX_STACK_VAR(tmp17,"tmp17");
+			HX_STACK_LINE(335)
+			int tmp18 = tmp17.length;		HX_STACK_VAR(tmp18,"tmp18");
+			HX_STACK_LINE(335)
+			tmp14->setTextFormat(tmp15,(int)0,tmp18);
 		}
 		HX_STACK_LINE(336)
 		this->dirty = true;
@@ -1172,36 +1176,40 @@ Float FlxText_obj::set_size( Float Size){
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Size,"Size")
 	HX_STACK_LINE(490)
-	::openfl::_legacy::text::TextFormat tmp = this->_defaultFormat;		HX_STACK_VAR(tmp,"tmp");
+	Float tmp = Size;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(490)
-	tmp->size = Size;
-	HX_STACK_LINE(491)
-	::openfl::_legacy::text::TextField tmp1 = this->_textField;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(491)
+	int tmp1 = ::Std_obj::_int(tmp);		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(490)
 	::openfl::_legacy::text::TextFormat tmp2 = this->_defaultFormat;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(490)
+	tmp2->size = tmp1;
 	HX_STACK_LINE(491)
-	tmp1->set_defaultTextFormat(tmp2);
+	::openfl::_legacy::text::TextField tmp3 = this->_textField;		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(491)
+	::openfl::_legacy::text::TextFormat tmp4 = this->_defaultFormat;		HX_STACK_VAR(tmp4,"tmp4");
+	HX_STACK_LINE(491)
+	tmp3->set_defaultTextFormat(tmp4);
 	HX_STACK_LINE(492)
 	{
 		HX_STACK_LINE(492)
-		::openfl::_legacy::text::TextField tmp3 = this->_textField;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(492)
-		::openfl::_legacy::text::TextFormat tmp4 = this->_defaultFormat;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(492)
 		::openfl::_legacy::text::TextField tmp5 = this->_textField;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(492)
-		::String tmp6 = tmp5->get_text();		HX_STACK_VAR(tmp6,"tmp6");
+		::openfl::_legacy::text::TextFormat tmp6 = this->_defaultFormat;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(492)
-		int tmp7 = tmp6.length;		HX_STACK_VAR(tmp7,"tmp7");
+		::openfl::_legacy::text::TextField tmp7 = this->_textField;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(492)
-		tmp3->setTextFormat(tmp4,(int)0,tmp7);
+		::String tmp8 = tmp7->get_text();		HX_STACK_VAR(tmp8,"tmp8");
+		HX_STACK_LINE(492)
+		int tmp9 = tmp8.length;		HX_STACK_VAR(tmp9,"tmp9");
+		HX_STACK_LINE(492)
+		tmp5->setTextFormat(tmp6,(int)0,tmp9);
 	}
 	HX_STACK_LINE(493)
 	this->dirty = true;
 	HX_STACK_LINE(495)
-	Float tmp3 = Size;		HX_STACK_VAR(tmp3,"tmp3");
+	Float tmp5 = Size;		HX_STACK_VAR(tmp5,"tmp5");
 	HX_STACK_LINE(495)
-	return tmp3;
+	return tmp5;
 }
 
 

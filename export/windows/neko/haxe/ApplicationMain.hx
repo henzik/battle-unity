@@ -22,7 +22,7 @@ class ApplicationMain {
 	
 	public static function main () {
 		
-		flash.Lib.setPackage ("HaxeFlixel", "BattleUnity", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "battle.unity", "com.example.myapp", "0.0.1");
 		
 		
 		#if ios
@@ -128,7 +128,7 @@ class ApplicationMain {
 			(false ? flash.Lib.FULLSCREEN : 0) |
 			(0 == 4 ? flash.Lib.HW_AA_HIRES : 0) |
 			(0 == 2 ? flash.Lib.HW_AA : 0),
-			"BattleUnity",
+			"battle.unity",
 			null
 			#if mobile, ScaledStage #end
 		);
@@ -305,14 +305,14 @@ class ApplicationMain {
 	public static function main () {
 		
 		#if openfl
-		flash.Lib.setPackage ("HaxeFlixel", "BattleUnity", "com.example.myapp", "0.0.1");
+		flash.Lib.setPackage ("HaxeFlixel", "battle.unity", "com.example.myapp", "0.0.1");
 		
 		#end
 		
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "BattleUnity", null, { width: 240, height: 160 });
+			frame = wx.Frame.create (null, null, "battle.unity", null, { width: 240, height: 160 });
 			
 			
 			#if openfl
@@ -416,6 +416,14 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("Nokia Cellphone FC Small");
+		types.push (lime.Assets.AssetType.FONT);
+		
+		
+		urls.push ("Arial");
+		types.push (lime.Assets.AssetType.FONT);
+		
+		
 		
 		if (config.assetsPrefix != null) {
 			
@@ -481,7 +489,7 @@ class ApplicationMain {
 			borderless: false,
 			company: "HaxeFlixel",
 			depthBuffer: false,
-			file: "BattleUnity",
+			file: "battle.unity",
 			fps: Std.int (60),
 			fullscreen: false,
 			height: Std.int (160),
@@ -489,7 +497,7 @@ class ApplicationMain {
 			packageName: "com.example.myapp",
 			resizable: true,
 			stencilBuffer: false,
-			title: "BattleUnity",
+			title: "battle.unity",
 			version: "0.0.1",
 			vsync: true,
 			width: Std.int (240),

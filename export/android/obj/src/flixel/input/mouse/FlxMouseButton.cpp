@@ -30,26 +30,14 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Watch
-#include <flixel/system/debug/Watch.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_Window
-#include <flixel/system/debug/Window.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_DebuggerFrontEnd
-#include <flixel/system/frontEnds/DebuggerFrontEnd.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxDestroyUtil
 #include <flixel/util/FlxDestroyUtil.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_display_DisplayObject
 #include <openfl/_legacy/display/DisplayObject.h>
@@ -103,7 +91,7 @@ HX_STACK_ARG(ID,"ID")
 		HX_STACK_LINE(37)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(37)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(37)
 		::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(37)
@@ -339,58 +327,12 @@ Void FlxMouseButton_obj::onDown( ::openfl::_legacy::events::MouseEvent FlashEven
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouseButton","onDown",0x8ad419ab,"flixel.input.mouse.FlxMouseButton.onDown","flixel/input/mouse/FlxMouseButton.hx",77,0x7fcdf6f7)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(FlashEvent,"FlashEvent")
-		HX_STACK_LINE(79)
-		int tmp = this->_ID;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(79)
-		bool tmp1 = (tmp == (int)-1);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(79)
-		bool tmp2;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(79)
+		HX_STACK_LINE(116)
+		int tmp = this->current;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(116)
+		bool tmp1 = (tmp > (int)0);		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(116)
 		if ((tmp1)){
-			HX_STACK_LINE(79)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp3 = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(79)
-			::flixel::_system::frontEnds::DebuggerFrontEnd tmp4 = tmp3;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(79)
-			tmp2 = tmp4->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );
-		}
-		else{
-			HX_STACK_LINE(79)
-			tmp2 = false;
-		}
-		HX_STACK_LINE(79)
-		if ((tmp2)){
-			HX_STACK_LINE(81)
-			::flixel::FlxGame tmp3 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(81)
-			bool tmp4 = tmp3->debugger->__Field(HX_HCSTRING("hasMouse","\x6b","\x60","\xbd","\x98"), hx::paccDynamic );		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(81)
-			if ((tmp4)){
-				HX_STACK_LINE(83)
-				return null();
-			}
-			HX_STACK_LINE(85)
-			::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(85)
-			::flixel::_system::debug::Watch tmp6 = tmp5->debugger->__Field(HX_HCSTRING("watch","\x4f","\x16","\x25","\xc5"), hx::paccDynamic );		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(85)
-			bool tmp7 = tmp6->__Field(HX_HCSTRING("editing","\x18","\xa5","\xb7","\x25"), hx::paccDynamic );		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(85)
-			if ((tmp7)){
-				HX_STACK_LINE(87)
-				::flixel::FlxGame tmp8 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(87)
-				::flixel::_system::debug::Watch tmp9 = tmp8->debugger->__Field(HX_HCSTRING("watch","\x4f","\x16","\x25","\xc5"), hx::paccDynamic );		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(87)
-				tmp9->__Field(HX_HCSTRING("submit","\x18","\x58","\x06","\x9a"), hx::paccDynamic )();
-			}
-		}
-		HX_STACK_LINE(116)
-		int tmp3 = this->current;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(116)
-		bool tmp4 = (tmp3 > (int)0);		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(116)
-		if ((tmp4)){
 			HX_STACK_LINE(118)
 			this->current = (int)1;
 		}
@@ -410,46 +352,22 @@ Void FlxMouseButton_obj::onUp( ::openfl::_legacy::events::MouseEvent FlashEvent)
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouseButton","onUp",0x3a027364,"flixel.input.mouse.FlxMouseButton.onUp","flixel/input/mouse/FlxMouseButton.hx",131,0x7fcdf6f7)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(FlashEvent,"FlashEvent")
-		HX_STACK_LINE(133)
-		::flixel::_system::frontEnds::DebuggerFrontEnd tmp = ::flixel::FlxG_obj::debugger;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(133)
-		bool tmp1 = tmp->__Field(HX_HCSTRING("visible","\x72","\x78","\x24","\xa3"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(133)
-		bool tmp2;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(133)
+		HX_STACK_LINE(140)
+		int tmp = this->current;		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(140)
+		bool tmp1 = (tmp == (int)2);		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(140)
 		if ((tmp1)){
-			HX_STACK_LINE(133)
-			::flixel::FlxGame tmp3 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(133)
-			::flixel::FlxGame tmp4 = tmp3;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(133)
-			tmp2 = tmp4->debugger->__Field(HX_HCSTRING("hasMouse","\x6b","\x60","\xbd","\x98"), hx::paccDynamic );
-		}
-		else{
-			HX_STACK_LINE(133)
-			tmp2 = false;
-		}
-		HX_STACK_LINE(133)
-		if ((tmp2)){
-			HX_STACK_LINE(136)
-			return null();
-		}
-		HX_STACK_LINE(140)
-		int tmp3 = this->current;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(140)
-		bool tmp4 = (tmp3 == (int)2);		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(140)
-		if ((tmp4)){
 			HX_STACK_LINE(142)
 			this->current = (int)-2;
 		}
 		else{
 			HX_STACK_LINE(144)
-			int tmp5 = this->current;		HX_STACK_VAR(tmp5,"tmp5");
+			int tmp2 = this->current;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(144)
-			bool tmp6 = (tmp5 > (int)0);		HX_STACK_VAR(tmp6,"tmp6");
+			bool tmp3 = (tmp2 > (int)0);		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(144)
-			if ((tmp6)){
+			if ((tmp3)){
 				HX_STACK_LINE(146)
 				this->current = (int)-1;
 			}

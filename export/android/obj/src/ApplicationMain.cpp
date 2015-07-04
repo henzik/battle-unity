@@ -102,7 +102,7 @@ Void ApplicationMain_obj::main( ){
 {
 		HX_STACK_FRAME("ApplicationMain","main",0x93d2f73e,"ApplicationMain.main","ApplicationMain.hx",23,0x0780ded5)
 		HX_STACK_LINE(25)
-		::openfl::_legacy::Lib_obj::setPackage(HX_HCSTRING("HaxeFlixel","\x42","\x8f","\x0c","\xac"),HX_HCSTRING("BattleUnity","\xfd","\xc0","\xfc","\xbc"),HX_HCSTRING("com.example.myapp","\x84","\x30","\x57","\xc1"),HX_HCSTRING("0.0.1","\x35","\x3d","\xc8","\xc1"));
+		::openfl::_legacy::Lib_obj::setPackage(HX_HCSTRING("HaxeFlixel","\x42","\x8f","\x0c","\xac"),HX_HCSTRING("battle.unity","\xbf","\x81","\x42","\x4b"),HX_HCSTRING("com.example.myapp","\x84","\x30","\x57","\xc1"),HX_HCSTRING("0.0.1","\x35","\x3d","\xc8","\xc1"));
 		HX_STACK_LINE(103)
 		int tmp;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(103)
@@ -152,7 +152,7 @@ Void ApplicationMain_obj::main( ){
 		HX_STACK_LINE(111)
 		int tmp15;		HX_STACK_VAR(tmp15,"tmp15");
 		HX_STACK_LINE(111)
-		tmp15 = ::openfl::_legacy::Lib_obj::FULLSCREEN;
+		tmp15 = (int)0;
 		HX_STACK_LINE(103)
 		int tmp16 = (int(tmp14) | int(tmp15));		HX_STACK_VAR(tmp16,"tmp16");
 		HX_STACK_LINE(112)
@@ -281,7 +281,7 @@ Void ApplicationMain_obj::main( ){
 		HX_END_LOCAL_FUNC0((void))
 
 		HX_STACK_LINE(39)
-		::openfl::_legacy::Lib_obj::create( Dynamic(new _Function_1_1()),(int)0,(int)0,(int)60,(int)0,tmp22,HX_HCSTRING("BattleUnity","\xfd","\xc0","\xfc","\xbc"),null(),null());
+		::openfl::_legacy::Lib_obj::create( Dynamic(new _Function_1_1()),(int)0,(int)0,(int)60,(int)0,tmp22,HX_HCSTRING("battle.unity","\xbf","\x81","\x42","\x4b"),null(),null());
 	}
 return null();
 }

@@ -298,18 +298,18 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxSignalBase_obj,registerListener,return )
 			::flixel::util::_FlxSignal::FlxSignalHandler handler = tmp2;		HX_STACK_VAR(handler,"handler");
 			HX_STACK_LINE(197)
 			++(_g);
-			HX_STACK_LINE(199)
+			HX_STACK_LINE(203)
 			bool tmp3 = (handler->listener == listener);		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(199)
 			if ((tmp3)){
-				HX_STACK_LINE(201)
+				HX_STACK_LINE(206)
 				::flixel::util::_FlxSignal::FlxSignalHandler tmp4 = handler;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(201)
+				HX_STACK_LINE(206)
 				return tmp4;
 			}
 		}
 	}
-	HX_STACK_LINE(204)
+	HX_STACK_LINE(209)
 	return null();
 }
 

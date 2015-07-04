@@ -21,14 +21,14 @@ namespace _FlxSignal{
 
 Void FlxSignal4_obj::__construct()
 {
-HX_STACK_FRAME("flixel.util._FlxSignal.FlxSignal4","new",0xd1f9e1e5,"flixel.util._FlxSignal.FlxSignal4.new","flixel/util/FlxSignal.hx",267,0x3c758c5e)
+HX_STACK_FRAME("flixel.util._FlxSignal.FlxSignal4","new",0xd1f9e1e5,"flixel.util._FlxSignal.FlxSignal4.new","flixel/util/FlxSignal.hx",272,0x3c758c5e)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(273)
 	super::__construct();
-	HX_STACK_LINE(269)
+	HX_STACK_LINE(274)
 	Dynamic tmp = this->dispatch4_dyn();		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(269)
+	HX_STACK_LINE(274)
 	this->dispatch = tmp;
 }
 ;
@@ -77,13 +77,13 @@ Void FlxSignal4_obj::dispatch4( Dynamic value1,Dynamic value2,Dynamic value3,Dyn
 			::flixel::util::_FlxSignal::FlxSignalHandler handler = tmp2;		HX_STACK_VAR(handler,"handler");
 			HX_STACK_LINE(103)
 			++(_g);
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(279)
 			Dynamic tmp3 = value1;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(279)
 			Dynamic tmp4 = value2;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(279)
 			Dynamic tmp5 = value3;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(279)
 			Dynamic tmp6 = value4;		HX_STACK_VAR(tmp6,"tmp6");
 			HX_STACK_LINE(105)
 			handler->listener(tmp3,tmp4,tmp5,tmp6);

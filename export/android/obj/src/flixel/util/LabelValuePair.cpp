@@ -3,8 +3,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_LabelValuePair
 #include <flixel/util/LabelValuePair.h>
@@ -63,7 +63,7 @@ Void LabelValuePair_obj::put( ){
 		HX_STACK_FRAME("flixel.util.LabelValuePair","put",0x8e76c772,"flixel.util.LabelValuePair.put","flixel/util/FlxStringUtil.hx",573,0x4e012e33)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(574)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+		::flixel::util::FlxPool tmp = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(574)
 		tmp->put(hx::ObjectPtr<OBJ_>(this));
 	}
@@ -88,7 +88,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(LabelValuePair_obj,destroy,(void))
 
-::flixel::util::FlxPool_flixel_util_LabelValuePair LabelValuePair_obj::_pool;
+::flixel::util::FlxPool LabelValuePair_obj::_pool;
 
 ::flixel::util::LabelValuePair LabelValuePair_obj::weak( ::String label,Dynamic value){
 	HX_STACK_FRAME("flixel.util.LabelValuePair","weak",0x1e0c0675,"flixel.util.LabelValuePair.weak","flixel/util/FlxStringUtil.hx",558,0x4e012e33)
@@ -99,7 +99,7 @@ HX_DEFINE_DYNAMIC_FUNC0(LabelValuePair_obj,destroy,(void))
 	HX_STACK_LINE(559)
 	{
 		HX_STACK_LINE(559)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(559)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(559)
@@ -182,7 +182,7 @@ bool LabelValuePair_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx:
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool_flixel_util_LabelValuePair >(); return true; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=ioValue.Cast< ::flixel::util::FlxPool >(); return true; }
 	}
 	return false;
 }
@@ -201,7 +201,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsObject /*::flixel::util::FlxPool_flixel_util_LabelValuePair*/ ,(void *) &LabelValuePair_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
+	{hx::fsObject /*::flixel::util::FlxPool*/ ,(void *) &LabelValuePair_obj::_pool,HX_HCSTRING("_pool","\xbb","\x9c","\x6d","\xfd")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif
@@ -261,7 +261,7 @@ void LabelValuePair_obj::__register()
 
 void LabelValuePair_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_util_LabelValuePair_obj::__new(hx::ClassOf< ::flixel::util::LabelValuePair >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::util::LabelValuePair >());
 }
 
 } // end namespace flixel

@@ -11,7 +11,7 @@
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(flixel,util,FlxPool_flixel_util_FlxPoint)
+HX_DECLARE_CLASS2(flixel,util,FlxPool)
 HX_DECLARE_CLASS2(flixel,util,FlxRect)
 HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
 namespace flixel{
@@ -110,7 +110,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxPoint_obj : public hx::Object{
 		virtual Float set_y( Float Value);
 		Dynamic set_y_dyn();
 
-		static ::flixel::util::FlxPool_flixel_util_FlxPoint _pool;
+		static ::flixel::util::FlxPool _pool;
 		static ::flixel::util::FlxPoint get( hx::Null< Float >  X,hx::Null< Float >  Y);
 		static Dynamic get_dyn();
 

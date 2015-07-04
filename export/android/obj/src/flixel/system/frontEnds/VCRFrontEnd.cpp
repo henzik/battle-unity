@@ -3,9 +3,6 @@
 #ifndef INCLUDED_flixel_FlxG
 #include <flixel/FlxG.h>
 #endif
-#ifndef INCLUDED_flixel_FlxGame
-#include <flixel/FlxGame.h>
-#endif
 #ifndef INCLUDED_flixel_input_mouse_FlxMouse
 #include <flixel/input/mouse/FlxMouse.h>
 #endif
@@ -18,50 +15,11 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_FlxDebugger
-#include <flixel/system/debug/FlxDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_GraphicArrowRight
-#include <flixel/system/debug/GraphicArrowRight.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug_VCR
-#include <flixel/system/debug/VCR.h>
-#endif
-#ifndef INCLUDED_flixel_system_debug__VCR_GraphicPause
-#include <flixel/system/debug/_VCR/GraphicPause.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_VCRFrontEnd
 #include <flixel/system/frontEnds/VCRFrontEnd.h>
 #endif
-#ifndef INCLUDED_flixel_system_ui_FlxSystemButton
-#include <flixel/system/ui/FlxSystemButton.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_BitmapData
-#include <openfl/_legacy/display/BitmapData.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_DisplayObject
-#include <openfl/_legacy/display/DisplayObject.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
-#include <openfl/_legacy/display/DisplayObjectContainer.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
-#include <openfl/_legacy/display/IBitmapDrawable.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
-#include <openfl/_legacy/display/InteractiveObject.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_display_Sprite
-#include <openfl/_legacy/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
-#include <openfl/_legacy/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
-#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_ui_Mouse
 #include <openfl/_legacy/ui/Mouse.h>
@@ -120,23 +78,6 @@ Void VCRFrontEnd_obj::pause( ){
 			}
 			HX_STACK_LINE(64)
 			this->paused = true;
-			HX_STACK_LINE(67)
-			{
-				HX_STACK_LINE(67)
-				::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(67)
-				::flixel::_system::debug::VCR tmp6 = tmp5->debugger->__Field(HX_HCSTRING("vcr","\xa5","\xe0","\x59","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(67)
-				::flixel::_system::debug::VCR _this = tmp6;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(67)
-				::flixel::_system::frontEnds::VCRFrontEnd tmp7 = ::flixel::FlxG_obj::vcr;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(67)
-				_this->__Field(HX_HCSTRING("playbackToggleBtn","\x8d","\xe1","\xd3","\xfc"), hx::paccDynamic )->__FieldRef(HX_HCSTRING("upHandler","\xaf","\xc2","\x8d","\x81")) = tmp7->__Field(HX_HCSTRING("resume","\xad","\x69","\x84","\x08"), hx::paccDynamic );
-				HX_STACK_LINE(67)
-				::flixel::_system::debug::GraphicArrowRight tmp8 = ::flixel::_system::debug::GraphicArrowRight_obj::__new((int)0,(int)0,null(),null());		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(67)
-				_this->__Field(HX_HCSTRING("playbackToggleBtn","\x8d","\xe1","\xd3","\xfc"), hx::paccDynamic )->__Field(HX_HCSTRING("changeIcon","\x09","\x1d","\xfc","\x1f"), hx::paccDynamic )(tmp8);
-			}
 		}
 	}
 return null();
@@ -166,23 +107,6 @@ Void VCRFrontEnd_obj::resume( ){
 			}
 			HX_STACK_LINE(84)
 			this->paused = false;
-			HX_STACK_LINE(87)
-			{
-				HX_STACK_LINE(87)
-				::flixel::FlxGame tmp4 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(87)
-				::flixel::_system::debug::VCR tmp5 = tmp4->debugger->__Field(HX_HCSTRING("vcr","\xa5","\xe0","\x59","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(87)
-				::flixel::_system::debug::VCR _this = tmp5;		HX_STACK_VAR(_this,"_this");
-				HX_STACK_LINE(87)
-				::flixel::_system::frontEnds::VCRFrontEnd tmp6 = ::flixel::FlxG_obj::vcr;		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(87)
-				_this->__Field(HX_HCSTRING("playbackToggleBtn","\x8d","\xe1","\xd3","\xfc"), hx::paccDynamic )->__FieldRef(HX_HCSTRING("upHandler","\xaf","\xc2","\x8d","\x81")) = tmp6->__Field(HX_HCSTRING("pause","\xf6","\xd6","\x57","\xbd"), hx::paccDynamic );
-				HX_STACK_LINE(87)
-				::flixel::_system::debug::_VCR::GraphicPause tmp7 = ::flixel::_system::debug::_VCR::GraphicPause_obj::__new((int)0,(int)0,null(),null());		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(87)
-				_this->__Field(HX_HCSTRING("playbackToggleBtn","\x8d","\xe1","\xd3","\xfc"), hx::paccDynamic )->__Field(HX_HCSTRING("changeIcon","\x09","\x1d","\xfc","\x1f"), hx::paccDynamic )(tmp7);
-			}
 		}
 	}
 return null();

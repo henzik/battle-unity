@@ -39,9 +39,6 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAssets_obj : public hx::Object{
 		static void __boot();
 		static ::String FONT_DEFAULT;
 		static ::String FONT_DEBUGGER;
-		static Void init( );
-		static Dynamic init_dyn();
-
 		static Void drawLogo( ::openfl::_legacy::display::Graphics graph);
 		static Dynamic drawLogo_dyn();
 

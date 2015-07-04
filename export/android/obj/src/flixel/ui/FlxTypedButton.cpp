@@ -57,8 +57,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_openfl__legacy_Lib
 #include <openfl/_legacy/Lib.h>
@@ -153,7 +153,7 @@ Float Y = __o_Y.Default(0);
 		HX_STACK_LINE(93)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp7 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp7,"tmp7");
+		::flixel::util::FlxPool tmp7 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(93)
 		::flixel::util::FlxPoint tmp8 = tmp7->get();		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(93)
@@ -178,7 +178,7 @@ Float Y = __o_Y.Default(0);
 		HX_STACK_LINE(93)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp8 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp8,"tmp8");
+		::flixel::util::FlxPool tmp8 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(93)
 		::flixel::util::FlxPoint tmp9 = tmp8->get();		HX_STACK_VAR(tmp9,"tmp9");
 		HX_STACK_LINE(93)
@@ -199,7 +199,7 @@ Float Y = __o_Y.Default(0);
 	HX_STACK_LINE(93)
 	{
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPool_flixel_util_FlxPoint tmp9 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
+		::flixel::util::FlxPool tmp9 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp9,"tmp9");
 		HX_STACK_LINE(93)
 		::flixel::util::FlxPoint tmp10 = tmp9->get();		HX_STACK_VAR(tmp10,"tmp10");
 		HX_STACK_LINE(93)
@@ -393,28 +393,6 @@ Void FlxTypedButton_obj::draw( ){
 			Dynamic tmp4 = this->label;		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(170)
 			tmp4->__Field(HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"), hx::paccDynamic )();
-		}
-	}
-return null();
-}
-
-
-Void FlxTypedButton_obj::drawDebug( ){
-{
-		HX_STACK_FRAME("flixel.ui.FlxTypedButton","drawDebug",0xd8c08953,"flixel.ui.FlxTypedButton.drawDebug","flixel/ui/FlxTypedButton.hx",179,0x752be24c)
-		HX_STACK_THIS(this)
-		HX_STACK_LINE(180)
-		this->super::drawDebug();
-		HX_STACK_LINE(182)
-		Dynamic tmp = this->label;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(182)
-		bool tmp1 = (tmp != null());		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(182)
-		if ((tmp1)){
-			HX_STACK_LINE(184)
-			Dynamic tmp2 = this->label;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(184)
-			tmp2->__Field(HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"), hx::paccDynamic )();
 		}
 	}
 return null();
@@ -1084,7 +1062,6 @@ Dynamic FlxTypedButton_obj::__Field(const ::String &inName,hx::PropertyAccess in
 		if (HX_FIELD_EQ(inName,"destroy") ) { return destroy_dyn(); }
 		break;
 	case 9:
-		if (HX_FIELD_EQ(inName,"drawDebug") ) { return drawDebug_dyn(); }
 		if (HX_FIELD_EQ(inName,"set_label") ) { return set_label_dyn(); }
 		break;
 	case 10:
@@ -1205,7 +1182,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
 	HX_HCSTRING("draw","\x04","\x2c","\x70","\x42"),
-	HX_HCSTRING("drawDebug","\xaf","\x87","\x2a","\x9f"),
 	HX_HCSTRING("updateButton","\xdb","\x08","\xa4","\xd9"),
 	HX_HCSTRING("updateStatus","\x1b","\x8e","\xbf","\x05"),
 	HX_HCSTRING("onUpEventListener","\xf4","\xbc","\xef","\x3b"),

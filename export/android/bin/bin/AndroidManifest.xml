@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="98" android:versionName="0.0.1" package="com.example.myapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="331" android:versionName="0.0.1" package="com.example.myapp">
 	
 	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
 	
@@ -9,9 +9,9 @@
 	
 	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="16"/>
 	
-	<application android:debuggable="false" android:icon="@drawable/icon" android:label="BattleUnity">
+	<application android:debuggable="false" android:icon="@drawable/icon" android:label="battle.unity">
 		
-		<activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="BattleUnity" android:launchMode="singleTask" android:name="com.example.myapp.MainActivity" android:screenOrientation="sensorPortrait">
+		<activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="battle.unity" android:launchMode="singleTask" android:name="com.example.myapp.MainActivity" android:screenOrientation="sensorPortrait">
 			
 			<intent-filter>
 				

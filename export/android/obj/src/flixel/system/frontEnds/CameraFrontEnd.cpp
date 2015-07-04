@@ -18,14 +18,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
 #endif
-#ifndef INCLUDED_flixel_system_debug_LogStyle
-#include <flixel/system/debug/LogStyle.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_CameraFrontEnd
 #include <flixel/system/frontEnds/CameraFrontEnd.h>
-#endif
-#ifndef INCLUDED_flixel_system_frontEnds_LogFrontEnd
-#include <flixel/system/frontEnds/LogFrontEnd.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
@@ -176,11 +170,7 @@ bool Destroy = __o_Destroy.Default(true);
 		}
 		else{
 			HX_STACK_LINE(70)
-			::flixel::_system::frontEnds::LogFrontEnd tmp4 = ::flixel::FlxG_obj::log;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(70)
-			::flixel::_system::debug::LogStyle tmp5 = ::flixel::_system::debug::LogStyle_obj::WARNING;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(70)
-			tmp4->__Field(HX_HCSTRING("advanced","\xa2","\x69","\x7b","\x3b"), hx::paccDynamic )(HX_HCSTRING("FlxG.cameras.remove(): The camera you attemped to remove is not a part of the game.","\xf7","\xd7","\x5b","\xc5"),tmp5,true);
+			Dynamic();
 		}
 		HX_STACK_LINE(74)
 		{
@@ -562,22 +552,18 @@ Void CameraFrontEnd_obj::lock( ){
 			::openfl::_legacy::display::Graphics tmp9 = camera->canvas->get_graphics();		HX_STACK_VAR(tmp9,"tmp9");
 			HX_STACK_LINE(197)
 			tmp9->clear();
-			HX_STACK_LINE(200)
-			::openfl::_legacy::display::Graphics tmp10 = camera->debugLayer->get_graphics();		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(200)
-			tmp10->clear();
 			HX_STACK_LINE(208)
-			int tmp11 = (int(camera->bgColor) & int((int)16777215));		HX_STACK_VAR(tmp11,"tmp11");
+			int tmp10 = (int(camera->bgColor) & int((int)16777215));		HX_STACK_VAR(tmp10,"tmp10");
 			HX_STACK_LINE(208)
-			bool tmp12 = camera->useBgAlphaBlending;		HX_STACK_VAR(tmp12,"tmp12");
+			bool tmp11 = camera->useBgAlphaBlending;		HX_STACK_VAR(tmp11,"tmp11");
 			HX_STACK_LINE(208)
-			int tmp13 = (int(camera->bgColor) >> int((int)24));		HX_STACK_VAR(tmp13,"tmp13");
+			int tmp12 = (int(camera->bgColor) >> int((int)24));		HX_STACK_VAR(tmp12,"tmp12");
 			HX_STACK_LINE(208)
-			int tmp14 = (int(tmp13) & int((int)255));		HX_STACK_VAR(tmp14,"tmp14");
+			int tmp13 = (int(tmp12) & int((int)255));		HX_STACK_VAR(tmp13,"tmp13");
 			HX_STACK_LINE(208)
-			Float tmp15 = (Float(tmp14) / Float((int)255));		HX_STACK_VAR(tmp15,"tmp15");
+			Float tmp14 = (Float(tmp13) / Float((int)255));		HX_STACK_VAR(tmp14,"tmp14");
 			HX_STACK_LINE(208)
-			camera->fill(tmp11,tmp12,tmp15,null());
+			camera->fill(tmp10,tmp11,tmp14,null());
 		}
 	}
 return null();
