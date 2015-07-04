@@ -13,9 +13,12 @@ class Player extends FlxSprite {
   var vPos = 2;
   var hPos = 2;
 
-  public function new(xPos,yPos) {
+  public function new(xPos,yPos, facing) {
     super(xPos,yPos);
     loadGraphic(AssetPaths.megaman__png);
+    if(facing == "left") {
+      flipX = true;
+    }
   }
 
   public function getSprite():FlxSprite {

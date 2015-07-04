@@ -24,12 +24,14 @@ class PlayState extends FlxState {
 
 	var background = null;
 	var megaman = null;
+	var megaman2 = null;
 
 
 	override public function create():Void {
 		bgColor = 0xffc0f8c8;
 		background = new Background();
-		megaman = new Player(43,65);
+		megaman = new Player(43,65, "right");
+		megaman2 = new Player(163,65, "left");
 
 		for(i in 0...background.getGroup().length) {
 			add(background.getGroup().members[i]);
@@ -37,6 +39,7 @@ class PlayState extends FlxState {
 		generatePlatforms();
 
 		add(megaman);
+		add(megaman2);
 
 		//var client = new ClientConnectionTest(); //If server is not running will crash program
 
