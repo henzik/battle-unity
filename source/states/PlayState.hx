@@ -9,6 +9,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import entity.Background;
+import entity.Player;
 
 /**
  * A FlxState which can be used for the actual gameplay.
@@ -20,21 +21,25 @@ class PlayState extends FlxState {
 	private var red_platform:FlxSprite;
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
-	
+
 	var background = null;
-	
+	var megaman = null;
+
 
 	override public function create():Void {
 		bgColor = 0xffc0f8c8;
-		background = new Background();				
+		background = new Background();
+		megaman = new Player();
 
 		for(i in 0...background.getGroup().length) {
 			add(background.getGroup().members[i]);
 		}
 		generatePlatforms();
-		
+
+		add(megaman);
+
 		//var client = new ClientConnectionTest(); //If server is not running will crash program
-		
+
 		super.create();
 	}
 

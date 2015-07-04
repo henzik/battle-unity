@@ -6,7 +6,7 @@ import flixel.group.FlxTypedGroup;
 
 /**
  * ...
- * @author Jazz Atwal
+ * @author Henrik Stepanyan
  */
 class Background extends FlxTypedGroup<FlxSprite> {
 
@@ -19,6 +19,7 @@ class Background extends FlxTypedGroup<FlxSprite> {
 		render();
 	}
 
+	/* build a grid of background entities */
 	private function render():Void {
 		var yPos = -96;
 		var xPos = -96;
@@ -44,10 +45,12 @@ class Background extends FlxTypedGroup<FlxSprite> {
 		return this;
 	}
 
+	/* function called to start moving the backgrounds */
 	public function move():Void {
 		forEach(animate);
 	}
 
+	/* weird spaghetti way but waits some times, then moves entities back */
 	public function animate(member:FlxObject):Void {
 		member.y += 0.5;
 		member.x += 0.5;
@@ -62,5 +65,4 @@ class Background extends FlxTypedGroup<FlxSprite> {
 			resetTimer = 0;
 		}
 	}
-
 }
