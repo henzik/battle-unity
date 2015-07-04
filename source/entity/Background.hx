@@ -52,9 +52,9 @@ class Background extends FlxTypedGroup<FlxSprite> {
 
 	/* weird spaghetti way but waits some times, then moves entities back */
 	public function animate(member:FlxObject):Void {
-		member.y += 0.5;
-		member.x += 0.5;
-		masterX  += 0.5;
+		member.y += 0.25;
+		member.x += 0.25;
+		masterX  += 0.25;
 		if(masterX >= 256.0*12) {
 			member.x -= 48;
 			member.y -= 48;
