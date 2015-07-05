@@ -20,6 +20,8 @@ class AssetData {
 			type.set ("assets/images/game_background_sprites.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/megaman.png", "assets/images/megaman.png");
 			type.set ("assets/images/megaman.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/megaman_move.png", "assets/images/megaman_move.png");
+			type.set ("assets/images/megaman_move.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 			type.set ("assets/images/menu_background.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");

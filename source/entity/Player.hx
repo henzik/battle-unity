@@ -15,7 +15,10 @@ class Player extends FlxSprite {
 
   public function new(xPos,yPos, facing) {
     super(xPos,yPos);
-    loadGraphic(AssetPaths.megaman__png);
+    loadGraphic(AssetPaths.megaman_move__png, true, 41, 52);
+    animation.add("move", [0, 1, 2, 3], 60, false);
+    animation.add("static", [3], 1, true);
+    animation.play("static");
     if(facing == "left") {
       flipX = true;
     }
@@ -43,15 +46,19 @@ class Player extends FlxSprite {
 
     if (_up && vPos > 1) {
       y-=26;
+      animation.play("move");
       vPos--;
     } else if (_down && vPos < 3) {
       y+=26;
+      animation.play("move");
       vPos++;
     } else if (_left && hPos > 1) {
       x-=40;
+      animation.play("move");
       hPos--;
     } else if (_right && hPos < 3) {
       x+=40;
+      animation.play("move");
       hPos++;
     }
   }
