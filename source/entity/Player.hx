@@ -11,6 +11,7 @@ import flixel.FlxObject;
 class Player extends FlxSprite {
 
 	public var _keyState:String;
+
 	public var vPos = 2;
 	public var hPos = 2;
 	

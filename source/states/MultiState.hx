@@ -91,9 +91,10 @@ class MultiState extends FlxState {
 						remote = new Player(true);
 						remote.flipX = true;
 						add(remote);
-					}
+					}					
 					
 					remote._keyState = player._keyState;
+					player._keyState = null;
 					//player.flipX = true;
 					//add(player);
 				} else {
@@ -102,7 +103,8 @@ class MultiState extends FlxState {
 						add(local);
 					}
 					
-					local._keyState = player._keyState;					
+					local._keyState = player._keyState;			
+					player._keyState = null;
 				}
 			}
 			
