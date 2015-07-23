@@ -45,8 +45,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxSpriteUtil
 #include <flixel/util/FlxSpriteUtil.h>
@@ -148,7 +148,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(38)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(38)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+				::flixel::util::FlxPool tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 				HX_STACK_LINE(38)
 				::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(38)
@@ -178,7 +178,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(37)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(37)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+				::flixel::util::FlxPool tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 				HX_STACK_LINE(37)
 				::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(37)
@@ -208,7 +208,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(36)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(36)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
+				::flixel::util::FlxPool tmp = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
 				HX_STACK_LINE(36)
 				::flixel::util::FlxPoint tmp1 = tmp->get();		HX_STACK_VAR(tmp1,"tmp1");
 				HX_STACK_LINE(36)
@@ -563,7 +563,7 @@ Void BitmapLog_obj::update( ){
 				HX_STACK_LINE(150)
 				Float Y = tmp3;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(150)
-				::flixel::util::FlxPool_flixel_util_FlxPoint tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+				::flixel::util::FlxPool tmp4 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 				HX_STACK_LINE(150)
 				::flixel::util::FlxPoint tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 				HX_STACK_LINE(150)

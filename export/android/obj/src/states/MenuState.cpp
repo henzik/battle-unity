@@ -72,6 +72,9 @@
 #ifndef INCLUDED_states_MenuState
 #include <states/MenuState.h>
 #endif
+#ifndef INCLUDED_states_MultiState
+#include <states/MultiState.h>
+#endif
 #ifndef INCLUDED_states_PlayState
 #include <states/PlayState.h>
 #endif
@@ -161,7 +164,37 @@ Void MenuState_obj::create( ){
 		Dynamic tmp7 = _Function_1_2::Block(tmp6);		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(31)
 		::flixel::tweens::FlxTween_obj::tween(tmp4,tmp5,((Float)2.0),tmp7);
-		HX_STACK_LINE(32)
+		HX_STACK_LINE(33)
+		Dynamic tmp8 = this->clickTest_dyn();		HX_STACK_VAR(tmp8,"tmp8");
+		HX_STACK_LINE(33)
+		::flixel::ui::FlxButton tmp9 = ::flixel::ui::FlxButton_obj::__new((int)0,(int)0,HX_HCSTRING("Multi-Testing","\x7c","\x76","\x00","\xa5"),tmp8);		HX_STACK_VAR(tmp9,"tmp9");
+		HX_STACK_LINE(33)
+		::flixel::ui::FlxButton _btnTest = tmp9;		HX_STACK_VAR(_btnTest,"_btnTest");
+		HX_STACK_LINE(34)
+		int tmp10 = this->gameWidth;		HX_STACK_VAR(tmp10,"tmp10");
+		HX_STACK_LINE(34)
+		Float tmp11 = _btnTest->get_width();		HX_STACK_VAR(tmp11,"tmp11");
+		HX_STACK_LINE(34)
+		Float tmp12 = (tmp10 - tmp11);		HX_STACK_VAR(tmp12,"tmp12");
+		HX_STACK_LINE(34)
+		Float tmp13 = (Float(tmp12) / Float((int)2));		HX_STACK_VAR(tmp13,"tmp13");
+		HX_STACK_LINE(34)
+		int tmp14 = this->gameHeight;		HX_STACK_VAR(tmp14,"tmp14");
+		HX_STACK_LINE(34)
+		Float tmp15 = _btnTest->get_height();		HX_STACK_VAR(tmp15,"tmp15");
+		HX_STACK_LINE(34)
+		Float tmp16 = (Float(tmp15) / Float((int)2));		HX_STACK_VAR(tmp16,"tmp16");
+		HX_STACK_LINE(34)
+		Float tmp17 = (tmp14 - tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+		HX_STACK_LINE(34)
+		Float tmp18 = (tmp17 - (int)20);		HX_STACK_VAR(tmp18,"tmp18");
+		HX_STACK_LINE(34)
+		_btnTest->setPosition(tmp13,tmp18);
+		HX_STACK_LINE(35)
+		::flixel::ui::FlxButton tmp19 = _btnTest;		HX_STACK_VAR(tmp19,"tmp19");
+		HX_STACK_LINE(35)
+		this->add(tmp19);
+		HX_STACK_LINE(37)
 		this->super::create();
 	}
 return null();
@@ -170,56 +203,56 @@ return null();
 
 Void MenuState_obj::Show_button( ::flixel::tweens::FlxTween tween){
 {
-		HX_STACK_FRAME("states.MenuState","Show_button",0xd50a1d4c,"states.MenuState.Show_button","states/MenuState.hx",35,0x6393c259)
+		HX_STACK_FRAME("states.MenuState","Show_button",0xd50a1d4c,"states.MenuState.Show_button","states/MenuState.hx",40,0x6393c259)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(tween,"tween")
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(41)
 		Dynamic tmp = this->clickPlay_dyn();		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(41)
 		::flixel::ui::FlxButton tmp1 = ::flixel::ui::FlxButton_obj::__new((int)0,(int)0,null(),tmp);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(41)
 		this->_btnPlay = tmp1;
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(42)
 		::flixel::ui::FlxButton tmp2 = this->_btnPlay;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(42)
 		tmp2->loadGraphic(HX_HCSTRING("assets/images/press_start.png","\x56","\xfc","\xc0","\x5e"),false,(int)127,(int)10,null(),null());
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		::flixel::ui::FlxButton tmp3 = this->_btnPlay;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		int tmp4 = this->gameWidth;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		::flixel::ui::FlxButton tmp5 = this->_btnPlay;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp6 = tmp5->get_width();		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp7 = (tmp4 - tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp8 = (Float(tmp7) / Float((int)2));		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		int tmp9 = this->gameHeight;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		::flixel::ui::FlxButton tmp10 = this->_btnPlay;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp11 = tmp10->get_height();		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp12 = (Float(tmp11) / Float((int)2));		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp13 = (tmp9 - tmp12);		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		Float tmp14 = (tmp13 - (int)40);		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(43)
 		tmp3->setPosition(tmp8,tmp14);
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(45)
 		::flixel::_system::frontEnds::SoundFrontEnd tmp15 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp15,"tmp15");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(45)
 		::flixel::_system::FlxSound tmp16 = tmp15->__Field(HX_HCSTRING("load","\x26","\x9a","\xb7","\x47"), hx::paccDynamic )(HX_HCSTRING("assets/sounds/Teleport.wav","\xa8","\xbe","\x60","\x5d"),(int)1,false,true,false,null(),null());		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(45)
 		::flixel::ui::FlxButton tmp17 = this->_btnPlay;		HX_STACK_VAR(tmp17,"tmp17");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(45)
 		tmp17->onDown->sound = tmp16;
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(46)
 		::flixel::ui::FlxButton tmp18 = this->_btnPlay;		HX_STACK_VAR(tmp18,"tmp18");
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(46)
 		this->add(tmp18);
 	}
 return null();
@@ -230,15 +263,15 @@ HX_DEFINE_DYNAMIC_FUNC1(MenuState_obj,Show_button,(void))
 
 Void MenuState_obj::clickPlay( ){
 {
-		HX_STACK_FRAME("states.MenuState","clickPlay",0xe30ef994,"states.MenuState.clickPlay","states/MenuState.hx",46,0x6393c259)
+		HX_STACK_FRAME("states.MenuState","clickPlay",0xe30ef994,"states.MenuState.clickPlay","states/MenuState.hx",52,0x6393c259)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(46)
+		HX_STACK_LINE(52)
 		::states::PlayState tmp = ::states::PlayState_obj::__new(null());		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(46)
+		HX_STACK_LINE(52)
 		::flixel::FlxState State = tmp;		HX_STACK_VAR(State,"State");
-		HX_STACK_LINE(46)
+		HX_STACK_LINE(52)
 		::flixel::FlxGame tmp1 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(46)
+		HX_STACK_LINE(52)
 		tmp1->_requestedState = State;
 	}
 return null();
@@ -247,11 +280,30 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(MenuState_obj,clickPlay,(void))
 
+Void MenuState_obj::clickTest( ){
+{
+		HX_STACK_FRAME("states.MenuState","clickTest",0xe5ae93f2,"states.MenuState.clickTest","states/MenuState.hx",56,0x6393c259)
+		HX_STACK_THIS(this)
+		HX_STACK_LINE(56)
+		::states::MultiState tmp = ::states::MultiState_obj::__new(null());		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(56)
+		::flixel::FlxState State = tmp;		HX_STACK_VAR(State,"State");
+		HX_STACK_LINE(56)
+		::flixel::FlxGame tmp1 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(56)
+		tmp1->_requestedState = State;
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(MenuState_obj,clickTest,(void))
+
 Void MenuState_obj::destroy( ){
 {
-		HX_STACK_FRAME("states.MenuState","destroy",0xcbe6ce32,"states.MenuState.destroy","states/MenuState.hx",53,0x6393c259)
+		HX_STACK_FRAME("states.MenuState","destroy",0xcbe6ce32,"states.MenuState.destroy","states/MenuState.hx",63,0x6393c259)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(53)
+		HX_STACK_LINE(63)
 		this->super::destroy();
 	}
 return null();
@@ -260,9 +312,9 @@ return null();
 
 Void MenuState_obj::update( ){
 {
-		HX_STACK_FRAME("states.MenuState","update",0x7b24f3d1,"states.MenuState.update","states/MenuState.hx",61,0x6393c259)
+		HX_STACK_FRAME("states.MenuState","update",0x7b24f3d1,"states.MenuState.update","states/MenuState.hx",71,0x6393c259)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(71)
 		this->super::update();
 	}
 return null();
@@ -310,6 +362,7 @@ Dynamic MenuState_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 	case 9:
 		if (HX_FIELD_EQ(inName,"gameWidth") ) { return gameWidth; }
 		if (HX_FIELD_EQ(inName,"clickPlay") ) { return clickPlay_dyn(); }
+		if (HX_FIELD_EQ(inName,"clickTest") ) { return clickTest_dyn(); }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"gameHeight") ) { return gameHeight; }
@@ -372,6 +425,7 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("create","\xfc","\x66","\x0f","\x7c"),
 	HX_HCSTRING("Show_button","\x14","\x80","\xd4","\x3b"),
 	HX_HCSTRING("clickPlay","\x5c","\x9a","\x59","\x29"),
+	HX_HCSTRING("clickTest","\xba","\x34","\xf9","\x2b"),
 	HX_HCSTRING("destroy","\xfa","\x2c","\x86","\x24"),
 	HX_HCSTRING("update","\x09","\x86","\x05","\x87"),
 	::String(null()) };

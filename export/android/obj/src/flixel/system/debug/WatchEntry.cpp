@@ -43,8 +43,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -936,7 +936,7 @@ HX_DEFINE_DYNAMIC_FUNC0(WatchEntry_obj,submit,(void))
 		HX_STACK_LINE(303)
 		{
 			HX_STACK_LINE(303)
-			::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+			::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(303)
 			::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(303)
@@ -954,7 +954,7 @@ HX_DEFINE_DYNAMIC_FUNC0(WatchEntry_obj,submit,(void))
 	HX_STACK_LINE(304)
 	{
 		HX_STACK_LINE(304)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(304)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(304)

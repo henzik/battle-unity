@@ -9,6 +9,7 @@
 #include <flixel/FlxState.h>
 #endif
 HX_DECLARE_CLASS1(entity,Background)
+HX_DECLARE_CLASS1(entity,Player)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
@@ -49,6 +50,8 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		int centerX;
 		int centerY;
 		::entity::Background background;
+		::entity::Player megaman;
+		::flixel::FlxBasic megaman2;
 		virtual Void create( );
 
 		virtual Void update( );

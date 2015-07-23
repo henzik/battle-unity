@@ -13,11 +13,14 @@
   </file>
   <file name="src/sys/net/_Socket/SocketOutput.cpp">
    <depend name="include/cpp/Lib.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Output.h"/>
    <depend name="include/sys/net/_Socket/SocketOutput.h"/>
   </file>
   <file name="src/sys/net/_Socket/SocketInput.cpp">
    <depend name="include/cpp/Lib.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Eof.h"/>
    <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Input.h"/>
@@ -28,9 +31,9 @@
    <depend name="include/sys/net/Host.h"/>
   </file>
   <file name="src/states/PlayState.cpp">
-   <depend name="include/ClientConnectionTest.h"/>
    <depend name="include/Std.h"/>
    <depend name="include/entity/Background.h"/>
+   <depend name="include/entity/Player.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxG.h"/>
    <depend name="include/flixel/FlxObject.h"/>
@@ -40,6 +43,28 @@
    <depend name="include/flixel/group/FlxTypedGroup.h"/>
    <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
    <depend name="include/states/PlayState.h"/>
+  </file>
+  <file name="src/states/MultiState.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/entity/Player.h"/>
+   <depend name="include/entity/Remote.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/FlxState.h"/>
+   <depend name="include/flixel/group/FlxGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/input/keyboard/FlxKeyboard.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxInput.h"/>
+   <depend name="include/flixel/text/FlxText.h"/>
+   <depend name="include/flixel/ui/FlxButton.h"/>
+   <depend name="include/flixel/ui/FlxTypedButton.h"/>
+   <depend name="include/haxe/Log.h"/>
+   <depend name="include/server/Client.h"/>
+   <depend name="include/server/Network.h"/>
+   <depend name="include/states/MultiState.h"/>
   </file>
   <file name="src/states/MenuState.cpp">
    <depend name="include/flixel/FlxBasic.h"/>
@@ -66,7 +91,35 @@
    <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
    <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
    <depend name="include/states/MenuState.h"/>
+   <depend name="include/states/MultiState.h"/>
    <depend name="include/states/PlayState.h"/>
+  </file>
+  <file name="src/server/Network.cpp">
+   <depend name="include/server/Network.h"/>
+  </file>
+  <file name="src/server/Client.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/entity/Player.h"/>
+   <depend name="include/entity/Remote.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/haxe/Log.h"/>
+   <depend name="include/haxe/Serializer.h"/>
+   <depend name="include/haxe/Unserializer.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/openfl/_legacy/events/Event.h"/>
+   <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
+   <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/_legacy/utils/ByteArray.h"/>
+   <depend name="include/openfl/_legacy/utils/IDataInput.h"/>
+   <depend name="include/openfl/_legacy/utils/IDataOutput.h"/>
+   <depend name="include/openfl/_legacy/utils/IMemoryRange.h"/>
+   <depend name="include/openfl/events/ProgressEvent.h"/>
+   <depend name="include/openfl/net/Socket.h"/>
+   <depend name="include/server/Client.h"/>
+   <depend name="include/server/Network.h"/>
   </file>
   <file name="src/openfl/utils/Endian.cpp">
    <depend name="include/openfl/utils/Endian.h"/>
@@ -108,6 +161,38 @@
   </file>
   <file name="src/openfl/net/URLLoaderDataFormat.cpp">
    <depend name="include/openfl/net/URLLoaderDataFormat.h"/>
+  </file>
+  <file name="src/openfl/net/Socket.cpp">
+   <depend name="include/Sys.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/openfl/_legacy/Lib.h"/>
+   <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
+   <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/_legacy/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/_legacy/display/InteractiveObject.h"/>
+   <depend name="include/openfl/_legacy/display/MovieClip.h"/>
+   <depend name="include/openfl/_legacy/display/Sprite.h"/>
+   <depend name="include/openfl/_legacy/events/Event.h"/>
+   <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
+   <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/_legacy/utils/ByteArray.h"/>
+   <depend name="include/openfl/_legacy/utils/IDataInput.h"/>
+   <depend name="include/openfl/_legacy/utils/IDataOutput.h"/>
+   <depend name="include/openfl/_legacy/utils/IMemoryRange.h"/>
+   <depend name="include/openfl/errors/Error.h"/>
+   <depend name="include/openfl/errors/IOError.h"/>
+   <depend name="include/openfl/errors/SecurityError.h"/>
+   <depend name="include/openfl/events/ErrorEvent.h"/>
+   <depend name="include/openfl/events/IOErrorEvent.h"/>
+   <depend name="include/openfl/events/ProgressEvent.h"/>
+   <depend name="include/openfl/events/TextEvent.h"/>
+   <depend name="include/openfl/net/Socket.h"/>
+   <depend name="include/sys/net/Host.h"/>
+   <depend name="include/sys/net/Socket.h"/>
   </file>
   <file name="src/openfl/net/SharedObjectFlushStatus.cpp">
    <depend name="include/openfl/net/SharedObjectFlushStatus.h"/>
@@ -203,9 +288,17 @@
    <depend name="include/openfl/_legacy/events/Event.h"/>
    <depend name="include/openfl/events/AccelerometerEvent.h"/>
   </file>
+  <file name="src/openfl/errors/SecurityError.cpp">
+   <depend name="include/openfl/errors/Error.h"/>
+   <depend name="include/openfl/errors/SecurityError.h"/>
+  </file>
   <file name="src/openfl/errors/RangeError.cpp">
    <depend name="include/openfl/errors/Error.h"/>
    <depend name="include/openfl/errors/RangeError.h"/>
+  </file>
+  <file name="src/openfl/errors/IOError.cpp">
+   <depend name="include/openfl/errors/Error.h"/>
+   <depend name="include/openfl/errors/IOError.h"/>
   </file>
   <file name="src/openfl/errors/EOFError.cpp">
    <depend name="include/openfl/errors/EOFError.h"/>
@@ -1915,24 +2008,6 @@
    <depend name="include/openfl/_legacy/text/TextFormatAlign.h"/>
    <depend name="include/openfl/display/PixelSnapping.h"/>
   </file>
-  <file name="src/flixel/system/ui/FlxFocusLostScreen.cpp">
-   <depend name="include/Std.h"/>
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxCamera.h"/>
-   <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/FlxGame.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/system/FlxAssets.h"/>
-   <depend name="include/flixel/system/ui/FlxFocusLostScreen.h"/>
-   <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
-   <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
-   <depend name="include/openfl/_legacy/display/Graphics.h"/>
-   <depend name="include/openfl/_legacy/display/IBitmapDrawable.h"/>
-   <depend name="include/openfl/_legacy/display/InteractiveObject.h"/>
-   <depend name="include/openfl/_legacy/display/Sprite.h"/>
-   <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
-   <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
-  </file>
   <file name="src/flixel/system/replay/MouseRecord.cpp">
    <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
    <depend name="include/flixel/interfaces/IFlxPooled.h"/>
@@ -2671,42 +2746,6 @@
    <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
    <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
   </file>
-  <file name="src/flixel/FlxSprite.cpp">
-   <depend name="include/Std.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxCamera.h"/>
-   <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/FlxObject.h"/>
-   <depend name="include/flixel/FlxSprite.h"/>
-   <depend name="include/flixel/_FlxSprite/GraphicDefault.h"/>
-   <depend name="include/flixel/animation/FlxAnimationController.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
-   <depend name="include/flixel/system/frontEnds/BitmapFrontEnd.h"/>
-   <depend name="include/flixel/system/layer/DrawStackItem.h"/>
-   <depend name="include/flixel/system/layer/Region.h"/>
-   <depend name="include/flixel/system/layer/TileSheetData.h"/>
-   <depend name="include/flixel/system/layer/frames/FlxFrame.h"/>
-   <depend name="include/flixel/system/layer/frames/FlxSpriteFrames.h"/>
-   <depend name="include/flixel/system/layer/frames/FrameType.h"/>
-   <depend name="include/flixel/util/FlxDestroyUtil.h"/>
-   <depend name="include/flixel/util/FlxPoint.h"/>
-   <depend name="include/flixel/util/FlxPool.h"/>
-   <depend name="include/flixel/util/loaders/CachedGraphics.h"/>
-   <depend name="include/flixel/util/loaders/TexturePackerData.h"/>
-   <depend name="include/flixel/util/loaders/TextureRegion.h"/>
-   <depend name="include/haxe/IMap.h"/>
-   <depend name="include/haxe/ds/IntMap.h"/>
-   <depend name="include/haxe/ds/StringMap.h"/>
-   <depend name="include/openfl/_legacy/display/BitmapData.h"/>
-   <depend name="include/openfl/_legacy/display/BlendMode.h"/>
-   <depend name="include/openfl/_legacy/display/IBitmapDrawable.h"/>
-   <depend name="include/openfl/_legacy/geom/ColorTransform.h"/>
-   <depend name="include/openfl/_legacy/geom/Matrix.h"/>
-   <depend name="include/openfl/_legacy/geom/Point.h"/>
-   <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
-  </file>
   <file name="src/flixel/_FlxSprite/GraphicDefault.cpp">
    <depend name="include/flixel/_FlxSprite/GraphicDefault.h"/>
    <depend name="include/haxe/Resource.h"/>
@@ -2740,26 +2779,6 @@
    <depend name="include/openfl/display/JPEGEncoderOptions.h"/>
    <depend name="include/openfl/display/PNGEncoderOptions.h"/>
   </file>
-  <file name="src/flixel/FlxObject.cpp">
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxCamera.h"/>
-   <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/FlxObject.h"/>
-   <depend name="include/flixel/FlxSprite.h"/>
-   <depend name="include/flixel/group/FlxSpriteGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
-   <depend name="include/flixel/tile/FlxTilemap.h"/>
-   <depend name="include/flixel/util/FlxDestroyUtil.h"/>
-   <depend name="include/flixel/util/FlxPoint.h"/>
-   <depend name="include/flixel/util/FlxPool.h"/>
-   <depend name="include/flixel/util/FlxRect.h"/>
-   <depend name="include/flixel/util/FlxStringUtil.h"/>
-   <depend name="include/flixel/util/FlxVelocity.h"/>
-   <depend name="include/flixel/util/LabelValuePair.h"/>
-  </file>
   <file name="src/flixel/FlxGame.cpp">
    <depend name="include/Std.h"/>
    <depend name="include/Type.h"/>
@@ -2786,7 +2805,6 @@
    <depend name="include/flixel/system/frontEnds/VCRFrontEnd.h"/>
    <depend name="include/flixel/system/layer/TileSheetExt.h"/>
    <depend name="include/flixel/system/scaleModes/BaseScaleMode.h"/>
-   <depend name="include/flixel/system/ui/FlxFocusLostScreen.h"/>
    <depend name="include/flixel/system/ui/FlxSoundTray.h"/>
    <depend name="include/flixel/text/pxText/PxBitmapFont.h"/>
    <depend name="include/flixel/util/FlxArrayUtil.h"/>
@@ -2868,17 +2886,6 @@
    <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
    <depend name="include/openfl/_legacy/net/URLRequest.h"/>
    <depend name="include/openfl/display/StageDisplayState.h"/>
-  </file>
-  <file name="src/flixel/util/FlxRect.cpp">
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
-   <depend name="include/flixel/util/FlxMath.h"/>
-   <depend name="include/flixel/util/FlxPoint.h"/>
-   <depend name="include/flixel/util/FlxPool.h"/>
-   <depend name="include/flixel/util/FlxRect.h"/>
-   <depend name="include/flixel/util/FlxStringUtil.h"/>
-   <depend name="include/flixel/util/LabelValuePair.h"/>
-   <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
   </file>
   <file name="src/flixel/system/frontEnds/WatchFrontEnd.cpp">
    <depend name="include/flixel/system/frontEnds/WatchFrontEnd.h"/>
@@ -3165,14 +3172,6 @@
    <depend name="include/flixel/util/LabelValuePair.h"/>
    <depend name="include/openfl/_legacy/geom/Point.h"/>
   </file>
-  <file name="src/flixel/util/FlxPool.cpp">
-   <depend name="include/Type.h"/>
-   <depend name="include/flixel/util/FlxPool.h"/>
-  </file>
-  <file name="src/flixel/interfaces/IFlxPooled.cpp">
-   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
-   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
-  </file>
   <file name="src/flixel/system/FlxVersion.cpp">
    <depend name="include/flixel/system/FlxVersion.h"/>
   </file>
@@ -3208,6 +3207,100 @@
    <depend name="include/openfl/_legacy/geom/Point.h"/>
    <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
    <depend name="include/openfl/_legacy/geom/Transform.h"/>
+  </file>
+  <file name="src/entity/Remote.cpp">
+   <depend name="include/entity/Remote.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/animation/FlxAnimationController.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+  </file>
+  <file name="src/entity/Player.cpp">
+   <depend name="include/entity/Player.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/animation/FlxAnimationController.h"/>
+   <depend name="include/flixel/input/keyboard/FlxKeyboard.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxInput.h"/>
+  </file>
+  <file name="src/flixel/FlxSprite.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxCamera.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/_FlxSprite/GraphicDefault.h"/>
+   <depend name="include/flixel/animation/FlxAnimationController.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
+   <depend name="include/flixel/system/frontEnds/BitmapFrontEnd.h"/>
+   <depend name="include/flixel/system/layer/DrawStackItem.h"/>
+   <depend name="include/flixel/system/layer/Region.h"/>
+   <depend name="include/flixel/system/layer/TileSheetData.h"/>
+   <depend name="include/flixel/system/layer/frames/FlxFrame.h"/>
+   <depend name="include/flixel/system/layer/frames/FlxSpriteFrames.h"/>
+   <depend name="include/flixel/system/layer/frames/FrameType.h"/>
+   <depend name="include/flixel/util/FlxDestroyUtil.h"/>
+   <depend name="include/flixel/util/FlxPoint.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
+   <depend name="include/flixel/util/loaders/CachedGraphics.h"/>
+   <depend name="include/flixel/util/loaders/TexturePackerData.h"/>
+   <depend name="include/flixel/util/loaders/TextureRegion.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/IntMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/openfl/_legacy/display/BitmapData.h"/>
+   <depend name="include/openfl/_legacy/display/BlendMode.h"/>
+   <depend name="include/openfl/_legacy/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/_legacy/geom/ColorTransform.h"/>
+   <depend name="include/openfl/_legacy/geom/Matrix.h"/>
+   <depend name="include/openfl/_legacy/geom/Point.h"/>
+   <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
+  </file>
+  <file name="src/flixel/FlxObject.cpp">
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxCamera.h"/>
+   <depend name="include/flixel/FlxG.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/group/FlxSpriteGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/group/FlxTypedSpriteGroup.h"/>
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
+   <depend name="include/flixel/tile/FlxTilemap.h"/>
+   <depend name="include/flixel/util/FlxDestroyUtil.h"/>
+   <depend name="include/flixel/util/FlxPoint.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
+   <depend name="include/flixel/util/FlxRect.h"/>
+   <depend name="include/flixel/util/FlxStringUtil.h"/>
+   <depend name="include/flixel/util/FlxVelocity.h"/>
+   <depend name="include/flixel/util/LabelValuePair.h"/>
+  </file>
+  <file name="src/flixel/util/FlxRect.cpp">
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
+   <depend name="include/flixel/util/FlxMath.h"/>
+   <depend name="include/flixel/util/FlxPoint.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
+   <depend name="include/flixel/util/FlxRect.h"/>
+   <depend name="include/flixel/util/FlxStringUtil.h"/>
+   <depend name="include/flixel/util/LabelValuePair.h"/>
+   <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
+  </file>
+  <file name="src/flixel/util/FlxPool.cpp">
+   <depend name="include/Type.h"/>
+   <depend name="include/flixel/util/FlxPool.h"/>
+  </file>
+  <file name="src/flixel/interfaces/IFlxPooled.cpp">
+   <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
   </file>
   <file name="src/entity/Background.cpp">
    <depend name="include/entity/Background.h"/>
@@ -3361,13 +3454,6 @@
    <depend name="include/Date.h"/>
    <depend name="include/Std.h"/>
   </file>
-  <file name="src/ClientConnectionTest.cpp">
-   <depend name="include/ClientConnectionTest.h"/>
-   <depend name="include/haxe/Log.h"/>
-   <depend name="include/haxe/io/Input.h"/>
-   <depend name="include/sys/net/Host.h"/>
-   <depend name="include/sys/net/Socket.h"/>
-  </file>
   <file name="src/AssetPaths.cpp">
    <depend name="include/AssetPaths.h"/>
   </file>
@@ -3514,7 +3600,9 @@
   </file>
   <file name="src/haxe/io/Input.cpp">
    <depend name="include/StringBuf.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Input.h"/>
   </file>
   <file name="src/haxe/io/Bytes.cpp">
@@ -3524,10 +3612,13 @@
   <file name="src/sys/io/_Process/Stdin.cpp">
    <depend name="include/cpp/Lib.h"/>
    <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
    <depend name="include/haxe/io/Output.h"/>
    <depend name="include/sys/io/_Process/Stdin.h"/>
   </file>
   <file name="src/haxe/io/Output.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Output.h"/>
   </file>
   <file name="src/sys/io/Process.cpp">
@@ -3595,6 +3686,7 @@
    <depend name="include/openfl/display/StageScaleMode.h"/>
   </file>
   <file name="src/__boot__.cpp">
+   <depend name="include/server/Network.h"/>
    <depend name="include/openfl/ui/MultitouchInputMode.h"/>
    <depend name="include/openfl/text/TextFieldType.h"/>
    <depend name="include/openfl/text/TextFieldAutoSize.h"/>
@@ -3740,9 +3832,7 @@
    <depend name="include/flixel/animation/FlxAnimationController.h"/>
    <depend name="include/flixel/_FlxSprite/GraphicDefault.h"/>
    <depend name="include/openfl/_legacy/display/BitmapData.h"/>
-   <depend name="include/flixel/FlxObject.h"/>
    <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/util/FlxRect.h"/>
    <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/tweens/FlxTween.h"/>
    <depend name="include/flixel/util/FlxPath.h"/>
@@ -3750,6 +3840,8 @@
    <depend name="include/flixel/system/scaleModes/BaseScaleMode.h"/>
    <depend name="include/flixel/util/FlxPoint.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/util/FlxRect.h"/>
    <depend name="include/Xml.h"/>
    <depend name="include/EReg.h"/>
    <depend name="include/openfl/_legacy/text/Font.h"/>

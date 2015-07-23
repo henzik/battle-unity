@@ -49,7 +49,6 @@ class HXCPP_CLASS_ATTRIBUTES  Stdout_obj : public ::haxe::io::Input_obj{
 		virtual int readByte( );
 
 		virtual int readBytes( ::haxe::io::Bytes str,int pos,int len);
-		Dynamic readBytes_dyn();
 
 		static Dynamic _stdout_read;
 		static Dynamic &_stdout_read_dyn() { return _stdout_read;}

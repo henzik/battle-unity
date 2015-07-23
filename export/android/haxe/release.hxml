@@ -10,6 +10,7 @@
 -cp source
 -cp E:\HaxeToolkit\haxe\lib\lime/2,4,5/legacy
 -D openfl-legacy
+-D FLX_NO_FOCUS_LOST_SCREEN
 -D tools=2.4.5
 -D lime-legacy
 -D FLX_NO_DEBUG

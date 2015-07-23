@@ -41,8 +41,13 @@ class HXCPP_CLASS_ATTRIBUTES  Sys_obj : public hx::Object{
 		static Void exit( int code);
 		static Dynamic exit_dyn();
 
+		static Float time( );
+		static Dynamic time_dyn();
+
 		static Dynamic _sleep;
 		static Dynamic &_sleep_dyn() { return _sleep;}
+		static Dynamic sys_time;
+		static Dynamic &sys_time_dyn() { return sys_time;}
 };
 
 

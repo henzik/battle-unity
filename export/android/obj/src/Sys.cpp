@@ -83,7 +83,20 @@ return null();
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Sys_obj,exit,(void))
 
+Float Sys_obj::time( ){
+	HX_STACK_FRAME("Sys","time",0xf7761b2e,"Sys.time","E:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",112,0xcbe3ebd9)
+	HX_STACK_LINE(113)
+	Float tmp = ::Sys_obj::sys_time();		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(113)
+	return tmp;
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,time,return )
+
 Dynamic Sys_obj::_sleep;
+
+Dynamic Sys_obj::sys_time;
 
 
 Sys_obj::Sys_obj()
@@ -95,6 +108,7 @@ bool Sys_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"exit") ) { outValue = exit_dyn(); return true;  }
+		if (HX_FIELD_EQ(inName,"time") ) { outValue = time_dyn(); return true;  }
 		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"print") ) { outValue = print_dyn(); return true;  }
@@ -105,6 +119,9 @@ bool Sys_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"println") ) { outValue = println_dyn(); return true;  }
+		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"sys_time") ) { outValue = sys_time; return true;  }
 	}
 	return false;
 }
@@ -113,6 +130,7 @@ bool Sys_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 static hx::StorageInfo *sMemberStorageInfo = 0;
 static hx::StaticInfo sStaticStorageInfo[] = {
 	{hx::fsObject /*Dynamic*/ ,(void *) &Sys_obj::_sleep,HX_HCSTRING("_sleep","\x58","\x04","\xac","\x7a")},
+	{hx::fsObject /*Dynamic*/ ,(void *) &Sys_obj::sys_time,HX_HCSTRING("sys_time","\xbf","\xcb","\x66","\x54")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif
@@ -120,12 +138,14 @@ static hx::StaticInfo sStaticStorageInfo[] = {
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Sys_obj::__mClass,"__mClass");
 	HX_MARK_MEMBER_NAME(Sys_obj::_sleep,"_sleep");
+	HX_MARK_MEMBER_NAME(Sys_obj::sys_time,"sys_time");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Sys_obj::__mClass,"__mClass");
 	HX_VISIT_MEMBER_NAME(Sys_obj::_sleep,"_sleep");
+	HX_VISIT_MEMBER_NAME(Sys_obj::sys_time,"sys_time");
 };
 
 #endif
@@ -137,7 +157,9 @@ static ::String sStaticFields[] = {
 	HX_HCSTRING("println","\xef","\xdb","\x33","\x84"),
 	HX_HCSTRING("sleep","\x17","\xbd","\xc4","\x7e"),
 	HX_HCSTRING("exit","\x1e","\xf7","\x1d","\x43"),
+	HX_HCSTRING("time","\x0d","\xcc","\xfc","\x4c"),
 	HX_HCSTRING("_sleep","\x58","\x04","\xac","\x7a"),
+	HX_HCSTRING("sys_time","\xbf","\xcb","\x66","\x54"),
 	::String(null()) };
 
 void Sys_obj::__register()
@@ -168,5 +190,6 @@ void Sys_obj::__register()
 void Sys_obj::__boot()
 {
 	_sleep= ::cpp::Lib_obj::load(HX_HCSTRING("std","\xa3","\xa8","\x57","\x00"),HX_HCSTRING("sys_sleep","\x25","\x79","\x1a","\xf4"),(int)1);
+	sys_time= ::cpp::Lib_obj::load(HX_HCSTRING("std","\xa3","\xa8","\x57","\x00"),HX_HCSTRING("sys_time","\xbf","\xcb","\x66","\x54"),(int)0);
 }
 

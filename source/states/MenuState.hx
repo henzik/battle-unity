@@ -28,7 +28,12 @@ class MenuState extends FlxState {
 		
 		add(_background);
 
-		FlxTween.tween(_background, { alpha: 1 }, 2.0, { complete: Show_button } );					
+		FlxTween.tween(_background, { alpha: 1 }, 2.0, { complete: Show_button } );
+		
+		var _btnTest = new FlxButton(0, 0, "Multi-Testing", clickTest);
+		_btnTest.setPosition((gameWidth - _btnTest.width) / 2, (gameHeight - _btnTest.height / 2) - 20);
+		add(_btnTest);
+		
 		super.create();
 	}
 	
@@ -39,11 +44,16 @@ class MenuState extends FlxState {
 		
 		_btnPlay.onDown.sound = FlxG.sound.load(AssetPaths.Teleport__wav, 1, false, true, false);
 		add(_btnPlay);
+		
+
 	}
 	
-	private function clickPlay():Void
-	{
+	private function clickPlay():Void {
 		FlxG.switchState(new PlayState());
+	}
+	
+	private function clickTest():Void {
+		FlxG.switchState(new MultiState());
 	}
 	/**
 	 * Function that is called when this state is destroyed - you might want to 

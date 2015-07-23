@@ -30,7 +30,7 @@ class PlayState extends FlxState {
 	override public function create():Void {
 		bgColor = 0xffc0f8c8;
 		background = new Background();
-		megaman = new Player(37,55, "right");
+		megaman = new Player();
 		//megaman2 = new Player(163,65, "left");
 
 		for(i in 0...background.getGroup().length) {
@@ -56,7 +56,7 @@ class PlayState extends FlxState {
 		super.update();
 	}
 
-		public function generatePlatforms():Void {
+	public function generatePlatforms():Void {
 		var width = 6;
 		var height = 3;
 		var xLocation = 0;

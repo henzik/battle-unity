@@ -51,6 +51,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
 		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
+		path.set ("assets/images/megaman.png", "assets/images/megaman.png");
+		type.set ("assets/images/megaman.png", AssetType.IMAGE);
+		path.set ("assets/images/megaman_move.png", "assets/images/megaman_move.png");
+		type.set ("assets/images/megaman_move.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
 		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
@@ -77,6 +81,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		var id;
 		id = "assets/images/game_background_sprites.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/megaman.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/megaman_move.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/menu_background.jpg";
@@ -125,6 +135,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		Font.registerFont (__ASSET__assets_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__assets_fonts_arial_ttf);
 		
@@ -132,6 +144,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -773,11 +787,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
 @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
+
+
 
 
 
@@ -868,6 +886,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
 		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
+		path.set ("assets/images/megaman.png", "assets/images/megaman.png");
+		type.set ("assets/images/megaman.png", AssetType.IMAGE);
+		path.set ("assets/images/megaman_move.png", "assets/images/megaman_move.png");
+		type.set ("assets/images/megaman_move.png", AssetType.IMAGE);
 		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
 		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
 		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
@@ -894,6 +916,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		var id;
 		id = "assets/images/game_background_sprites.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/megaman.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/megaman_move.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/menu_background.jpg";
@@ -950,6 +978,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_fonts_arial_ttf);
 		
@@ -958,6 +988,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1583,11 +1615,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
 
 
 #elseif html5
+
+
 
 
 

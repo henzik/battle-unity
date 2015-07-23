@@ -59,6 +59,9 @@ class HXCPP_CLASS_ATTRIBUTES  MenuState_obj : public ::flixel::FlxState_obj{
 		virtual Void clickPlay( );
 		Dynamic clickPlay_dyn();
 
+		virtual Void clickTest( );
+		Dynamic clickTest_dyn();
+
 		virtual Void destroy( );
 
 		virtual Void update( );

@@ -58,11 +58,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -280,7 +277,7 @@ Void FlxBar_obj::trackParent( int offsetX,int offsetY){
 		HX_STACK_LINE(225)
 		{
 			HX_STACK_LINE(225)
-			::flixel::util::FlxPool_flixel_util_FlxPoint tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+			::flixel::util::FlxPool tmp1 = ::flixel::util::FlxPoint_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(225)
 			::flixel::util::FlxPoint tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(225)
@@ -4002,7 +3999,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1251)
 	{
 		HX_STACK_LINE(1251)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
+		::flixel::util::FlxPool tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(1251)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(1251)
@@ -4021,7 +4018,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1252)
 	{
 		HX_STACK_LINE(1252)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
+		::flixel::util::FlxPool tmp2 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(1252)
 		::flixel::util::LabelValuePair tmp3 = tmp2->get();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(1252)
@@ -4040,7 +4037,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1253)
 	{
 		HX_STACK_LINE(1253)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
+		::flixel::util::FlxPool tmp3 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(1253)
 		::flixel::util::LabelValuePair tmp4 = tmp3->get();		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(1253)
@@ -4059,7 +4056,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1254)
 	{
 		HX_STACK_LINE(1254)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
+		::flixel::util::FlxPool tmp4 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(1254)
 		::flixel::util::LabelValuePair tmp5 = tmp4->get();		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(1254)
@@ -4078,7 +4075,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1255)
 	{
 		HX_STACK_LINE(1255)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
+		::flixel::util::FlxPool tmp5 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(1255)
 		::flixel::util::LabelValuePair tmp6 = tmp5->get();		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(1255)
@@ -4097,7 +4094,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxBar_obj,setCachedFrontGraphics,(void))
 	HX_STACK_LINE(1256)
 	{
 		HX_STACK_LINE(1256)
-		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
+		::flixel::util::FlxPool tmp6 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(1256)
 		::flixel::util::LabelValuePair tmp7 = tmp6->get();		HX_STACK_VAR(tmp7,"tmp7");
 		HX_STACK_LINE(1256)

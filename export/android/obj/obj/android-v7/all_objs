@@ -3,7 +3,10 @@ obj/android-v7/0e75574c_SocketOutput.obj
 obj/android-v7/0e75574c_SocketInput.obj
 obj/android-v7/3b3fee42_Host.obj
 obj/android-v7/ef65611b_PlayState.obj
+obj/android-v7/ef65611b_MultiState.obj
 obj/android-v7/ef65611b_MenuState.obj
+obj/android-v7/b211ab27_Network.obj
+obj/android-v7/b211ab27_Client.obj
 obj/android-v7/d0e6f76c_Endian.obj
 obj/android-v7/2ea784e3_MultitouchInputMode.obj
 obj/android-v7/d395476d_TextFieldType.obj
@@ -16,6 +19,7 @@ obj/android-v7/edeaf5f4_ApplicationDomain.obj
 obj/android-v7/5ddd9d91_URLVariables.obj
 obj/android-v7/5ddd9d91_URLRequestHeader.obj
 obj/android-v7/5ddd9d91_URLLoaderDataFormat.obj
+obj/android-v7/5ddd9d91_Socket.obj
 obj/android-v7/5ddd9d91_SharedObjectFlushStatus.obj
 obj/android-v7/cd4e09d7_SoundTransform.obj
 obj/android-v7/cd4e09d7_SoundLoaderContext.obj
@@ -34,7 +38,9 @@ obj/android-v7/33b45fcb_EventPhase.obj
 obj/android-v7/33b45fcb_ErrorEvent.obj
 obj/android-v7/33b45fcb_TextEvent.obj
 obj/android-v7/33b45fcb_AccelerometerEvent.obj
+obj/android-v7/94985206_SecurityError.obj
 obj/android-v7/94985206_RangeError.obj
+obj/android-v7/94985206_IOError.obj
 obj/android-v7/94985206_EOFError.obj
 obj/android-v7/94985206_ArgumentError.obj
 obj/android-v7/94985206_Error.obj
@@ -224,7 +230,6 @@ obj/android-v7/129c354d_FlxTextFormat.obj
 obj/android-v7/129c354d_FlxText.obj
 obj/android-v7/4a3ac86c_FlxSystemButton.obj
 obj/android-v7/4a3ac86c_FlxSoundTray.obj
-obj/android-v7/4a3ac86c_FlxFocusLostScreen.obj
 obj/android-v7/7141ec58_MouseRecord.obj
 obj/android-v7/7141ec58_FrameRecord.obj
 obj/android-v7/7141ec58_FlxReplay.obj
@@ -284,13 +289,10 @@ obj/android-v7/579efa51_FlxBaseAnimation.obj
 obj/android-v7/d2937073_FlxSubState.obj
 obj/android-v7/d2937073_FlxState.obj
 obj/android-v7/3a9a4348_FlxGroup.obj
-obj/android-v7/d2937073_FlxSprite.obj
 obj/android-v7/8ddce483_GraphicDefault.obj
 obj/android-v7/1997953c_BitmapData.obj
-obj/android-v7/d2937073_FlxObject.obj
 obj/android-v7/d2937073_FlxGame.obj
 obj/android-v7/d2937073_FlxG.obj
-obj/android-v7/c77d3200_FlxRect.obj
 obj/android-v7/113e0135_WatchFrontEnd.obj
 obj/android-v7/113e0135_VCRFrontEnd.obj
 obj/android-v7/113e0135_SoundFrontEnd.obj
@@ -317,10 +319,15 @@ obj/android-v7/113e0135_BitmapFrontEnd.obj
 obj/android-v7/2810a5a8_RatioScaleMode.obj
 obj/android-v7/2810a5a8_BaseScaleMode.obj
 obj/android-v7/c77d3200_FlxPoint.obj
-obj/android-v7/c77d3200_FlxPool.obj
-obj/android-v7/86c83690_IFlxPooled.obj
 obj/android-v7/57e677d6_FlxVersion.obj
 obj/android-v7/d2937073_FlxCamera.obj
+obj/android-v7/41bc0828_Remote.obj
+obj/android-v7/41bc0828_Player.obj
+obj/android-v7/d2937073_FlxSprite.obj
+obj/android-v7/d2937073_FlxObject.obj
+obj/android-v7/c77d3200_FlxRect.obj
+obj/android-v7/c77d3200_FlxPool.obj
+obj/android-v7/86c83690_IFlxPooled.obj
 obj/android-v7/41bc0828_Background.obj
 obj/android-v7/3a9a4348_FlxTypedGroup.obj
 obj/android-v7/d2937073_FlxBasic.obj
@@ -343,7 +350,6 @@ obj/android-v7/3c86c1ab_Font.obj
 obj/android-v7/82b53a69_DefaultAssetLibrary.obj
 obj/android-v7/4ffc2b06_AssetLibrary.obj
 obj/android-v7/82b53a69_Date.obj
-obj/android-v7/82b53a69_ClientConnectionTest.obj
 obj/android-v7/82b53a69_AssetPaths.obj
 obj/android-v7/82b53a69_DocumentClass.obj
 obj/android-v7/82b53a69_Main.obj

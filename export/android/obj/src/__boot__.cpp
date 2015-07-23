@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_server_Network
+#include <server/Network.h>
+#endif
 #ifndef INCLUDED_openfl_ui_MultitouchInputMode
 #include <openfl/ui/MultitouchInputMode.h>
 #endif
@@ -435,14 +438,8 @@
 #ifndef INCLUDED_openfl__legacy_display_BitmapData
 #include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_flixel_FlxObject
-#include <flixel/FlxObject.h>
-#endif
 #ifndef INCLUDED_flixel_FlxG
 #include <flixel/FlxG.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxRect
-#include <flixel/util/FlxRect.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxSave
 #include <flixel/util/FlxSave.h>
@@ -464,6 +461,12 @@
 #endif
 #ifndef INCLUDED_flixel_FlxCamera
 #include <flixel/FlxCamera.h>
+#endif
+#ifndef INCLUDED_flixel_FlxObject
+#include <flixel/FlxObject.h>
+#endif
+#ifndef INCLUDED_flixel_util_FlxRect
+#include <flixel/util/FlxRect.h>
 #endif
 #ifndef INCLUDED_Xml
 #include <Xml.h>
@@ -504,8 +507,14 @@
 #ifndef INCLUDED_states_PlayState
 #include <states/PlayState.h>
 #endif
+#ifndef INCLUDED_states_MultiState
+#include <states/MultiState.h>
+#endif
 #ifndef INCLUDED_states_MenuState
 #include <states/MenuState.h>
+#endif
+#ifndef INCLUDED_server_Client
+#include <server/Client.h>
 #endif
 #ifndef INCLUDED_openfl_system_LoaderContext
 #include <openfl/system/LoaderContext.h>
@@ -515,6 +524,9 @@
 #endif
 #ifndef INCLUDED_openfl_net_URLRequestHeader
 #include <openfl/net/URLRequestHeader.h>
+#endif
+#ifndef INCLUDED_openfl_net_Socket
+#include <openfl/net/Socket.h>
 #endif
 #ifndef INCLUDED_openfl_media_SoundTransform
 #include <openfl/media/SoundTransform.h>
@@ -537,8 +549,14 @@
 #ifndef INCLUDED_openfl_events_AccelerometerEvent
 #include <openfl/events/AccelerometerEvent.h>
 #endif
+#ifndef INCLUDED_openfl_errors_SecurityError
+#include <openfl/errors/SecurityError.h>
+#endif
 #ifndef INCLUDED_openfl_errors_RangeError
 #include <openfl/errors/RangeError.h>
+#endif
+#ifndef INCLUDED_openfl_errors_IOError
+#include <openfl/errors/IOError.h>
 #endif
 #ifndef INCLUDED_openfl_errors_EOFError
 #include <openfl/errors/EOFError.h>
@@ -822,9 +840,6 @@
 #ifndef INCLUDED_flixel_system_ui_FlxSoundTray
 #include <flixel/system/ui/FlxSoundTray.h>
 #endif
-#ifndef INCLUDED_flixel_system_ui_FlxFocusLostScreen
-#include <flixel/system/ui/FlxFocusLostScreen.h>
-#endif
 #ifndef INCLUDED_flixel_system_replay_MouseRecord
 #include <flixel/system/replay/MouseRecord.h>
 #endif
@@ -933,9 +948,6 @@
 #ifndef INCLUDED_flixel_group_FlxGroup
 #include <flixel/group/FlxGroup.h>
 #endif
-#ifndef INCLUDED_flixel_FlxSprite
-#include <flixel/FlxSprite.h>
-#endif
 #ifndef INCLUDED_flixel_FlxGame
 #include <flixel/FlxGame.h>
 #endif
@@ -999,14 +1011,23 @@
 #ifndef INCLUDED_flixel_system_scaleModes_RatioScaleMode
 #include <flixel/system/scaleModes/RatioScaleMode.h>
 #endif
+#ifndef INCLUDED_flixel_system_FlxVersion
+#include <flixel/system/FlxVersion.h>
+#endif
+#ifndef INCLUDED_entity_Remote
+#include <entity/Remote.h>
+#endif
+#ifndef INCLUDED_entity_Player
+#include <entity/Player.h>
+#endif
+#ifndef INCLUDED_flixel_FlxSprite
+#include <flixel/FlxSprite.h>
+#endif
 #ifndef INCLUDED_flixel_util_FlxPool
 #include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_interfaces_IFlxPooled
 #include <flixel/interfaces/IFlxPooled.h>
-#endif
-#ifndef INCLUDED_flixel_system_FlxVersion
-#include <flixel/system/FlxVersion.h>
 #endif
 #ifndef INCLUDED_entity_Background
 #include <entity/Background.h>
@@ -1062,9 +1083,6 @@
 #ifndef INCLUDED_Date
 #include <Date.h>
 #endif
-#ifndef INCLUDED_ClientConnectionTest
-#include <ClientConnectionTest.h>
-#endif
 #ifndef INCLUDED_DocumentClass
 #include <DocumentClass.h>
 #endif
@@ -1108,6 +1126,7 @@ void __boot_all()
 {
 __files__boot();
 hx::RegisterResources( hx::GetResources() );
+::server::Network_obj::__register();
 ::openfl::ui::MultitouchInputMode_obj::__register();
 ::openfl::text::TextFieldType_obj::__register();
 ::openfl::text::TextFieldAutoSize_obj::__register();
@@ -1253,9 +1272,7 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::animation::FlxAnimationController_obj::__register();
 ::flixel::_FlxSprite::GraphicDefault_obj::__register();
 ::openfl::_legacy::display::BitmapData_obj::__register();
-::flixel::FlxObject_obj::__register();
 ::flixel::FlxG_obj::__register();
-::flixel::util::FlxRect_obj::__register();
 ::flixel::util::FlxSave_obj::__register();
 ::flixel::tweens::FlxTween_obj::__register();
 ::flixel::util::FlxPath_obj::__register();
@@ -1263,6 +1280,8 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::scaleModes::BaseScaleMode_obj::__register();
 ::flixel::util::FlxPoint_obj::__register();
 ::flixel::FlxCamera_obj::__register();
+::flixel::FlxObject_obj::__register();
+::flixel::util::FlxRect_obj::__register();
 ::Xml_obj::__register();
 ::EReg_obj::__register();
 ::openfl::_legacy::text::Font_obj::__register();
@@ -1276,10 +1295,13 @@ hx::RegisterResources( hx::GetResources() );
 ::sys::io::Process_obj::__register();
 ::Sys_obj::__register();
 ::states::PlayState_obj::__register();
+::states::MultiState_obj::__register();
 ::states::MenuState_obj::__register();
+::server::Client_obj::__register();
 ::openfl::_system::LoaderContext_obj::__register();
 ::openfl::net::URLVariables_obj::__register();
 ::openfl::net::URLRequestHeader_obj::__register();
+::openfl::net::Socket_obj::__register();
 ::openfl::media::SoundTransform_obj::__register();
 ::openfl::media::SoundLoaderContext_obj::__register();
 ::openfl::media::ID3Info_obj::__register();
@@ -1287,7 +1309,9 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::geom::Matrix3D_obj::__register();
 ::openfl::events::UncaughtErrorEvents_obj::__register();
 ::openfl::events::AccelerometerEvent_obj::__register();
+::openfl::errors::SecurityError_obj::__register();
 ::openfl::errors::RangeError_obj::__register();
+::openfl::errors::IOError_obj::__register();
 ::openfl::errors::EOFError_obj::__register();
 ::openfl::errors::ArgumentError_obj::__register();
 ::openfl::display3D::textures::Texture_obj::__register();
@@ -1382,7 +1406,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::text::FlxTextFormat_obj::__register();
 ::flixel::_system::ui::FlxSystemButton_obj::__register();
 ::flixel::_system::ui::FlxSoundTray_obj::__register();
-::flixel::_system::ui::FlxFocusLostScreen_obj::__register();
 ::flixel::_system::replay::MouseRecord_obj::__register();
 ::flixel::_system::replay::FrameRecord_obj::__register();
 ::flixel::_system::replay::FlxReplay_obj::__register();
@@ -1419,7 +1442,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::FlxSubState_obj::__register();
 ::flixel::FlxState_obj::__register();
 ::flixel::group::FlxGroup_obj::__register();
-::flixel::FlxSprite_obj::__register();
 ::flixel::FlxGame_obj::__register();
 ::flixel::_system::frontEnds::WatchFrontEnd_obj::__register();
 ::flixel::_system::frontEnds::VCRFrontEnd_obj::__register();
@@ -1441,9 +1463,12 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::frontEnds::BitmapLogFrontEnd_obj::__register();
 ::flixel::_system::frontEnds::BitmapFrontEnd_obj::__register();
 ::flixel::_system::scaleModes::RatioScaleMode_obj::__register();
+::flixel::_system::FlxVersion_obj::__register();
+::entity::Remote_obj::__register();
+::entity::Player_obj::__register();
+::flixel::FlxSprite_obj::__register();
 ::flixel::util::FlxPool_obj::__register();
 ::flixel::interfaces::IFlxPooled_obj::__register();
-::flixel::_system::FlxVersion_obj::__register();
 ::entity::Background_obj::__register();
 ::flixel::group::FlxTypedGroup_obj::__register();
 ::flixel::FlxBasic_obj::__register();
@@ -1462,7 +1487,6 @@ hx::RegisterResources( hx::GetResources() );
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::_legacy::AssetLibrary_obj::__register();
 ::Date_obj::__register();
-::ClientConnectionTest_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::openfl::_legacy::display::Sprite_obj::__register();
@@ -1475,6 +1499,7 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_legacy::events::EventDispatcher_obj::__register();
 ::openfl::_legacy::events::IEventDispatcher_obj::__register();
 ::ApplicationMain_obj::__register();
+::server::Network_obj::__boot();
 ::openfl::ui::MultitouchInputMode_obj::__boot();
 ::openfl::text::TextFieldType_obj::__boot();
 ::openfl::text::TextFieldAutoSize_obj::__boot();
@@ -1534,15 +1559,15 @@ hx::RegisterResources( hx::GetResources() );
 ::AssetPaths_obj::__boot();
 ::openfl::_legacy::text::Font_obj::__boot();
 ::Xml_obj::__boot();
+::flixel::util::FlxRect_obj::__boot();
+::flixel::FlxObject_obj::__boot();
 ::flixel::FlxCamera_obj::__boot();
 ::flixel::util::FlxPoint_obj::__boot();
 ::flixel::_system::scaleModes::BaseScaleMode_obj::__boot();
 ::flixel::util::FlxPath_obj::__boot();
 ::flixel::tweens::FlxTween_obj::__boot();
 ::flixel::util::FlxSave_obj::__boot();
-::flixel::util::FlxRect_obj::__boot();
 ::flixel::FlxG_obj::__boot();
-::flixel::FlxObject_obj::__boot();
 ::openfl::_legacy::display::BitmapData_obj::__boot();
 ::flixel::_FlxSprite::GraphicDefault_obj::__boot();
 ::flixel::animation::FlxAnimationController_obj::__boot();

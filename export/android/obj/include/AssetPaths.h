@@ -28,7 +28,10 @@ class HXCPP_CLASS_ATTRIBUTES  AssetPaths_obj : public hx::Object{
 		::String __ToString() const { return HX_HCSTRING("AssetPaths","\x3e","\x0f","\xe6","\x60"); }
 
 		static void __boot();
+		static ::String __DS_Store;
 		static ::String game_background_sprites__png;
+		static ::String megaman__png;
+		static ::String megaman_move__png;
 		static ::String menu_background__jpg;
 		static ::String platform_blue_normal__png;
 		static ::String platform_red_normal__png;

@@ -5,6 +5,7 @@
 #include <hxcpp.h>
 #endif
 
+HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS2(haxe,io,Output)
 namespace haxe{
 namespace io{
@@ -30,8 +31,17 @@ class HXCPP_CLASS_ATTRIBUTES  Output_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_HCSTRING("Output","\x21","\x83","\x15","\x41"); }
 
+		virtual Void writeByte( int c);
+		Dynamic writeByte_dyn();
+
+		virtual int writeBytes( ::haxe::io::Bytes s,int pos,int len);
+		Dynamic writeBytes_dyn();
+
 		virtual Void close( );
 		Dynamic close_dyn();
+
+		virtual Void write( ::haxe::io::Bytes s);
+		Dynamic write_dyn();
 
 };
 

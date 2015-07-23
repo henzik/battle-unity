@@ -47,6 +47,12 @@ class HXCPP_CLASS_ATTRIBUTES  Stdin_obj : public ::haxe::io::Output_obj{
 		::haxe::io::Bytes buf;
 		virtual Void close( );
 
+		virtual Void writeByte( int c);
+
+		virtual int writeBytes( ::haxe::io::Bytes buf,int pos,int len);
+
+		static Dynamic _stdin_write;
+		static Dynamic &_stdin_write_dyn() { return _stdin_write;}
 		static Dynamic _stdin_close;
 		static Dynamic &_stdin_close_dyn() { return _stdin_close;}
 };

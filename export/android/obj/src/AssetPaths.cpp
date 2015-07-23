@@ -22,7 +22,13 @@ Dynamic AssetPaths_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct();
 	return _result_;}
 
+::String AssetPaths_obj::__DS_Store;
+
 ::String AssetPaths_obj::game_background_sprites__png;
+
+::String AssetPaths_obj::megaman__png;
+
+::String AssetPaths_obj::megaman_move__png;
 
 ::String AssetPaths_obj::menu_background__jpg;
 
@@ -44,7 +50,10 @@ AssetPaths_obj::AssetPaths_obj()
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo *sMemberStorageInfo = 0;
 static hx::StaticInfo sStaticStorageInfo[] = {
+	{hx::fsString,(void *) &AssetPaths_obj::__DS_Store,HX_HCSTRING("__DS_Store","\xf1","\x0e","\x3f","\x63")},
 	{hx::fsString,(void *) &AssetPaths_obj::game_background_sprites__png,HX_HCSTRING("game_background_sprites__png","\x9f","\xf1","\x8b","\x81")},
+	{hx::fsString,(void *) &AssetPaths_obj::megaman__png,HX_HCSTRING("megaman__png","\x21","\x06","\x41","\x2b")},
+	{hx::fsString,(void *) &AssetPaths_obj::megaman_move__png,HX_HCSTRING("megaman_move__png","\x01","\x29","\x38","\x81")},
 	{hx::fsString,(void *) &AssetPaths_obj::menu_background__jpg,HX_HCSTRING("menu_background__jpg","\x33","\x95","\x2c","\x64")},
 	{hx::fsString,(void *) &AssetPaths_obj::platform_blue_normal__png,HX_HCSTRING("platform_blue_normal__png","\xe9","\x8f","\x58","\xeb")},
 	{hx::fsString,(void *) &AssetPaths_obj::platform_red_normal__png,HX_HCSTRING("platform_red_normal__png","\x08","\xa6","\x38","\x65")},
@@ -57,7 +66,10 @@ static hx::StaticInfo sStaticStorageInfo[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::__mClass,"__mClass");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::__DS_Store,"__DS_Store");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::game_background_sprites__png,"game_background_sprites__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::megaman__png,"megaman__png");
+	HX_MARK_MEMBER_NAME(AssetPaths_obj::megaman_move__png,"megaman_move__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::menu_background__jpg,"menu_background__jpg");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::platform_blue_normal__png,"platform_blue_normal__png");
 	HX_MARK_MEMBER_NAME(AssetPaths_obj::platform_red_normal__png,"platform_red_normal__png");
@@ -69,7 +81,10 @@ static void sMarkStatics(HX_MARK_PARAMS) {
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::__mClass,"__mClass");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::__DS_Store,"__DS_Store");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::game_background_sprites__png,"game_background_sprites__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::megaman__png,"megaman__png");
+	HX_VISIT_MEMBER_NAME(AssetPaths_obj::megaman_move__png,"megaman_move__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::menu_background__jpg,"menu_background__jpg");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::platform_blue_normal__png,"platform_blue_normal__png");
 	HX_VISIT_MEMBER_NAME(AssetPaths_obj::platform_red_normal__png,"platform_red_normal__png");
@@ -83,7 +98,10 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 hx::Class AssetPaths_obj::__mClass;
 
 static ::String sStaticFields[] = {
+	HX_HCSTRING("__DS_Store","\xf1","\x0e","\x3f","\x63"),
 	HX_HCSTRING("game_background_sprites__png","\x9f","\xf1","\x8b","\x81"),
+	HX_HCSTRING("megaman__png","\x21","\x06","\x41","\x2b"),
+	HX_HCSTRING("megaman_move__png","\x01","\x29","\x38","\x81"),
 	HX_HCSTRING("menu_background__jpg","\x33","\x95","\x2c","\x64"),
 	HX_HCSTRING("platform_blue_normal__png","\xe9","\x8f","\x58","\xeb"),
 	HX_HCSTRING("platform_red_normal__png","\x08","\xa6","\x38","\x65"),
@@ -119,7 +137,10 @@ void AssetPaths_obj::__register()
 
 void AssetPaths_obj::__boot()
 {
+	__DS_Store= HX_HCSTRING("assets/.DS_Store","\x33","\xa6","\xd1","\x02");
 	game_background_sprites__png= HX_HCSTRING("assets/images/game_background_sprites.png","\x1a","\x5a","\x90","\x8c");
+	megaman__png= HX_HCSTRING("assets/images/megaman.png","\xd8","\x51","\xc0","\xe9");
+	megaman_move__png= HX_HCSTRING("assets/images/megaman_move.png","\x6e","\x66","\x53","\x27");
 	menu_background__jpg= HX_HCSTRING("assets/images/menu_background.jpg","\x76","\x01","\x17","\xa1");
 	platform_blue_normal__png= HX_HCSTRING("assets/images/platform_blue_normal.png","\x86","\x77","\x39","\x47");
 	platform_red_normal__png= HX_HCSTRING("assets/images/platform_red_normal.png","\x51","\x67","\x0c","\x7f");
