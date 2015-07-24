@@ -44,7 +44,7 @@ class Client {
 		socket.addEventListener(Event.CLOSE, onSocketClose);
 		socket.addEventListener(ProgressEvent.SOCKET_DATA, onReceiveSocketData);
 		
-		socket.connect("192.168.1.26", 2000);
+		socket.connect("86.8.168.12", 5000);
 		
 	}
 	
@@ -87,9 +87,18 @@ class Client {
 				var remote = new Remote(id);
 				playerList.set(id, remote);
 				
-			case Network.PlayerControl:
-				trace("Player Control("+data[1]+")");
-				var Input:String = Std.string(data[1]);
+			case Network.PlayerAControl:
+				trace("Player A Control("+data[1]+")");
+				var Input:Int = Std.parseInt(Std.string(data[1]));
+				var player = playerList.get(ID);
+				player.isLocal = true;
+				player._keyState = Input;
+				
+				playerList.set(ID, player);
+			
+			case Network.PlayerBControl:
+				trace("Player B Control("+data[1]+")");
+				var Input:Int = Std.parseInt(Std.string(data[1]));
 				
 				for (player in playerList) {
 					if (!player.isLocal) {
@@ -97,6 +106,15 @@ class Client {
 						playerList.set(player.ID, player);
 					}
 				}
+				
+			case Network.LobbyDetails:
+				trace("Lobby Details");
+				
+			case Network.StartAutoAttack:
+				trace("Start Auto Attack");
+			
+			case Network.EndAutoAttack:
+				trace("Start Auto Attack");
 				
 				
 				//remote._lastKeyState = remote._keyState;
@@ -106,7 +124,7 @@ class Client {
 		}		
 	}
 	
-	public function sendEvent(event:Network, value:Dynamic) {
+	public function sendEvent(event:Network, value:Dynamic, fast:Bool = false) {
 		var data:Dynamic = [event, value];
 		var serialiser = new Serializer();
 		serialiser.serialize(data);		
@@ -115,8 +133,8 @@ class Client {
 
 		var hxBytes = Bytes.ofString(serialiser.toString());
 		var opBytes = ByteArray.fromBytes(hxBytes);
-	
 		
-		socket.writeBytes(opBytes);		
+		socket.writeBytes(opBytes);
+		socket.flush();
 	}
 }

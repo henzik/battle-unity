@@ -9,7 +9,7 @@ class Remote {
 	public var ID:Int;
 	private var Name:String;
 	
-	public var _keyState:String;
+	public var _keyState:Int;
 	public var _lastKeyState:String;
 	
 	public var isLocal:Bool = false;	

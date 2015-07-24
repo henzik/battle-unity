@@ -8,6 +8,12 @@ enum Network {
 	PlayerConnectReqID;
 	
 	PlayersInLobby;
-	PlayerControl;
+	LobbyDetails;
+	
+	PlayerAControl;
+	PlayerBControl;
+	
+	StartAutoAttack;
+	EndAutoAttack;
 
 }

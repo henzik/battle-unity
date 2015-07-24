@@ -8,6 +8,7 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import entity.Player;
 
+import server.Start;
 import server.Network;
 import server.Client;
 
@@ -19,10 +20,8 @@ class MultiState extends FlxState {
 	 * Function that is called up when to state is created to set it up.
 	 */
 	//private var player:Player;
-	private var local:Player;
-	private var remote:Player;
-	
-	private var client:Client;
+	private var local:Player = null;
+	private var remote:Player = null;
 	
 	private var status:FlxText;
 	private var players:FlxText;
@@ -60,8 +59,8 @@ class MultiState extends FlxState {
 		players.text = "Players: 0";
 		add(players);
 		
-		client = new Client();
-		client.Connect();
+		Start.instance.Logic.Connect();
+		
 		
 		reconnect = new FlxButton(0, 150, "Reconnect", restartCon);
 		add(reconnect);
@@ -72,56 +71,51 @@ class MultiState extends FlxState {
 	private function restartCon():Void {
 		trace("restarting...");
 		status.text = "Reconnecting...";
-		client.Connect();
+		//client.Connect();
 	}
 	
 	/**
 	 * Function that is called once every frame.
-	 */
-	
-	
+	 */		
+	private var backgroundPlayers:Map<Int, Player> = new Map<Int, Player>();
 	override public function update():Void {
-		if (client.Connected) {
+		if (Start.instance.Logic.Connected) {
 			status.text = "Status: Connected";
 			//add(client.player);
 			
-			for (player in client.playerList) {
+			for (player in Start.instance.Logic.playerList) {
+				
 				if (!player.isLocal) {
-					if (remote == null) {
+					
+					if (remote == null && Start.instance.Logic.LobbyCount > 1) {						
 						remote = new Player(true);
-						remote.flipX = true;
 						add(remote);
 					}					
 					
-					remote._keyState = player._keyState;
-					player._keyState = null;
+					if (remote != null) {
+						remote._keyState = player._keyState;
+						player._keyState = -1;
+					}													
+
 					//player.flipX = true;
 					//add(player);
-				} else {
+				} else {							
+				//trace("Player Count: " + Start.instance.Logic.LobbyCount);
 					if (local == null) {
-						local = new Player();
+						local = new Player();						
+						local.isLocal = true;
 						add(local);
 					}
 					
-					local._keyState = player._keyState;			
-					player._keyState = null;
+					if (local != null) {
+						
+						local._keyState = player._keyState;			
+						player._keyState = -1;
+					}
+					
+
 				}
-			}
-			
-			// Send Local player commands
-			if (FlxG.keys.anyJustPressed(["Up"])) {
-				client.sendEvent(Network.PlayerControl, "Up");
-				if (local != null) local._keyState = "Up";
-			} else if (FlxG.keys.anyJustPressed(["Down"])) {
-				client.sendEvent(Network.PlayerControl, "Down");
-				if (local != null) local._keyState = "Down";
-			} else if (FlxG.keys.anyJustPressed(["Left"])) {
-				client.sendEvent(Network.PlayerControl, "Left");
-				if (local != null) local._keyState = "Left";
-			} else if (FlxG.keys.anyJustPressed(["Right"])) {
-				client.sendEvent(Network.PlayerControl, "Right");
-				if (local != null) local._keyState = "Right";
-			}
+			}	
 			
 			/*
 			#if android 
@@ -139,32 +133,32 @@ class MultiState extends FlxState {
 			status.text = "Status: Disconnected";
 		}
 		
-		if (client.LobbyCount > 1) {
+		if (Start.instance.Logic.LobbyCount > 1) {
 			//add(client.remote);
 		} else {
 			//remove(client.remote);
 		}
 		
-		players.text = "Players: " + client.LobbyCount;
+		players.text = "Players: " + Start.instance.Logic.LobbyCount;
 		
 		super.update();
 	}
 
 	public function CBup():Void {
-		client.sendEvent(Network.PlayerControl, "Up");
+		Start.instance.Logic.sendEvent(Network.PlayerAControl, "0");
 		//client.player.
 	}
 	
 	public function CBdown():Void {
-		client.sendEvent(Network.PlayerControl, "Down");
+		Start.instance.Logic.sendEvent(Network.PlayerAControl, "1");
 	}
 	
 	public function CBleft():Void {
-		client.sendEvent(Network.PlayerControl, "Left");		
+		Start.instance.Logic.sendEvent(Network.PlayerAControl, "2");		
 	}
 
 	public function CBright():Void {
-		client.sendEvent(Network.PlayerControl, "Right");
+		Start.instance.Logic.sendEvent(Network.PlayerAControl, "3");
 	}
 	
 	public function generatePlatforms():Void {
@@ -197,8 +191,8 @@ class MultiState extends FlxState {
 	 * Function that is called when this state is destroyed - you might want to
 	 * consider setting all objects this state uses to null to help garbage collection.
 	 */
-	override public function destroy():Void
-	{
+	override public function destroy():Void {
 		super.destroy();
 	}
+	
 }

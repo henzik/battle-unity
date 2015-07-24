@@ -115,7 +115,7 @@ Void PlayState_obj::create( ){
 		HX_STACK_LINE(32)
 		this->background = tmp;
 		HX_STACK_LINE(33)
-		::entity::Player tmp1 = ::entity::Player_obj::__new();		HX_STACK_VAR(tmp1,"tmp1");
+		::entity::Player tmp1 = ::entity::Player_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(33)
 		this->megaman = tmp1;
 		HX_STACK_LINE(36)

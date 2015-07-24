@@ -4,82 +4,87 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxObject;
 
+import server.Network;
+import server.Start;
+
 /**
  * ...
  * @author Henrik Stepanyan
  */
 class Player extends FlxSprite {
 
-	public var _keyState:String;
+	public var _keyState:Int;
 
 	public var vPos = 2;
 	public var hPos = 2;
+	public var isLocal:Bool = false;
 	
 	
 	public function new(flip:Bool = false) {
+		
 		if (flip) {
-			super(163, 55);
+			var rightX = (FlxG.width / 2) + 43;
+			var rightY = (FlxG.height / 2) - 25;
+			trace("CENTER X: " + rightX + " CENTER Y: " + rightY);
+			super(rightX, rightY);
 			flipX = true;
 		} else {
-			super(37, 55);
+			var leftX = (FlxG.width / 2) - 83;
+			var leftY = (FlxG.height / 2) - 25;
+			
+			super(leftX, leftY);
 		}
 		loadGraphic(AssetPaths.megaman_move__png, true, 41, 52);
 		animation.add("move", [0, 1, 2, 3], 30, false);
 		animation.add("static", [3], 1, true);
-		animation.play("static");			
+		animation.play("static");		
 	}
 
 	override public function update():Void {
-		if (_keyState == "Up" && vPos > 1) {
+		
+		if (_keyState == 0 && vPos > 1) {
 			vPos--;
 			y -= 26;
 			
-			_keyState = null;
+			_keyState = -1;
 			animation.play("move");
-		} else if (_keyState == "Down" && vPos < 3) {
+		} else if (_keyState == 1 && vPos < 3) {
 			vPos++;
 			y += 26;
 			
-			_keyState = null;
+			_keyState = -1;
 			animation.play("move");
-		} else if (_keyState == "Left" && hPos > 1) {
+		} else if (_keyState == 2 && hPos > 1) {
 			hPos--;
-			if (flipX) {
-				x += 40;
-			} else {
-				x -= 40;
-			}
+			x -= 40;
 			
-			_keyState = null;
+			_keyState = -1;
 			animation.play("move");
-		} else if (_keyState == "Right" && hPos < 3) {
-			hPos++;
+		} else if (_keyState == 3 && hPos < 3) {
+			hPos++;			
+			x += 40;
 			
-			if (flipX) {
-				x -= 40;
-			} else {
-				x += 40;
-			}			
-			
-			_keyState = null;
+			_keyState = -1;
 			animation.play("move");
 		}
 		
-		var _up:Bool = false;
-		var _down:Bool = false;
-		var _left:Bool = false;
-		var _right:Bool = false;
-
-		_up = FlxG.keys.anyJustPressed(["UP", "W"]);
-		_down = FlxG.keys.anyJustPressed(["DOWN", "S"]);
-		_left = FlxG.keys.anyJustPressed(["LEFT", "A"]);
-		_right = FlxG.keys.anyJustPressed(["RIGHT", "D"]);
-
-		if (_up && _down)
-			 _up = _down = false;
-		if (_left && _right)
-			 _left = _right = false;
-			 
+		if (isLocal) {
+		// Send Local player commands
+			if (FlxG.keys.anyJustPressed(["Up"])) {
+				
+				Start.instance.Logic.sendEvent(Network.PlayerAControl, "0");
+				//if (local != null) local._keyState = "Up";
+			} else if (FlxG.keys.anyJustPressed(["Down"])) {
+				Start.instance.Logic.sendEvent(Network.PlayerAControl, "1");
+				//if (local != null) local._keyState = "Down";
+			} else if (FlxG.keys.anyJustPressed(["Left"])) {
+				Start.instance.Logic.sendEvent(Network.PlayerAControl, "2");
+				//if (local != null) local._keyState = "Left";
+			} else if (FlxG.keys.anyJustPressed(["Right"])) {
+				Start.instance.Logic.sendEvent(Network.PlayerAControl, "3");
+				//if (local != null) local._keyState = "Right";
+			}
+		}
 		super.update();
 	}
 }

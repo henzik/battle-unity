@@ -513,6 +513,12 @@
 #ifndef INCLUDED_states_MenuState
 #include <states/MenuState.h>
 #endif
+#ifndef INCLUDED_server_Start
+#include <server/Start.h>
+#endif
+#ifndef INCLUDED_server_Remote
+#include <server/Remote.h>
+#endif
 #ifndef INCLUDED_server_Client
 #include <server/Client.h>
 #endif
@@ -1014,9 +1020,6 @@
 #ifndef INCLUDED_flixel_system_FlxVersion
 #include <flixel/system/FlxVersion.h>
 #endif
-#ifndef INCLUDED_entity_Remote
-#include <entity/Remote.h>
-#endif
 #ifndef INCLUDED_entity_Player
 #include <entity/Player.h>
 #endif
@@ -1297,6 +1300,8 @@ hx::RegisterResources( hx::GetResources() );
 ::states::PlayState_obj::__register();
 ::states::MultiState_obj::__register();
 ::states::MenuState_obj::__register();
+::server::Start_obj::__register();
+::server::Remote_obj::__register();
 ::server::Client_obj::__register();
 ::openfl::_system::LoaderContext_obj::__register();
 ::openfl::net::URLVariables_obj::__register();
@@ -1464,7 +1469,6 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::_system::frontEnds::BitmapFrontEnd_obj::__register();
 ::flixel::_system::scaleModes::RatioScaleMode_obj::__register();
 ::flixel::_system::FlxVersion_obj::__register();
-::entity::Remote_obj::__register();
 ::entity::Player_obj::__register();
 ::flixel::FlxSprite_obj::__register();
 ::flixel::util::FlxPool_obj::__register();

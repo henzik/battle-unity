@@ -5,6 +5,8 @@ obj/android-v7/3b3fee42_Host.obj
 obj/android-v7/ef65611b_PlayState.obj
 obj/android-v7/ef65611b_MultiState.obj
 obj/android-v7/ef65611b_MenuState.obj
+obj/android-v7/b211ab27_Start.obj
+obj/android-v7/b211ab27_Remote.obj
 obj/android-v7/b211ab27_Network.obj
 obj/android-v7/b211ab27_Client.obj
 obj/android-v7/d0e6f76c_Endian.obj
@@ -321,7 +323,6 @@ obj/android-v7/2810a5a8_BaseScaleMode.obj
 obj/android-v7/c77d3200_FlxPoint.obj
 obj/android-v7/57e677d6_FlxVersion.obj
 obj/android-v7/d2937073_FlxCamera.obj
-obj/android-v7/41bc0828_Remote.obj
 obj/android-v7/41bc0828_Player.obj
 obj/android-v7/d2937073_FlxSprite.obj
 obj/android-v7/d2937073_FlxObject.obj
