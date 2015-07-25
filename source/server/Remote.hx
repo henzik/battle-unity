@@ -16,7 +16,7 @@ class Remote {
 
 	public var flipX:Bool = false;
 
-	public function new(id:Int) {
+	public function new(id:Int = -1) {
 		this.ID = id;
 		this.Name = "usr" + id;
 		

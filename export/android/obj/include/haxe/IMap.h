@@ -14,13 +14,13 @@ class HXCPP_CLASS_ATTRIBUTES  IMap_obj : public hx::Interface{
 		typedef hx::Interface super;
 		typedef IMap_obj OBJ_;
 		HX_DO_INTERFACE_RTTI;
-		virtual Dynamic iterator( )=0;
-		virtual Dynamic iterator_dyn()=0;
+		virtual Dynamic get( Dynamic k)=0;
+		virtual Dynamic get_dyn()=0;
 };
 
 #define DELEGATE_haxe_IMap \
-virtual Dynamic iterator( ) { return mDelegate->iterator();}  \
-virtual Dynamic iterator_dyn() { return mDelegate->iterator_dyn();}  \
+virtual Dynamic get( Dynamic k) { return mDelegate->get(k);}  \
+virtual Dynamic get_dyn() { return mDelegate->get_dyn();}  \
 
 
 template<typename IMPL>

@@ -7,7 +7,7 @@ namespace haxe{
 
 
 static ::String sMemberFields[] = {
-	HX_HCSTRING("iterator","\xee","\x49","\x9a","\x93"),
+	HX_HCSTRING("get","\x96","\x80","\x4e","\x00"),
 	::String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {

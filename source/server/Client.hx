@@ -23,9 +23,9 @@ import openfl.events.ProgressEvent;
  */
 class Client {
 
-	public var ID:Int;
+	public var id:Int = -1;
 	
-	private var socket:Socket;
+	public var socket:Socket;
 	
 	public var Connected:Bool = false;
 	public var LobbyCount:Dynamic;
@@ -71,41 +71,67 @@ class Client {
 
 		switch (data[0]) {
 			case Network.PlayerConnectReqID:
-				var id = Std.parseInt(Std.string(data[1]));
-				ID = id;
-				
+				id = Std.parseInt(Std.string(data[1]));
+				trace("ID Received: " + data[1] + " ID Saved: "+ id);								
 				var local = new Remote(id);
 				local.isLocal = true;
-				trace("ID: " + id);
+			
 				
 				playerList.set(id, local);
 				
+				
 			case Network.PlayersInLobby:				
 				LobbyCount = data[1];
+				if (playerList.exists(id)) {
+					if (!playerList.exists(100)) {
+						var remote = new Remote();
+						playerList.set(100, remote);
+					}
+				}
 				
-				var id:Int = LobbyCount + 1;
-				var remote = new Remote(id);
-				playerList.set(id, remote);
+				
 				
 			case Network.PlayerAControl:
-				trace("Player A Control("+data[1]+")");
-				var Input:Int = Std.parseInt(Std.string(data[1]));
-				var player = playerList.get(ID);
-				player.isLocal = true;
-				player._keyState = Input;
+				trace("Player A Control(" + data[1] + ") ID: " + id);
 				
-				playerList.set(ID, player);
+				var Recv:Int = Std.parseInt(Std.string(data[1]));
+				var Input:Int = Std.parseInt(Std.string(data[2]));
+				
+				
+				//trace("CLIENT ID: " + this.id);
+				if (id == Recv) {
+					var player = playerList.get(this.id);
+				
+					player.isLocal = true;
+					player._keyState = Input;
+				
+					playerList.set(id, player);
+				}
 			
 			case Network.PlayerBControl:
-				trace("Player B Control("+data[1]+")");
-				var Input:Int = Std.parseInt(Std.string(data[1]));
+				//trace("Player B Control(" + data[1] + ")ID: " + id);
 				
-				for (player in playerList) {
-					if (!player.isLocal) {
+				var Recv:Int = Std.parseInt(Std.string(data[1]));
+				var Input:Int = Std.parseInt(Std.string(data[2]));
+				//trace("PLAYER B CONTROL - RECEIVED ID: " + data[1] + "Input: " + data[2]);
+				for (player in playerList) {					
+					if (player.ID == -1) {						
+						player._keyState = Input;
+						
+						playerList.set(player.ID, player);
+						trace("Player keystate: " + player._keyState);
+					}
+				}
+				//for (player in Start.instance.Logic.playerList) {
+					//if (player.
+				//}
+				/*for (player in playerList) {
+					if (player.ID != Recv) {
+						trace("Player ID: " + player.ID + "Saved ID: " + id);
 						player._keyState = Input;
 						playerList.set(player.ID, player);
 					}
-				}
+				}*/
 				
 			case Network.LobbyDetails:
 				trace("Lobby Details");
@@ -125,7 +151,7 @@ class Client {
 	}
 	
 	public function sendEvent(event:Network, value:Dynamic, fast:Bool = false) {
-		var data:Dynamic = [event, value];
+		var data:Dynamic = [event, value, id];
 		var serialiser = new Serializer();
 		serialiser.serialize(data);		
 		

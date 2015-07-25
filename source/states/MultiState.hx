@@ -20,8 +20,8 @@ class MultiState extends FlxState {
 	 * Function that is called up when to state is created to set it up.
 	 */
 	//private var player:Player;
-	private var local:Player = null;
-	private var remote:Player = null;
+	private var local:Player;
+	private var remote:Player;
 	
 	private var status:FlxText;
 	private var players:FlxText;
@@ -71,72 +71,46 @@ class MultiState extends FlxState {
 	private function restartCon():Void {
 		trace("restarting...");
 		status.text = "Reconnecting...";
-		//client.Connect();
+		Start.instance.Logic.Connect();
 	}
 	
 	/**
 	 * Function that is called once every frame.
 	 */		
-	private var backgroundPlayers:Map<Int, Player> = new Map<Int, Player>();
+
 	override public function update():Void {
 		if (Start.instance.Logic.Connected) {
 			status.text = "Status: Connected";
-			//add(client.player);
-			
-			for (player in Start.instance.Logic.playerList) {
-				
-				if (!player.isLocal) {
-					
-					if (remote == null && Start.instance.Logic.LobbyCount > 1) {						
-						remote = new Player(true);
-						add(remote);
-					}					
-					
-					if (remote != null) {
-						remote._keyState = player._keyState;
-						player._keyState = -1;
-					}													
 
-					//player.flipX = true;
-					//add(player);
-				} else {							
-				//trace("Player Count: " + Start.instance.Logic.LobbyCount);
-					if (local == null) {
-						local = new Player();						
-						local.isLocal = true;
-						add(local);
-					}
+			var localDetails = Start.instance.Logic.playerList[Start.instance.Logic.id];
+			if (localDetails != null) {
+				if (local == null) {
+					local = new Player();						
+					local.isLocal = true;
+					add(local);
 					
-					if (local != null) {
-						
-						local._keyState = player._keyState;			
-						player._keyState = -1;
-					}
-					
+				}
 
-				}
-			}	
-			
-			/*
-			#if android 
-			for (touch in FlxG.touches.list) {
-				if (touch.justPressed) {
-					client.sendEvent(Network.PlayerControl, "Up");
-				}
+				local._keyState = localDetails._keyState;
+				//trace("Keystate: " + local._keyState);
+				Start.instance.Logic.playerList[Start.instance.Logic.id]._keyState = -1;
 			}
 			
+			var remoteDetails = Start.instance.Logic.playerList[100];
 			
+			if (remoteDetails != null) {
+				if (remote == null && Start.instance.Logic.LobbyCount > 1) {						
+					remote = new Player(true);
+					add(remote);
+				}					
+				
+				
+				remote._keyState = remoteDetails._keyState;
+				Start.instance.Logic.playerList[100]._keyState = -1;				
+			}
 
-			#end
-			*/
 		} else {
 			status.text = "Status: Disconnected";
-		}
-		
-		if (Start.instance.Logic.LobbyCount > 1) {
-			//add(client.remote);
-		} else {
-			//remove(client.remote);
 		}
 		
 		players.text = "Players: " + Start.instance.Logic.LobbyCount;
@@ -192,6 +166,7 @@ class MultiState extends FlxState {
 	 * consider setting all objects this state uses to null to help garbage collection.
 	 */
 	override public function destroy():Void {
+		Start.instance.Logic.socket.close();
 		super.destroy();
 	}
 	
