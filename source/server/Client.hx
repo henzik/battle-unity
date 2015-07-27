@@ -25,31 +25,32 @@ class Client {
 
 	public var id:Int = -1;
 	
+	public var stats:Stats;
 	public var socket:Socket;
 	
-	public var Connected:Bool = false;
-	public var LobbyCount:Dynamic;
+	public var roomInfo:RoomInfo;
 	
 	public var playerList:Map<Int,Remote> = new Map<Int, Remote>();
 	//public var remote:Remote;
 	
-	
-	public function new() {
+	public function new () {}
 
-	}
-	
 	public function Connect():Void {
+		stats = new Stats();
+		roomInfo = new RoomInfo();
+		
 		socket = new Socket();
 		socket.addEventListener(Event.CONNECT, onSocketConnect);
 		socket.addEventListener(Event.CLOSE, onSocketClose);
 		socket.addEventListener(ProgressEvent.SOCKET_DATA, onReceiveSocketData);
+		
 		
 		socket.connect("86.8.168.12", 5000);
 		
 	}
 	
 	private function onSocketConnect(e:Event = null):Void {
-		Connected = true;
+		stats.connected = true;
 
 		sendEvent(Network.PlayerConnectReqID, null);
 				
@@ -59,9 +60,9 @@ class Client {
 	
 	private function onSocketClose(e:Event = null):Void {
 		trace("Disconnected from server\n");
-		LobbyCount = 0;
+		stats.playerCount = 0;
 		//player.destroy();
-		Connected = false;
+		stats.connected = false;
 	}
 	
 	private function onReceiveSocketData(e:ProgressEvent):Void {
@@ -81,7 +82,7 @@ class Client {
 				
 				
 			case Network.PlayersInLobby:				
-				LobbyCount = data[1];
+				stats.playerCount = Std.parseInt(Std.string(data[1]));
 				if (playerList.exists(id)) {
 					if (!playerList.exists(100)) {
 						var remote = new Remote();
@@ -133,15 +134,34 @@ class Client {
 					}
 				}*/
 				
+			case Network.CreateRoom:
+				trace("Create Room Response");
+				
+				if (Std.string(data[1]) == "true") {
+					
+					roomInfo.id = Std.parseInt(Std.string(data[2]));
+					roomInfo.name = Std.string(data[3]);
+					roomInfo.maxPlayers = Std.parseInt(Std.string(data[4]));
+				} else {
+					trace("Failed to create the room");
+				}
+				
+			
+			case Network.JoinRoom:
+								
+				if (Std.string(data[1]) == "true") {
+					
+					roomInfo.id = Std.parseInt(Std.string(data[2]));
+					roomInfo.name = Std.string(data[3]);
+					roomInfo.maxPlayers = Std.parseInt(Std.string(data[4]));
+				} else { 
+					trace("Failed to join the room");
+				}
+				
 			case Network.LobbyDetails:
 				trace("Lobby Details");
 				
-			case Network.StartAutoAttack:
-				trace("Start Auto Attack");
 			
-			case Network.EndAutoAttack:
-				trace("Start Auto Attack");
-				
 				
 				//remote._lastKeyState = remote._keyState;
 				//remote._keyState = Input;				
@@ -151,16 +171,18 @@ class Client {
 	}
 	
 	public function sendEvent(event:Network, value:Dynamic, fast:Bool = false) {
-		var data:Dynamic = [event, value, id];
-		var serialiser = new Serializer();
-		serialiser.serialize(data);		
-		
-		//socket.writeUTF("Hello");
+		if (stats.connected) {
+			var data:Dynamic = [event, id, value];
+			var serialiser = new Serializer();
+			serialiser.serialize(data);		
+			
+			//socket.writeUTF("Hello");
 
-		var hxBytes = Bytes.ofString(serialiser.toString());
-		var opBytes = ByteArray.fromBytes(hxBytes);
-		
-		socket.writeBytes(opBytes);
-		socket.flush();
+			var hxBytes = Bytes.ofString(serialiser.toString());
+			var opBytes = ByteArray.fromBytes(hxBytes);
+			
+			socket.writeBytes(opBytes);
+			socket.flush();
+		}
 	}
 }

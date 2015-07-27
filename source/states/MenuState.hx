@@ -30,7 +30,7 @@ class MenuState extends FlxState {
 
 		FlxTween.tween(_background, { alpha: 1 }, 2.0, { complete: Show_button } );
 		
-		var _btnTest = new FlxButton(0, 0, "Multi-Testing", clickTest);
+		var _btnTest = new FlxButton(0, 0, "Lobby", clickTest);
 		_btnTest.setPosition((gameWidth - _btnTest.width) / 2, (gameHeight - _btnTest.height / 2) - 20);
 		add(_btnTest);
 		
@@ -53,7 +53,7 @@ class MenuState extends FlxState {
 	}
 	
 	private function clickTest():Void {
-		FlxG.switchState(new MultiState());
+		FlxG.switchState(new LobbyState());
 	}
 	/**
 	 * Function that is called when this state is destroyed - you might want to 

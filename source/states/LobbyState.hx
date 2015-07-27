@@ -1,6 +1,7 @@
 package states;
 
 import server.Start;
+import server.Network;
 
 import flixel.FlxG;
 import flixel.FlxState;
@@ -13,33 +14,74 @@ import flixel.ui.FlxButton;
  * @author Jazz Atwal
  */
 class LobbyState extends FlxState {
+
+	
+	private var rooms:FlxText;
 	private var status:FlxText;
 	private var players:FlxText;
-	private var reconnect:FlxButton;
+	private var roomName:FlxText;
 	
+	private var createRoom:FlxButton;
+	private var joinRoom:FlxButton;
 	
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
 	
-	public function new() {
-
-	}
-	
 	override public function create():Void {
-		status = new FlxText(0, 0);
-		status.text = "Status: Disconnected";
-		add(status);
+		Start.instance.Logic.Connect();
 		
-		players = new FlxText(180, 0);
-		players.text = "Players: 0";
+		roomName = new FlxText(0, 10);
+		roomName.text = "Room name: " + Start.instance.Logic.roomInfo.name;
+		add(roomName);
+		
+		rooms = new FlxText(150, 130);
+		rooms.text = "Rooms: " + Start.instance.Logic.stats.roomCount;
+		add(rooms);
+	
+		players = new FlxText(0, 140);
+		players.text = "Players: " + Start.instance.Logic.stats.playerCount;
 		add(players);
 		
-		Start.instance.Logic.Connect();
+		var statusTxt = "Disconnected";
+		
+		status = new FlxText(135, 140);
+		status.text = "Status: "+statusTxt;
+		add(status);
+		
+		createRoom = new FlxButton(140, 10, "Create Room", _createRoom);
+		add(createRoom);
+		
+		joinRoom = new FlxButton(140, 30, "Join Room", _joinRoom);
+		add(joinRoom);
 		
 		super.create();
 	}
 	
-	override public function update():Void {
+	private function _createRoom() {
+		Start.instance.Logic.sendEvent(Network.CreateRoom, "Henmanz");
+	}
+	
+	private function _joinRoom() {
+		Start.instance.Logic.sendEvent(Network.JoinRoom, "Henmanz");
+	}
+	
+	override public function update():Void {	
+		
+		if (Start.instance.Logic.stats.connected) {
+			roomName.text = "Room name: " + Start.instance.Logic.roomInfo.name;
+			
+			rooms.text = "Rooms: " + Start.instance.Logic.stats.roomCount;
+			
+			players.text = "Players: " + Start.instance.Logic.stats.playerCount + "/" + Start.instance.Logic.roomInfo.maxPlayers;
+			
+			if (Start.instance.Logic.stats.connected) {
+				status.text = "Status: Connected";
+			} else {
+				status.text = "Status: Disconnected";
+			}
+		}
+		
+		status.update();
 		super.update();
 	}
 	

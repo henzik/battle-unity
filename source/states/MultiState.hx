@@ -79,7 +79,7 @@ class MultiState extends FlxState {
 	 */		
 
 	override public function update():Void {
-		if (Start.instance.Logic.Connected) {
+		if (Start.instance.Logic.stats.connected) {
 			status.text = "Status: Connected";
 
 			var localDetails = Start.instance.Logic.playerList[Start.instance.Logic.id];
@@ -99,7 +99,7 @@ class MultiState extends FlxState {
 			var remoteDetails = Start.instance.Logic.playerList[100];
 			
 			if (remoteDetails != null) {
-				if (remote == null && Start.instance.Logic.LobbyCount > 1) {						
+				if (remote == null && Start.instance.Logic.stats.playerCount > 1) {						
 					remote = new Player(true);
 					add(remote);
 				}					
@@ -113,7 +113,7 @@ class MultiState extends FlxState {
 			status.text = "Status: Disconnected";
 		}
 		
-		players.text = "Players: " + Start.instance.Logic.LobbyCount;
+		players.text = "Players: " + Start.instance.Logic.stats.playerCount;
 		
 		super.update();
 	}

@@ -13,7 +13,7 @@ enum Network {
 	PlayerAControl;
 	PlayerBControl;
 	
-	StartAutoAttack;
-	EndAutoAttack;
+	CreateRoom;
+	JoinRoom;
 
 }
