@@ -44,8 +44,8 @@ class ApplicationMain {
 				
 				#if mobile
 				
-				forceWidth = 240;
-				forceHeight = 160;
+				forceWidth = 480;
+				forceHeight = 320;
 				
 				container = new flash.display.Sprite ();
 				barA = new flash.display.Sprite ();
@@ -114,7 +114,7 @@ class ApplicationMain {
 				}
 				
 			},
-			240, 160, 
+			480, 320, 
 			60, 
 			0,
 			(true ? flash.Lib.HARDWARE : 0) |
@@ -235,13 +235,13 @@ class ScaledStage extends flash.display.Stage {
 	
 	private override function get_stageHeight ():Int {
 		
-		return 160;
+		return 320;
 	
 	}
 	
 	private override function get_stageWidth ():Int {
 		
-		return 240;
+		return 480;
 	
 	}
 	
@@ -312,11 +312,11 @@ class ApplicationMain {
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "battle.unity", null, { width: 240, height: 160 });
+			frame = wx.Frame.create (null, null, "battle.unity", null, { width: 480, height: 320 });
 			
 			
 			#if openfl
-			var stage = wx.NMEStage.create (frame, null, null, { width: 240, height: 160 });
+			var stage = wx.NMEStage.create (frame, null, null, { width: 480, height: 320 });
 			#end
 			
 			var hasMain = false;
@@ -471,7 +471,7 @@ class ApplicationMain {
 		
 		
 		
-		if (loaded == total) {
+		if (total == 0) {
 			
 			start ();
 			
@@ -492,7 +492,7 @@ class ApplicationMain {
 			file: "battle.unity",
 			fps: Std.int (60),
 			fullscreen: false,
-			height: Std.int (160),
+			height: Std.int (320),
 			orientation: "portrait",
 			packageName: "com.example.myapp",
 			resizable: true,
@@ -500,13 +500,13 @@ class ApplicationMain {
 			title: "battle.unity",
 			version: "0.0.1",
 			vsync: true,
-			width: Std.int (240),
+			width: Std.int (480),
 			
 		}
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 240, 160, "null");
+		openfl.Lib.embed (null, 480, 320, "null");
 		#end
 		#else
 		create ();

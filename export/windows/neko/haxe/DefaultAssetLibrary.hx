@@ -16,10 +16,12 @@ import openfl.net.URLRequest;
 import openfl.utils.ByteArray;
 import openfl.Assets;
 
-#if (flash || js)
-import openfl.display.Loader;
-import openfl.events.Event;
-import openfl.net.URLLoader;
+#if neko
+import neko.vm.Deque;
+import neko.vm.Thread;
+#elseif cpp
+import cpp.vm.Deque;
+import cpp.vm.Thread;
 #end
 
 #if sys
@@ -35,6 +37,12 @@ import openfl._legacy.utils.SystemPath;
 class DefaultAssetLibrary extends AssetLibrary {
 	
 	
+	private static var loaded = 0;
+	private static var loading = 0;
+	private static var workerIncomingQueue = new Deque<Dynamic> ();
+	private static var workerResult = new Deque<Dynamic> ();
+	private static var workerThread:Thread;
+	
 	public var className (default, null) = new Map <String, Dynamic> ();
 	public var path (default, null) = new Map <String, String> ();
 	public var type (default, null) = new Map <String, AssetType> ();
@@ -46,84 +54,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 	public function new () {
 		
 		super ();
-		
-		#if flash
-		
-		path.set ("assets/images/game_background_sprites.png", "assets/images/game_background_sprites.png");
-		type.set ("assets/images/game_background_sprites.png", AssetType.IMAGE);
-		path.set ("assets/images/megaman.png", "assets/images/megaman.png");
-		type.set ("assets/images/megaman.png", AssetType.IMAGE);
-		path.set ("assets/images/megaman_move.png", "assets/images/megaman_move.png");
-		type.set ("assets/images/megaman_move.png", AssetType.IMAGE);
-		path.set ("assets/images/menu_background.jpg", "assets/images/menu_background.jpg");
-		type.set ("assets/images/menu_background.jpg", AssetType.IMAGE);
-		path.set ("assets/images/platform_blue_normal.png", "assets/images/platform_blue_normal.png");
-		type.set ("assets/images/platform_blue_normal.png", AssetType.IMAGE);
-		path.set ("assets/images/platform_red_normal.png", "assets/images/platform_red_normal.png");
-		type.set ("assets/images/platform_red_normal.png", AssetType.IMAGE);
-		path.set ("assets/images/press_start.png", "assets/images/press_start.png");
-		type.set ("assets/images/press_start.png", AssetType.IMAGE);
-		path.set ("assets/music/maintheme.wav", "assets/music/maintheme.wav");
-		type.set ("assets/music/maintheme.wav", AssetType.SOUND);
-		path.set ("assets/sounds/Teleport.wav", "assets/sounds/Teleport.wav");
-		type.set ("assets/sounds/Teleport.wav", AssetType.SOUND);
-		path.set ("assets/sounds/beep.ogg", "assets/sounds/beep.ogg");
-		type.set ("assets/sounds/beep.ogg", AssetType.SOUND);
-		path.set ("assets/sounds/flixel.ogg", "assets/sounds/flixel.ogg");
-		type.set ("assets/sounds/flixel.ogg", AssetType.SOUND);
-		className.set ("assets/fonts/nokiafc22.ttf", __ASSET__assets_fonts_nokiafc22_ttf);
-		type.set ("assets/fonts/nokiafc22.ttf", AssetType.FONT);
-		className.set ("assets/fonts/arial.ttf", __ASSET__assets_fonts_arial_ttf);
-		type.set ("assets/fonts/arial.ttf", AssetType.FONT);
-		
-		
-		#elseif html5
-		
-		var id;
-		id = "assets/images/game_background_sprites.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/megaman.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/megaman_move.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/menu_background.jpg";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/platform_blue_normal.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/platform_red_normal.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/images/press_start.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/music/maintheme.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/sounds/Teleport.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/sounds/beep.ogg";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/sounds/flixel.ogg";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/fonts/nokiafc22.ttf";
-		className.set (id, __ASSET__assets_fonts_nokiafc22_ttf);
-		
-		type.set (id, AssetType.FONT);
-		id = "assets/fonts/arial.ttf";
-		className.set (id, __ASSET__assets_fonts_arial_ttf);
-		
-		type.set (id, AssetType.FONT);
-		
-		
-		#else
 		
 		
 		
@@ -201,7 +131,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		loadManifest ();
 		
 		#end
-		#end
 		
 	}
 	
@@ -209,20 +138,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 	public override function exists (id:String, type:AssetType):Bool {
 		
 		var assetType = this.type.get (id);
-		
-		#if pixi
-		
-		if (assetType == IMAGE) {
-			
-			return true;
-			
-		} else {
-			
-			return false;
-			
-		}
-		
-		#end
 		
 		if (assetType != null) {
 			
@@ -232,27 +147,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 				
 			}
 			
-			#if flash
-			
-			if ((assetType == BINARY || assetType == TEXT) && type == BINARY) {
-				
-				return true;
-				
-			} else if (path.exists (id)) {
-				
-				return true;
-				
-			}
-			
-			#else
-			
 			if (type == BINARY || type == null || (assetType == BINARY && type == TEXT)) {
 				
 				return true;
 				
 			}
-			
-			#end
 			
 		}
 		
@@ -263,128 +162,62 @@ class DefaultAssetLibrary extends AssetLibrary {
 	
 	public override function getBitmapData (id:String):BitmapData {
 		
-		#if pixi
-		
-		return BitmapData.fromImage (path.get (id));
-		
-		#elseif (flash)
-		
-		return cast (Type.createInstance (className.get (id), []), BitmapData);
-		
-		#elseif openfl_html5
-		
-		return BitmapData.fromImage (ApplicationMain.images.get (path.get (id)));
-		
-		#elseif js
-		
-		return cast (ApplicationMain.loaders.get (path.get (id)).contentLoaderInfo.content, Bitmap).bitmapData;
-		
-		#else
-		
-		if (className.exists(id)) return cast (Type.createInstance (className.get (id), []), BitmapData);
-		else return BitmapData.load (path.get (id));
-		
-		#end
+		if (className.exists (id)) {
+			
+			return cast (Type.createInstance (className.get (id), []), BitmapData);
+			
+		} else {
+			
+			return BitmapData.load (path.get (id));
+			
+		}
 		
 	}
 	
 	
 	public override function getBytes (id:String):ByteArray {
 		
-		#if (flash)
-		
-		return cast (Type.createInstance (className.get (id), []), ByteArray);
-
-		#elseif (js || openfl_html5 || pixi)
-		
-		var bytes:ByteArray = null;
-		var data = ApplicationMain.urlLoaders.get (path.get (id)).data;
-		
-		if (Std.is (data, String)) {
+		if (className.exists (id)) {
 			
-			bytes = new ByteArray ();
-			bytes.writeUTFBytes (data);
-			
-		} else if (Std.is (data, ByteArray)) {
-			
-			bytes = cast data;
+			return cast (Type.createInstance (className.get (id), []), ByteArray);
 			
 		} else {
 			
-			bytes = null;
+			return ByteArray.readFile (path.get (id));
 			
 		}
-
-		if (bytes != null) {
-			
-			bytes.position = 0;
-			return bytes;
-			
-		} else {
-			
-			return null;
-		}
-		
-		#else
-		
-		if (className.exists(id)) return cast (Type.createInstance (className.get (id), []), ByteArray);
-		else return ByteArray.readFile (path.get (id));
-		
-		#end
 		
 	}
 	
 	
 	public override function getFont (id:String):Font {
 		
-		#if pixi
-		
-		return null;
-		
-		#elseif (flash || js)
-		
-		return cast (Type.createInstance (className.get (id), []), Font);
-		
-		#else
-		
-		if (className.exists(id)) {
-			var fontClass = className.get(id);
-			Font.registerFont(fontClass);
+		if (className.exists (id)) {
+			
+			var fontClass = className.get (id);
+			Font.registerFont (fontClass);
 			return cast (Type.createInstance (fontClass, []), Font);
-		} else return new Font (path.get (id));
-		
-		#end
+			
+		} else {
+			
+			return new Font (path.get (id));
+			
+		}
 		
 	}
 	
 	
 	public override function getMusic (id:String):Sound {
 		
-		#if pixi
-		
-		return null;
-		
-		#elseif (flash)
-		
-		return cast (Type.createInstance (className.get (id), []), Sound);
-		
-		#elseif openfl_html5
-		
-		var sound = new Sound ();
-		sound.__buffer = true;
-		sound.load (new URLRequest (path.get (id)));
-		return sound; 
-		
-		#elseif js
-		
-		return new Sound (new URLRequest (path.get (id)));
-		
-		#else
-		
-		if (className.exists(id)) return cast (Type.createInstance (className.get (id), []), Sound);
-		else return new Sound (new URLRequest (path.get (id)), null, true);
-		
-		#end
+		if (className.exists (id)) {
+			
+			return cast (Type.createInstance (className.get (id), []), Sound);
+			
+		} else {
+			
+			return new Sound (new URLRequest (path.get (id)), null, true);
+			
+		}
 		
 	}
 	
@@ -406,60 +239,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 	
 	public override function getSound (id:String):Sound {
 		
-		#if pixi
-		
-		return null;
-		
-		#elseif (flash)
-		
-		return cast (Type.createInstance (className.get (id), []), Sound);
-		
-		#elseif js
-		
-		return new Sound (new URLRequest (path.get (id)));
-		
-		#else
-		
-		if (className.exists(id)) return cast (Type.createInstance (className.get (id), []), Sound);
-		else return new Sound (new URLRequest (path.get (id)), null, type.get (id) == MUSIC);
-		
-		#end
+		if (className.exists (id)) {
+			
+			return cast (Type.createInstance (className.get (id), []), Sound);
+			
+		} else {
+			
+			return new Sound (new URLRequest (path.get (id)), null, type.get (id) == MUSIC);
+			
+		}
 		
 	}
 	
 	
 	public override function getText (id:String):String {
-		
-		#if js
-		
-		var bytes:ByteArray = null;
-		var data = ApplicationMain.urlLoaders.get (path.get (id)).data;
-		
-		if (Std.is (data, String)) {
-			
-			return cast data;
-			
-		} else if (Std.is (data, ByteArray)) {
-			
-			bytes = cast data;
-			
-		} else {
-			
-			bytes = null;
-			
-		}
-		
-		if (bytes != null) {
-			
-			bytes.position = 0;
-			return bytes.readUTFBytes (bytes.length);
-			
-		} else {
-			
-			return null;
-		}
-		
-		#else
 		
 		var bytes = getBytes (id);
 		
@@ -473,22 +266,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 			
 		}
 		
-		#end
-		
 	}
 	
 	
 	public override function isLocal (id:String, type:AssetType):Bool {
-		
-		#if flash
-		
-		if (type != AssetType.MUSIC && type != AssetType.SOUND) {
-			
-			return className.exists (id);
-			
-		}
-		
-		#end
 		
 		return true;
 		
@@ -516,104 +297,25 @@ class DefaultAssetLibrary extends AssetLibrary {
 	
 	public override function loadBitmapData (id:String, handler:BitmapData -> Void):Void {
 		
-		#if pixi
-		
-		handler (getBitmapData (id));
-		
-		#elseif (flash || js)
-		
-		if (path.exists (id)) {
-			
-			var loader = new Loader ();
-			loader.contentLoaderInfo.addEventListener (Event.COMPLETE, function (event:Event) {
-				
-				handler (cast (event.currentTarget.content, Bitmap).bitmapData);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {
-			
-			handler (getBitmapData (id));
-			
-		}
-		
-		#else
-		
-		handler (getBitmapData (id));
-		
-		#end
+		__load (getBitmapData, id, handler);
 		
 	}
 	
 	
 	public override function loadBytes (id:String, handler:ByteArray -> Void):Void {
 		
-		#if pixi
-		
-		handler (getBytes (id));
-		
-		#elseif (flash || js)
-		
-		if (path.exists (id)) {
-			
-			var loader = new URLLoader ();
-			loader.addEventListener (Event.COMPLETE, function (event:Event) {
-				
-				var bytes = new ByteArray ();
-				bytes.writeUTFBytes (event.currentTarget.data);
-				bytes.position = 0;
-				
-				handler (bytes);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {
-			
-			handler (getBytes (id));
-			
-		}
-		
-		#else
-		
-		handler (getBytes (id));
-		
-		#end
+		__load (getBytes, id, handler);
 		
 	}
 	
 	
 	public override function loadFont (id:String, handler:Font -> Void):Void {
 		
-		#if (flash || js)
-		
-		/*if (path.exists (id)) {
-			
-			var loader = new Loader ();
-			loader.contentLoaderInfo.addEventListener (Event.COMPLETE, function (event) {
-				
-				handler (cast (event.currentTarget.content, Bitmap).bitmapData);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {*/
-			
-			handler (getFont (id));
-			
-		//}
-		
-		#else
-		
-		handler (getFont (id));
-		
-		#end
+		__load (getFont, id, handler);
 		
 	}
 	
 	
-	#if (!flash && !html5)
 	private function loadManifest ():Void {
 		
 		try {
@@ -668,88 +370,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		}
 		
 	}
-	#end
 	
 	
 	public override function loadMusic (id:String, handler:Sound -> Void):Void {
 		
-		#if (flash || js)
-		
-		/*if (path.exists (id)) {
-			
-			var loader = new Loader ();
-			loader.contentLoaderInfo.addEventListener (Event.COMPLETE, function (event) {
-				
-				handler (cast (event.currentTarget.content, Bitmap).bitmapData);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {*/
-			
-			handler (getMusic (id));
-			
-		//}
-		
-		#else
-		
-		handler (getMusic (id));
-		
-		#end
+		__load (getMusic, id, handler);
 		
 	}
 	
 	
 	public override function loadSound (id:String, handler:Sound -> Void):Void {
 		
-		#if (flash || js)
-		
-		/*if (path.exists (id)) {
-			
-			var loader = new Loader ();
-			loader.contentLoaderInfo.addEventListener (Event.COMPLETE, function (event) {
-				
-				handler (cast (event.currentTarget.content, Bitmap).bitmapData);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {*/
-			
-			handler (getSound (id));
-			
-		//}
-		
-		#else
-		
-		handler (getSound (id));
-		
-		#end
+		__load (getSound, id, handler);
 		
 	}
 	
 	
 	public override function loadText (id:String, handler:String -> Void):Void {
-		
-		#if js
-		
-		if (path.exists (id)) {
-			
-			var loader = new URLLoader ();
-			loader.addEventListener (Event.COMPLETE, function (event:Event) {
-				
-				handler (event.currentTarget.data);
-				
-			});
-			loader.load (new URLRequest (path.get (id)));
-			
-		} else {
-			
-			handler (getText (id));
-			
-		}
-		
-		#else
 		
 		var callback = function (bytes:ByteArray):Void {
 			
@@ -767,7 +404,88 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		loadBytes (id, callback);
 		
-		#end
+	}
+	
+	
+	private static function __doWork ():Void {
+		
+		while (true) {
+			
+			var message = workerIncomingQueue.pop (true);
+			
+			if (message == "WORK") {
+				
+				var getMethod = workerIncomingQueue.pop (true);
+				var id = workerIncomingQueue.pop (true);
+				var handler = workerIncomingQueue.pop (true);
+				
+				var data = getMethod (id);
+				workerResult.add ("RESULT");
+				workerResult.add (data);
+				workerResult.add (handler);
+				
+			} else if (message == "EXIT") {
+				
+				break;
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	private inline function __load<T> (getMethod:String->T, id:String, handler:T->Void):Void {
+		
+		workerIncomingQueue.add ("WORK");
+		workerIncomingQueue.add (getMethod);
+		workerIncomingQueue.add (id);
+		workerIncomingQueue.add (handler);
+		
+		loading++;
+		
+	}
+	
+	
+	public static function __poll ():Void {
+		
+		if (loading > loaded) {
+			
+			if (workerThread == null) {
+				
+				workerThread = Thread.create (__doWork);
+				
+			}
+			
+			var message = workerResult.pop (false);
+			
+			while (message == "RESULT") {
+				
+				loaded++;
+				
+				var data = workerResult.pop (true);
+				var handler = workerResult.pop (true);
+				
+				if (handler != null) {
+					
+					handler (data);
+					
+				}
+				
+				message = workerResult.pop (false);
+				
+			}
+			
+		} else {
+			
+			if (workerThread != null) {
+				
+				workerIncomingQueue.add ("EXIT");
+				workerThread = null;
+				
+			}
+			
+		}
 		
 	}
 	
@@ -775,48 +493,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 }
 
 
-#if pixi
-#elseif flash
-
-
-
-
-
-
-
-
-
-
-
-
-@:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends null { }
-@:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends null { }
-
-
-#elseif html5
-
-
-
-
-
-
-
-
-
-
-
-
-@:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Nokia Cellphone FC Small"; } #end }
-@:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "Arial"; } #end }
-
-
-#else
-
 #if (windows || mac || linux)
 
 
-@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font {}
-@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/arial.ttf") @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font {}
+@:font("E:/Dev/HaxeToolkit/haxe/lib/flixel/3,3,11/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends flash.text.Font {}
+@:font("E:/Dev/HaxeToolkit/haxe/lib/flixel/3,3,11/assets/fonts/arial.ttf") @:keep #if display private #end class __ASSET__assets_fonts_arial_ttf extends flash.text.Font {}
 
 
 
@@ -828,8 +509,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 class __ASSET__assets_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/nokiafc22.ttf"; fontName = "Nokia Cellphone FC Small";  }}
 class __ASSET__assets_fonts_arial_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/fonts/arial.ttf"; fontName = "Arial";  }}
 
-
-#end
 
 #end
 
@@ -847,6 +526,7 @@ import lime.audio.AudioSource;
 import lime.audio.openal.AL;
 import lime.audio.AudioBuffer;
 import lime.graphics.Image;
+import lime.system.ThreadPool;
 import lime.text.Font;
 import lime.utils.ByteArray;
 import lime.utils.UInt8Array;
@@ -856,7 +536,10 @@ import lime.Assets;
 import sys.FileSystem;
 #end
 
-#if flash
+#if (js && html5)
+import lime.net.URLLoader;
+import lime.net.URLRequest;
+#elseif flash
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Loader;
@@ -875,6 +558,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 	public var type (default, null) = new Map <String, AssetType> ();
 	
 	private var lastModified:Float;
+	private var loadHandlers:Map<String, Dynamic>;
+	private var threadPool:ThreadPool;
 	private var timer:Timer;
 	
 	
@@ -1050,6 +735,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 	}
 	
 	
+	private function createThreadPool ():Void {
+		
+		threadPool = new ThreadPool (0, 2);
+		threadPool.doWork.add (function (id, getMethod) {
+			
+			threadPool.sendComplete (id, getMethod (id));
+			
+		});
+		threadPool.onComplete.add (function (id, data) {
+			
+			var handler = loadHandlers.get (id);
+			handler (data);
+			
+		});
+		
+	}
+	
+	
 	public override function exists (id:String, type:String):Bool {
 		
 		var requestedType = type != null ? cast (type, AssetType) : null;
@@ -1141,7 +844,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var bytes:ByteArray = null;
-		var data = Preloader.loaders.get (path.get (id)).data;
+		var loader = Preloader.loaders.get (path.get (id));
+		
+		if (loader == null) {
+			
+			return null;
+			
+		}
+		
+		var data = loader.data;
 		
 		if (Std.is (data, String)) {
 			
@@ -1288,7 +999,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if html5
 		
 		var bytes:ByteArray = null;
-		var data = Preloader.loaders.get (path.get (id)).data;
+		var loader = Preloader.loaders.get (path.get (id));
+		
+		if (loader == null) {
+			
+			return null;
+			
+		}
+		
+		var data = loader.data;
 		
 		if (Std.is (data, String)) {
 			
@@ -1375,6 +1094,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 	public override function loadAudioBuffer (id:String, handler:AudioBuffer -> Void):Void {
 		
 		#if (flash)
+		
 		if (path.exists (id)) {
 			
 			var soundLoader = new Sound ();
@@ -1385,13 +1105,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 				handler (audioBuffer);
 				
 			});
+			
 			soundLoader.load (new URLRequest (path.get (id)));
 			
 		} else {
+			
 			handler (getAudioBuffer (id));
 			
 		}
+		
 		#else
+		
 		handler (getAudioBuffer (id));
 		
 		#end
@@ -1423,9 +1147,37 @@ class DefaultAssetLibrary extends AssetLibrary {
 			
 		}
 		
+		#elseif html5
+		
+		if (path.exists (id)) {
+			
+			var loader = new URLLoader ();
+			loader.dataFormat = BINARY;
+			loader.onComplete.add (function (_):Void {
+				
+				handler (loader.data);
+				
+			});
+			
+			loader.load (new URLRequest (path.get (id)));
+			
+		} else {
+			
+			handler (getBytes (id));
+			
+		}
+		
 		#else
 		
-		handler (getBytes (id));
+		if (threadPool == null) {
+			
+			loadHandlers = new Map ();
+			createThreadPool ();
+			
+		}
+		
+		loadHandlers.set (id, handler);
+		threadPool.queue (id, getBytes);
 		
 		#end
 		
@@ -1453,9 +1205,35 @@ class DefaultAssetLibrary extends AssetLibrary {
 			
 		}
 		
+		#elseif html5
+		
+		if (path.exists (id)) {
+			
+			var image = new js.html.Image ();
+			image.onload = function (_):Void {
+				
+				handler (Image.fromImageElement (image));
+				
+			}
+			image.src = path.get (id);
+			
+		} else {
+			
+			handler (getImage (id));
+			
+		}
+		
 		#else
 		
-		handler (getImage (id));
+		if (threadPool == null) {
+			
+			loadHandlers = new Map ();
+			createThreadPool ();
+			
+		}
+		
+		loadHandlers.set (id, handler);
+		threadPool.queue (id, getImage);
 		
 		#end
 		
@@ -1559,25 +1337,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 	
 	public override function loadText (id:String, handler:String -> Void):Void {
 		
-		//#if html5
+		#if html5
 		
-		/*if (path.exists (id)) {
+		if (path.exists (id)) {
 			
 			var loader = new URLLoader ();
-			loader.addEventListener (Event.COMPLETE, function (event:Event) {
+			loader.onComplete.add (function (_):Void {
 				
-				handler (event.currentTarget.data);
+				handler (loader.data);
 				
 			});
+			
 			loader.load (new URLRequest (path.get (id)));
 			
 		} else {
 			
 			handler (getText (id));
 			
-		}*/
+		}
 		
-		//#else
+		#else
 		
 		var callback = function (bytes:ByteArray):Void {
 			
@@ -1595,7 +1374,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		loadBytes (id, callback);
 		
-		//#end
+		#end
 		
 	}
 	
@@ -1645,16 +1424,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
-@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:font("E:/HaxeToolkit/haxe/lib/flixel/3,3,10/assets/fonts/arial.ttf") #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font {}
+@:font("E:/Dev/HaxeToolkit/haxe/lib/flixel/3,3,11/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__assets_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("E:/Dev/HaxeToolkit/haxe/lib/flixel/3,3,11/assets/fonts/arial.ttf") #if display private #end class __ASSET__assets_fonts_arial_ttf extends lime.text.Font {}
 
 
 
 #end
 
 #if openfl
-@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { __fontPath = "assets/fonts/nokiafc22.ttf"; name = "Nokia Cellphone FC Small"; super (); }}
-@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_arial_ttf extends openfl.text.Font { public function new () { __fontPath = "assets/fonts/arial.ttf"; name = "Arial"; super (); }}
+@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__assets_fonts_nokiafc22_ttf (); src = font.src; name = font.name; super (); }}
+@:keep #if display private #end class __ASSET__OPENFL__assets_fonts_arial_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__assets_fonts_arial_ttf (); src = font.src; name = font.name; super (); }}
 
 #end
 
