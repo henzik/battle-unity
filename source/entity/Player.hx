@@ -3,6 +3,8 @@ package entity;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxObject;
+import flixel.ui.FlxButton;
+import flixel.ui.FlxVirtualPad;
 
 import server.Network;
 import server.Start;
@@ -17,24 +19,48 @@ class Player extends FlxSprite {
 	public var id:Int = -1;
 
 	public var vPos = 2;
+	
 	public var hPos = 2;
 	public var isLocal:Bool = false;
 	
+	#if mobile
+	private var _virtualPad:FlxVirtualPad;
+	#end
 	
 	public function new(flip:Bool = false) {
 		
 		if (flip) {
 			var rightX = (FlxG.width / 2) + 43;
-			var rightY = (FlxG.height / 2) - 25;
-			trace("CENTER X: " + rightX + " CENTER Y: " + rightY);
+			
+			#if windows
+			var rightY = (FlxG.height / 2);
+			#end
+			
+			#if android 
+			var rightY = (FlxG.height / 2) - 15;
+			#end
+			trace("Flipped: " + rightY);
 			super(rightX, rightY);
 			flipX = true;
 		} else {
 			var leftX = (FlxG.width / 2) - 83;
-			var leftY = (FlxG.height / 2) - 25;
 			
+			#if windows
+			var leftY = (FlxG.height / 2);
+			#end
+			#if android 
+			var leftY = (FlxG.height / 2) - 15;
+			#end
+			trace("Flipped: " + leftY);
 			super(leftX, leftY);
 		}
+		
+		#if mobile
+		_virtualPad = new FlxVirtualPad(FULL, NONE);
+		_virtualPad.alpha = 0.5;
+		FlxG.state.add(_virtualPad);
+		#end		
+		
 		loadGraphic(AssetPaths.megaman_move__png, true, 41, 52);
 		animation.add("move", [0, 1, 2, 3], 30, false);
 		animation.add("static", [3], 1, true);
@@ -42,9 +68,6 @@ class Player extends FlxSprite {
 	}
 
 	override public function update():Void {
-		if (!isLocal) {
-			//trace("Keystate: "+_keyState);
-		}
 		
 		if (_keyState == 0 && vPos > 1) {
 			vPos--;
@@ -81,20 +104,32 @@ class Player extends FlxSprite {
 		}
 		
 		if (isLocal) {
+			#if mobile
+				if (_virtualPad.buttonUp.status == FlxButton.PRESSED) {
+					Start.instance.Logic.sendEvent(Network.PlayerAControl, "0");
+				} else if (_virtualPad.buttonDown.status == FlxButton.PRESSED) {
+					Start.instance.Logic.sendEvent(Network.PlayerAControl, "1");
+				} else if (_virtualPad.buttonLeft.status == FlxButton.PRESSED) {
+					Start.instance.Logic.sendEvent(Network.PlayerAControl, "2");
+				} else if (_virtualPad.buttonRight.status == FlxButton.PRESSED) {
+					Start.instance.Logic.sendEvent(Network.PlayerAControl, "3");
+				}
+			#else
 		// Send Local player commands
-			if (FlxG.keys.anyJustPressed(["Up"]) && vPos > 1) {				
+			if (FlxG.keys.anyJustPressed(["Up","W"]) && vPos > 1) {				
 				Start.instance.Logic.sendEvent(Network.PlayerAControl, "0");
 				//if (local != null) local._keyState = "Up";
-			} else if (FlxG.keys.anyJustPressed(["Down"]) && vPos < 3) {
+			} else if (FlxG.keys.anyJustPressed(["Down", "S"]) && vPos < 3) {
 				Start.instance.Logic.sendEvent(Network.PlayerAControl, "1");
 				//if (local != null) local._keyState = "Down";
-			} else if (FlxG.keys.anyJustPressed(["Left"]) && hPos > 1) {
+			} else if (FlxG.keys.anyJustPressed(["Left", "A"]) && hPos > 1) {
 				Start.instance.Logic.sendEvent(Network.PlayerAControl, "2");
 				//if (local != null) local._keyState = "Left";
-			} else if (FlxG.keys.anyJustPressed(["Right"]) && hPos < 3) {
+			} else if (FlxG.keys.anyJustPressed(["Right", "D"]) && hPos < 3) {
 				Start.instance.Logic.sendEvent(Network.PlayerAControl, "3");
 				//if (local != null) local._keyState = "Right";
 			}
+			#end
 		}
 		super.update();
 	}

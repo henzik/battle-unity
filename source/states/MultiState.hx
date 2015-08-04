@@ -7,6 +7,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import entity.Player;
+import server.Remote;
 
 import server.Start;
 import server.Network;
@@ -24,122 +25,101 @@ class MultiState extends FlxState {
 	private var remote:Player;
 	
 	private var status:FlxText;
-	private var players:FlxText;
-	
-	private var reconnect:FlxButton;
-	
+		
 	private var red_platform:FlxSprite;
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
+	
+	private var ping:FlxText;
 
 	override public function create():Void {
-
 		generatePlatforms();
 		
-		var Up = new FlxButton(80, centerY - 70, "Up", CBup);
-		var Down = new FlxButton(80, centerY - 40, "Down", CBdown);
-		var Left = new FlxButton(40, centerY - 55, "Left", CBleft);
-		var Right = new FlxButton(130, centerY - 55, "Right", CBright);
+		local = new Player();
+		local.isLocal = true;
+		local.kill();
+		add(local);
 		
-		add(Up);
-		add(Down);
-		add(Left);
-		add(Right);
-		
-		//player = new Player(37, 55, "right");
-		
-		//enemy = new Remote(163, 55, "left");
-		//add(enemy);
+		remote = new Player(true);
+		remote.kill();
+		add(remote);
 		
 		status = new FlxText(0, 0);
 		status.text = "Status: Disconnected";
 		add(status);
 		
-		players = new FlxText(180, 0);
-		players.text = "Players: 0";
-		add(players);
-		
-		Start.instance.Logic.Connect();
-		
-		
-		reconnect = new FlxButton(0, 150, "Reconnect", restartCon);
-		add(reconnect);
+		ping = new FlxText(100, 0);
+		ping.text = "Ping: null";
 		
 		super.create();
 	}
 	
-	private function restartCon():Void {
-		trace("restarting...");
-		status.text = "Reconnecting...";
-		Start.instance.Logic.Connect();
-	}
-	
 	/**
 	 * Function that is called once every frame.
-	 */		
-
+	 */
 	override public function update():Void {
 		if (Start.instance.Logic.stats.connected) {
 			status.text = "Status: Connected";
-
-			var localDetails = Start.instance.Logic.playerList[Start.instance.Logic.id];
-			if (localDetails != null) {
-				if (local == null) {
-					local = new Player();						
-					local.isLocal = true;
-					add(local);
+			var Player1 = Start.instance.Logic.roomInfo.players.get(Start.instance.Logic.roomInfo.Player1);
+			var Player2 = Start.instance.Logic.roomInfo.players.get(Start.instance.Logic.roomInfo.Player2);
+			
+			if (Player1 != null) {
+				if (Player1.ID == Start.instance.Logic.id) {				
+					if (!local.alive) {
+						trace("Does not exist!");
+						local.revive();
+					}
 					
+					local._keyState = Player1._keyState;
+					Start.instance.Logic.roomInfo.players[Player1.ID]._keyState = -1;
+				} else {
+					if (!remote.alive) {
+						trace("Attempted to revive");
+						remote.revive();
+					}
+				
+					remote._keyState = Player1._keyState;
+					Start.instance.Logic.roomInfo.players[Player1.ID]._keyState = -1;
 				}
-
-				local._keyState = localDetails._keyState;
-				//trace("Keystate: " + local._keyState);
-				Start.instance.Logic.playerList[Start.instance.Logic.id]._keyState = -1;
-			}
+			} 
 			
-			var remoteDetails = Start.instance.Logic.playerList[100];
-			
-			if (remoteDetails != null) {
-				if (remote == null && Start.instance.Logic.stats.playerCount > 1) {						
-					remote = new Player(true);
-					add(remote);
-				}					
+			if (Player2 != null) {				
+				if (Player2.ID == Start.instance.Logic.id) {
+					if (!local.alive) {
+						trace("Does not exist!");
+						local.revive();
+					}
+					
+					local._keyState = Player2._keyState;
+					Start.instance.Logic.roomInfo.players[Player2.ID]._keyState = -1;
+				} else {
+					if (!remote.alive) {
+						trace("Attempted to revive");
+						remote.revive();
+					}
 				
-				
-				remote._keyState = remoteDetails._keyState;
-				Start.instance.Logic.playerList[100]._keyState = -1;				
+					remote._keyState = Player2._keyState;
+					Start.instance.Logic.roomInfo.players[Player2.ID]._keyState = -1;
+				}
 			}
 
+			
+			
+			
 		} else {
 			status.text = "Status: Disconnected";
 		}
 		
-		players.text = "Players: " + Start.instance.Logic.stats.playerCount;
 		
 		super.update();
+		
 	}
 
-	public function CBup():Void {
-		Start.instance.Logic.sendEvent(Network.PlayerAControl, "0");
-		//client.player.
-	}
-	
-	public function CBdown():Void {
-		Start.instance.Logic.sendEvent(Network.PlayerAControl, "1");
-	}
-	
-	public function CBleft():Void {
-		Start.instance.Logic.sendEvent(Network.PlayerAControl, "2");		
-	}
-
-	public function CBright():Void {
-		Start.instance.Logic.sendEvent(Network.PlayerAControl, "3");
-	}
-	
 	public function generatePlatforms():Void {
 		var width = 6;
 		var height = 3;
 		var xLocation = 0;
-		var yLocation = centerY-15;
+		var yLocation = centerY;
 
 		for (i in 0...width) {
 			for (j in 0...height) {
@@ -151,14 +131,12 @@ class MultiState extends FlxState {
 			} else {
 				add(blue_platform);
 			}
-			yLocation += 26;
-
+				yLocation += 26;
 			}
 
-			yLocation = centerY-15;
+			yLocation = centerY;
 			xLocation += 40;
 		}
-
 	}
 
 	/**

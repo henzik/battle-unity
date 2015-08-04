@@ -7,9 +7,10 @@ package server;
 enum Network {
 	PlayerConnectReqID;
 	
-	PlayersInLobby;
+	PlayersInRoom;
 	LobbyDetails;
-	
+		
+	StartGame;
 	PlayerAControl;
 	PlayerBControl;
 	

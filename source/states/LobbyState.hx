@@ -27,9 +27,7 @@ class LobbyState extends FlxState {
 	private var centerX:Int = Std.int(FlxG.width / 2);
 	private var centerY:Int = Std.int(FlxG.height / 2);
 	
-	override public function create():Void {
-		Start.instance.Logic.Connect();
-		
+	override public function create():Void {		
 		roomName = new FlxText(0, 10);
 		roomName.text = "Room name: " + Start.instance.Logic.roomInfo.name;
 		add(roomName);
@@ -79,9 +77,13 @@ class LobbyState extends FlxState {
 			} else {
 				status.text = "Status: Disconnected";
 			}
+			
+			if (Start.instance.Logic.roomInfo.name != "Lobby") {
+				FlxG.switchState(new RoomState());
+			}
 		}
 		
-		status.update();
+		
 		super.update();
 	}
 	

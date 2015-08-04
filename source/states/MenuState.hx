@@ -1,10 +1,13 @@
 package states;
 
+import server.Start;
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxButton;
+
 /**
  * A FlxState which can be used for the game's menu.
  */
@@ -20,7 +23,8 @@ class MenuState extends FlxState {
 	private var gameHeight:Int = FlxG.height;
 	
 	override public function create():Void {
-	
+		Start.instance.Logic.Connect();
+		
 		FlxG.sound.playMusic(AssetPaths.maintheme__wav, 0.5);		
 				
 		_background = new FlxSprite(0, 0, AssetPaths.menu_background__jpg);
